@@ -25,11 +25,11 @@
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.0-macos.dmg"
                 type="application/octet-stream"
-                length="68744378"
+                length="68768702"
                 sparkle:version="1.0.0"
                 sparkle:shortVersionString="1.0.0"
                 sparkle:os="macos"
-                sparkle:edSignature="sh5LLqxWAOitocaPUEIoeDO58b3Ci5xWxnJAAynCHdDeiPpn4CT5PPCyBUW0EspTIh5g30x/shIsaOcmfUTLBw==" />
+                sparkle:edSignature="sP3KZ/X+qMRopkfI71HRPf54nOu+5pgAoYM0++rW12poTBikWFgjH5kW+MraO77FYMbtz1LYkAUT5D2EQlwpAQ==" />
                 
             <!-- Windows Update -->
             <enclosure 
