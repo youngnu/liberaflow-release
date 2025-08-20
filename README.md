@@ -5,7 +5,7 @@
 
   ## Download
 
-  Visit our [download page](https://youngnu.github.io/liberaflow-releases/)
+  Visit our [download page](https://youngnu.github.io/liberaflow-release/)
   to get the latest version.
 
   ## Auto Updates
