@@ -15,4 +15,4 @@
 
   ## Support
 
-  For issues and support, please contact us through our main website.pplication Downloads and Updates
+  For issues and support, please contact us through our main website.  
