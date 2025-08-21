@@ -8,6 +8,45 @@
         
         <!-- Latest Release Item -->
         <item>
+            <title>Version 1.0.2</title>
+            <sparkle:version>1.0.2</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <description><![CDATA[
+                <h3>Auto-updater Test Release 1.0.2</h3>
+                <ul>
+                    <li>🧪 Testing auto-updater functionality</li>
+                    <li>✅ Fully notarized macOS app</li>
+                    <li>🔐 Code signed with Developer ID</li>
+                    <li>🚀 Window automation functionality</li>
+                    <li>📱 Multi-window support</li>
+                    <li>🖥️ Desktop integration</li>
+                </ul>
+            ]]></description>
+            <pubDate>Thu, 22 Aug 2025 03:00:00 +0000</pubDate>
+            
+            <!-- macOS Update -->
+            <enclosure 
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.2-macos.dmg"
+                type="application/octet-stream"
+                length="69463660"
+                sparkle:version="1.0.2"
+                sparkle:shortVersionString="1.0.2"
+                sparkle:os="macos"
+                sparkle:edSignature="VkXpyrS8Ih7u35oPk44CMyLLED/XubMl8XG2r4GNrtH3xiBhTpL1/RA6rqhZyWMyiGrrVqvLaof1ngif92JiCA==" />
+                
+            <!-- Windows Update -->
+            <enclosure 
+                url="https://github.com/yourusername/liberaflow/releases/download/v1.0.1/Liberaflow-1.0.1-windows.exe"
+                type="application/octet-stream"
+                length="45000000"
+                sparkle:version="1.0.1"
+                sparkle:shortVersionString="1.0.1"
+                sparkle:os="windows"
+                sparkle:edSignature="YOUR_SIGNATURE_HERE" />
+        </item>
+        
+        <!-- Previous Release Item -->
+        <item>
             <title>Version 1.0.1</title>
             <sparkle:version>1.0.1</sparkle:version>
             <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
@@ -33,18 +72,7 @@
                 sparkle:os="macos"
                 sparkle:edSignature="V3NU8wxuMhKKCrwZ9SmTyWe4N97zP3vb8er5whFcX9ZWZ05ih3Wqn4N39+IHC4lFKuCvrKWO6hF4RbBg7xetDQ==" />
                 
-            <!-- Windows Update -->
-            <enclosure 
-                url="https://github.com/yourusername/liberaflow/releases/download/v1.0.1/Liberaflow-1.0.1-windows.exe"
-                type="application/octet-stream"
-                length="45000000"
-                sparkle:version="1.0.1"
-                sparkle:shortVersionString="1.0.1"
-                sparkle:os="windows"
-                sparkle:edSignature="YOUR_SIGNATURE_HERE" />
-        </item>
-        
-        <!-- Previous Release Item (Example) -->
+        <!-- Previous Release Item -->
         <item>
             <title>Version 1.0.0</title>
             <sparkle:version>1.0.0</sparkle:version>
