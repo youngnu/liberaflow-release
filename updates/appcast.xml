@@ -27,7 +27,7 @@
             <!-- macOS Update -->
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.3-macos.dmg"
-                type="application/octet-stream"
+                type="application/x-apple-diskimage"
                 length="69468100"
                 sparkle:version="1.0.3"
                 sparkle:shortVersionString="1.0.3"
@@ -57,13 +57,15 @@
             <!-- macOS Update -->
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.2-macos.dmg"
-                type="application/octet-stream"
+                type="application/x-apple-diskimage"
                 length="69463660"
                 sparkle:version="1.0.2"
                 sparkle:shortVersionString="1.0.2"
                 sparkle:os="macos"
-                sparkle:edSignature="VkXpyrS8Ih7u35oPk44CMyLLED/XubMl8XG2r4GNrtH3xiBhTpL1/RA6rqhZyWMyiGrrVqvLaof1ngif92JiCA==" />
+                sparkle:edSignature="Q16UOgaFCvmXPuGT9asx3Vgn9U+sqB8DKCuNDFfRCPf1F37XbxmXrfPcNkhdtJF7m2YdKIyHVx2XzZuprd7SDw==" />
                 
+        </item>
+        
         <!-- Previous Release Item -->
         <item>
             <title>Version 1.0.0</title>
@@ -79,6 +81,16 @@
             ]]></description>
             <pubDate>Mon, 01 Aug 2025 12:00:00 +0000</pubDate>
             
+            <!-- macOS Update -->
+            <enclosure 
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.0-macos.dmg"
+                type="application/x-apple-diskimage"
+                length="69020334"
+                sparkle:version="1.0.0"
+                sparkle:shortVersionString="1.0.0"
+                sparkle:os="macos"
+                sparkle:edSignature="XIkd8VEI48t2v9IIutYzy4kX4j0SfmrkahlicTUDPy6QnKysH5ZM981erm5bu6cJhAdq/ZaauE6i1mmykBBRDQ==" />
+                
         </item>
     </channel>
 </rss>
