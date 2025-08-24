@@ -1,32 +1,325 @@
- <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Liberaflow - Download</title>
-      <style>
-          body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px
-  auto; padding: 20px; }
-          .download-btn { display: inline-block; padding: 12px 24px; background:
-  #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 10px;
-   }
-          .download-btn:hover { background: #0056b3; }
-      </style>
-  </head>
-  <body>
-      <h1>Liberaflow</h1>
-      <p>Advanced automation and productivity application for desktop</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberaflow - 자동화와 생산성을 위한 데스크톱 앱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      <h2>Download</h2>
-      <a href="downloads/Liberaflow-1.0.4-macos.dmg"
-  class="download-btn">Download for macOS</a>
-      <a href="downloads/Liberaflow-1.0.0-windows.exe"
-  class="download-btn">Download for Windows</a>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #ffffff;
+            min-height: 100vh;
+            font-weight: 400;
+        }
 
-      <h2>System Requirements</h2>
-      <ul>
-          <li><strong>macOS:</strong> macOS 11.0 or later</li>
-          <li><strong>Windows:</strong> Windows 10 or later</li>
-      </ul>
-  </body>
-  </html>
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #86868b;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .description {
+            background: #f5f5f7;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+            border: none;
+        }
+
+        .notice {
+            background: #f0f5ff;
+            border: 1px solid #d1e4ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .notice-title {
+            font-weight: 600;
+            color: #0071e3;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .notice-text {
+            color: #515154;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .lang-section {
+            margin-bottom: 25px;
+        }
+
+        .lang-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .flag-emoji {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+
+        .download-section {
+            text-align: center;
+            margin: 80px 0;
+            padding: 60px 40px;
+            background: #1d1d1f;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .download-title {
+            font-size: 2.25rem;
+            margin-bottom: 24px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: #0071e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            border: none;
+            min-width: 180px;
+            justify-content: center;
+        }
+
+        .download-btn:hover {
+            background: #0077ed;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+        }
+
+        .download-btn::before {
+            content: '↓';
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin: 80px 0;
+        }
+
+        .feature {
+            background: #f5f5f7;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s ease;
+            border: 1px solid #e5e5e7;
+        }
+
+        .feature:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .system-requirements {
+            background: #f5f5f7;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 60px;
+            border: 1px solid #e5e5e7;
+        }
+
+        .system-requirements h2 {
+            color: #1d1d1f;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .system-requirements ul {
+            list-style: none;
+        }
+
+        .system-requirements li {
+            padding: 12px 0;
+            border-bottom: 1px solid #d2d2d7;
+            display: flex;
+            align-items: center;
+            color: #1d1d1f;
+        }
+
+        .system-requirements li:last-child {
+            border-bottom: none;
+        }
+
+        .system-requirements li::before {
+            content: '✓';
+            color: #30d158;
+            font-weight: 600;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                font-size: 3rem;
+            }
+
+            .download-section {
+                margin: 60px 0;
+                padding: 40px 20px;
+            }
+
+            .download-title {
+                font-size: 1.875rem;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                margin: 60px 0;
+            }
+
+            .feature {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">Liberaflow</h1>
+            <p class="tagline">for Liberation from your work</p>
+        </div>
+
+        <div class="description">
+            <div class="lang-section">
+                <div class="lang-title korean">
+                    <span>💡 Intro</span> 
+                </div>
+                <p>
+                    안녕하세요. 저는 대한민국 공무원으로써 일상 속에서 반복되는 비효율적인 업무 프로세스를 개선하고 싶다는 생각을 늘 해왔습니다.<br>
+                    
+                    그 고민 끝에 <strong>Liberaflow</strong>라는 애플리케이션을 만들었습니다.<br><br>
+
+                    <strong>Liberaflow</strong>는 단순한 AI 애플리케이션을 넘어, <strong>사용자가 자신의 아이디어와 창의성을 마음껏 발휘할 수 있는 환경</strong>을 제공하고자 합니다.<br>
+
+                    저는 <strong>그 각각의 창의성들이 연결될 때, 우리는 더 나은 세상으로 나아갈 수 있다고 믿습니다.</strong><br><br>
+
+                    Liberaflow와 함께   <strong>당신의 일상을, 그리고 세상을 변화시켜 나가길 바랍니다.</strong>
+                </p>
+            </div>
+            
+            <div class="notice">
+                <div class="notice-title">📢 테스트 배포 안내</div>
+                <div class="notice-text">
+                    현재 한 달간 테스트 배포 기간이며, 테스트 배포 기간에는 <strong>OpenAI-oss-120B 모델</strong>만 사용하실 수 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <div class="feature-title">AI chat</div>
+                <p>OpenAI, Anthropic, Gemini, xAI 등 멀티 LLM</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📕</div>
+                <div class="feature-title">Note</div>
+                <p>간단한 노트를 생성, 버전 관리, 협업을 지원</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-title">AI Automation</div>
+                <p>개인의 워크플로우에 맞게 Python 코드 생성 및 실행, 그리고 공유</p>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h2 class="download-title">지금 다운로드하세요</h2>
+            <div class="download-buttons">
+                <a href="downloads/Liberaflow-1.0.5-macos.dmg" class="download-btn">Download for macOS</a>
+                <a href="downloads/Liberaflow-1.0.0-windows.exe" class="download-btn">Download for Windows</a>
+            </div>
+        </div>
+
+        <div class="system-requirements">
+            <h2>시스템 요구사항</h2>
+            <ul>
+                <li><strong>macOS:</strong> macOS 11.0 이상</li>
+                <li><strong>Windows:</strong> Windows 11 이상</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
