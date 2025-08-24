@@ -8,11 +8,11 @@
         
         <!-- Latest Release Item -->
         <item>
-            <title>Version 1.0.3</title>
-            <sparkle:version>1.0.3</sparkle:version>
-            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+            <title>Version 1.0.4</title>
+            <sparkle:version>1.0.4</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
             <description><![CDATA[
-                <h3>Fixed Appcast Parsing - Release 1.0.3</h3>
+                <h3>Fixed Appcast Parsing - Release 1.0.4</h3>
                 <ul>
                     <li>🐛 Fixed XML parsing errors in appcast</li>
                     <li>✅ Fully notarized macOS app</li>
@@ -22,17 +22,17 @@
                     <li>🖥️ Desktop integration</li>
                 </ul>
             ]]></description>
-            <pubDate>Thu, 22 Aug 2025 04:00:00 +0000</pubDate>
+            <pubDate>Thu, 24 Aug 2025 16:00:00 +0000</pubDate>
             
             <!-- macOS Update -->
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.3-macos.dmg"
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.4-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="69468100"
-                sparkle:version="1.0.3"
-                sparkle:shortVersionString="1.0.3"
+                length="70530284"
+                sparkle:version="1.0.4"
+                sparkle:shortVersionString="1.0.4"
                 sparkle:os="macos"
-                sparkle:edSignature="gXo8pHm9aOcXSEDnLOF9ycTETBePflxksbOfkQPJcHl6sZLg0Db2c17VqfLggv686vDjmjlSHe6ybt9/evKABQ==" />
+                sparkle:edSignature="0eY+dt49GxVLNdn9B0uebsoatQVosmqOJqkuL/ByLT6a0+eS/rXS6rslTPdnAfL6yYgYldQXl7+84lJa8dd+AQ==" />
                 
         </item>
         
