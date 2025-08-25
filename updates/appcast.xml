@@ -12,13 +12,14 @@
             <sparkle:version>1.0.5</sparkle:version>
             <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
             <description><![CDATA[
-                <h3>Code-Signed Windows Release - Version 1.0.5</h3>
+                <h3>Complete Code-Signed Windows Package - Version 1.0.5</h3>
                 <ul>
                     <li>🔐 Code signed Windows executable (SSL.com certificate)</li>
-                    <li>🪟 Windows ZIP distribution package</li>
+                    <li>📦 Complete application package with all dependencies</li>
+                    <li>🐍 Python runtime and libraries included</li>
+                    <li>🪟 WebView2, PDF viewer, and all required DLLs</li>
                     <li>🎨 Updated UI with black navigation bar</li>
-                    <li>🔧 WebView2 Runtime auto-installation</li>
-                    <li>🚀 Improved Windows performance</li>
+                    <li>🚀 Improved Windows performance and stability</li>
                     <li>📱 Multi-window support</li>
                     <li>🖥️ Cross-platform desktop integration</li>
                 </ul>
@@ -27,10 +28,10 @@
             
             <!-- Windows Update -->
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.5-signed.zip"
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.5-Complete.zip"
                 type="application/zip"
-                length="38788"
-                sparkle:dsaSignature="MD0CHQCaEFH7saGkH/vO+NSnG879KO9DWX0Zej0lnaEMAhx9MIk/YlrnD9Bl4NguCcjDh9yy7fVsReQUAdUw"
+                length="40550300"
+                sparkle:dsaSignature="MD0CHQCEhyg+DMkV6zdE//nVYMLRaZ6gFN4oYP8oD4QIAhwhgaEN+dWFYg49wO7Bf/AeeEeTBUurhGewHpbl"
                 sparkle:version="1.0.5"
                 sparkle:shortVersionString="1.0.5"
                 sparkle:os="windows" />
