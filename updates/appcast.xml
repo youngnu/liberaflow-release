@@ -12,9 +12,10 @@
             <sparkle:version>1.0.5</sparkle:version>
             <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
             <description><![CDATA[
-                <h3>Windows Support & UI Improvements - Release 1.0.5</h3>
+                <h3>Code-Signed Windows Release - Version 1.0.5</h3>
                 <ul>
-                    <li>🪟 Windows MSIX package support</li>
+                    <li>🔐 Code signed Windows executable (SSL.com certificate)</li>
+                    <li>🪟 Windows ZIP distribution package</li>
                     <li>🎨 Updated UI with black navigation bar</li>
                     <li>🔧 WebView2 Runtime auto-installation</li>
                     <li>🚀 Improved Windows performance</li>
@@ -26,10 +27,10 @@
             
             <!-- Windows Update -->
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.5-windows.msix"
-                type="application/msix"
-                length="45526869"
-                sparkle:dsaSignature="MDwCHEU9gCvVK8nMDO0FwZhMJNIhbgC4JRUUO0/Fg1MCHAy6rFfD/h4s2giYDF7AAxvvJMoMzHv/RczJAAg="
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.5-signed.zip"
+                type="application/zip"
+                length="38788"
+                sparkle:dsaSignature="MD0CHQCaEFH7saGkH/vO+NSnG879KO9DWX0Zej0lnaEMAhx9MIk/YlrnD9Bl4NguCcjDh9yy7fVsReQUAdUw"
                 sparkle:version="1.0.5"
                 sparkle:shortVersionString="1.0.5"
                 sparkle:os="windows" />
