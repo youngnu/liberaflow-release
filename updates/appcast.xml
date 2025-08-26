@@ -28,10 +28,10 @@
             
             <!-- Windows Update -->
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.5-Complete.zip"
-                type="application/zip"
-                length="40550300"
-                sparkle:dsaSignature="MD0CHQCEhyg+DMkV6zdE//nVYMLRaZ6gFN4oYP8oD4QIAhwhgaEN+dWFYg49wO7Bf/AeeEeTBUurhGewHpbl"
+                url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.0.5.msix"
+                type="application/msix"
+                length="0"
+                sparkle:dsaSignature="MD0CHQC4cIhjH6E+tL15z/GE2nzFdmRFq+e4UduWX33FAhxVWKSm9pCg/V20Bzp+oTaWb+4VjKjEkIM6wAqw"
                 sparkle:version="1.0.5"
                 sparkle:shortVersionString="1.0.5"
                 sparkle:os="windows" />
