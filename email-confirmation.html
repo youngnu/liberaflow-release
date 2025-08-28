@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일 확인 - Liberaflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #ffffff;
+            min-height: 100vh;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .success-container {
+            background: #f5f5f7;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid #e5e5e7;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            animation: bounce 0.6s ease-out;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .success-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .success-message {
+            font-size: 1.1rem;
+            color: #86868b;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .actions {
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background: #0071e3;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0077ed;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f5f5f7;
+            color: #1d1d1f;
+            border: 1px solid #e5e5e7;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e5e7;
+        }
+
+        .status {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .status.success {
+            background: #f0f5ff;
+            color: #0071e3;
+            border: 1px solid #d1e4ff;
+        }
+
+        .status.error {
+            background: #fff5f5;
+            color: #d70015;
+            border: 1px solid #ffd1d1;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #0071e3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #86868b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .success-container {
+                padding: 32px 24px;
+                margin: 20px 0;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .success-title {
+                font-size: 1.75rem;
+            }
+
+            .btn {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">Liberaflow</h1>
+        
+        <div class="success-container">
+            <div class="success-icon">✅</div>
+            <h2 class="success-title">이메일 확인 완료!</h2>
+            <p class="success-message">
+                계정이 성공적으로 활성화되었습니다.<br>
+                이제 Liberaflow 앱으로 돌아가서 로그인하세요.
+            </p>
+            
+            <div class="actions">
+                <button class="btn btn-primary" onclick="openApp()" id="openAppBtn">
+                    앱으로 돌아가기
+                </button>
+                <button class="btn btn-secondary" onclick="closeWindow()">
+                    창 닫기
+                </button>
+            </div>
+            
+            <div id="status" class="status"></div>
+        </div>
+        
+        <div class="footer">
+            이 창이 자동으로 닫히지 않으면 수동으로 닫아주세요.
+        </div>
+    </div>
+
+    <script>
+        // URL 파라미터 확인
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const type = urlParams.get('type');
+        const access_token = urlParams.get('access_token');
+        const refresh_token = urlParams.get('refresh_token');
+        
+        console.log('Email confirmation params:', { token, type, access_token, refresh_token });
+        
+        function showStatus(message, isError = false) {
+            const status = document.getElementById('status');
+            status.className = `status ${isError ? 'error' : 'success'}`;
+            status.textContent = message;
+            status.style.display = 'block';
+        }
+        
+        function showLoading(buttonId, text) {
+            const button = document.getElementById(buttonId);
+            button.innerHTML = `<div class="loading"></div>${text}`;
+            button.disabled = true;
+        }
+        
+        function hideLoading(buttonId, text) {
+            const button = document.getElementById(buttonId);
+            button.innerHTML = text;
+            button.disabled = false;
+        }
+        
+        function openApp() {
+            showLoading('openAppBtn', '앱 연결 중...');
+            
+            try {
+                // 데스크톱 앱 열기 시도 (나중에 URL scheme 등록시 사용)
+                // window.location.href = 'liberaflow://email-confirmed';
+                
+                // 현재는 사용자에게 안내
+                setTimeout(() => {
+                    hideLoading('openAppBtn', '앱으로 돌아가기');
+                    showStatus('Liberaflow 데스크톱 앱을 직접 실행하고 로그인해주세요.');
+                }, 1500);
+                
+            } catch (error) {
+                hideLoading('openAppBtn', '앱으로 돌아가기');
+                showStatus('앱으로 연결할 수 없습니다. 앱을 직접 실행해주세요.', true);
+            }
+        }
+        
+        function closeWindow() {
+            try {
+                window.close();
+            } catch (error) {
+                showStatus('이 창을 수동으로 닫아주세요.', true);
+            }
+        }
+        
+        // 페이지 로드 시 자동 처리
+        window.addEventListener('load', () => {
+            if (token || access_token) {
+                showStatus('이메일 확인이 완료되었습니다! 이제 앱에 로그인할 수 있습니다.');
+                
+                // 3초 후 자동으로 앱 열기 버튼 하이라이트
+                setTimeout(() => {
+                    const btn = document.getElementById('openAppBtn');
+                    btn.style.animation = 'pulse 1s infinite';
+                }, 3000);
+            }
+            
+            // 5초 후 자동으로 창 닫기 시도
+            setTimeout(() => {
+                closeWindow();
+            }, 8000);
+        });
+        
+        // 버튼 펄스 애니메이션 추가
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.4); }
+                70% { box-shadow: 0 0 0 10px rgba(0, 113, 227, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
