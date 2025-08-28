@@ -255,22 +255,11 @@
                 const access_token = urlParams.get('access_token');
                 const refresh_token = urlParams.get('refresh_token');
                 
-                if (access_token && refresh_token) {
-                    // 토큰을 포함한 커스텀 URL로 앱 열기 시도
-                    const appUrl = `liberaflow://email-confirmed?access_token=${access_token}&refresh_token=${refresh_token}`;
-                    window.location.href = appUrl;
-                    
-                    setTimeout(() => {
-                        hideLoading('openAppBtn', '앱으로 돌아가기');
-                        showStatus('앱에서 자동 로그인을 처리 중입니다...');
-                    }, 1500);
-                } else {
-                    // 토큰이 없으면 수동 안내
-                    setTimeout(() => {
-                        hideLoading('openAppBtn', '앱으로 돌아가기');
-                        showStatus('Liberaflow 데스크톱 앱을 직접 실행하고 로그인해주세요.');
-                    }, 1500);
-                }
+                // 현재는 사용자에게 수동으로 앱 실행하도록 안내
+                setTimeout(() => {
+                    hideLoading('openAppBtn', '앱으로 돌아가기');
+                    showStatus('이메일 확인이 완료되었습니다! Liberaflow 데스크톱 앱을 실행하고 로그인해주세요.');
+                }, 1500);
                 
             } catch (error) {
                 hideLoading('openAppBtn', '앱으로 돌아가기');
