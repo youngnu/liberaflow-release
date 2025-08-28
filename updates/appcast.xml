@@ -28,7 +28,7 @@
             
             <!-- Windows Update -->
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.0.5.msix"
+                url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.0.6.msix"
                 type="application/msix"
                 length="45598053"
                 sparkle:dsaSignature="MDwCHEv9q0atjmmOpTGwzyRCxskPDjY/PpmnQ1yGaigCHF1E2VNVZtXLPdsLZPKKfi9BqAvCLXSOHWd2bDo="
