@@ -250,14 +250,27 @@
             showLoading('openAppBtn', '앱 연결 중...');
             
             try {
-                // 데스크톱 앱 열기 시도 (나중에 URL scheme 등록시 사용)
-                // window.location.href = 'liberaflow://email-confirmed';
+                // URL 파라미터에서 토큰들 추출
+                const urlParams = new URLSearchParams(window.location.search);
+                const access_token = urlParams.get('access_token');
+                const refresh_token = urlParams.get('refresh_token');
                 
-                // 현재는 사용자에게 안내
-                setTimeout(() => {
-                    hideLoading('openAppBtn', '앱으로 돌아가기');
-                    showStatus('Liberaflow 데스크톱 앱을 직접 실행하고 로그인해주세요.');
-                }, 1500);
+                if (access_token && refresh_token) {
+                    // 토큰을 포함한 커스텀 URL로 앱 열기 시도
+                    const appUrl = `liberaflow://email-confirmed?access_token=${access_token}&refresh_token=${refresh_token}`;
+                    window.location.href = appUrl;
+                    
+                    setTimeout(() => {
+                        hideLoading('openAppBtn', '앱으로 돌아가기');
+                        showStatus('앱에서 자동 로그인을 처리 중입니다...');
+                    }, 1500);
+                } else {
+                    // 토큰이 없으면 수동 안내
+                    setTimeout(() => {
+                        hideLoading('openAppBtn', '앱으로 돌아가기');
+                        showStatus('Liberaflow 데스크톱 앱을 직접 실행하고 로그인해주세요.');
+                    }, 1500);
+                }
                 
             } catch (error) {
                 hideLoading('openAppBtn', '앱으로 돌아가기');
