@@ -18,9 +18,9 @@
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.6-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="71384637"
+                length="71384891"
                 sparkle:os="macos"
-                sparkle:edSignature="REsOcMV4pORsHqoYwUKmlli9cmw/EMXQ1Ohy70QV4FCeV4bUFgpm7s3ky4/xaquWemQCyljMi7sE0ZrQiv+EDQ==" />
+                sparkle:edSignature="knNqdyHf2gtDWake9mRKdeDRmGwPSXO25xc+LTGA+Fqe+FpWYplgPvRj2c2mZEBzuMu2OuflkxKBb+UaL1CRBA==" />
         </item>
         
         <!-- Windows Release Item -->
