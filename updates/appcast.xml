@@ -4,135 +4,39 @@
         <title>Liberaflow</title>
         <link>https://youngnu.github.io/liberaflow-release/</link>
         <description>Advanced automation and productivity application updates</description>
-        <language>en-US</language>
+        <language>en</language>
         
-        <!-- Latest Release Item -->
+        <!-- macOS Release Item -->
         <item>
             <title>Version 1.0.6</title>
             <sparkle:version>1.0.6</sparkle:version>
             <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
-            <description><![CDATA[
-                <h3>Complete Code-Signed Windows Package - Version 1.0.6</h3>
-                <ul>
-                    <li>🔐 Code signed Windows executable (SSL.com certificate)</li>
-                    <li>📦 Complete application package with all dependencies</li>
-                    <li>🐍 Python runtime and libraries included</li>
-                    <li>🪟 WebView2, PDF viewer, and all required DLLs</li>
-                    <li>🎨 Updated UI with black navigation bar</li>
-                    <li>🚀 Improved Windows performance and stability</li>
-                    <li>📱 Multi-window support</li>
-                    <li>🖥️ Cross-platform desktop integration</li>
-                </ul>
-            ]]></description>
-            <pubDate>Sat, 24 Aug 2025 18:00:00 +0000</pubDate>
-            
-            <!-- Windows Update -->
+            <sparkle:releaseNotesLink>
+                https://youngnu.github.io/liberaflow-release/release_notes.html
+            </sparkle:releaseNotesLink>
+            <pubDate>Sat, 30 Aug 2025 15:29:00 +0000</pubDate>
+            <enclosure 
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.6-macos.dmg"
+                type="application/x-apple-diskimage"
+                length="71384637"
+                sparkle:os="macos"
+                sparkle:edSignature="REsOcMV4pORsHqoYwUKmlli9cmw/EMXQ1Ohy70QV4FCeV4bUFgpm7s3ky4/xaquWemQCyljMi7sE0ZrQiv+EDQ==" />
+        </item>
+        
+        <!-- Windows Release Item -->
+        <item>
+            <title>Version 1.0.6</title>
+            <sparkle:releaseNotesLink>
+                https://youngnu.github.io/liberaflow-release/release_notes.html
+            </sparkle:releaseNotesLink>
+            <pubDate>Sat, 30 Aug 2025 14:41:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.0.6.msix"
                 type="application/msix"
                 length="45598053"
                 sparkle:dsaSignature="MDwCHEv9q0atjmmOpTGwzyRCxskPDjY/PpmnQ1yGaigCHF1E2VNVZtXLPdsLZPKKfi9BqAvCLXSOHWd2bDo="
                 sparkle:version="1.0.6"
-                sparkle:shortVersionString="1.0.6"
                 sparkle:os="windows" />
-            
-            <!-- macOS Update -->
-            <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.5-macos.dmg"
-                type="application/x-apple-diskimage"
-                length="70528512"
-                sparkle:version="1.0.5"
-                sparkle:shortVersionString="1.0.5"
-                sparkle:os="macos"
-                sparkle:edSignature="vXn9/Pto2XAVxC8YubqzJ3Yubot40naNVUohOQMgbThog9wfOWq3d9KqLtzAHKrKV5J6KkkJC8uUs/w/c9HCCQ==" />
-                
-        </item>
-        
-        <!-- Previous Release Item -->
-        <item>
-            <title>Version 1.0.4</title>
-            <sparkle:version>1.0.4</sparkle:version>
-            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
-            <description><![CDATA[
-                <h3>Fixed Appcast Parsing - Release 1.0.4</h3>
-                <ul>
-                    <li>🐛 Fixed XML parsing errors in appcast</li>
-                    <li>✅ Fully notarized macOS app</li>
-                    <li>🔐 Code signed with Developer ID</li>
-                    <li>🚀 Window automation functionality</li>
-                    <li>📱 Multi-window support</li>
-                    <li>🖥️ Desktop integration</li>
-                </ul>
-            ]]></description>
-            <pubDate>Thu, 24 Aug 2025 16:00:00 +0000</pubDate>
-            
-            <!-- macOS Update -->
-            <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.4-macos.dmg"
-                type="application/x-apple-diskimage"
-                length="70530284"
-                sparkle:version="1.0.4"
-                sparkle:shortVersionString="1.0.4"
-                sparkle:os="macos"
-                sparkle:edSignature="0eY+dt49GxVLNdn9B0uebsoatQVosmqOJqkuL/ByLT6a0+eS/rXS6rslTPdnAfL6yYgYldQXl7+84lJa8dd+AQ==" />
-                
-        </item>
-        
-        <!-- Previous Release Item -->
-        <item>
-            <title>Version 1.0.2</title>
-            <sparkle:version>1.0.2</sparkle:version>
-            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
-            <description><![CDATA[
-                <h3>Auto-updater Test Release 1.0.2</h3>
-                <ul>
-                    <li>🧪 Testing auto-updater functionality</li>
-                    <li>✅ Fully notarized macOS app</li>
-                    <li>🔐 Code signed with Developer ID</li>
-                    <li>🚀 Window automation functionality</li>
-                    <li>📱 Multi-window support</li>
-                    <li>🖥️ Desktop integration</li>
-                </ul>
-            ]]></description>
-            <pubDate>Thu, 22 Aug 2025 03:00:00 +0000</pubDate>
-            
-            <!-- macOS Update -->
-            <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.2-macos.dmg"
-                type="application/x-apple-diskimage"
-                length="69463660"
-                sparkle:version="1.0.2"
-                sparkle:shortVersionString="1.0.2"
-                sparkle:os="macos"
-                sparkle:edSignature="Q16UOgaFCvmXPuGT9asx3Vgn9U+sqB8DKCuNDFfRCPf1F37XbxmXrfPcNkhdtJF7m2YdKIyHVx2XzZuprd7SDw==" />
-                
-        </item>
-        
-        <!-- Previous Release Item -->
-        <item>
-            <title>Version 1.0.0</title>
-            <sparkle:version>1.0.0</sparkle:version>
-            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
-            <description><![CDATA[
-                <h3>Initial Release</h3>
-                <ul>
-                    <li>Window automation functionality</li>
-                    <li>Multi-window support</li>
-                    <li>Desktop integration</li>
-                </ul>
-            ]]></description>
-            <pubDate>Mon, 01 Aug 2025 12:00:00 +0000</pubDate>
-            
-            <!-- macOS Update -->
-            <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.0-macos.dmg"
-                type="application/x-apple-diskimage"
-                length="69020334"
-                sparkle:version="1.0.0"
-                sparkle:shortVersionString="1.0.0"
-                sparkle:os="macos"
-                sparkle:edSignature="XIkd8VEI48t2v9IIutYzy4kX4j0SfmrkahlicTUDPy6QnKysH5ZM981erm5bu6cJhAdq/ZaauE6i1mmykBBRDQ==" />
-                
         </item>
     </channel>
 </rss>
