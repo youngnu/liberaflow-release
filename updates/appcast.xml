@@ -14,13 +14,13 @@
             <sparkle:releaseNotesLink>
                 https://youngnu.github.io/liberaflow-release/release_notes.html
             </sparkle:releaseNotesLink>
-            <pubDate>Sat, 30 Aug 2025 15:29:00 +0000</pubDate>
+            <pubDate>Sun, 31 Aug 2025 16:37:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.6-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="71384891"
+                length="71385035"
                 sparkle:os="macos"
-                sparkle:edSignature="knNqdyHf2gtDWake9mRKdeDRmGwPSXO25xc+LTGA+Fqe+FpWYplgPvRj2c2mZEBzuMu2OuflkxKBb+UaL1CRBA==" />
+                sparkle:edSignature="kDPB7F5IfzRNgBDmcvxwNdukpeNVAH9THBfiFrpunICwkLPx9eg822emmhykehOsM9bmsBI1kIb832bigVqPBA==" />
         </item>
         
         <!-- Windows Release Item -->
