@@ -11,9 +11,6 @@
             <title>Version 1.0.6</title>
             <sparkle:version>1.0.6</sparkle:version>
             <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
-            <sparkle:releaseNotesLink>
-                https://youngnu.github.io/liberaflow-release/release_notes.html
-            </sparkle:releaseNotesLink>
             <pubDate>Sun, 31 Aug 2025 16:37:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.6-macos.dmg"
@@ -26,9 +23,6 @@
         <!-- Windows Release Item -->
         <item>
             <title>Version 1.0.7</title>
-            <sparkle:releaseNotesLink>
-                https://youngnu.github.io/liberaflow-release/release_notes.html
-            </sparkle:releaseNotesLink>
             <pubDate>Sun, 31 Aug 2025 21:46:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.0.7.msix"
