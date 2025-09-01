@@ -29,12 +29,12 @@
             <sparkle:releaseNotesLink>
                 https://youngnu.github.io/liberaflow-release/release_notes.html
             </sparkle:releaseNotesLink>
-            <pubDate>Sun, 31 Aug 2025 21:46:00 +0000</pubDate>
+            <pubDate>Sun, 2 Sep 2025 01:10:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.0.7.msix"
                 type="application/msix"
-                length="45594470"
-                sparkle:dsaSignature="MD4CHQCYIMf9HzN+cQeG9Ctxkz2x8H3rSal1m+HgiAKZAh0Av8vkg5B1CaRHh9Y8OIdD/dacBFeBjKU4y6z7nQ=="
+                length="45592397"
+                sparkle:dsaSignature="MDwCHC7N1h62pzIaAsICIRHACxSoDVpDyy+z2WeZvWACHF1XjsBL3QCKBdt5O6V7zLt6sK38SMvAAuVgKiQ="
                 sparkle:version="1.0.7"
                 sparkle:os="windows" />
         </item>
