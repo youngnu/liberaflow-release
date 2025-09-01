@@ -8,21 +8,27 @@
         
         <!-- macOS Release Item -->
         <item>
-            <title>Version 1.0.6</title>
-            <sparkle:version>1.0.6</sparkle:version>
-            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
-            <pubDate>Sun, 31 Aug 2025 16:37:00 +0000</pubDate>
+            <title>Version 1.0.7</title>
+            <sparkle:version>1.0.7</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:releaseNotesLink>
+                https://youngnu.github.io/liberaflow-release/release_notes.html
+            </sparkle:releaseNotesLink>
+            <pubDate>Mon, 2 Sep 2025 12:42:00 +0000</pubDate>
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.6-macos.dmg"
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.0.7-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="71385035"
+                length="71423894"
                 sparkle:os="macos"
-                sparkle:edSignature="kDPB7F5IfzRNgBDmcvxwNdukpeNVAH9THBfiFrpunICwkLPx9eg822emmhykehOsM9bmsBI1kIb832bigVqPBA==" />
+                sparkle:edSignature="KudUQFx6uTCnOi6O27FccSJe4pGQFu9M4IDp0CrnoBlQKwVocsTEBz0fDUzzT5NxB+W/fY3Or7k8kYvZVG+FBg==" />
         </item>
         
         <!-- Windows Release Item -->
         <item>
             <title>Version 1.0.7</title>
+            <sparkle:releaseNotesLink>
+                https://youngnu.github.io/liberaflow-release/release_notes.html
+            </sparkle:releaseNotesLink>
             <pubDate>Sun, 31 Aug 2025 21:46:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.0.7.msix"
