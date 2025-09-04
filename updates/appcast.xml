@@ -11,18 +11,24 @@
             <title>Version 1.1.0</title>
             <sparkle:version>1.1.0</sparkle:version>
             <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:releaseNotesLink>
+                https://youngnu.github.io/liberaflow-release/release_notes.html
+            </sparkle:releaseNotesLink>
             <pubDate>Fri, 5 Sep 2025 00:09:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.1.0-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="70615267"
+                length="70615466"
                 sparkle:os="macos"
-                sparkle:edSignature="jFvbHIuymdxJk0DesSgnLUwd26dWKcpKHI2Sd3Zr88qCu7oYINvJhRSh6VEKV59ZzjTd3LEVWsn52ITG/v8VCA==" />
+                sparkle:edSignature="SsQmgmoXQmiwfhSnB8MgCTfVoOS35Wb1O1tDPhYcqr7URufsiF9m05WtfCno34vTKiC5iWebu5/gJKXM2dhKBw==" />
         </item>
         
         <!-- Windows Release Item -->
         <item>
             <title>Version 1.1.0</title>
+            <sparkle:releaseNotesLink>
+                https://youngnu.github.io/liberaflow-release/release_notes.html
+            </sparkle:releaseNotesLink>
             <pubDate>Fri, 5 Sep 2025 01:02:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow_1.1.0_Setup.exe"
