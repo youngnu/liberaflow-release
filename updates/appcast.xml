@@ -27,8 +27,8 @@
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.1.0.msix"
                 type="application/msix"
-                length="45703538"
-                sparkle:dsaSignature="MD0CHA6hPQelqyMo6Bf+//NZbzjlv+0w7At4FpXWisYCHQCxdDUHxOx+L+FMWKib5dH8FwjV5LsdZHn1MZar"
+                length="50405817"
+                sparkle:dsaSignature="MDwCHBN5gVZcwZn4LcEK00SpFRsVk6mtVq9/EGOYTJMCHF/GOLE1EFVIa/Lbc9KJruC4lcQJcCy0dstGOJY="
                 sparkle:version="1.1.0"
                 sparkle:os="windows" />
         </item>
