@@ -26,15 +26,12 @@
         <!-- Windows Release Item -->
         <item>
             <title>Version 1.1.0</title>
-            <sparkle:releaseNotesLink>
-                https://youngnu.github.io/liberaflow-release/release_notes.html
-            </sparkle:releaseNotesLink>
-            <pubDate>Fri, 5 Sep 2025 01:02:00 +0000</pubDate>
+            <pubDate>Fri, 5 Sep 2025 18:55:00 +0000</pubDate>
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow_1.1.0_Setup.exe"
-                type="application/octet-stream"
-                length="82217040"
-                sparkle:dsaSignature="MDwCHEE1O9aB1EQKMQOjex4bFHk16hwm8pagzAtzwz8CHF2+8qp/CGZxVmrhVC463cW/ylE0OKLfsQ5bTKE="
+                url="https://youngnu.github.io/liberaflow-release/downloads/liberaflow_1.1.0.msix"
+                type="application/msix"
+                length="50405750"
+                sparkle:dsaSignature="MD0CHB2fzAiVmTxmK0gpD2IS0gljNS3/8w4uity1YEgCHQCgeZwym54O8phDxV8V3v01z42cK4a0PA3hUJco"
                 sparkle:version="1.1.0"
                 sparkle:os="windows" />
         </item>
