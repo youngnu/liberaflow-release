@@ -18,17 +18,14 @@
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.1.2-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="72384018"
+                length="72380924"
                 sparkle:os="macos"
-                sparkle:edSignature="rO/JWH+4h+uLI8bvECjoAZ5ZhcGKN5xAv84s+Z/0suQ7FR3eBmIYo0+EfGdjEmYQZ9Euu+SbnAVZohIdR/oiDg==" />
+                sparkle:edSignature="1D7+VcrSsKfHFkmcyOa81BC/09BPL1QEXTpsdx8fLh+W2NTNM57le1Z1J+NUREfqxoshYlzB/vnbIMlW1DpmDg==" />
         </item>
         
         <!-- Windows Release Item -->
         <item>
             <title>Version 1.1.2</title>
-            <sparkle:releaseNotesLink>
-                https://youngnu.github.io/liberaflow-release/release_notes.html
-            </sparkle:releaseNotesLink>
             <pubDate>Fri, 12 Sep 2025 02:54:00 +0000</pubDate>
             <enclosure 
                 url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow_1.1.2_Setup.exe"
