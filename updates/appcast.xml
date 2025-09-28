@@ -5,19 +5,19 @@
         <link>https://youngnu.github.io/liberaflow-release/</link>
         <description>Advanced automation and productivity application updates</description>
         <language>en</language>
-        
+             
         <!-- macOS Release Item -->
         <item>
-            <title>Version 1.1.3</title>
-            <sparkle:version>1.1.3</sparkle:version>
-            <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
-            <pubDate>Fri, 18 Thu 2025 00:15:00 +0000</pubDate>
+            <title>Version 1.1.4</title>
+            <sparkle:version>1.1.4</sparkle:version>
+            <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+            <pubDate>Mon, 29 Sept 2025 00:40:00 +0000</pubDate>
             <enclosure 
-                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.1.3-macos.dmg"
+                url="https://youngnu.github.io/liberaflow-release/downloads/Liberaflow-1.1.4-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="71639612"
+                length="72364575"
                 sparkle:os="macos"
-                sparkle:edSignature="4QDTZIfYCpdlESbmDtH6DMmNdh9kMW6tXMBsvTcvkf/WT3KSXSOGcVZAvp/D0ClYfaxtCAv+nDltRsTZSLazAQ==" />
+                sparkle:edSignature="pyCrzoG+/Ek0/E4Vg0vAxcFdeqJe3Q7gEzJ6p8qBoWPDRFUjtOddN6lNYJY/sgF04W9WENE4XcHUDbwV+5EvAA==" />
         </item>
         
         <!-- Windows Release Item -->
