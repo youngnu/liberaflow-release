@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board - Liberaflow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg,
+                rgba(248, 249, 250, 0.95) 0%,
+                rgba(255, 255, 255, 0.9) 50%,
+                rgba(240, 245, 255, 0.95) 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            font-weight: 400;
+            margin: 0;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 25% 25%, rgba(0, 113, 227, 0.03) 0%, transparent 25%),
+                            radial-gradient(circle at 75% 75%, rgba(0, 168, 255, 0.02) 0%, transparent 25%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #e5e5e7;
+            z-index: 1000;
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0071e3;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-btn:hover {
+            color: #0071e3;
+        }
+
+        .dropdown-btn::after {
+            content: '▼';
+            font-size: 0.7rem;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown.open .dropdown-btn::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid #e5e5e7;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            padding: 8px;
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .dropdown.open .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 8px 12px;
+            color: #1d1d1f;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(0, 113, 227, 0.1);
+            color: #0071e3;
+        }
+
+        .nav-cta {
+            background: #0071e3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0077ed;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 120px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            margin-bottom: 40px;
+        }
+
+        .breadcrumb a {
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb span {
+            color: #86868b;
+            margin: 0 8px;
+        }
+
+        .feature-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0071e3, #00a8ff);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 32px rgba(0, 113, 227, 0.2);
+        }
+
+        .feature-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-subtitle {
+            font-size: 1.25rem;
+            color: #86868b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .content-text {
+            font-size: 1.125rem;
+            color: #515154;
+            line-height: 1.7;
+        }
+
+        .content-text h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+        }
+
+        .content-text ul {
+            margin: 16px 0;
+            padding-left: 20px;
+        }
+
+        .content-text li {
+            margin-bottom: 8px;
+        }
+
+        .media-container {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e5e7;
+        }
+
+        .media-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px dashed #dee2e6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #86868b;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .download-section-bottom {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 40px;
+            background: #1d1d1f;
+            border-radius: 16px;
+            color: white;
+        }
+
+        .download-title-bottom {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .download-subtitle-bottom {
+            font-size: 1.125rem;
+            color: #a1a1a6;
+            margin-bottom: 32px;
+        }
+
+        .download-buttons-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn-bottom {
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+        }
+
+        .download-btn-bottom.primary {
+            background: #0071e3;
+            color: white;
+            border-color: #0071e3;
+        }
+
+        .download-btn-bottom.primary:hover {
+            background: #0077ed;
+            border-color: #0077ed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+        }
+
+        .download-btn-bottom.secondary {
+            background: transparent;
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .download-btn-bottom.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .feature-title {
+                font-size: 2.5rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .main-content {
+                padding: 100px 20px 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../Liberaflow_logo.png" alt="Liberaflow Logo" class="nav-logo-img">
+                Liberaflow
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#features" class="dropdown-btn">Features</a>
+                    <div class="dropdown-content">
+                        <a href="ai-chat.html" class="dropdown-item">💬 AI Chat</a>
+                        <a href="space.html" class="dropdown-item">🌌 Space</a>
+                        <a href="mind-map.html" class="dropdown-item">🧠 Mind Map</a>
+                        <a href="calendar.html" class="dropdown-item">📅 Calendar</a>
+                        <a href="todo-list.html" class="dropdown-item">✅ Todo List</a>
+                        <a href="board.html" class="dropdown-item">📋 Board</a>
+                        <a href="secondbrain-note.html" class="dropdown-item">🧩 SecondBrain Note</a>
+                        <a href="python-automation.html" class="dropdown-item">🤖 Python Automation</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#download">Download</a></li>
+            </ul>
+            <a href="../downloads/Liberaflow-1.1.4-macos.dmg" class="nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../">Home</a>
+            <span>/</span>
+            <a href="../index.html#features">Features</a>
+            <span>/</span>
+            <span>Board</span>
+        </div>
+
+        <!-- Feature Header -->
+        <div class="feature-header">
+            <div class="feature-icon">📋</div>
+            <h1 class="feature-title">Board</h1>
+            <p class="feature-subtitle">칸반 스타일의 프로젝트 관리로 팀 워크플로우를 시각화하고 효율적으로 관리하세요</p>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="content-section">
+            <h2 class="section-title">칸반 보드 관리</h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>직관적인 시각 관리</h3>
+                    <ul>
+                        <li><strong>드래그 앤 드롭 카드 이동:</strong> 직관적인 작업 상태 변경</li>
+                        <li><strong>커스텀 컬럼 생성:</strong> 워크플로우에 맞는 단계 설정</li>
+                        <li><strong>카드 템플릿:</strong> 반복되는 작업 유형 템플릿화</li>
+                        <li><strong>진행 상황 시각화:</strong> 실시간 프로젝트 진행률 확인</li>
+                    </ul>
+                    <p>칸반 방식으로 작업의 흐름을 한눈에 파악하고, 병목 지점을 빠르게 식별할 수 있습니다. 각 팀의 워크플로우에 맞춘 맞춤형 보드를 구성하세요.</p>
+                </div>
+                <div class="media-container">
+                    <div class="media-placeholder">
+                        칸반 보드 인터페이스
+                        <br>
+                        (PNG/GIF 이미지가 들어갈 영역)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">팀 프로젝트 관리</h2>
+            <div class="content-grid">
+                <div class="media-container">
+                    <div class="media-placeholder">
+                        팀 프로젝트 관리 데모
+                        <br>
+                        (MP4 비디오가 들어갈 영역)
+                    </div>
+                </div>
+                <div class="content-text">
+                    <h3>협업 중심의 프로젝트 관리</h3>
+                    <ul>
+                        <li><strong>담당자 할당:</strong> 명확한 역할 분담과 책임 설정</li>
+                        <li><strong>마감일 관리:</strong> 일정 추적 및 지연 알림</li>
+                        <li><strong>파일 첨부:</strong> 관련 문서 및 자료 통합 관리</li>
+                        <li><strong>댓글 및 토론:</strong> 카드별 소통 채널 제공</li>
+                    </ul>
+                    <p>팀원 간의 원활한 소통과 협업을 위한 다양한 기능을 제공합니다. 프로젝트의 모든 정보를 한 곳에서 관리하고 팀 생산성을 높이세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="download-section-bottom">
+            <h2 class="download-title-bottom">지금 다운로드하세요</h2>
+            <p class="download-subtitle-bottom">Board 기능을 포함한 모든 기능을 경험해보세요</p>
+            <div class="download-buttons-bottom">
+                <a href="../downloads/Liberaflow-1.1.4-macos.dmg" class="download-btn-bottom primary" id="macosBtn">
+                    Download for macOS
+                </a>
+                <a href="../downloads/Liberaflow_1.1.4_Setup.exe" class="download-btn-bottom secondary" id="windowsBtn">
+                    Download for Windows
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dropdown functionality
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+
+            if (dropdown && dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+
+                // Close dropdown when pressing escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            }
+
+            // Platform detection for download buttons
+            function detectPlatform() {
+                const userAgent = navigator.userAgent.toLowerCase();
+                if (userAgent.includes('mac')) {
+                    return 'macos';
+                } else if (userAgent.includes('win')) {
+                    return 'windows';
+                } else {
+                    return 'unknown';
+                }
+            }
+
+            function updateDownloadButtons() {
+                const platform = detectPlatform();
+                const macosBtn = document.getElementById('macosBtn');
+                const windowsBtn = document.getElementById('windowsBtn');
+
+                if (platform === 'macos') {
+                    macosBtn.classList.add('primary');
+                    macosBtn.classList.remove('secondary');
+                    windowsBtn.classList.add('secondary');
+                    windowsBtn.classList.remove('primary');
+                } else if (platform === 'windows') {
+                    windowsBtn.classList.add('primary');
+                    windowsBtn.classList.remove('secondary');
+                    macosBtn.classList.add('secondary');
+                    macosBtn.classList.remove('primary');
+                }
+            }
+
+            updateDownloadButtons();
+        });
+    </script>
+</body>
+</html>

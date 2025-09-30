@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liberaflow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,38 +13,270 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: #1d1d1f;
-            background: #ffffff;
+            background: linear-gradient(135deg,
+                rgba(248, 249, 250, 0.95) 0%,
+                rgba(255, 255, 255, 0.9) 50%,
+                rgba(240, 245, 255, 0.95) 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             font-weight: 400;
+            margin: 0;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 25% 25%, rgba(0, 113, 227, 0.03) 0%, transparent 25%),
+                            radial-gradient(circle at 75% 75%, rgba(0, 168, 255, 0.02) 0%, transparent 25%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #e5e5e7;
+            z-index: 1000;
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0071e3;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-btn:hover {
+            color: #0071e3;
+        }
+
+        .dropdown-btn::after {
+            content: '▼';
+            font-size: 0.7rem;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown.open .dropdown-btn::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid #e5e5e7;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            padding: 8px;
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .dropdown.open .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 8px 12px;
+            color: #1d1d1f;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(0, 113, 227, 0.1);
+            color: #0071e3;
+        }
+
+        .nav-cta {
+            background: #0071e3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0077ed;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 20px 80px;
+            text-align: center;
+            background: transparent;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: auto;
+            margin: 0 auto 32px;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero-title .highlight {
+            color: #0071e3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #86868b;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: #0071e3;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            border: none;
+            min-width: 180px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary:hover {
+            background: #0077ed;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #0071e3;
+            padding: 16px 32px;
+            border: 2px solid #0071e3;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            min-width: 180px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-secondary:hover {
+            background: #0071e3;
+            color: white;
+            transform: translateY(-1px);
         }
 
         .container {
-            max-width: 980px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .logo {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #1d1d1f;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            color: #86868b;
-            margin-bottom: 10px;
-            font-weight: 400;
         }
 
         .description {
@@ -95,232 +328,817 @@
         }
 
 
-        .download-section {
+        /* Features Section */
+        .features-section {
+            padding: 100px 20px;
+            background: transparent;
+        }
+
+        .section-title {
             text-align: center;
-            margin: 80px 0;
-            padding: 60px 40px;
-            background: #1d1d1f;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #86868b;
+            margin-bottom: 80px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Feature Tabs - Glassmorphism */
+        .feature-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 60px;
+            background: rgba(219, 219, 219, 0.4);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(226, 232, 240, 0.3);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            padding: 8px;
+            border-radius: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .feature-tabs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg,
+                rgba(248, 250, 252, 0.2) 0%,
+                rgba(241, 245, 249, 0.3) 50%,
+                rgba(248, 250, 252, 0.15) 100%);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            padding: 12px 16px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-weight: 500;
+            color: rgba(29, 29, 31, 0.7);
+            min-width: 120px;
+            width: 120px;
+            height: 44px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+            position: relative;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-sizing: border-box;
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            color: #0071e3;
+            box-shadow:
+                0 3px 12px rgba(0, 113, 227, 0.12),
+                0 1px 4px rgba(255, 255, 255, 0.3) inset;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            color: #1d1d1f;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .tab-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Tab Content */
+        .tab-content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .feature-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .feature-text {
+            padding: 40px 0;
+        }
+
+        .feature-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-description {
+            color: #515154;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .feature-link {
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+
+        .feature-link:hover {
+            color: #0077ed;
+        }
+
+        .feature-link::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        .feature-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-video {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px dashed #dee2e6;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #86868b;
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 20px;
+            background: transparent;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 32px;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .about-description {
+            font-size: 1.125rem;
+            color: #515154;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .beta-notice {
+            background: #f0f5ff;
+            border: 1px solid #d1e4ff;
             border-radius: 12px;
+            padding: 32px;
+            margin-top: 48px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .notice-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .notice-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0071e3;
+            margin-bottom: 8px;
+        }
+
+        .notice-content p {
+            color: #515154;
+            line-height: 1.6;
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 100px 20px;
+            background: #1d1d1f;
             color: white;
         }
 
+        .download-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .download-title {
-            font-size: 2.25rem;
-            margin-bottom: 24px;
-            font-weight: 600;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
+        }
+
+        .download-subtitle {
+            font-size: 1.25rem;
+            color: #a1a1a6;
+            margin-bottom: 48px;
         }
 
         .download-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
         .download-btn {
-            display: inline-flex;
-            align-items: center;
             padding: 16px 32px;
-            background: #0071e3;
-            color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
+            border-radius: 12px;
+            font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.2s ease;
-            border: none;
-            min-width: 180px;
-            justify-content: center;
-        }
-
-        .download-btn:hover {
-            background: #0077ed;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
-        }
-
-        .download-btn::before {
-            content: '↓';
-            margin-right: 6px;
-            font-size: 1rem;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin: 80px 0;
-        }
-
-        .feature {
-            background: #f5f5f7;
-            padding: 32px;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.2s ease;
-            border: 1px solid #e5e5e7;
-        }
-
-        .feature:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-        }
-
-        .system-requirements {
-            background: #f5f5f7;
-            padding: 40px;
-            border-radius: 12px;
-            margin-top: 60px;
-            border: 1px solid #e5e5e7;
-        }
-
-        .system-requirements h2 {
-            color: #1d1d1f;
-            margin-bottom: 24px;
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-
-        .system-requirements ul {
-            list-style: none;
-        }
-
-        .system-requirements li {
-            padding: 12px 0;
-            border-bottom: 1px solid #d2d2d7;
+            transition: all 0.3s ease;
+            min-width: 200px;
             display: flex;
             align-items: center;
-            color: #1d1d1f;
+            justify-content: center;
+            gap: 8px;
+            border: 2px solid;
         }
 
-        .system-requirements li:last-child {
-            border-bottom: none;
+        .download-btn.primary {
+            background: #0071e3;
+            color: white;
+            border-color: #0071e3;
         }
 
-        .system-requirements li::before {
-            content: '✓';
-            color: #30d158;
-            font-weight: 600;
-            margin-right: 12px;
-            font-size: 1.1rem;
+        .download-btn.primary:hover {
+            background: #0077ed;
+            border-color: #0077ed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+        }
+
+        .download-btn.secondary {
+            background: transparent;
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .download-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* System Requirements Text */
+        .system-requirements-text {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .system-requirements-text p {
+            color: #a1a1a6;
+            font-size: 0.9rem;
+            margin: 0 0 8px 0;
+        }
+
+        .system-requirements-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .system-requirements-text a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .system-requirements-text a:hover {
+            color: #a1a1a6;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
+            /* Navigation */
+            .nav-links {
+                display: none;
             }
 
-            .logo {
-                font-size: 3rem;
+            .nav-container {
+                padding: 12px 20px;
             }
 
-            .download-section {
-                margin: 60px 0;
-                padding: 40px 20px;
+            /* Hero */
+            .hero {
+                padding: 100px 20px 60px;
             }
 
+            .hero-logo {
+                width: 80px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Features */
+            .feature-tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                max-width: 100%;
+                padding: 8px 4px;
+            }
+
+            .tab-btn {
+                padding: 10px 12px;
+                font-size: 0.8rem;
+                min-width: 100px;
+                width: 100px;
+                height: 40px;
+                gap: 4px;
+            }
+
+            .tab-btn span {
+                white-space: nowrap;
+            }
+
+            .feature-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .feature-text {
+                padding: 20px 0;
+            }
+
+            .feature-title {
+                font-size: 1.75rem;
+            }
+
+            .screenshot-placeholder {
+                height: 300px;
+            }
+
+            /* Sections */
+            .section-title,
+            .about-title,
             .download-title {
-                font-size: 1.875rem;
+                font-size: 2rem;
             }
 
+            .features-section,
+            .about-section,
+            .download-section {
+                padding: 60px 20px;
+            }
+
+            /* Download */
             .download-buttons {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .features {
-                grid-template-columns: 1fr;
-                margin: 60px 0;
+            .download-btn {
+                min-width: 250px;
             }
 
-            .feature {
-                padding: 24px;
+
+            /* Beta Notice */
+            .beta-notice {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
             }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Dropdown functionality
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+
+            if (dropdown && dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+
+                // Close dropdown when pressing escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            }
+
+            // Platform detection for download buttons
+            function detectPlatform() {
+                const userAgent = navigator.userAgent.toLowerCase();
+                if (userAgent.includes('mac')) {
+                    return 'macos';
+                } else if (userAgent.includes('win')) {
+                    return 'windows';
+                } else {
+                    return 'unknown';
+                }
+            }
+
+            function updateDownloadButtons() {
+                const platform = detectPlatform();
+                const macosBtn = document.getElementById('macosBtn');
+                const windowsBtn = document.getElementById('windowsBtn');
+                const navCta = document.querySelector('.nav-cta');
+
+                if (platform === 'macos') {
+                    // macOS가 primary (파란색)
+                    macosBtn.classList.add('primary');
+                    macosBtn.classList.remove('secondary');
+                    windowsBtn.classList.add('secondary');
+                    windowsBtn.classList.remove('primary');
+
+                    // 상단 네비게이션 Download 버튼을 macOS로 설정
+                    if (navCta) {
+                        navCta.href = 'downloads/Liberaflow-1.1.4-macos.dmg';
+                    }
+                } else if (platform === 'windows') {
+                    // Windows가 primary (파란색)
+                    windowsBtn.classList.add('primary');
+                    windowsBtn.classList.remove('secondary');
+                    macosBtn.classList.add('secondary');
+                    macosBtn.classList.remove('primary');
+
+                    // 상단 네비게이션 Download 버튼을 Windows로 설정
+                    if (navCta) {
+                        navCta.href = 'downloads/Liberaflow_1.1.4_Setup.exe';
+                    }
+                }
+            }
+
+            // 페이지 로드 시 플랫폼 감지 실행
+            updateDownloadButtons();
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="logo">Liberaflow</h1>
-            <p class="tagline">for Liberation from your work</p>
-        </div>
-
-        <div class="description">
-            <div class="lang-section">
-                <div class="lang-title korean">
-                    <span>💡 Intro</span> 
-                </div>
-                <p>
-                    안녕하세요. 저는 일상 속에서 반복되는 비효율적인 업무 프로세스를 개선하고 싶다는 생각을 늘 해왔습니다.<br>
-                    
-                    그 고민 끝에 <strong>Liberaflow</strong>라는 애플리케이션을 만들었습니다.<br><br>
-
-                    <strong>Liberaflow</strong>는 단순한 AI Chat 애플리케이션을 넘어,
-                    <br><strong>사용자가 자신의 아이디어를 마음껏 발휘할 수 있는 공간</strong>을 제공하고자 합니다.<br>
-                    <strong>그 각각의 창의성들이 연결될 때, 우리는 더 나은 세상으로 나아갈 수 있다고 믿습니다.</strong><br><br>
-
-                    Liberaflow와 함께   <strong>당신의 일상을, 그리고 세상을 변화시켜 나가길 바랍니다.</strong>
-                </p>
-            </div>
-            
-            <div class="notice">
-                <div class="notice-title">📢 베타 테스트 안내</div>
-                <div class="notice-text">
-                    현재는 베타 테스트중이며, 정식 출시가 아니기에 많은 오류가 있을 수 있습니다. 양해 해주시기 바랍니다.<br>
-                    테스트 한달 간에는 <strong>OpenAI-oss-120B 모델</strong>만 사용하실 수 있습니다.
-                </div>
-            </div>
-        </div>
-
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">💬</div>
-                <div class="feature-title">AI chat</div>
-                <p>OpenAI, Anthropic, Gemini, xAI 등 멀티 LLM</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📕</div>
-                <div class="feature-title">Note</div>
-                <p>간단한 노트를 생성, 버전 관리, 협업을 지원</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🤖</div>
-                <div class="feature-title">AI Automation</div>
-                <p>개인의 워크플로우에 맞게 Python 코드 생성 및 실행, 그리고 공유</p>
-            </div>
-        </div>
-
-        <div class="download-section">
-            <h2 class="download-title">지금 다운로드하세요</h2>
-            <div class="download-buttons">
-                <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="download-btn">Download for macOS</a>
-                <a href="downloads/Liberaflow_1.1.4_Setup.exe" class="download-btn">Download for Windows</a>
-            </div>
-        </div>
-
-        <div class="system-requirements">
-            <h2>시스템 요구사항</h2>
-            <ul>    
-                <li><strong>macOS:</strong> macOS 11.0 이상</li>
-                <li><strong>Windows:</strong> Windows 11 이상 + <a href="https://www.python.org/downloads/windows/" target="_blank" style="color: #0071e3; text-decoration: none;">Python 설치</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="Liberaflow_logo.png" alt="Liberaflow Logo" class="nav-logo-img">
+                Liberaflow
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#features" class="dropdown-btn">Features</a>
+                    <div class="dropdown-content">
+                        <a href="features/ai-chat.html" class="dropdown-item">💬 AI Chat</a>
+                        <a href="features/space.html" class="dropdown-item">🌌 Space</a>
+                        <a href="features/mind-map.html" class="dropdown-item">🧠 Mind Map</a>
+                        <a href="features/calendar.html" class="dropdown-item">📅 Calendar</a>
+                        <a href="features/todo-list.html" class="dropdown-item">✅ Todo List</a>
+                        <a href="features/board.html" class="dropdown-item">📋 Board</a>
+                        <a href="features/secondbrain-note.html" class="dropdown-item">🧩 SecondBrain Note</a>
+                        <a href="features/python-automation.html" class="dropdown-item">🤖 Python Automation</a>
+                    </div>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#download">Download</a></li>
             </ul>
+            <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="nav-cta">Download</a>
         </div>
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title"><span class="highlight">Libera</span>tion from your Work<span class="highlight">flow</span></h1>
+            <p class="hero-subtitle">Liberaflow는 AI와 자동화를 통해 당신의 일상 업무를 혁신합니다. <br>당신의 업무에서 새로운 가능성을 발견하세요.</p>
+            <div class="hero-buttons">
+                <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="btn-primary">Download for macOS</a>
+                <a href="downloads/Liberaflow_1.1.4_Setup.exe" class="btn-secondary">Download for Windows</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <p class="section-subtitle">Liberaflow는 AI 채팅, 워크스페이스, 마인드맵, 캘린더, 할일관리, 보드, 노트, 자동화 등 모든 기능을 하나의 플랫폼에서 제공합니다</p>
+
+            <!-- Feature Tabs -->
+            <div class="feature-tabs">
+                <button class="tab-btn active" data-tab="secondbrain-note">
+                    <div class="tab-icon">🧩</div>
+                    <span>SecondBrain Note</span>
+                </button>
+                <button class="tab-btn" data-tab="space">
+                    <div class="tab-icon">🌌</div>
+                    <span>Space</span>
+                </button>
+                <button class="tab-btn" data-tab="mind-map">
+                    <div class="tab-icon">🧠</div>
+                    <span>Mind Map</span>
+                </button>
+                <button class="tab-btn" data-tab="calendar">
+                    <div class="tab-icon">📅</div>
+                    <span>Calendar</span>
+                </button>
+                <button class="tab-btn" data-tab="todo-list">
+                    <div class="tab-icon">✅</div>
+                    <span>Todo List</span>
+                </button>
+                <button class="tab-btn" data-tab="board">
+                    <div class="tab-icon">📋</div>
+                    <span>Board</span>
+                </button>
+                <button class="tab-btn" data-tab="ai-chat">
+                    <div class="tab-icon">💬</div>
+                    <span>AI Chat</span>
+                </button>
+                <button class="tab-btn" data-tab="python-automation">
+                    <div class="tab-icon">🤖</div>
+                    <span>Python Automation</span>
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content-container">
+                <div class="tab-content" id="ai-chat">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">AI Chat</h3>
+                            <p class="feature-description">OpenAI, Anthropic, Gemini, xAI 등 최신 LLM을 하나의 인터페이스에서 경험하세요</p>
+                            <a href="features/ai-chat.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <video class="feature-video" autoplay loop muted playsinline>
+                                <source src="ai_chat_init.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="space">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">Space</h3>
+                            <p class="feature-description">프로젝트별 워크스페이스를 만들고 관리하세요. 팀 협업과 개인 작업 공간을 효율적으로 구분하여 생산성을 높입니다.</p>
+                            <a href="features/space.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <div class="screenshot-placeholder">
+                                <span>Space Screenshot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="mind-map">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">Mind Map</h3>
+                            <p class="feature-description">시각적 사고 도구로 아이디어를 체계화하세요. 직관적인 인터페이스로 복잡한 개념을 간단하게 정리할 수 있습니다.</p>
+                            <a href="features/mind-map.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <div class="screenshot-placeholder">
+                                <span>Mind Map Screenshot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="calendar">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">Calendar</h3>
+                            <p class="feature-description">스마트 일정 관리로 시간을 효율적으로 활용하세요. AI가 최적의 일정을 제안하고 중요한 일정을 놓치지 않도록 도와줍니다.</p>
+                            <a href="features/calendar.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <div class="screenshot-placeholder">
+                                <span>Calendar Screenshot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="todo-list">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">Todo List</h3>
+                            <p class="feature-description">스마트한 할일 관리로 생산성을 극대화하세요. 우선순위 자동 설정과 진행 상황 추적으로 목표를 달성하세요.</p>
+                            <a href="features/todo-list.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <div class="screenshot-placeholder">
+                                <span>Todo List Screenshot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="board">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">Board</h3>
+                            <p class="feature-description">칸반 스타일의 프로젝트 관리 보드로 팀 워크플로우를 시각화하세요. 드래그 앤 드롭으로 간편하게 작업을 관리할 수 있습니다.</p>
+                            <a href="features/board.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <div class="screenshot-placeholder">
+                                <span>Board Screenshot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content active" id="secondbrain-note">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">SecondBrain Note</h3>
+                            <p class="feature-description">지식을 체계적으로 축적하고 연결하는 제2의 뇌를 만드세요. AI가 관련 정보를 자동으로 연결하여 새로운 인사이트를 발견할 수 있습니다.</p>
+                            <a href="features/secondbrain-note.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <img src="note_screen_init.png" alt="SecondBrain Note Interface" class="feature-video">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="python-automation">
+                    <div class="feature-content">
+                        <div class="feature-text">
+                            <h3 class="feature-title">Python Automation</h3>
+                            <p class="feature-description">개인의 워크플로우에 맞춘 Python 코드 자동 생성 및 실행. 반복 작업을 자동화하고 생산성을 극대화하세요.</p>
+                            <a href="features/python-automation.html" class="feature-link">Learn more</a>
+                        </div>
+                        <div class="feature-image">
+                            <div class="screenshot-placeholder">
+                                <span>Python Automation Screenshot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="about-title">About</h2>
+                    <p class="about-description">
+                        안녕하세요. 저는 일상 속에서 반복되는 비효율적인 업무 프로세스를 개선하고 싶다는 생각을 늘 해왔습니다.
+                    </p>
+                    <p class="about-description">
+                        그 고민 끝에 <strong>Liberaflow</strong>라는 애플리케이션을 만들었습니다. Liberaflow는 단순한 AI Chat 애플리케이션을 넘어, <strong>사용자가 자신의 아이디어를 마음껏 발휘할 수 있는 공간</strong>을 제공하고자 합니다.
+                    </p>
+                    <p class="about-description">
+                        <strong>그 각각의 창의성들이 연결될 때, 우리는 더 나은 세상으로 나아갈 수 있다고 믿습니다.</strong> Liberaflow와 함께 당신의 일상을, 그리고 세상을 변화시켜 나가길 바랍니다.
+                    </p>
+                </div>
+
+                <div class="beta-notice">
+                    <div class="notice-icon">📢</div>
+                    <div class="notice-content">
+                        <h3 class="notice-title">베타 테스트 안내</h3>
+                        <p class="notice-text">
+                            현재는 베타 테스트중이며, 정식 출시가 아니기에 많은 오류가 있을 수 있습니다. 양해 해주시기 바랍니다.
+                            테스트 한달 간에는 <strong>OpenAI-oss-120B 모델</strong>만 사용하실 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title">지금 다운로드하세요</h2>
+                <p class="download-subtitle">macOS와 Windows에서 Liberaflow를 경험해보세요</p>
+                <div class="download-buttons">
+                    <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="download-btn primary" id="macosBtn">
+                        Download for macOS
+                    </a>
+                    <a href="downloads/Liberaflow_1.1.4_Setup.exe" class="download-btn secondary" id="windowsBtn">
+                        Download for Windows
+                    </a>
+                </div>
+                <div class="system-requirements-text">
+                    <p><strong>시스템 요구사항:</strong> macOS 11.0+ 또는 Windows 11+</p>
+                    <p><strong>참고:</strong> Windows에서 Automation 기능 사용시 <a href="https://www.python.org/downloads/windows/" target="_blank">Python 설치</a>가 필요합니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
