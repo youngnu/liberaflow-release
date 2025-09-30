@@ -849,7 +849,9 @@
                 const platform = detectPlatform();
                 const macosBtn = document.getElementById('macosBtn');
                 const windowsBtn = document.getElementById('windowsBtn');
-                const navCta = document.querySelector('.nav-cta');
+                const heroMacosBtn = document.getElementById('heroMacosBtn');
+                const heroWindowsBtn = document.getElementById('heroWindowsBtn');
+                const navCta = document.getElementById('navCta');
 
                 if (platform === 'macos') {
                     // macOS가 primary (파란색)
@@ -857,6 +859,12 @@
                     macosBtn.classList.remove('secondary');
                     windowsBtn.classList.add('secondary');
                     windowsBtn.classList.remove('primary');
+
+                    // Hero 섹션의 macOS 버튼을 primary로 설정
+                    heroMacosBtn.classList.add('btn-primary');
+                    heroMacosBtn.classList.remove('btn-secondary');
+                    heroWindowsBtn.classList.add('btn-secondary');
+                    heroWindowsBtn.classList.remove('btn-primary');
 
                     // 상단 네비게이션 Download 버튼을 macOS로 설정
                     if (navCta) {
@@ -868,6 +876,12 @@
                     windowsBtn.classList.remove('secondary');
                     macosBtn.classList.add('secondary');
                     macosBtn.classList.remove('primary');
+
+                    // Hero 섹션의 Windows 버튼을 primary로 설정
+                    heroWindowsBtn.classList.add('btn-primary');
+                    heroWindowsBtn.classList.remove('btn-secondary');
+                    heroMacosBtn.classList.add('btn-secondary');
+                    heroMacosBtn.classList.remove('btn-primary');
 
                     // 상단 네비게이션 Download 버튼을 Windows로 설정
                     if (navCta) {
@@ -906,7 +920,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#download">Download</a></li>
             </ul>
-            <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="nav-cta">Download</a>
+            <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="nav-cta" id="navCta">Download</a>
         </div>
     </nav>
 
@@ -916,8 +930,8 @@
             <h1 class="hero-title"><span class="highlight">Libera</span>tion from your Work<span class="highlight">flow</span></h1>
             <p class="hero-subtitle">Liberaflow는 AI와 자동화를 통해 당신의 일상 업무를 혁신합니다. <br>당신의 업무에서 새로운 가능성을 발견하세요.</p>
             <div class="hero-buttons">
-                <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="btn-primary">Download for macOS</a>
-                <a href="downloads/Liberaflow_1.1.5_Setup.exe" class="btn-secondary">Download for Windows</a>
+                <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="btn-primary" id="heroMacosBtn">Download for macOS</a>
+                <a href="downloads/Liberaflow_1.1.5_Setup.exe" class="btn-secondary" id="heroWindowsBtn">Download for Windows</a>
             </div>
         </div>
     </section>
