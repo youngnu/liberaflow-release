@@ -232,7 +232,7 @@
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 60px;
+            margin-bottom: 0;
         }
 
         .btn-primary {
@@ -363,11 +363,20 @@
         }
 
         /* Feature Tabs - Glassmorphism */
+        .feature-tabs-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            width: 100%;
+        }
+
         .feature-tabs {
             display: flex;
             justify-content: center;
             gap: 6px;
-            margin-bottom: 60px;
             background: rgba(219, 219, 219, 0.4);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
@@ -375,13 +384,36 @@
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
             padding: 8px;
             border-radius: 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 60px;
             flex-wrap: wrap;
             overflow-x: auto;
             position: relative;
+            flex: 1;
+        }
+
+        .tab-arrow {
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #0071e3;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .tab-arrow:hover {
+            background: rgba(0, 113, 227, 0.12);
+            color: #005bb5;
+            box-shadow: 0 6px 16px rgba(0, 113, 227, 0.15);
+        }
+
+        .tab-arrow:active {
+            transform: translateY(1px);
         }
 
         .feature-tabs::before {
@@ -732,12 +764,24 @@
             }
 
             /* Features */
+            .feature-tabs-wrapper {
+                gap: 8px;
+                margin-bottom: 40px;
+                width: 100%;
+            }
+
             .feature-tabs {
                 flex-wrap: nowrap;
                 overflow-x: auto;
                 justify-content: flex-start;
                 max-width: 100%;
                 padding: 8px 4px;
+            }
+
+            .tab-arrow {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
             }
 
             .tab-btn {
@@ -806,22 +850,52 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Tab functionality
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+            const tabContents = Array.from(document.querySelectorAll('.tab-content'));
+            const tabContainer = document.querySelector('.feature-tabs');
+
+            function setActiveTab(targetTab) {
+                tabButtons.forEach(btn => {
+                    const isTarget = btn.dataset.tab === targetTab;
+                    btn.classList.toggle('active', isTarget);
+                });
+
+                tabContents.forEach(content => {
+                    const isTarget = content.id === targetTab;
+                    content.classList.toggle('active', isTarget);
+                });
+
+                const activeButton = tabButtons.find(btn => btn.dataset.tab === targetTab);
+                if (activeButton && tabContainer) {
+                    activeButton.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
+            }
 
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const targetTab = button.getAttribute('data-tab');
-
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-
-                    // Add active class to clicked button and corresponding content
-                    button.classList.add('active');
-                    document.getElementById(targetTab).classList.add('active');
+                    setActiveTab(button.dataset.tab);
                 });
             });
+
+            const arrowButtons = document.querySelectorAll('.tab-arrow');
+
+            arrowButtons.forEach(arrow => {
+                arrow.addEventListener('click', () => {
+                    const direction = arrow.dataset.direction === 'next' ? 1 : -1;
+                    const currentIndex = tabButtons.findIndex(btn => btn.classList.contains('active'));
+                    const nextIndex = (currentIndex + direction + tabButtons.length) % tabButtons.length;
+                    const nextButton = tabButtons[nextIndex];
+                    setActiveTab(nextButton.dataset.tab);
+                    if (nextButton && typeof nextButton.focus === 'function') {
+                        nextButton.focus({ preventScroll: true });
+                    }
+                });
+            });
+
+            const initialActive = tabButtons.find(btn => btn.classList.contains('active'));
+            if (initialActive) {
+                setActiveTab(initialActive.dataset.tab);
+            }
 
             // Dropdown functionality
             const dropdown = document.querySelector('.dropdown');
@@ -931,7 +1005,6 @@
                         <a href="features/python-automation.html" class="dropdown-item">🤖 Python Automation</a>
                     </div>
                 </li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#download">Download</a></li>
             </ul>
             <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="nav-cta" id="navCta">Download</a>
@@ -1035,35 +1108,39 @@
             <h2 style="text-align: center; font-size: 3rem; font-family: 'Noto Sans KR', 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">Libeaflow는 위의 문제들을 해결하기 위해<br> 아래의 기능들을 제공합니다</h2>
 
             <!-- Feature Tabs -->
-            <div class="feature-tabs">
-                <button class="tab-btn active" data-tab="liberaflow-note">
-                    <div class="tab-icon">🧩</div>
-                    <span>Liberaflow Note</span>
-                </button>
-                <button class="tab-btn" data-tab="space">
-                    <div class="tab-icon">🌌</div>
-                    <span>Space</span>
-                </button>
-                <button class="tab-btn" data-tab="mind-map">
-                    <div class="tab-icon">🧠</div>
-                    <span>Mind Map</span>
-                </button>
-                <button class="tab-btn" data-tab="calendar">
-                    <div class="tab-icon">📅</div>
-                    <span>Calendar</span>
-                </button>
-                <button class="tab-btn" data-tab="tasks">
-                    <div class="tab-icon">✅</div>
-                    <span>Tasks</span>
-                </button>
-                <button class="tab-btn" data-tab="ai-chat">
-                    <div class="tab-icon">💬</div>
-                    <span>AI Chat</span>
-                </button>
-                <button class="tab-btn" data-tab="python-automation">
-                    <div class="tab-icon">🤖</div>
-                    <span>Python Automation</span>
-                </button>
+            <div class="feature-tabs-wrapper">
+                <button type="button" class="tab-arrow tab-arrow-left" data-direction="prev" aria-label="이전 기능 보기">&#10094;</button>
+                <div class="feature-tabs">
+                    <button type="button" class="tab-btn active" data-tab="liberaflow-note">
+                        <div class="tab-icon">🧩</div>
+                        <span>Liberaflow Note</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="space">
+                        <div class="tab-icon">🌌</div>
+                        <span>Space</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="mind-map">
+                        <div class="tab-icon">🧠</div>
+                        <span>Mind Map</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="calendar">
+                        <div class="tab-icon">📅</div>
+                        <span>Calendar</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="tasks">
+                        <div class="tab-icon">✅</div>
+                        <span>Tasks</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="ai-chat">
+                        <div class="tab-icon">💬</div>
+                        <span>AI Chat</span>
+                    </button>
+                    <button type="button" class="tab-btn" data-tab="python-automation">
+                        <div class="tab-icon">🤖</div>
+                        <span>Python Automation</span>
+                    </button>
+                </div>
+                <button type="button" class="tab-arrow tab-arrow-right" data-direction="next" aria-label="다음 기능 보기">&#10095;</button>
             </div>
 
             <!-- Tab Content -->
@@ -1223,37 +1300,6 @@
                         <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">보상을 받으세요</p>
                         <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
                             도움받은 사람들의 후원을 통해 당신의 기여가 정당한 보상으로 돌아옵니다
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="about-title">About</h2>
-                    <p class="about-description">
-                        안녕하세요. 저는 일상 속에서 반복되는 비효율적인 업무 프로세스를 개선하고 싶다는 생각을 늘 해왔습니다.
-                    </p>
-                    <p class="about-description">
-                        그 고민 끝에 <strong>Liberaflow</strong>라는 애플리케이션을 만들었습니다. Liberaflow는 단순한 AI Chat 애플리케이션을 넘어, <strong>사용자가 자신의 아이디어를 마음껏 발휘할 수 있는 공간</strong>을 제공하고자 합니다.
-                    </p>
-                    <p class="about-description">
-                        <strong>그 각각의 창의성들이 연결될 때, 우리는 더 나은 세상으로 나아갈 수 있다고 믿습니다.</strong> Liberaflow와 함께 당신의 일상을, 그리고 세상을 변화시켜 나가길 바랍니다.
-                    </p>
-                </div>
-
-                <div class="beta-notice">
-                    <div class="notice-icon">📢</div>
-                    <div class="notice-content">
-                        <h3 class="notice-title">베타 테스트 안내</h3>
-                        <p class="notice-text">
-                            현재는 베타 테스트중이며, 정식 출시가 아니기에 많은 오류가 있을 수 있습니다. 양해 해주시기 바랍니다.
-                            테스트 한달 간에는 <strong>OpenAI-oss-120B 모델</strong>만 사용하실 수 있습니다.
                         </p>
                     </div>
                 </div>
