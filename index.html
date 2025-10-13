@@ -206,10 +206,10 @@
         }
 
         .hero-title {
-            font-size: 4.5rem;
+            font-size: 5.5rem;
             font-weight: 700;
             color: #1d1d1f;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
             letter-spacing: -0.02em;
             line-height: 1.1;
         }
@@ -219,12 +219,13 @@
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             color: #86868b;
             margin-bottom: 40px;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
 
         .hero-buttons {
@@ -839,7 +840,27 @@
             }
         }
     </style>
-    <script>
+        <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        const navigationEntries = typeof performance !== 'undefined' && typeof performance.getEntriesByType === 'function'
+            ? performance.getEntriesByType('navigation')
+            : [];
+        const navigationEntry = navigationEntries.length > 0 ? navigationEntries[0] : null;
+        const isReloadNavigation = navigationEntry
+            ? navigationEntry.type === 'reload'
+            : typeof performance !== 'undefined' && performance.navigation && performance.navigation.type === 1;
+        const keepHeroInView = (event) => {
+            const fromBFCache = event && event.type === 'pageshow' && event.persisted;
+            if (isReloadNavigation || fromBFCache || !window.location.hash) {
+                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+            }
+        };
+        window.addEventListener('pageshow', keepHeroInView);
+        document.addEventListener('DOMContentLoaded', function() {
+            keepHeroInView();
+        });
         document.addEventListener('DOMContentLoaded', function() {
             // Tab functionality
             const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
@@ -1007,10 +1028,60 @@
     <section class="hero">
         <div class="hero-container">
             <h1 class="hero-title"><span class="highlight">Libera</span>tion from your Work<span class="highlight">flow</span></h1>
-            <p class="hero-subtitle">Liberaflow는 일상 업무를 혁신합니다. <br>당신의 업무에서 새로운 가능성을 발견하세요.</p>
+            <p class="hero-subtitle">우리는 지식의 가치를 믿습니다.<br>또한 지식이 공유될 때 더 큰 가치를 있음을 믿습니다.</p>
             <div class="hero-buttons">
-                <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="btn-primary" id="heroMacosBtn">Download for macOS</a>
-                <a href="downloads/Liberaflow_1.1.5_Setup.exe" class="btn-secondary" id="heroWindowsBtn">Download for Windows</a>
+                <a href="#download" class="btn-primary">지금 시작하기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section class="about-section" id="vision" style="background: #ffffff;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
+            <div>
+                <h2 style="text-align: center; font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">Our Vision</h2>
+                <p style="text-align: center; font-size: 1.5rem; color: #515154; margin-bottom: 80px; line-height: 1.7;">
+                    Liberaflow는 <span style="color: #0071e3; font-weight: 600; background: rgba(0, 113, 227, 0.12); padding: 4px 10px; border-radius: 12px;">개인과 조직이 성장할 수 있는 환경을 만들기 위해 설계되었습니다.</span><br>
+                    우리는 모든 사람이 <span style="color: #0071e3; font-weight: 600; background: rgba(0, 113, 227, 0.12); padding: 4px 10px; border-radius: 12px;">자신의 경험을 관리하고 공유하여 더 나은 미래를 만들어 나가길 바랍니다.</span>
+                </p>
+
+                <div style="display: flex; align-items: stretch; justify-content: center; gap: 24px; margin-top: 60px; position: relative;">
+                    <!-- Create Card -->
+                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
+                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">✍️</div>
+                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Create</h3>
+                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">창작하고 기록하세요</p>
+                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
+                            노하우 문서, 자동화 스크립트 등<br> 당신의 지식과 경험을 정리하고 생성하세요
+                        </p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div style="font-size: 2.5rem; color: #d2d2d7; flex-shrink: 0; display: flex; align-items: center;">→</div>
+
+                    <!-- Share Card -->
+                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
+                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">🤝</div>
+                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Share</h3>
+                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">사람들과 공유하세요</p>
+                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
+                            작성한 문서, 스크립트를 공유하고<br> 다른 사람들이 발전시켜 나갈 수 있습니다
+                        </p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div style="font-size: 2.5rem; color: #d2d2d7; flex-shrink: 0; display: flex; align-items: center;">→</div>
+
+                    <!-- Benefit Card -->
+                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
+                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">💰</div>
+                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Benefit</h3>
+                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">보상을 받으세요</p>
+                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
+                            도움받은 사람들의 후원을 통해 당신의 창작물이 보상으로 돌아옵니다
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1020,40 +1091,46 @@
         <div class="problem-wrapper" style="position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center;">
             <div style="max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px;">
                 <div style="text-align: center; position: relative; min-height: 400px;">
-                    <!-- Problem 1 -->
+                    <!-- Problem Intro -->
                     <div class="problem-slide" data-index="0" style="position: absolute; top: 0; left: 0; right: 0; width: 100%; opacity: 1; transition: opacity 1s ease; text-align: center;">
-                        <h2 style="font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
-                            형편없는 업무인수인계 때문에<br>불편했던 적 없나요?
+                        <h2 style="font-size: 4.0rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
+                            Liberaflow는 <br>다음의 문제를 해결하고자 합니다
+                        </h2>
+                    </div>
+                    <!-- Problem 1 -->
+                    <div class="problem-slide" data-index="1" style="position: absolute; top: 0; left: 0; right: 0; width: 100%; opacity: 0; transition: opacity 1s ease; text-align: center;">
+                        <h2 style="font-size: 4.0rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
+                            공유되지 않고 묻혀버리는 지식들
                         </h2>
                         <p style="font-size: 1.5rem; color: #515154; line-height: 1.7;">
-                            체계적이지 못한 인수인계는<br>
-                            조직 전체의 생산성을 떨어뜨립니다.
+                            형편없는 업무인수인계로 인한 업무 누수<br>
+                            개인과 조직 전체의 생산성을 떨어뜨립니다.
                         </p>
                     </div>
                     <!-- Problem 2 -->
-                    <div class="problem-slide" data-index="1" style="position: absolute; top: 0; left: 0; right: 0; width: 100%; opacity: 0; transition: opacity 1s ease; text-align: center;">
-                        <h2 style="font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
-                            가끔 하는 업무,<br>매번 다시 배우고 있지 않나요?
+                    <div class="problem-slide" data-index="2" style="position: absolute; top: 0; left: 0; right: 0; width: 100%; opacity: 0; transition: opacity 1s ease; text-align: center;">
+                        <h2 style="font-size: 4.0rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
+                            새로운 지침, 지식들로 인한<br> 학습 피로감
                         </h2>
                         <p style="font-size: 1.5rem; color: #515154; line-height: 1.7;">
-                            이전에 했던 방법을 찾지 못해<br>
-                            매번 처음부터 다시 배우느라 효율성이 떨어집니다.
+                            가끔하는 업무를 처리하기 위해서 많은 시간을 허비했던 적은 없나요? <br>
+                            또는 새로운 업무 지식들을 배우느라 지친적은 없었나요?
                         </p>
                     </div>
                     <!-- Problem 3 -->
-                    <div class="problem-slide" data-index="2" style="position: absolute; top: 0; left: 0; right: 0; width: 100%; opacity: 0; transition: opacity 1s ease; text-align: center;">
-                        <h2 style="font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
-                            단순 반복 업무에<br>하루를 보내고 있지 않나요?
+                    <div class="problem-slide" data-index="3" style="position: absolute; top: 0; left: 0; right: 0; width: 100%; opacity: 0; transition: opacity 1s ease; text-align: center;">
+                        <h2 style="font-size: 4.0rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
+                            단순 반복 업무로 인한<br>창의성 저하
                         </h2>
                         <p style="font-size: 1.5rem; color: #515154; line-height: 1.7;">
-                            단순 반복적인 일을 계속하는건<br>
-                            창의성을 저하시킵니다.
+                            단순 반복적인 업무를 하느라<br>
+                            정작 보다 중요한 업무를 처리할 시간이 없지 않나요?
                         </p>
                     </div>
                     <!-- Problem 4 -->
                     <div class="problem-slide" data-index="4" style="position: absolute; top: 0; left: 0; right: 0; width: 100%; opacity: 0; transition: opacity 1s ease; text-align: center;">
-                        <h2 style="font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
-                            중요한 지식들이 흩어져서<br>정리가 되질 않나요?
+                        <h2 style="font-size: 4.0rem; font-weight: 700; color: #1d1d1f; margin-bottom: 32px; line-height: 1.3;">
+                            중요한 지식들의 소실
                         </h2>
                         <p style="font-size: 1.5rem; color: #515154; line-height: 1.7;">
                             필요한 순간에 찾지 못하는 정보들,<br>
@@ -1097,7 +1174,10 @@
     <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="container">
-            <h2 style="text-align: center; font-size: 3rem; font-family: 'Noto Sans KR', 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">Libeaflow는 위의 문제들을 해결하기 위해<br> 아래의 기능들을 제공합니다</h2>
+            <h2 style="text-align: center; font-size: 3rem; font-family: 'Noto Sans KR', 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">우리는 이런 방식으로 문제를 해결합니다</h2>
+            <p style="text-align: center; font-size: 1.25rem; color: #86868b; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Liberaflow는 지식 공유와 협업을 위한 다양한 도구를 제공합니다
+            </p>
 
             <!-- Feature Tabs -->
             <div class="feature-tabs-wrapper">
@@ -1245,59 +1325,6 @@
                                 <span>Python Automation Screenshot</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Our Vision Section -->
-    <section class="about-section" style="background: #ffffff;">
-        <div style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
-            <div>
-                <h2 style="text-align: center; font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">Our Vision</h2>
-                <p style="text-align: center; font-size: 1.5rem; color: #515154; margin-bottom: 80px; line-height: 1.7;">
-                    Liberaflow는<span style="color: #0071e3; font-weight: 600; background: rgba(0, 113, 227, 0.12); padding: 4px 10px; border-radius: 12px;">지식과 경험을 체계적으로 관리하고 공유하여</span><br>
-                    <span style="color: #0071e3; font-weight: 600; background: rgba(0, 113, 227, 0.12); padding: 4px 10px; border-radius: 12px;">개인과 조직이 성장할 수 있는 환경을 만들기 위해 설계되었습니다.</span> <br>
-                    우리는 모든 사람이 자신의 업무를 혁신하고, 더 나은 미래를 만들어 나가길 바랍니다.
-                </p>
-
-                <div style="display: flex; align-items: stretch; justify-content: center; gap: 24px; margin-top: 60px; position: relative;">
-                    <!-- Create Card -->
-                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
-                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">✍️</div>
-                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Create</h3>
-                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">창작하고 기록하세요</p>
-                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
-                            노하우 문서, 자동화 스크립트 등<br> 당신의 지식과 경험을 정리하고 생성하세요
-                        </p>
-                    </div>
-
-                    <!-- Arrow -->
-                    <div style="font-size: 2.5rem; color: #d2d2d7; flex-shrink: 0; display: flex; align-items: center;">→</div>
-
-                    <!-- Share Card -->
-                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
-                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">🤝</div>
-                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Share</h3>
-                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">사람들과 공유하세요</p>
-                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
-                            작성한 문서, 스크립트를 공유하고<br> 다른 사람들이 발전시켜 나갈 수 있습니다
-                        </p>
-                    </div>
-
-                    <!-- Arrow -->
-                    <div style="font-size: 2.5rem; color: #d2d2d7; flex-shrink: 0; display: flex; align-items: center;">→</div>
-
-                    <!-- Benefit Card -->
-                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
-                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">💰</div>
-                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Benefit</h3>
-                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">보상을 받으세요</p>
-                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
-                            도움받은 사람들의 후원을 통해 당신의 창작물이 보상으로 돌아옵니다
-                        </p>
                     </div>
                 </div>
             </div>
