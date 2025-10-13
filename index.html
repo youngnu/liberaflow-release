@@ -1045,40 +1045,76 @@
                     우리는 모든 사람이 <span style="color: #0071e3; font-weight: 600; background: rgba(0, 113, 227, 0.12); padding: 4px 10px; border-radius: 12px;">자신의 경험을 관리하고 공유하여 더 나은 미래를 만들어 나가길 바랍니다.</span>
                 </p>
 
-                <div style="display: flex; align-items: stretch; justify-content: center; gap: 24px; margin-top: 60px; position: relative;">
-                    <!-- Create Card -->
-                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
-                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">✍️</div>
-                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Create</h3>
-                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">창작하고 기록하세요</p>
-                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
-                            노하우 문서, 자동화 스크립트 등<br> 당신의 지식과 경험을 정리하고 생성하세요
+                <div style="position: relative; width: 100%; max-width: 1100px; height: 800px; margin: 0 auto;">
+                    <!-- Circular Arrow SVG -->
+                    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;" viewBox="0 0 1100 800">
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#0071e3" />
+                            </marker>
+                        </defs>
+
+                        <!-- Create to Share (위에서 왼쪽 아래로) -->
+                        <path d="M 380 100 Q 100 250, 240 500"
+                              stroke="#0071e3"
+                              stroke-width="4"
+                              fill="none"
+                              opacity="0.8"
+                              marker-end="url(#arrowhead)"/>
+
+                        <!-- Share to Benefit (왼쪽 아래에서 오른쪽 아래로) -->
+                        <path d="M 400 680 Q 550 730, 700 680"
+                              stroke="#0071e3"
+                              stroke-width="4"
+                              fill="none"
+                              opacity="0.8"
+                              marker-end="url(#arrowhead)"/>
+
+                        <!-- Benefit to Create (오른쪽 아래에서 위로) -->
+                        <path d="M 860 550 Q 1000 250, 720 100"
+                              stroke="#0071e3"
+                              stroke-width="4"
+                              fill="none"
+                              opacity="0.8"
+                              marker-end="url(#arrowhead)"/>
+                    </svg>
+
+                    <!-- Create Card - Top -->
+                    <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 280px; text-align: center; padding: 32px 24px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); z-index: 2;">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: #f5f5f7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">✍️</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 8px;">Create</h3>
+                        <p style="font-size: 0.9rem; color: #86868b; font-weight: 500; margin-bottom: 8px;">창작하고 기록하세요</p>
+                        <p style="font-size: 0.85rem; color: #86868b; line-height: 1.6;">
+                            노하우 문서, 자동화 스크립트 등 당신의 지식과 경험을 정리하세요
                         </p>
                     </div>
 
-                    <!-- Arrow -->
-                    <div style="font-size: 2.5rem; color: #d2d2d7; flex-shrink: 0; display: flex; align-items: center;">→</div>
-
-                    <!-- Share Card -->
-                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
-                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">🤝</div>
-                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Share</h3>
-                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">사람들과 공유하세요</p>
-                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
-                            작성한 문서, 스크립트를 공유하고<br> 다른 사람들이 발전시켜 나갈 수 있습니다
+                    <!-- Share Card - Bottom Left (시계 방향으로 두 번째) -->
+                    <div style="position: absolute; bottom: 40px; left: 5%; width: 280px; text-align: center; padding: 32px 24px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); z-index: 2;">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: #f5f5f7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🤝</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 8px;">Share</h3>
+                        <p style="font-size: 0.9rem; color: #86868b; font-weight: 500; margin-bottom: 8px;">사람들과 공유하세요</p>
+                        <p style="font-size: 0.85rem; color: #86868b; line-height: 1.6;">
+                            작성한 문서, 스크립트를 공유하고 다른 사람들이 발전시켜 나갈 수 있습니다
                         </p>
                     </div>
 
-                    <!-- Arrow -->
-                    <div style="font-size: 2.5rem; color: #d2d2d7; flex-shrink: 0; display: flex; align-items: center;">→</div>
-
-                    <!-- Benefit Card -->
-                    <div style="flex: 1; max-width: 360px; min-height: 320px; text-align: center; padding: 48px 32px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; transition: all 0.3s ease; display: flex; flex-direction: column;">
-                        <div style="width: 72px; height: 72px; margin: 0 auto 24px; background: #f5f5f7; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">💰</div>
-                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #1d1d1f; margin-bottom: 12px;">Benefit</h3>
-                        <p style="font-size: 1rem; color: #86868b; font-weight: 500; margin-bottom: 12px;">보상을 받으세요</p>
-                        <p style="font-size: 0.95rem; color: #86868b; line-height: 1.7;">
+                    <!-- Benefit Card - Bottom Right (시계 방향으로 세 번째) -->
+                    <div style="position: absolute; bottom: 40px; right: 5%; width: 280px; text-align: center; padding: 32px 24px; background: #ffffff; border: 2px solid #e5e5e7; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); z-index: 2;">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: #f5f5f7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">💰</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 8px;">Benefit</h3>
+                        <p style="font-size: 0.9rem; color: #86868b; font-weight: 500; margin-bottom: 8px;">보상을 받으세요</p>
+                        <p style="font-size: 0.85rem; color: #86868b; line-height: 1.6;">
                             도움받은 사람들의 후원을 통해 당신의 창작물이 보상으로 돌아옵니다
+                        </p>
+                    </div>
+
+                    <!-- Growth Card - Center -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%); border-radius: 50%; box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3); z-index: 4;">
+                        <div style="font-size: 2.5rem; margin-bottom: 12px;">📈</div>
+                        <h3 style="font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Growth</h3>
+                        <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.95); line-height: 1.5;">
+                            개인과 조직의<br>지속적인 성장
                         </p>
                     </div>
                 </div>
@@ -1114,7 +1150,7 @@
                         </h2>
                         <p style="font-size: 1.5rem; color: #515154; line-height: 1.7;">
                             가끔하는 업무를 처리하기 위해서 많은 시간을 허비했던 적은 없나요? <br>
-                            또는 새로운 업무 지식들을 배우느라 지친적은 없었나요?
+                            또는 새로운 업무 지식들을 배우느라 지친 적은 없었나요?
                         </p>
                     </div>
                     <!-- Problem 3 -->
