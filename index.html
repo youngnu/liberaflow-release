@@ -742,21 +742,33 @@
                 padding: 12px 20px;
             }
 
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-logo-img {
+                height: 28px;
+            }
+
             /* Hero */
             .hero {
                 padding: 100px 20px 60px;
+                min-height: 80vh;
             }
 
             .hero-logo {
                 width: 80px;
+                margin-bottom: 24px;
             }
 
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                margin-bottom: 24px;
             }
 
             .hero-subtitle {
-                font-size: 1.125rem;
+                font-size: 1rem;
+                margin-bottom: 32px;
             }
 
             .hero-buttons {
@@ -764,7 +776,103 @@
                 align-items: center;
             }
 
-            /* Features */
+            .btn-primary,
+            .btn-secondary {
+                min-width: 250px;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            /* Our Vision Section */
+            .about-section {
+                padding: 60px 20px !important;
+            }
+
+            .about-section h2 {
+                font-size: 2rem !important;
+                margin-bottom: 20px !important;
+            }
+
+            .about-section p {
+                font-size: 1rem !important;
+                margin-bottom: 40px !important;
+                padding: 0 10px;
+            }
+
+            .about-section p span {
+                display: inline;
+                padding: 2px 6px !important;
+            }
+
+            /* Vision Cards Container */
+            .about-section > div > div > div[style*="position: relative"] {
+                height: auto !important;
+                padding: 20px 0 !important;
+            }
+
+            /* Hide SVG arrows on mobile */
+            .about-section svg {
+                display: none !important;
+            }
+
+            /* Vision Cards - Stack vertically */
+            .about-section > div > div > div[style*="position: relative"] > div[style*="position: absolute"] {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 320px !important;
+                margin: 0 auto 24px !important;
+                height: auto !important;
+            }
+
+            /* Growth Card on mobile */
+            .about-section > div > div > div[style*="position: relative"] > div[style*="linear-gradient"] {
+                width: 100% !important;
+                max-width: 280px !important;
+                height: 200px !important;
+                border-radius: 16px !important;
+                margin: 24px auto !important;
+            }
+
+            /* Problem Section */
+            .problem-section {
+                height: auto !important;
+                min-height: 300vh;
+            }
+
+            .problem-wrapper {
+                padding: 0 10px;
+            }
+
+            .problem-slide h2 {
+                font-size: 1.75rem !important;
+                margin-bottom: 20px !important;
+            }
+
+            .problem-slide p {
+                font-size: 1rem !important;
+            }
+
+            /* Features Section */
+            .features-section {
+                padding: 60px 20px;
+                min-height: auto;
+            }
+
+            .features-section h2 {
+                font-size: 1.75rem !important;
+                margin-bottom: 20px !important;
+            }
+
+            .features-section > div > p {
+                font-size: 1rem !important;
+                margin-bottom: 40px !important;
+            }
+
             .feature-tabs-wrapper {
                 gap: 8px;
                 margin-bottom: 40px;
@@ -809,34 +917,89 @@
             }
 
             .feature-title {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
+            }
+
+            .feature-description {
+                font-size: 1rem;
             }
 
             .screenshot-placeholder {
                 height: 300px;
             }
 
-            /* Sections */
-            .section-title,
-            .about-title,
-            .download-title {
-                font-size: 2rem;
+            /* FAQ Section */
+            .faq-section {
+                padding: 60px 20px !important;
+                min-height: auto !important;
             }
 
-            .features-section,
-            .about-section,
+            .faq-section h2 {
+                font-size: 2rem !important;
+                margin-bottom: 20px !important;
+            }
+
+            .faq-section > div > p {
+                font-size: 1rem !important;
+                margin-bottom: 40px !important;
+            }
+
+            .faq-question {
+                padding: 20px 16px !important;
+                font-size: 1rem !important;
+            }
+
+            .faq-question span:first-child {
+                padding-right: 16px;
+            }
+
+            .faq-icon {
+                font-size: 1.3rem !important;
+            }
+
+            .faq-answer > div {
+                padding: 0 16px 20px 16px !important;
+                font-size: 0.95rem;
+            }
+
+            /* Download Section */
             .download-section {
-                padding: 60px 20px;
+                padding: 60px 20px !important;
+                min-height: auto !important;
             }
 
-            /* Download */
-            .download-buttons {
+            .download-section h2 {
+                font-size: 2rem !important;
+                margin-bottom: 16px !important;
+            }
+
+            .download-section > div > p {
+                font-size: 1rem !important;
+                margin-bottom: 32px !important;
+            }
+
+            .download-section > div > div {
                 flex-direction: column;
                 align-items: center;
+                margin-bottom: 32px !important;
             }
 
             .download-btn {
-                min-width: 250px;
+                min-width: 250px !important;
+                width: 100%;
+                max-width: 320px;
+                font-size: 1rem !important;
+                padding: 14px 24px !important;
+            }
+
+            .system-requirements-text p {
+                font-size: 0.85rem !important;
+                padding: 0 10px;
+            }
+
+            /* Container */
+            .container {
+                padding: 40px 15px;
             }
         }
     </style>
