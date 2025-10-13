@@ -866,18 +866,6 @@
             const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
             const tabContents = Array.from(document.querySelectorAll('.tab-content'));
             const tabContainer = document.querySelector('.feature-tabs');
-            const featureTitle = document.getElementById('feature-title');
-
-            // 각 탭에 대한 제목 매핑
-            const titleMap = {
-                'liberaflow-note': 'Note를 생성하고 다른사람과 협업하세요',
-                'space': '모든 지식을 한 곳에서 관리하고 AI와 대화하세요',
-                'mind-map': '시각적 사고로 아이디어를 체계화하세요',
-                'calendar': '팀원과 일정을 공유하고 협업하세요',
-                'tasks': 'Todo List로 생산성을 높이고 업무 누수를 방지하세요',
-                'ai-chat': '다양한 AI 모델과 대화하며 최적의 답변을 얻으세요',
-                'python-automation': '반복 작업을 자동화하고 생산성을 극대화하세요'
-            };
 
             function setActiveTab(targetTab) {
                 tabButtons.forEach(btn => {
@@ -889,11 +877,6 @@
                     const isTarget = content.id === targetTab;
                     content.classList.toggle('active', isTarget);
                 });
-
-                // 제목 업데이트
-                if (featureTitle && titleMap[targetTab]) {
-                    featureTitle.textContent = titleMap[targetTab];
-                }
 
                 const activeButton = tabButtons.find(btn => btn.dataset.tab === targetTab);
                 if (activeButton && tabContainer) {
@@ -1023,7 +1006,7 @@
                 Liberaflow
             </a>
             <ul class="nav-links">
-                <li><a href="#vision">Our Vision</a></li>
+                <li><a href="#vision">Why Liberaflow</a></li>
                 <li class="dropdown">
                     <a href="#features" class="dropdown-btn">Features</a>
                     <div class="dropdown-content">
@@ -1058,7 +1041,7 @@
     <section class="about-section" id="vision" style="background: #ffffff;">
         <div style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
             <div>
-                <h2 style="text-align: center; font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">Our Vision</h2>
+                <h2 style="text-align: center; font-size: 3.5rem; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">Why Liberaflow?</h2>
                 <p style="text-align: center; font-size: 1.5rem; color: #515154; margin-bottom: 80px; line-height: 1.7;">
                     Liberaflow는 개인과 조직이 성장할 수 있는 환경을 만들기 위해 설계되었습니다.<br>
                     우리는 모든 사람이 <span style="color: #0071e3; font-weight: 600; background: rgba(0, 113, 227, 0.12); padding: 4px 10px; border-radius: 12px;">자신의 지식을 관리하고 공유하여 더 나은 미래를 만들어 나가길 바랍니다.</span>
@@ -1229,9 +1212,9 @@
     <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="container">
-            <h2 id="feature-title" style="text-align: center; font-size: 3rem; font-family: 'Noto Sans KR', 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">제텔카스텐 방식으로 지식을 연결하고 공유하세요</h2>
+            <h2 style="text-align: center; font-size: 3rem; font-family: 'Noto Sans KR', 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif; font-weight: 700; color: #1d1d1f; margin-bottom: 24px; letter-spacing: -0.02em;">Liberaflow는 다음의 방식으로 문제를 해결합니다</h2>
             <p style="text-align: center; font-size: 1.25rem; color: #86868b; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Liberaflow는 문제를 해결하기 위해 다양한 도구를 제공합니다
+                Liberaflow는 지식 공유와 협업을 위한 다양한 도구를 제공합니다
             </p>
 
             <!-- Feature Tabs -->
@@ -1406,22 +1389,8 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item" style="background: #ffffff; border-radius: 12px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
-                    <button class="faq-question" style="width: 100%; text-align: left; padding: 24px; border: none; background: transparent; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.125rem; font-weight: 600; color: #1d1d1f;">
-                        <span>Note에서 AI가 자동으로 문서작성을 도와주나요?</span>
-                        <span class="faq-icon" style="font-size: 1.5rem; transition: transform 0.3s ease; color: #0071e3;">+</span>
-                    </button>
-                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                        <div style="padding: 0 24px 24px 24px; color: #515154; line-height: 1.6;">
-                            Note에서 AI는 문서작성을 대신해주진 않습니다. <br>그대신 AI를 이용하여 다양한 출처로부터 문서작성에 필요한 인사이트를 얻을 순 있습니다.
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- FAQ Item 3 -->
+                <!-- FAQ Item 2 -->
                 <div class="faq-item" style="background: #ffffff; border-radius: 12px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                     <button class="faq-question" style="width: 100%; text-align: left; padding: 24px; border: none; background: transparent; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.125rem; font-weight: 600; color: #1d1d1f;">
                         <span>어떤 운영체제를 지원하나요?</span>
@@ -1434,7 +1403,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 4 -->
+                <!-- FAQ Item 3 -->
                 <div class="faq-item" style="background: #ffffff; border-radius: 12px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                     <button class="faq-question" style="width: 100%; text-align: left; padding: 24px; border: none; background: transparent; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.125rem; font-weight: 600; color: #1d1d1f;">
                         <span>데이터는 어디에 저장되나요?</span>
@@ -1447,7 +1416,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 5 -->
+                <!-- FAQ Item 4 -->
                 <div class="faq-item" style="background: #ffffff; border-radius: 12px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                     <button class="faq-question" style="width: 100%; text-align: left; padding: 24px; border: none; background: transparent; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.125rem; font-weight: 600; color: #1d1d1f;">
                         <span>Python Automation 기능을 사용하려면?</span>
@@ -1459,7 +1428,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- FAQ Item 6 -->
+
+                <!-- FAQ Item 5 -->
                 <div class="faq-item" style="background: #ffffff; border-radius: 12px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                     <button class="faq-question" style="width: 100%; text-align: left; padding: 24px; border: none; background: transparent; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.125rem; font-weight: 600; color: #1d1d1f;">
                         <span>Liberaflow는 사용자의 데이터를 학습하나요?</span>
@@ -1467,11 +1437,12 @@
                     </button>
                     <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
                         <div style="padding: 0 24px 24px 24px; color: #515154; line-height: 1.6;">
-                            Liberaflow는 사용자의 데이터를 학습에 이용하지 않습니다.<br> LLM 공급업체와의 Zero data retention agreement를 통해 사용자의 데이터를 보호합니다. 
+                            Liberaflow는 사용자의 데이터를 학습에 이용하지 않습니다.<br>따로 저장하지 않은 AI와의 대화는 일정한 주기로 자동 삭제가 되며<br>LLM 공급업체와의 Zero data retention agreement를 통해 사용자의 데이터를 보호합니다. 
                         </div>
                     </div>
                 </div>
-                <!-- FAQ Item 7 -->
+
+                <!-- FAQ Item 6 -->
                 <div class="faq-item" style="background: #ffffff; border-radius: 12px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                     <button class="faq-question" style="width: 100%; text-align: left; padding: 24px; border: none; background: transparent; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.125rem; font-weight: 600; color: #1d1d1f;">
                         <span>Liberaflow는 무료인가요?</span>
