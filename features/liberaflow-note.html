@@ -382,21 +382,104 @@
         }
 
         @media (max-width: 768px) {
+            /* Navigation */
             .nav-links {
                 display: none;
             }
 
-            .feature-title {
-                font-size: 2.5rem;
+            .nav-logo {
+                font-size: 1.2rem;
             }
 
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .nav-logo-img {
+                height: 28px;
             }
 
+            .nav-cta {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+
+            /* Main Content */
             .main-content {
                 padding: 100px 20px 60px;
+            }
+
+            /* Breadcrumb */
+            .breadcrumb {
+                font-size: 0.85rem;
+                margin-bottom: 20px;
+            }
+
+            /* Feature Header */
+            .feature-icon {
+                font-size: 3rem;
+                width: 80px;
+                height: 80px;
+            }
+
+            .feature-title {
+                font-size: 2rem;
+                margin-bottom: 16px;
+            }
+
+            .feature-subtitle {
+                font-size: 1rem;
+            }
+
+            /* Section Title */
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 32px;
+            }
+
+            /* Content Grid */
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .content-grid.video-large {
+                grid-template-columns: 1fr;
+            }
+
+            /* Content Text */
+            .content-text h3 {
+                font-size: 1.25rem;
+                margin-bottom: 16px;
+            }
+
+            .content-text p,
+            .content-text li {
+                font-size: 0.95rem;
+            }
+
+            /* Media Container */
+            .media-container img,
+            .media-container video {
+                max-height: 300px;
+                object-fit: contain;
+                width: 100% !important;
+            }
+
+            /* Content Section */
+            .content-section {
+                margin-bottom: 60px;
+                padding: 0 10px;
+            }
+
+            /* Feature Cards Grid */
+            .feature-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .feature-card p {
+                font-size: 0.9rem;
             }
         }
     </style>
