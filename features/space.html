@@ -424,6 +424,17 @@
             .content-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* 모바일에서는 모든 섹션을 텍스트 → 이미지 순서로 통일 */
+            .content-grid .content-text {
+                order: 1;
+            }
+
+            .content-grid .media-container {
+                order: 2;
             }
 
             .content-grid.video-large {
