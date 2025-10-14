@@ -448,6 +448,20 @@
                 max-width: 100% !important;
             }
 
+            .content-grid.video-right-large {
+                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content-grid.video-right-large .content-text {
+                order: 2;
+            }
+
+            .content-grid.video-right-large .media-container {
+                order: 1;
+            }
+
             /* Content Text */
             .content-text h3 {
                 font-size: 1.25rem;
