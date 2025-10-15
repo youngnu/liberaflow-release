@@ -1123,65 +1123,6 @@
                 });
             }
 
-            // Platform detection for download buttons
-            function detectPlatform() {
-                const userAgent = navigator.userAgent.toLowerCase();
-                if (userAgent.includes('mac')) {
-                    return 'macos';
-                } else if (userAgent.includes('win')) {
-                    return 'windows';
-                } else {
-                    return 'unknown';
-                }
-            }
-
-            function updateDownloadButtons() {
-                const platform = detectPlatform();
-                const macosBtn = document.getElementById('macosBtn');
-                const windowsBtn = document.getElementById('windowsBtn');
-                const heroMacosBtn = document.getElementById('heroMacosBtn');
-                const heroWindowsBtn = document.getElementById('heroWindowsBtn');
-                const navCta = document.getElementById('navCta');
-
-                if (platform === 'macos') {
-                    // macOS가 primary (파란색)
-                    macosBtn.classList.add('primary');
-                    macosBtn.classList.remove('secondary');
-                    windowsBtn.classList.add('secondary');
-                    windowsBtn.classList.remove('primary');
-
-                    // Hero 섹션의 macOS 버튼을 primary로 설정
-                    heroMacosBtn.classList.add('btn-primary');
-                    heroMacosBtn.classList.remove('btn-secondary');
-                    heroWindowsBtn.classList.add('btn-secondary');
-                    heroWindowsBtn.classList.remove('btn-primary');
-
-                    // 상단 네비게이션 Download 버튼을 macOS로 설정
-                    if (navCta) {
-                        navCta.href = 'downloads/Liberaflow-1.1.4-macos.dmg';
-                    }
-                } else if (platform === 'windows') {
-                    // Windows가 primary (파란색)
-                    windowsBtn.classList.add('primary');
-                    windowsBtn.classList.remove('secondary');
-                    macosBtn.classList.add('secondary');
-                    macosBtn.classList.remove('primary');
-
-                    // Hero 섹션의 Windows 버튼을 primary로 설정
-                    heroWindowsBtn.classList.add('btn-primary');
-                    heroWindowsBtn.classList.remove('btn-secondary');
-                    heroMacosBtn.classList.add('btn-secondary');
-                    heroMacosBtn.classList.remove('btn-primary');
-
-                    // 상단 네비게이션 Download 버튼을 Windows로 설정
-                    if (navCta) {
-                        navCta.href = 'downloads/Liberaflow_1.1.6_Setup.exe';
-                    }
-                }
-            }
-
-            // 페이지 로드 시 플랫폼 감지 실행
-            updateDownloadButtons();
         });
     </script>
 </head>
@@ -1208,7 +1149,6 @@
                     </div>
                 </li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#download">Download</a></li>
             </ul>
             <a href="#download" class="nav-cta" id="navCta">Download</a>
         </div>
@@ -1669,10 +1609,10 @@
             <p style="font-size: 1.25rem; color: #a1a1a6; margin-bottom: 48px;">macOS와 Windows에서 Liberaflow를 경험해보세요</p>
 
             <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
-                <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="download-btn primary" id="macosBtn" style="padding: 16px 32px; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid #0071e3; background: #0071e3; color: white; min-width: 250px;">
+                <a href="downloads/Liberaflow-1.1.4-macos.dmg" class="download-btn secondary" style="padding: 16px 32px; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid rgba(255, 255, 255, 0.3); background: transparent; color: white; min-width: 250px;">
                     Download for macOS
                 </a>
-                <a href="downloads/Liberaflow_1.1.6_Setup.exe" class="download-btn secondary" id="windowsBtn" style="padding: 16px 32px; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid rgba(255, 255, 255, 0.3); background: transparent; color: white; min-width: 250px;">
+                <a href="downloads/Liberaflow_1.1.6_Setup.exe" class="download-btn secondary" style="padding: 16px 32px; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid rgba(255, 255, 255, 0.3); background: transparent; color: white; min-width: 250px;">
                     Download for Windows
                 </a>
             </div>
