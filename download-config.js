@@ -6,19 +6,32 @@ const DOWNLOAD_LINKS = {
 
 // 다운로드 버튼 업데이트 함수
 function updateDownloadLinks() {
-    // macOS 다운로드 버튼 업데이트
-    const macosButtons = document.querySelectorAll('a[href*="macos.dmg"], a[href*="Download for macOS"]');
-    macosButtons.forEach(button => {
-        if (button.textContent.includes('macOS') || button.textContent.includes('Download for macOS')) {
-            button.href = DOWNLOAD_LINKS.macos;
-        }
-    });
+    // 모든 다운로드 링크를 찾아서 업데이트
+    const allLinks = document.querySelectorAll('a');
 
-    // Windows 다운로드 버튼 업데이트
-    const windowsButtons = document.querySelectorAll('a[href*="Setup.exe"], a[href*="Download for Windows"]');
-    windowsButtons.forEach(button => {
-        if (button.textContent.includes('Windows') || button.textContent.includes('Download for Windows')) {
-            button.href = DOWNLOAD_LINKS.windows;
+    allLinks.forEach(link => {
+        const text = link.textContent.trim();
+        const id = link.id;
+        const href = link.getAttribute('href');
+
+        // macOS 다운로드 버튼 감지
+        if (
+            id === 'macosBtn' ||
+            text.includes('macOS') ||
+            text.includes('Download for macOS') ||
+            (href && href.includes('macos.dmg'))
+        ) {
+            link.href = DOWNLOAD_LINKS.macos;
+        }
+
+        // Windows 다운로드 버튼 감지
+        if (
+            id === 'windowsBtn' ||
+            text.includes('Windows') ||
+            text.includes('Download for Windows') ||
+            (href && href.includes('Setup.exe'))
+        ) {
+            link.href = DOWNLOAD_LINKS.windows;
         }
     });
 }
