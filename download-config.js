@@ -1,6 +1,6 @@
 // 다운로드 링크 중앙 관리
 const DOWNLOAD_LINKS = {
-    macos: 'downloads/Liberaflow-1.1.6-macos.dmg',
+    macos: 'downloads/Liberaflow-1.2.0-macos.dmg',
     windows: 'downloads/Liberaflow_1.1.9_Setup.exe'
 };
 
