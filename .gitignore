@@ -1,0 +1,12 @@
+# Large binary files - use GitHub Releases instead
+downloads/*.dmg
+downloads/*.exe
+downloads/*.zip
+downloads/*.tar.gz
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

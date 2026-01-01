@@ -12,8 +12,8 @@
             <sparkle:version>1.2.0</sparkle:version>
             <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
             <pubDate>Fri, 02 Jan 2026 02:05:00 +0000</pubDate>
-            <enclosure 
-                url="https://liberaflow.com/downloads/Liberaflow-1.2.0-macos.dmg"
+            <enclosure
+                url="https://github.com/youngnu/liberaflow-release/releases/download/v1.2.0/Liberaflow-1.2.0-macos.dmg"
                 type="application/x-apple-diskimage"
                 length="107033983"
                 sparkle:os="macos"
@@ -26,8 +26,8 @@
             <sparkle:version>1.1.9</sparkle:version>
             <sparkle:shortVersionString>1.1.9</sparkle:shortVersionString>
             <pubDate>Thur, 1 Jan 2026 00:00:00 +0000</pubDate>
-            <enclosure 
-                url="https://liberaflow.com/downloads/Liberaflow_1.1.9_Setup.exe"
+            <enclosure
+                url="https://github.com/youngnu/liberaflow-release/releases/download/v1.2.0/Liberaflow_1.1.9_Setup.exe"
                 type="application/octet-stream"
                 length="65612392"
                 sparkle:dsaSignature="MD0CHQC4DuzS8d9aXopJliUSGVq6eMGzbe6L2J4mjE/QAhwXRRlX0TB6Za2mwIP7wVYvQX75jtPqViJzvTJe"
