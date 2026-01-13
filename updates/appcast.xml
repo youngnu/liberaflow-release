@@ -27,8 +27,8 @@
             <enclosure 
                 url="https://github.com/youngnu/liberaflow-release/releases/download/v1.2.0/Liberaflow_1.2.0_Setup.exe"
                 type="application/octet-stream"
-                length="65697080"
-                sparkle:dsaSignature="MDwCHDDxvJNh8Pj+BvKJlQqwal/pEOA/7jFX0R/ID8YCHDmUy3RQ2NBwdfmwjOT/lsUOWgHEB9igRuDYLBo="
+                length="65696840"
+                sparkle:dsaSignature="MD0CHARMjrhxOvoIJJaJ/T7ATqThtgaQbRXyAeSgP/YCHQCZMah0tO54Y8vBE74I3D7WsDpF7OZ8Yhw6I5Or"
                 sparkle:version="1.2.0"
                 sparkle:os="windows" />
         </item>
