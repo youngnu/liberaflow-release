@@ -23,7 +23,7 @@
         <!-- Windows Release Item -->
         <item>
             <title>Version 1.2.0</title>
-            <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+            <pubDate>Wed, 14 Jan 2026 01:00:00 +0000</pubDate>
             <enclosure 
                 url="https://github.com/youngnu/liberaflow-release/releases/download/v1.2.0/Liberaflow_1.2.0_Setup.exe"
                 type="application/octet-stream"
