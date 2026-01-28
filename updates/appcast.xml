@@ -22,14 +22,14 @@
         
         <!-- Windows Release Item -->
         <item>
-            <title>Version 1.2.1</title>
-            <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+            <title>Version 1.2.2</title>
+            <pubDate>Wed, 29 Jan 2026 00:00:00 +0000</pubDate>
             <enclosure 
-                url="https://liberaflow.com/downloads/Liberaflow_1.2.1_Setup.exe"
+                url="https://liberaflow.com/downloads/Liberaflow_1.2.2_Setup.exe"
                 type="application/octet-stream"
-                length="65825536"
-                sparkle:dsaSignature="MDwCHAXoRSOdwPEDT4PW0t3DbZBrElrT6ZwjRyRDg2gCHGBaWBTzJjD54LOq6+k12oDTu3lr0Oonq3DfkG8="
-                sparkle:version="1.2.1"
+                length="65847176"
+                sparkle:dsaSignature="MDwCHFNLIPFR08zR8MZWU/yehplUQhcNSFHbuiVhxfwCHFbvEXVoJKsQoc3r0eo+RnOyljFDUbs1vZos1OY="
+                sparkle:version="1.2.2"
                 sparkle:os="windows" />
         </item>
     </channel>
