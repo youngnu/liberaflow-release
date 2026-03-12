@@ -55,7 +55,7 @@ cp "$WINDOWS_FILE" downloads/
 
 # 2. download-config.js 업데이트
 echo -e "${YELLOW}[2/5] download-config.js 업데이트 중...${NC}"
-cat > download-config.js << EOF
+cat > assets/js/download-config.js << EOF
 // 다운로드 링크 중앙 관리
 const DOWNLOAD_LINKS = {
     macos: 'https://github.com/youngnu/liberaflow-release/releases/download/v${VERSION}/${MACOS_FILENAME}',
@@ -93,7 +93,7 @@ echo -e "${GREEN}✓ download-config.js 업데이트 완료${NC}"
 
 # 3. 변경사항 커밋
 echo -e "${YELLOW}[3/5] Git 변경사항 커밋 중...${NC}"
-git add download-config.js
+git add assets/js/download-config.js
 git commit -m "Update download links to v${VERSION}
 
 macOS: ${MACOS_VERSION}
