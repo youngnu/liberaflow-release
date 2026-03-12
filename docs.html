@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar - Liberaflow</title>
+    <title>Documentation - Liberaflow</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -183,7 +184,7 @@
         /* Main Content */
         .main-content {
             padding: 120px 20px 80px;
-            max-width: 1600px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -237,7 +238,7 @@
 
         /* Content Sections */
         .content-section {
-            margin-bottom: 100px;
+            margin-bottom: 80px;
         }
 
         .section-title {
@@ -248,58 +249,79 @@
             letter-spacing: -0.01em;
         }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .content-text {
-            font-size: 1.125rem;
-            color: #515154;
-            line-height: 1.7;
-        }
-
-        .content-text h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 16px;
-        }
-
-        .content-text ul {
-            margin: 16px 0;
-            padding-left: 20px;
-        }
-
-        .content-text li {
-            margin-bottom: 8px;
-        }
-
-        .media-container {
+        /* Docs Table */
+        .docs-table {
+            width: 100%;
+            border-collapse: collapse;
             background: #ffffff;
             border-radius: 16px;
-            padding: 20px;
+            overflow: hidden;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             border: 1px solid #e5e5e7;
         }
 
-        .media-placeholder {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border: 2px dashed #dee2e6;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #86868b;
-            font-size: 1rem;
-            font-weight: 500;
+        .docs-table thead {
+            background: linear-gradient(135deg, #0071e3, #00a8ff);
+            color: white;
         }
 
+        .docs-table th {
+            padding: 16px 24px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .docs-table td {
+            padding: 14px 24px;
+            border-bottom: 1px solid #f0f0f2;
+            font-size: 0.95rem;
+            color: #515154;
+        }
+
+        .docs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .docs-table tr:hover td {
+            background: rgba(0, 113, 227, 0.03);
+        }
+
+        kbd {
+            display: inline-block;
+            padding: 3px 8px;
+            font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: #1d1d1f;
+            background: #f5f5f7;
+            border: 1px solid #d1d1d6;
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            white-space: nowrap;
+        }
+
+        /* Placeholder Section */
+        .placeholder-card {
+            background: #ffffff;
+            border: 2px dashed #d1d1d6;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            color: #86868b;
+        }
+
+        .placeholder-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #515154;
+            margin-bottom: 8px;
+        }
+
+        .placeholder-card p {
+            font-size: 1rem;
+        }
+
+        /* Download Section */
         .download-section-bottom {
             text-align: center;
             margin-top: 80px;
@@ -369,7 +391,6 @@
         }
 
         @media (max-width: 768px) {
-            /* Navigation */
             .nav-links {
                 display: none;
             }
@@ -387,22 +408,13 @@
                 font-size: 0.9rem;
             }
 
-            /* Main Content */
             .main-content {
                 padding: 100px 20px 60px;
             }
 
-            /* Breadcrumb */
             .breadcrumb {
                 font-size: 0.85rem;
                 margin-bottom: 20px;
-            }
-
-            /* Feature Header */
-            .feature-icon {
-                font-size: 3rem;
-                width: 80px;
-                height: 80px;
             }
 
             .feature-title {
@@ -414,153 +426,195 @@
                 font-size: 1rem;
             }
 
-            /* Section Title */
             .section-title {
-                font-size: 1.75rem;
-                margin-bottom: 32px;
+                font-size: 1.5rem;
+                margin-bottom: 24px;
             }
 
-            /* Content Grid */
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .content-grid.video-large {
-                grid-template-columns: 1fr;
-            }
-
-            /* Content Text */
-            .content-text h3 {
-                font-size: 1.25rem;
-                margin-bottom: 16px;
-            }
-
-            .content-text p,
-            .content-text li {
-                font-size: 0.95rem;
-            }
-
-            /* Media Container */
-            .media-container img,
-            .media-container video {
-                max-height: 300px;
-                object-fit: contain;
-                width: 100% !important;
-            }
-
-            /* Content Section */
             .content-section {
                 margin-bottom: 60px;
-                padding: 0 10px;
             }
 
-            /* Feature Cards Grid */
-            .feature-cards {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .docs-table th,
+            .docs-table td {
+                padding: 10px 14px;
+                font-size: 0.85rem;
             }
 
-            .feature-card h4 {
-                font-size: 1.1rem;
-            }
-
-            .feature-card p {
-                font-size: 0.9rem;
+            kbd {
+                font-size: 0.75rem;
+                padding: 2px 6px;
             }
         }
     </style>
-    <script src="../download-config.js"></script>
+    <script src="download-config.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../" class="nav-logo">
-                <img src="../Liberaflow_logo.png" alt="Liberaflow Logo" class="nav-logo-img">
+            <a href="index.html" class="nav-logo">
+                <img src="Liberaflow_logo.png" alt="Liberaflow Logo" class="nav-logo-img">
                 Liberaflow
             </a>
             <ul class="nav-links">
-                <li><a href="../index.html#vision">Why Liberaflow</a></li>
+                <li><a href="index.html#vision">Why Liberaflow</a></li>
                 <li class="dropdown">
                     <a href="#features" class="dropdown-btn">Features</a>
                     <div class="dropdown-content">
-                        <a href="liberaflow-note.html" class="dropdown-item">🧩 Liberaflow Note</a>
-                        <a href="space.html" class="dropdown-item">🌌 Space</a>
-                        <a href="mind-map.html" class="dropdown-item">🧠 Mind Map</a>
-                        <a href="calendar.html" class="dropdown-item">📅 Calendar</a>
-                        <a href="tasks.html" class="dropdown-item">✅ Tasks</a>
-                        <a href="ai-chat.html" class="dropdown-item">💬 AI Chat</a>
-                        <a href="python-automation.html" class="dropdown-item">🤖 Python Automation</a>
+                        <a href="features/liberaflow-note.html" class="dropdown-item">🧩 Liberaflow Note</a>
+                        <a href="features/space.html" class="dropdown-item">🌌 Space</a>
+                        <a href="features/mind-map.html" class="dropdown-item">🧠 Mind Map</a>
+                        <a href="features/calendar.html" class="dropdown-item">📅 Calendar</a>
+                        <a href="features/tasks.html" class="dropdown-item">✅ Tasks</a>
+                        <a href="features/ai-chat.html" class="dropdown-item">💬 AI Chat</a>
+                        <a href="features/python-automation.html" class="dropdown-item">🤖 Python Automation</a>
                     </div>
                 </li>
-                <li><a href="../index.html#faq">FAQ</a></li>
-                <li><a href="../docs.html">Docs</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="docs.html" style="color: #0071e3;">Docs</a></li>
             </ul>
-            <a href="../index.html#download" class="nav-cta">Download</a>
+            <a href="index.html#download" class="nav-cta">Download</a>
         </div>
     </nav>
 
     <main class="main-content">
         <!-- Breadcrumb -->
         <div class="breadcrumb">
-            <a href="../">Home</a>
+            <a href="index.html">Home</a>
             <span>/</span>
-            <a href="../index.html#features">Features</a>
-            <span>/</span>
-            <span>Calendar</span>
+            <span>Docs</span>
         </div>
 
         <!-- Feature Header -->
         <div class="feature-header">
-            <div class="feature-icon">📅</div>
-            <h1 class="feature-title">Calendar</h1>
-            <p class="feature-subtitle">팀원을 팔로우하고 일정을 공유하세요</p>
+            <div class="feature-icon">📖</div>
+            <h1 class="feature-title">Documentation</h1>
+            <p class="feature-subtitle">Liberaflow 사용 가이드 및 단축키 안내</p>
         </div>
 
-        <!-- Content Sections -->
-        <div class="content-section">
-            <h2 class="section-title">다양한 캘런더 위젯 제공</h2>
-            <div class="content-grid">
-                <div class="content-text">
-                    <h3>Day, Week, Month, timeLine까지</h3>
-                    <p>다양한 캘린더 위젯으로 일정을 관리할 수 있습니다.</p>
-                </div>
-                <div class="media-container">
-                    <video width="100%" height="auto" autoplay loop muted playsinline style="border-radius: 12px;">
-                        <source src="../calendar_first.mp4" type="video/mp4">
-                        스마트 스케줄링 인터페이스 비디오
-                    </video>
-                </div>
+        <!-- Note Editing Commands -->
+        <div class="content-section" id="note-commands">
+            <h2 class="section-title">노트편집 명령어</h2>
+            <table class="docs-table">
+                <thead>
+                    <tr>
+                        <th>단축키 / 명령어</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><kbd>/</kbd></td>
+                        <td>슬래시 명령어</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>@</kbd></td>
+                        <td>노트 간 연결 (제텔카스텐 링크)</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>Z</kbd></td>
+                        <td>실행취소</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>#</kbd> + 스페이스바</td>
+                        <td>제목 1</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>##</kbd> + 스페이스바</td>
+                        <td>제목 2</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>###</kbd> + 스페이스바</td>
+                        <td>제목 3</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>####</kbd> + 스페이스바</td>
+                        <td>제목 4</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>#####</kbd> + 스페이스바</td>
+                        <td>제목 5</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>&gt;</kbd> + 스페이스바</td>
+                        <td>인용구</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>```</kbd> + 스페이스바</td>
+                        <td>코드블록</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>[ ]</kbd> + 스페이스바</td>
+                        <td>할 일 목록 (체크리스트)</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>-</kbd> 또는 <kbd>*</kbd> + 스페이스바</td>
+                        <td>불릿 리스트</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>1.</kbd> + 스페이스바</td>
+                        <td>숫자 리스트</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Tab</kbd></td>
+                        <td>들여쓰기</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Shift</kbd> + <kbd>Tab</kbd></td>
+                        <td>내여쓰기</td>
+                    </tr>
+                    <tr>
+                        <td>블록선택 후 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>B</kbd></td>
+                        <td>굵게 (Bold)</td>
+                    </tr>
+                    <tr>
+                        <td>블록선택 후 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>U</kbd></td>
+                        <td>밑줄 (Underline)</td>
+                    </tr>
+                    <tr>
+                        <td>블록선택 후 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>I</kbd></td>
+                        <td>기울임꼴 (Italic)</td>
+                    </tr>
+                    <tr>
+                        <td>블록선택 후 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></td>
+                        <td>취소선 (Strikethrough)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Calendar Shortcuts -->
+        <div class="content-section" id="calendar">
+            <h2 class="section-title">캘린더 사용법</h2>
+            <div class="placeholder-card">
+                <h3>Coming Soon</h3>
+                <p>캘린더 단축키 및 사용 가이드가 곧 추가됩니다.</p>
             </div>
         </div>
 
-        <div class="content-section">
-            <h2 class="section-title">공유 캘린더</h2>
-            <div class="content-grid">
-                <div class="media-container">
-                    <video width="100%" height="auto" autoplay loop muted playsinline style="border-radius: 12px;">
-                        <source src="../calendar_second.mp4" type="video/mp4">
-                        통합 캘린더 기능 데모 비디오
-                    </video>
-                </div>
-                <div class="content-text">
-                    <h3>팀원과 일정을 공유</h3>
-                    <ul>
-                        <li><strong>팀원 검색:</strong> 손쉽게 같이 일할 팀원을 검색하고 팔로우</li>
-                        <li><strong>일정 생성:</strong> 간편하게 일정을 생성</li>
-                        <li><strong>일정 공유:</strong> 팀원과 일정을 공유</li>
-                        <li><strong>Google 캘린더 연동:</strong> Google 캘린더와의 연동을 통해 일정을 쉽게 가져오고 공유</li>
-                    </ul>
-                    <p>팀원들과의 일정을 공유하고 협업을 강화하세요.<br>drag & drop 그리고 resize로 일정을 관리할 수 있습니다.</p>
-                </div>
+        <!-- AI Chat Tips -->
+        <div class="content-section" id="ai-chat">
+            <h2 class="section-title">AI Chat 사용 팁</h2>
+            <div class="placeholder-card">
+                <h3>Coming Soon</h3>
+                <p>AI Chat 활용 가이드가 곧 추가됩니다.</p>
+            </div>
+        </div>
+
+        <!-- Automation Guide -->
+        <div class="content-section" id="automation">
+            <h2 class="section-title">Automation 가이드</h2>
+            <div class="placeholder-card">
+                <h3>Coming Soon</h3>
+                <p>Python Automation 사용 가이드가 곧 추가됩니다.</p>
             </div>
         </div>
 
         <!-- Download Section -->
         <div class="download-section-bottom">
             <h2 class="download-title-bottom">지금 다운로드하세요</h2>
-            <p class="download-subtitle-bottom">Calendar 기능을 포함한 모든 기능을 경험해보세요</p>
+            <p class="download-subtitle-bottom">Liberaflow의 모든 기능을 경험해보세요</p>
             <div class="download-buttons-bottom">
                 <a href="#" class="download-btn-bottom primary" id="macosBtn">
                     Download for macOS
@@ -584,14 +638,12 @@
                     dropdown.classList.toggle('open');
                 });
 
-                // Close dropdown when clicking outside
                 document.addEventListener('click', function(e) {
                     if (!dropdown.contains(e.target)) {
                         dropdown.classList.remove('open');
                     }
                 });
 
-                // Close dropdown when pressing escape
                 document.addEventListener('keydown', function(e) {
                     if (e.key === 'Escape') {
                         dropdown.classList.remove('open');
@@ -602,13 +654,9 @@
             // Platform detection for download buttons
             function detectPlatform() {
                 const userAgent = navigator.userAgent.toLowerCase();
-                if (userAgent.includes('mac')) {
-                    return 'macos';
-                } else if (userAgent.includes('win')) {
-                    return 'windows';
-                } else {
-                    return 'unknown';
-                }
+                if (userAgent.includes('mac')) return 'macos';
+                if (userAgent.includes('win')) return 'windows';
+                return 'unknown';
             }
 
             function updateDownloadButtons() {
