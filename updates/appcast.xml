@@ -21,15 +21,25 @@
         </item>
         
         <!-- Windows Release Item -->
+        <!--
+            Hosting note (1.2.4~):
+            Windows .exe(127MB)는 GitHub의 100MB 파일 크기 제한을 초과하므로
+            liberaflow-release repo (GitHub Pages)에 올릴 수 없다.
+            대신 Cloudflare R2 + Custom Domain (downloads.liberaflow.com) 을 사용.
+            - R2 bucket: liberaflow-downloads
+            - 다운로드 트래픽 무료 (R2 zero egress)
+            - 새 Windows 빌드 배포 시: R2에 .exe 업로드 → 이 url/length 갱신
+        -->
+
         <item>
-            <title>Version 1.2.3</title>
-            <pubDate>Tue, 17 Mar 2026 02:05:00 +0000</pubDate>
+            <title>Version 1.2.4</title>
+            <pubDate>Tue, 14 Apr 2026 13:50:00 +0000</pubDate>
             <enclosure 
-                url="https://liberaflow.com/downloads/Liberaflow_1.2.3_Setup.exe"
+                url="https://downloads.liberaflow.com/Liberaflow_1.2.4_Setup.exe"
                 type="application/octet-stream"
-                length="64868576"
-                sparkle:dsaSignature="MD0CHANv/IFjzwzLGl3BNueuIF8Up6QECep6kiCtwooCHQCZ5Xd6iRYhIlIugHf3kh5T0bJbPfxg5dSk4wI2"
-                sparkle:version="1.2.3"
+                length="127413528"
+                sparkle:dsaSignature="MD0CHHC0ktr6k6avS4H8LYe6oMJHQqL6irqEcWrTbbQCHQCBJ7vhxZ6W6y8ru0O1P0+TRqf6aC2ZUpRdT6Ao"
+                sparkle:version="1.2.4"
                 sparkle:os="windows" />
         </item>
     </channel>
