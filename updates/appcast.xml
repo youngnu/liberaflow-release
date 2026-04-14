@@ -37,8 +37,8 @@
             <enclosure 
                 url="https://downloads.liberaflow.com/Liberaflow_1.2.4_Setup.exe"
                 type="application/octet-stream"
-                length="127413528"
-                sparkle:dsaSignature="MD0CHHC0ktr6k6avS4H8LYe6oMJHQqL6irqEcWrTbbQCHQCBJ7vhxZ6W6y8ru0O1P0+TRqf6aC2ZUpRdT6Ao"
+                length="127444008"
+                sparkle:dsaSignature="MD0CHFpFPsdDfXuNGXaPtPlRA4TJNcCUtoyz8e/wcYYCHQCnU9kYnbbSVKSO3aP6q7B6uAOrwFAmx1TcCe4P"
                 sparkle:version="1.2.4"
                 sparkle:os="windows" />
         </item>
