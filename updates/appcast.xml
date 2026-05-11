@@ -32,14 +32,14 @@
         -->
 
         <item>
-            <title>Version 1.2.8</title>
-            <pubDate>Thur, 7 May 2026 22:30:00 +0000</pubDate>
+            <title>Version 1.2.9</title>
+            <pubDate>Mon, 11 May 2026 22:10:00 +0000</pubDate>
             <enclosure 
-                url="https://downloads.liberaflow.com/Liberaflow_1.2.8_Setup.exe"
+                url="https://downloads.liberaflow.com/Liberaflow_1.2.9_Setup.exe"
                 type="application/octet-stream"
-                length="136871120"
-                sparkle:dsaSignature="MDwCHAalUkd2njHwWLmf8IUN7gUf2tF6sDnaaIpnif4CHDrYSCqjokt2HHWJpyOIxmvdAZSCN8NRkhn4zBs="
-                sparkle:version="1.2.8"
+                length="135652920"
+                sparkle:dsaSignature="MDwCHBatrUIStDGpZjWOvRahnmUGM9iTzRCuwD1y4kICHD/dIWq2TM05FWV2UmsXXgpd5ifLrPmGEqauvws="
+                sparkle:version="1.2.9"
                 sparkle:os="windows" />
         </item>
     </channel>
