@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberaflow Browser Automation 개인정보처리방침</title>
+    <meta name="description" content="Liberaflow Browser Automation의 브라우저 데이터 처리, 로컬 저장, 화면 캡처 및 선택적 AI 전송에 관한 개인정보처리방침입니다.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://liberaflow.com/privacy/browser-automation">
+    <meta property="og:title" content="Liberaflow Browser Automation 개인정보처리방침">
+    <meta property="og:description" content="브라우저 자동화 확장의 데이터 처리 및 사용자 선택에 관한 안내">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://liberaflow.com/privacy/browser-automation">
+    <meta property="og:image" content="https://liberaflow.com/privacy/browser-automation/og.png">
+    <meta property="og:site_name" content="Liberaflow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Liberaflow Browser Automation Privacy &amp; Data Controls">
+    <meta name="twitter:description" content="How Liberaflow Browser Automation processes browser data, local storage, screenshots and optional AI transfers.">
+    <meta name="twitter:image" content="https://liberaflow.com/privacy/browser-automation/og.png">
+    <style>
+        :root {
+            color-scheme: light;
+            --background: #f5f7fb;
+            --surface: #ffffff;
+            --surface-soft: #f8fafc;
+            --text: #172033;
+            --muted: #667085;
+            --line: #e3e8ef;
+            --brand: #1769e0;
+            --brand-dark: #0e4fae;
+            --brand-soft: #eef5ff;
+            --success: #087a55;
+            --success-soft: #edf9f4;
+            --shadow: 0 18px 50px rgba(30, 52, 84, 0.09);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 5%, rgba(23, 105, 224, 0.08), transparent 28rem),
+                var(--background);
+            font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Segoe UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
+            word-break: keep-all;
+        }
+
+        a {
+            color: var(--brand);
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: var(--brand-dark);
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid rgba(227, 232, 239, 0.92);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(18px);
+        }
+
+        .header-inner {
+            width: min(1120px, calc(100% - 40px));
+            min-height: 68px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 760;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+        }
+
+        .language-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .language-links a {
+            padding: 7px 11px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 650;
+            text-decoration: none;
+        }
+
+        .language-links a:hover,
+        .language-links a:first-child {
+            color: var(--brand-dark);
+            background: var(--brand-soft);
+        }
+
+        main {
+            width: min(960px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 76px 0 96px;
+        }
+
+        .hero {
+            margin-bottom: 34px;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--brand);
+            font-size: 14px;
+            font-weight: 760;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 820px;
+            margin: 0;
+            font-size: clamp(2.1rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            letter-spacing: -0.045em;
+        }
+
+        .lead {
+            max-width: 760px;
+            margin: 20px 0 0;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .date-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin: 34px 0;
+        }
+
+        .summary-card {
+            min-height: 132px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--surface);
+            box-shadow: 0 8px 24px rgba(30, 52, 84, 0.045);
+        }
+
+        .summary-card strong {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 15px;
+        }
+
+        .summary-card span {
+            display: block;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .notice {
+            margin: 26px 0;
+            padding: 18px 20px;
+            border: 1px solid #cbe9dd;
+            border-radius: 16px;
+            background: var(--success-soft);
+            color: #155f48;
+        }
+
+        .policy {
+            padding: 34px clamp(20px, 5vw, 52px);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .policy + .policy {
+            margin-top: 42px;
+        }
+
+        .policy-heading {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .policy-heading h2 {
+            margin: 0;
+            font-size: clamp(1.65rem, 4vw, 2.25rem);
+            letter-spacing: -0.035em;
+        }
+
+        .language-badge {
+            flex: none;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--brand-soft);
+            color: var(--brand-dark);
+            font-size: 12px;
+            font-weight: 760;
+        }
+
+        section {
+            scroll-margin-top: 94px;
+        }
+
+        .policy section {
+            padding-top: 32px;
+        }
+
+        h3 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            letter-spacing: -0.025em;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        ul {
+            margin: 12px 0;
+            padding-left: 22px;
+        }
+
+        li + li {
+            margin-top: 8px;
+        }
+
+        .table-wrap {
+            margin-top: 16px;
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 680px;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th,
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        th {
+            background: var(--surface-soft);
+            color: #344054;
+            font-weight: 720;
+        }
+
+        .provider-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .provider-links a {
+            padding: 7px 11px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--surface-soft);
+            font-size: 13px;
+            font-weight: 650;
+            text-decoration: none;
+        }
+
+        .contact-card {
+            padding: 18px 20px;
+            border-radius: 15px;
+            background: var(--surface-soft);
+        }
+
+        .contact-card p {
+            margin: 3px 0;
+        }
+
+        footer {
+            padding: 26px 20px 42px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width: 820px) {
+            .summary-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            body {
+                word-break: normal;
+            }
+
+            .header-inner,
+            main {
+                width: min(100% - 28px, 960px);
+            }
+
+            .header-inner {
+                min-height: 62px;
+            }
+
+            .brand {
+                font-size: 16px;
+            }
+
+            .brand img {
+                width: 30px;
+                height: 30px;
+            }
+
+            main {
+                padding-top: 50px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-card {
+                min-height: auto;
+            }
+
+            .policy {
+                border-radius: 18px;
+            }
+
+            .policy-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="../../" aria-label="Liberaflow 홈으로 이동">
+                <img src="../../assets/images/Liberaflow_logo.png" alt="">
+                <span>Liberaflow</span>
+            </a>
+            <nav class="language-links" aria-label="언어 선택">
+                <a href="#ko" lang="ko">한국어</a>
+                <a href="#en" lang="en">English</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <p class="eyebrow">Privacy &amp; data controls</p>
+            <h1>Liberaflow Browser Automation 개인정보처리방침</h1>
+            <p class="lead">
+                사용자가 선택한 브라우저 탭의 작업을 기록하고 재생할 때 어떤 정보가 처리되는지,
+                어디에 저장되는지, 언제 외부 AI 제공자에게 전송될 수 있는지 설명합니다.
+            </p>
+            <div class="date-row">
+                <span>시행일: 2026년 8월 10일</span>
+                <span>최종 업데이트: 2026년 8월 10일</span>
+            </div>
+        </div>
+
+        <div class="summary-grid" aria-label="핵심 개인정보 보호 원칙">
+            <div class="summary-card">
+                <strong>명시적으로 시작</strong>
+                <span>탭 선택, 사전 고지와 동의 없이는 녹화를 시작하지 않습니다.</span>
+            </div>
+            <div class="summary-card">
+                <strong>로컬 우선</strong>
+                <span>녹화 데이터는 같은 컴퓨터의 데스크톱 앱으로 전달되어 암호화 저장됩니다.</span>
+            </div>
+            <div class="summary-card">
+                <strong>화면 캡처 기본 꺼짐</strong>
+                <span>녹화용과 AI 자가치유용 화면 캡처를 각각 따로 켜야 합니다.</span>
+            </div>
+            <div class="summary-card">
+                <strong>AI 전송 전 확인</strong>
+                <span>제공자와 데이터 항목을 먼저 표시하며, 취소하면 전송하지 않습니다.</span>
+            </div>
+        </div>
+
+        <div class="notice">
+            Liberaflow는 브라우저 자동화 데이터를 판매하거나 맞춤형 광고, 신용평가 또는 대출 판단에 사용하지 않습니다.
+        </div>
+
+        <article id="ko" class="policy" lang="ko">
+            <div class="policy-heading">
+                <h2>개인정보처리방침</h2>
+                <span class="language-badge">한국어 · 기본</span>
+            </div>
+
+            <section>
+                <h3>1. 적용 범위와 운영자</h3>
+                <p>
+                    이 방침은 <strong>Liberaflow Browser Automation</strong> 브라우저 확장 프로그램과
+                    해당 확장을 연결해 사용하는 Liberaflow 데스크톱 앱의 브라우저 자동화 기능에 적용됩니다.
+                    운영자는 Liberaflow입니다.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. 처리하는 정보</h3>
+                <p>
+                    확장은 사용자가 탭을 선택하고 사전 고지에 동의해 녹화를 시작하거나, 저장된 작업을
+                    재생하도록 요청한 경우에만 해당 탭의 자동화 정보를 처리합니다.
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>처리될 수 있는 항목</th>
+                                <th>목적</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>브라우저 문맥</td>
+                                <td>승인된 탭의 URL, 페이지 제목, 탭·창 식별자, 이동 기록과 시각</td>
+                                <td>대상 탭 고정, 페이지 이동 기록 및 재생</td>
+                            </tr>
+                            <tr>
+                                <td>사용자 활동</td>
+                                <td>클릭, 양식 입력, 선택, 체크, 제출, 키 입력, 다이얼로그 응답</td>
+                                <td>워크플로 단계 생성 및 사용자가 요청한 재생</td>
+                            </tr>
+                            <tr>
+                                <td>웹사이트 콘텐츠</td>
+                                <td>요소의 역할·접근 가능한 이름·selector 후보, 필요한 DOM 또는 페이지 텍스트</td>
+                                <td>클릭 대상 식별, 재생 및 사용자가 요청한 AI 보조 기능</td>
+                            </tr>
+                            <tr>
+                                <td>화면 이미지</td>
+                                <td>클릭 전후 화면 또는 재생 실패 화면</td>
+                                <td>사용자 가이드 생성 또는 사용자가 선택한 AI 자가치유</td>
+                            </tr>
+                            <tr>
+                                <td>설정·진단</td>
+                                <td>연결·녹화 상태, 화면 캡처 선택, 동의 기록, 민감정보가 제거된 오류·실행 기록</td>
+                                <td>선택 유지, 연결 복구, 오류 확인과 데이터 삭제</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    사용자가 선택한 웹페이지의 내용에 따라 개인 식별 정보, 건강 정보, 금융·결제 정보,
+                    인증 정보, 개인적인 커뮤니케이션, 위치, 웹 기록, 사용자 활동 또는 기타 웹사이트 콘텐츠가
+                    포함될 수 있습니다. 비밀번호, 일회용 인증 코드, 카드 보안 코드 및 인증 토큰은 구조화된
+                    이벤트 기록에서 제외하며 URL의 민감한 query와 fragment를 제거합니다. 다만 사용자가
+                    화면 캡처를 별도로 켜면 현재 화면에 보이는 정보가 이미지에 포함될 수 있습니다.
+                </p>
+            </section>
+
+            <section>
+                <h3>3. 처리 목적</h3>
+                <ul>
+                    <li>사용자가 승인한 브라우저 탭의 클릭·입력·선택·이동을 워크플로로 기록</li>
+                    <li>저장된 워크플로를 사용자의 요청에 따라 같은 브라우저에서 재생</li>
+                    <li>사용자가 선택한 화면 이미지를 단계 확인 및 가이드 문서 작성에 사용</li>
+                    <li>사용자가 별도로 동의한 경우 AI를 이용한 단계 편집, 코드 생성, 읽기 또는 재생 실패 복구</li>
+                    <li>연결 유지, 오류 진단, 보안 경계 적용 및 사용자가 요청한 삭제 수행</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>4. 사용자 선택과 수집 시점</h3>
+                <ul>
+                    <li>녹화는 사용자가 대상 탭을 선택하고 제품 내 고지를 확인한 뒤 동의해야 시작됩니다.</li>
+                    <li>클릭 전후 화면 캡처와 AI 자가치유 화면 캡처는 기본적으로 꺼져 있고 서로 별도 설정입니다.</li>
+                    <li>AI 기능은 선택한 제공자, 목적, 전송 데이터와 화면 이미지 포함 여부를 전송 전에 표시합니다.</li>
+                    <li>사용자는 동의하지 않고 로컬 녹화·재생·수동 편집을 계속 사용할 수 있으며, 설정에서 기존 AI 동의를 철회할 수 있습니다.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>5. 저장 위치와 보유 기간</h3>
+                <ul>
+                    <li>확장은 Chrome의 Native Messaging 통로를 통해 같은 컴퓨터에서 실행 중인 등록된 Liberaflow 데스크톱 앱과 통신합니다.</li>
+                    <li>연결·녹화 상태와 두 화면 캡처 선택은 확장 전용 로컬 저장소에 저장됩니다. 확장은 녹화된 워크플로 또는 비밀 자격증명을 Chrome 저장소에 저장하지 않습니다.</li>
+                    <li>워크플로, 실행 기록, 설정, 저장형 화면 이미지와 생성물은 운영체제의 Application Support/AppData 영역에 AES-256-GCM으로 암호화됩니다. 복호화 키는 별도의 운영체제 보안 저장소에 보관됩니다.</li>
+                    <li>자동 정리는 기본적으로 켜져 있으며 기본 보유 기간은 14일입니다. 사용자는 설정에서 기간을 변경하거나 자동 정리를 끌 수 있습니다.</li>
+                    <li>AI 자가치유를 위해 만든 임시 화면 이미지는 요청 성공 또는 실패와 관계없이 사용 직후 삭제됩니다.</li>
+                    <li>사용자는 워크플로를 개별 삭제하거나, 설정에서 브라우저 자동화 데이터와 암호화 키를 모두 삭제할 수 있습니다.</li>
+                    <li>확장 설정은 사용자가 변경하거나 브라우저에서 확장 데이터를 삭제 또는 확장을 제거할 때까지 남을 수 있습니다.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>6. 외부 제공자와 선택적 전송</h3>
+                <p>
+                    녹화 자체는 로컬에서 이루어집니다. 사용자가 AI 기능을 직접 실행하고 전송에 동의한 경우에만
+                    선택한 제공자에게 기능 수행에 필요한 데이터가 전달됩니다. 기능에 따라 민감정보가 제거된 URL,
+                    DOM 또는 페이지 텍스트, 워크플로 단계, 입력값, 사용자의 요청 문구와 사용자가 허용한 화면 이미지가
+                    포함될 수 있습니다.
+                </p>
+                <p>
+                    현재 선택 가능한 제공자는 OpenAI(Codex), Anthropic(Claude) 및 로그인한 사용자에게 제공되는
+                    OpenRouter입니다. 실제 제공자와 데이터 항목은 앱이 전송 직전에 표시합니다. 외부 제공자의 처리 지역,
+                    보유 기간 및 모델 개선 사용 여부는 사용자의 계정 유형·설정과 각 제공자의 최신 정책에 따릅니다.
+                    사용자는 전송 화면에서 취소하여 국외 전송을 거부할 수 있으며, 이 경우 해당 AI 기능만 실행되지 않습니다.
+                </p>
+                <div class="provider-links" aria-label="AI 제공자 개인정보처리방침">
+                    <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noreferrer">OpenAI Privacy</a>
+                    <a href="https://privacy.anthropic.com/" target="_blank" rel="noreferrer">Anthropic Privacy</a>
+                    <a href="https://openrouter.ai/privacy" target="_blank" rel="noreferrer">OpenRouter Privacy</a>
+                </div>
+                <p>
+                    Liberaflow는 사용자 데이터를 판매하지 않으며, 맞춤형 광고, 신용평가 또는 대출 판단을 위해
+                    사용하거나 이전하지 않습니다. 법령상 의무가 있는 경우를 제외하고 공개한 단일 목적과 무관하게
+                    사용자 데이터를 제공하지 않습니다.
+                </p>
+            </section>
+
+            <section>
+                <h3>7. Chrome Web Store Limited Use</h3>
+                <p>
+                    Chrome API에서 받은 정보의 사용 및 전송은 Chrome Web Store 사용자 데이터 정책과 Limited Use
+                    요건을 준수합니다. 해당 정보는 공개된 브라우저 자동화 기능을 제공하거나 개선하기 위한 목적으로만
+                    사용하며, 사용자 데이터 판매, 맞춤형 광고, 신용 판단 또는 허용되지 않은 사람의 열람에 사용하지 않습니다.
+                </p>
+                <p>
+                    <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use" target="_blank" rel="noreferrer">Chrome Web Store Limited Use 정책 보기</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>8. 파기 방법</h3>
+                <p>
+                    사용자가 삭제를 요청하거나 설정한 보유 기간이 지나면 관련 암호화 파일을 로컬 저장소에서 삭제합니다.
+                    전체 삭제를 선택하면 브라우저 자동화 데이터 디렉터리와 암호화 키를 함께 제거합니다. AI 요청용 임시
+                    화면 이미지는 사용 직후 삭제합니다. 외부 AI 제공자에게 이미 전송된 데이터의 삭제는 해당 제공자의
+                    계정 설정과 개인정보처리방침에 따릅니다.
+                </p>
+            </section>
+
+            <section>
+                <h3>9. 이용자의 권리와 행사 방법</h3>
+                <ul>
+                    <li>녹화·재생을 중지하고 화면 캡처 설정을 언제든 끌 수 있습니다.</li>
+                    <li>AI 전송 화면에서 취소하거나 설정에서 저장된 AI 동의를 철회할 수 있습니다.</li>
+                    <li>저장된 워크플로와 실행 기록을 개별 삭제하거나 브라우저 자동화 데이터를 모두 삭제할 수 있습니다.</li>
+                    <li>개인정보 처리에 관한 열람·정정·삭제·처리정지 요청은 아래 연락처로 접수할 수 있습니다.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>10. 안전성 확보 조치</h3>
+                <ul>
+                    <li>승인된 탭과 최상위 frame에만 녹화·재생 세션을 고정합니다.</li>
+                    <li>Native Messaging 상대와 앱 세션을 검증하고 연결이 끊기면 녹화·재생을 안전 상태로 중지합니다.</li>
+                    <li>저장 데이터는 AES-256-GCM으로 암호화하고 키는 운영체제 보안 저장소에 분리합니다.</li>
+                    <li>비밀번호·OTP·카드 보안 코드·인증 토큰과 민감한 URL 값을 구조화된 기록 및 진단 로그에서 제거합니다.</li>
+                    <li>화면 캡처와 외부 AI 전송은 기본 꺼짐 및 별도 동의 원칙을 적용합니다.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>11. 자동 수집 장치</h3>
+                <p>
+                    이 개인정보처리방침 페이지는 광고·분석용 쿠키를 설치하지 않습니다. 브라우저 확장은 웹사이트의
+                    쿠키나 로컬 저장소 값을 읽기 위한 권한을 요청하지 않습니다.
+                </p>
+            </section>
+
+            <section>
+                <h3>12. 방침 변경</h3>
+                <p>
+                    처리 항목, 목적, 제공자 또는 사용자 선택 방식이 변경되면 시행 전에 이 페이지와 제품 내 고지를
+                    업데이트합니다. 중요한 변경으로 새로운 데이터 처리가 필요한 경우에는 기존 동의와 별도로 다시 알리고
+                    필요한 동의를 받습니다.
+                </p>
+            </section>
+
+            <section>
+                <h3>13. 개인정보 보호 문의</h3>
+                <div class="contact-card">
+                    <p><strong>운영자 및 개인정보 보호 담당:</strong> Liberaflow</p>
+                    <p><strong>이메일:</strong> <a href="mailto:qyahzn2004@gmail.com">qyahzn2004@gmail.com</a></p>
+                </div>
+            </section>
+        </article>
+
+        <article id="en" class="policy" lang="en">
+            <div class="policy-heading">
+                <h2>Privacy Policy</h2>
+                <span class="language-badge">English</span>
+            </div>
+
+            <section>
+                <h3>1. Scope and operator</h3>
+                <p>
+                    This policy applies to the <strong>Liberaflow Browser Automation</strong> browser extension
+                    and the Browser Automation features of the Liberaflow desktop application used with it.
+                    The operator is Liberaflow.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Information processed</h3>
+                <p>
+                    The extension processes automation information from a browser tab only after the user selects
+                    that tab and consents to start recording, or asks to replay a saved workflow.
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Information that may be processed</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Browser context</td>
+                                <td>Approved tab URL, page title, tab and window identifiers, navigation history and timestamps</td>
+                                <td>Pinning the approved tab and recording or replaying navigation</td>
+                            </tr>
+                            <tr>
+                                <td>User activity</td>
+                                <td>Clicks, form inputs, selections, checks, submissions, key presses and dialog responses</td>
+                                <td>Creating workflow steps and performing user-requested replay</td>
+                            </tr>
+                            <tr>
+                                <td>Website content</td>
+                                <td>Element role, accessible name, selector candidates and necessary DOM or page text</td>
+                                <td>Identifying targets, replay and user-requested AI assistance</td>
+                            </tr>
+                            <tr>
+                                <td>Screenshots</td>
+                                <td>Before-and-after action images or a failed replay screen</td>
+                                <td>User guides or user-selected AI-assisted recovery</td>
+                            </tr>
+                            <tr>
+                                <td>Settings and diagnostics</td>
+                                <td>Connection and recording state, screenshot choices, consent records and sanitized error or run records</td>
+                                <td>Remembering choices, connection recovery, diagnostics and deletion</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    Depending on the page selected by the user, this information may contain personally identifiable,
+                    health, financial and payment, authentication, personal communication, location, web history,
+                    user activity or other website content. Passwords, one-time codes, card security codes and
+                    authentication tokens are excluded from structured event capture, and sensitive URL query and
+                    fragment values are removed. A screenshot separately enabled by the user may still include
+                    information visible on the screen.
+                </p>
+            </section>
+
+            <section>
+                <h3>3. Purposes</h3>
+                <ul>
+                    <li>Record clicks, inputs, selections and navigation in a user-approved browser tab as a workflow.</li>
+                    <li>Replay a saved workflow in the same browser when requested by the user.</li>
+                    <li>Use screenshots selected by the user for step review and guide creation.</li>
+                    <li>Provide AI-assisted editing, code generation, reading or failed-step recovery after separate consent.</li>
+                    <li>Maintain the connection, diagnose errors, enforce security boundaries and perform requested deletion.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>4. User choices and timing</h3>
+                <ul>
+                    <li>Recording starts only after the user selects a tab, reviews the in-product disclosure and consents.</li>
+                    <li>Before-and-after recording screenshots and AI recovery screenshots are off by default and use separate settings.</li>
+                    <li>Before an AI transmission, the app shows the provider, purpose, data categories and whether a screenshot is included.</li>
+                    <li>The user may decline and continue using local recording, replay and manual editing, and may revoke saved AI consent in Settings.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>5. Storage and retention</h3>
+                <ul>
+                    <li>The extension communicates with the registered Liberaflow desktop app on the same computer through Chrome Native Messaging.</li>
+                    <li>Connection and recording state and the two screenshot choices are stored in extension-local storage. Recorded workflows and secret credentials are not stored in Chrome storage.</li>
+                    <li>Workflows, run records, settings, persistent screenshots and generated artifacts are encrypted with AES-256-GCM in the operating system's Application Support/AppData area. The decryption key is kept separately in operating-system secure storage.</li>
+                    <li>Automatic cleanup is enabled by default with a default retention period of 14 days. The user may change the period or turn automatic cleanup off.</li>
+                    <li>A temporary AI recovery screenshot is deleted immediately after use, whether the request succeeds or fails.</li>
+                    <li>The user may delete workflows individually or delete all Browser Automation data and the encryption key in Settings.</li>
+                    <li>Extension settings may remain until the user changes them, clears extension data or uninstalls the extension.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>6. External providers and optional transfers</h3>
+                <p>
+                    Recording itself occurs locally. Data is sent to a selected provider only when the user directly
+                    invokes an AI feature and consents to the transmission. Depending on the feature, this may include
+                    sanitized URL context, DOM or page text, workflow steps, input values, the user's instruction and
+                    a screenshot the user has allowed.
+                </p>
+                <p>
+                    Currently available providers are OpenAI (Codex), Anthropic (Claude), and OpenRouter for signed-in
+                    users. The app identifies the actual provider and data categories immediately before transmission.
+                    Processing location, retention and model-improvement practices depend on the user's account type,
+                    settings and the provider's current policy. The user may refuse an international transfer by
+                    canceling the transmission; only that AI feature will be unavailable.
+                </p>
+                <div class="provider-links" aria-label="AI provider privacy policies">
+                    <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noreferrer">OpenAI Privacy</a>
+                    <a href="https://privacy.anthropic.com/" target="_blank" rel="noreferrer">Anthropic Privacy</a>
+                    <a href="https://openrouter.ai/privacy" target="_blank" rel="noreferrer">OpenRouter Privacy</a>
+                </div>
+                <p>
+                    Liberaflow does not sell user data or use or transfer it for personalized advertising, credit
+                    scoring or lending decisions. Except when legally required, Liberaflow does not transfer user data
+                    for purposes unrelated to the disclosed single purpose.
+                </p>
+            </section>
+
+            <section>
+                <h3>7. Chrome Web Store Limited Use</h3>
+                <p>
+                    The use and transfer of information received from Chrome APIs complies with the Chrome Web Store
+                    User Data Policy, including the Limited Use requirements. Such information is used only to provide
+                    or improve the disclosed Browser Automation features, and not for selling user data, personalized
+                    advertising, credit decisions or unauthorized human review.
+                </p>
+                <p>
+                    <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use" target="_blank" rel="noreferrer">Read the Chrome Web Store Limited Use policy</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>8. Deletion</h3>
+                <p>
+                    When the user requests deletion or the selected retention period expires, the related encrypted
+                    files are deleted from local storage. Choosing Delete All removes the Browser Automation data
+                    directory and encryption key. Temporary AI screenshots are deleted immediately after use. Deletion
+                    of information already sent to an external AI provider is governed by that provider's account
+                    controls and privacy policy.
+                </p>
+            </section>
+
+            <section>
+                <h3>9. User rights</h3>
+                <ul>
+                    <li>Stop recording or replay and turn either screenshot setting off at any time.</li>
+                    <li>Cancel an AI transmission or revoke saved AI consent in Settings.</li>
+                    <li>Delete saved workflows and run records individually or delete all Browser Automation data.</li>
+                    <li>Request access, correction, deletion or restriction by contacting us below.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>10. Security measures</h3>
+                <ul>
+                    <li>Recording and replay sessions are pinned to the approved top-level tab.</li>
+                    <li>The Native Messaging peer and app session are verified, and disconnection stops recording and replay safely.</li>
+                    <li>Stored data is encrypted with AES-256-GCM and the key is separated into operating-system secure storage.</li>
+                    <li>Passwords, OTPs, card security codes, authentication tokens and sensitive URL values are removed from structured records and diagnostic logs.</li>
+                    <li>Screenshots and external AI transmissions follow off-by-default and separate-consent controls.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>11. Automatic collection technologies</h3>
+                <p>
+                    This privacy-policy page does not set advertising or analytics cookies. The browser extension does
+                    not request permission to read website cookies or local-storage values.
+                </p>
+            </section>
+
+            <section>
+                <h3>12. Changes</h3>
+                <p>
+                    If data categories, purposes, providers or user controls change, we will update this page and the
+                    in-product disclosure before the change takes effect. Material new processing will be disclosed
+                    separately and, where required, will require new consent.
+                </p>
+            </section>
+
+            <section>
+                <h3>13. Privacy contact</h3>
+                <div class="contact-card">
+                    <p><strong>Operator and privacy contact:</strong> Liberaflow</p>
+                    <p><strong>Email:</strong> <a href="mailto:qyahzn2004@gmail.com">qyahzn2004@gmail.com</a></p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        © 2026 Liberaflow. Browser Automation privacy and data controls.
+    </footer>
+</body>
+</html>
