@@ -39,6 +39,9 @@
   th, td { border-bottom: 1px solid #e2e8f0; padding: 8px 10px; text-align: left; }
   th { color: #4a5568; font-weight: 600; background: #f7fafc; }
   .empty { color: #a0aec0; }
+  td.pending { color: #b7791f; font-weight: 600; }
+  td.approved { color: #2f855a; font-weight: 600; }
+  button.approve { padding: 5px 12px; font-size: 13px; }
   .muted { color: #718096; font-size: 12px; margin-top: 28px; line-height: 1.6; }
 </style>
 </head>
@@ -87,11 +90,36 @@
     </table>
   </div>
 
+  <div class="card">
+    <h2>3. Approval queue (click-only automation) / 승인 대기 목록 (클릭 자동화)</h2>
+    <p class="desc" style="margin-top:0">
+      A second common automation shape: no typing, just clicking the same
+      button across many rows. Record approving a few requests, then Replay
+      clicks them again automatically after Reset.<br />
+      타이핑 없이 여러 행의 버튼을 연달아 클릭하는 자동화 예시입니다.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Request</th><th>Status</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Purchase request A</td><td id="status-1" class="pending">Pending</td><td><button id="approve-1" type="button" class="approve">Approve</button></td></tr>
+        <tr><td>Purchase request B</td><td id="status-2" class="pending">Pending</td><td><button id="approve-2" type="button" class="approve">Approve</button></td></tr>
+        <tr><td>Purchase request C</td><td id="status-3" class="pending">Pending</td><td><button id="approve-3" type="button" class="approve">Approve</button></td></tr>
+        <tr><td>Purchase request D</td><td id="status-4" class="pending">Pending</td><td><button id="approve-4" type="button" class="approve">Approve</button></td></tr>
+      </tbody>
+    </table>
+    <div class="actions">
+      <button id="reset-approvals" type="button" class="secondary">Reset approvals</button>
+    </div>
+    <div id="approval-status" class="status">Approved 0 of 4.</div>
+  </div>
+
   <p class="muted">
-    Expected during review: recording captures the typing and the Save click.
-    Replay repeats them — the form fills itself, Save is clicked, and a new row
-    is appended to the list without any manual input. Data is kept only in this
-    browser tab and is cleared on reload.
+    Expected during review: recording captures the typing and every click.
+    Replay repeats them — the form fills itself, Save is clicked, a new row is
+    appended, and Approve buttons are clicked one by one without any manual
+    input. Data is kept only in this browser tab and is cleared on reload.
   </p>
 
 <script>
@@ -128,6 +156,27 @@
       rows.innerHTML =
         '<tr id="empty-row"><td colspan="4" class="empty">Empty — saved products appear here.</td></tr>';
       status.textContent = "No product saved yet.";
+    });
+
+    var approvalStatus = document.getElementById("approval-status");
+    function approvedCount() {
+      return document.querySelectorAll("td.approved").length;
+    }
+    [1, 2, 3, 4].forEach(function (n) {
+      document.getElementById("approve-" + n).addEventListener("click", function () {
+        var cell = document.getElementById("status-" + n);
+        cell.textContent = "Approved";
+        cell.className = "approved";
+        approvalStatus.textContent = "Approved " + approvedCount() + " of 4.";
+      });
+    });
+    document.getElementById("reset-approvals").addEventListener("click", function () {
+      [1, 2, 3, 4].forEach(function (n) {
+        var cell = document.getElementById("status-" + n);
+        cell.textContent = "Pending";
+        cell.className = "pending";
+      });
+      approvalStatus.textContent = "Approved 0 of 4.";
     });
   })();
 </script>
