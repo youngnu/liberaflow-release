@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Liberaflow 추출 테스트 페이지</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    max-width: 860px; margin: 40px auto 120px; padding: 0 20px; color: #1a202c; background: #fff;
+  }
+  h1 { font-size: 22px; margin-bottom: 6px; }
+  h2 { font-size: 16px; margin: 0 0 12px; }
+  p.desc { color: #4a5568; font-size: 13.5px; line-height: 1.7; }
+  .card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-top: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { border-bottom: 1px solid #e2e8f0; padding: 9px 10px; text-align: left; vertical-align: top; }
+  th { color: #4a5568; font-weight: 600; background: #f7fafc; }
+  .actions { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  button {
+    font-size: 14px; padding: 8px 16px; border-radius: 8px; border: 1px solid #2b6cb0;
+    background: #2b6cb0; color: #fff; cursor: pointer;
+  }
+  button.secondary { background: #fff; color: #2b6cb0; }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  .status { margin-top: 12px; padding: 9px 12px; border-radius: 8px; background: #f0fff4;
+    border: 1px solid #9ae6b4; font-size: 13px; }
+  .muted { color: #718096; font-size: 12px; line-height: 1.7; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 999px;
+    background: #edf2f7; color: #4a5568; margin-left: 6px; }
+  #scroll-box { max-height: 260px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 8px; }
+  #scroll-box table { border: 0; }
+  code { background: #edf2f7; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1>Liberaflow 추출 테스트 페이지</h1>
+  <p class="desc">
+    결정적 추출(<code>web.extract</code>), 요소 picker, 여러 페이지 수집, 중복 제거,
+    CSV·XLSX 저장을 시험하기 위한 정적 페이지입니다. 로그인·개인정보·네트워크 요청이
+    없고 모든 데이터는 이 파일 안에 들어 있습니다. 새로고침하면 초기 상태로 돌아갑니다.
+  </p>
+
+  <div class="card">
+    <h2>1. 상품 목록 <span class="tag">추출 대상</span></h2>
+    <p class="desc" style="margin-top:0">
+      행 하나가 상품 하나입니다. picker로 <strong>첫 두 행</strong>을 고르면 반복 구조가
+      잡히고, 각 열을 필드로 지정하면 규칙이 완성됩니다. 링크는 <code>href</code>,
+      상품코드는 <code>data-sku</code> 속성에 들어 있어 <code>attr</code> 소스를 시험할 수 있습니다.
+    </p>
+    <table>
+      <thead>
+        <tr><th>상품명</th><th>가격</th><th>카테고리</th><th>재고</th><th>상세</th></tr>
+      </thead>
+      <tbody id="product-rows"></tbody>
+    </table>
+
+    <!-- 화면에 보이지 않는 내부 값. 추출 규칙이 이 값을 읽어가면 안 된다
+         (visibility:'all' + source:'value' 차단 확인용). -->
+    <input type="hidden" id="internal-account-id" name="internalAccountId"
+           value="ACCT-77213-INTERNAL-DO-NOT-EXPORT" />
+
+    <div class="actions">
+      <button id="next-page" type="button">다음 페이지 →</button>
+      <button id="load-more" type="button" class="secondary">더 보기</button>
+      <button id="reset-list" type="button" class="secondary">처음으로</button>
+    </div>
+    <div id="list-status" class="status">1 / 3 페이지 · 5개 표시</div>
+    <p class="muted" style="margin-bottom:0">
+      · <strong>다음 페이지</strong>: 표 내용이 통째로 바뀝니다(next 방식).<br />
+      · <strong>더 보기</strong>: 아래에 행이 덧붙습니다(load-more 방식).<br />
+      · <strong>2페이지에는 1페이지의 "무선 마우스"가 다시 나옵니다</strong> — 목록이
+      밀렸을 때 생기는 실제 상황이라, 중복 제거(<code>dedupe</code>)를 켰을 때 한 건만
+      남는지 확인할 수 있습니다.<br />
+      · 3페이지의 "정산 합계" 행은 상품명이 <code>=</code>로 시작합니다. CSV/XLSX로
+      저장했을 때 <strong>수식으로 실행되지 않고 글자 그대로</strong> 들어가야 정상입니다.<br />
+      · 일부 행에는 "재고"가 비어 있습니다. 필드 coverage가 100%가 아닌 경우의 표시를
+      확인할 수 있습니다.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>2. 무한 스크롤 목록 <span class="tag">scroll 수집</span></h2>
+    <p class="desc" style="margin-top:0">
+      아래 상자를 끝까지 스크롤하면 행이 자동으로 추가됩니다(최대 30건). 가상 스크롤이
+      아니라 실제 DOM에 쌓이는 방식이라, 지원 범위 안의 scroll 수집을 시험할 수 있습니다.
+    </p>
+    <div id="scroll-box">
+      <table>
+        <thead><tr><th>주문번호</th><th>고객</th><th>금액</th></tr></thead>
+        <tbody id="scroll-rows"></tbody>
+      </table>
+    </div>
+    <div id="scroll-status" class="status">10 / 30건 로드됨</div>
+  </div>
+
+  <div class="card">
+    <h2>3. 입력 폼 <span class="tag">녹화·재생</span></h2>
+    <p class="desc" style="margin-top:0">
+      녹화 → 재생, 그리고 반복 실행(데이터 행마다 <code>{{변수}}</code> 주입)을 시험하는
+      영역입니다. 저장하면 아래 목록에 쌓입니다.
+    </p>
+    <div class="actions">
+      <input id="memo-title" type="text" placeholder="제목"
+             style="flex:1 1 200px; padding:8px 12px; border:1px solid #cbd5e0; border-radius:8px; font-size:14px;" />
+      <select id="memo-type" style="padding:8px 12px; border:1px solid #cbd5e0; border-radius:8px; font-size:14px;">
+        <option value="메모">메모</option>
+        <option value="할일">할일</option>
+        <option value="보고">보고</option>
+      </select>
+      <button id="memo-save" type="button">저장</button>
+    </div>
+    <div id="memo-status" class="status">아직 저장된 항목이 없습니다.</div>
+    <ul id="memo-list" style="font-size:13.5px; color:#2d3748;"></ul>
+  </div>
+
+<script>
+(function () {
+  // ---- 1. 상품 목록 (next / load-more) --------------------------------------
+  // 2페이지가 1페이지의 마지막 항목을 다시 포함한다 — 목록이 한 칸 밀렸을 때
+  // 실제로 벌어지는 상황이고, 중복 제거를 시험하는 지점이다.
+  const PAGES = [
+    [
+      { name: '기계식 키보드', price: '89,000', cat: '주변기기', stock: '12', sku: 'KB-1001' },
+      { name: 'USB-C 허브',   price: '42,000', cat: '주변기기', stock: '',   sku: 'HB-1002' },
+      { name: '노트북 거치대', price: '31,500', cat: '액세서리', stock: '7',  sku: 'ST-1003' },
+      { name: '모니터 암',     price: '128,000', cat: '액세서리', stock: '3', sku: 'AR-1004' },
+      { name: '무선 마우스',   price: '35,900', cat: '주변기기', stock: '21', sku: 'MS-1005' },
+    ],
+    [
+      { name: '무선 마우스',   price: '35,900', cat: '주변기기', stock: '21', sku: 'MS-1005' },
+      { name: '웹캠 1080p',    price: '67,000', cat: '영상',    stock: '9',  sku: 'CM-1006' },
+      { name: '마이크 암',     price: '54,000', cat: '음향',    stock: '',   sku: 'MA-1007' },
+      { name: '방음 패널',     price: '22,000', cat: '음향',    stock: '40', sku: 'AP-1008' },
+      { name: '데스크 매트',   price: '18,500', cat: '액세서리', stock: '15', sku: 'DM-1009' },
+    ],
+    [
+      { name: 'HDMI 케이블',   price: '9,900',  cat: '케이블',  stock: '99', sku: 'HC-1010' },
+      { name: '전원 멀티탭',   price: '14,300', cat: '케이블',  stock: '31', sku: 'PW-1011' },
+      // CSV/XLSX 로 나갈 때 수식으로 실행되면 안 되는 값.
+      { name: '=SUM(1+1)*정산 합계', price: '0', cat: '정산', stock: '', sku: 'SUM-9999' },
+    ],
+  ];
+
+  let pageIndex = 0;
+  let appended = false;
+  const rowsBody = document.getElementById('product-rows');
+  const listStatus = document.getElementById('list-status');
+
+  function rowHtml(item) {
+    const tr = document.createElement('tr');
+    tr.className = 'product-row';
+    tr.setAttribute('data-sku', item.sku);
+    tr.innerHTML =
+      '<td class="p-name"></td>' +
+      '<td class="p-price"></td>' +
+      '<td class="p-cat"></td>' +
+      '<td class="p-stock"></td>' +
+      '<td><a class="p-link" href="/product/' + item.sku + '">상세 보기</a></td>';
+    tr.querySelector('.p-name').textContent = item.name;
+    tr.querySelector('.p-price').textContent = item.price;
+    tr.querySelector('.p-cat').textContent = item.cat;
+    tr.querySelector('.p-stock').textContent = item.stock;
+    return tr;
+  }
+
+  function renderPage(replace) {
+    if (replace) rowsBody.innerHTML = '';
+    for (const item of PAGES[pageIndex]) rowsBody.appendChild(rowHtml(item));
+    const shown = rowsBody.querySelectorAll('tr').length;
+    listStatus.textContent =
+      (pageIndex + 1) + ' / ' + PAGES.length + ' 페이지 · ' + shown + '개 표시';
+    document.getElementById('next-page').disabled = pageIndex >= PAGES.length - 1;
+    document.getElementById('load-more').disabled = pageIndex >= PAGES.length - 1;
+  }
+
+  document.getElementById('next-page').addEventListener('click', function () {
+    if (pageIndex >= PAGES.length - 1) return;
+    pageIndex += 1;
+    appended = false;
+    renderPage(true);
+  });
+
+  document.getElementById('load-more').addEventListener('click', function () {
+    if (pageIndex >= PAGES.length - 1) return;
+    pageIndex += 1;
+    appended = true;
+    renderPage(false);
+  });
+
+  document.getElementById('reset-list').addEventListener('click', function () {
+    pageIndex = 0;
+    appended = false;
+    renderPage(true);
+  });
+
+  renderPage(true);
+
+  // ---- 2. 무한 스크롤 --------------------------------------------------------
+  const scrollBox = document.getElementById('scroll-box');
+  const scrollRows = document.getElementById('scroll-rows');
+  const scrollStatus = document.getElementById('scroll-status');
+  const SCROLL_MAX = 30;
+  let scrollCount = 0;
+
+  function addScrollRows(count) {
+    for (let i = 0; i < count && scrollCount < SCROLL_MAX; i++) {
+      scrollCount += 1;
+      const tr = document.createElement('tr');
+      tr.className = 'order-row';
+      tr.innerHTML = '<td class="o-id"></td><td class="o-name"></td><td class="o-amount"></td>';
+      tr.querySelector('.o-id').textContent = 'ORD-' + String(2000 + scrollCount);
+      tr.querySelector('.o-name').textContent = '고객 ' + String.fromCharCode(64 + ((scrollCount - 1) % 26) + 1);
+      tr.querySelector('.o-amount').textContent = (12000 + scrollCount * 1350).toLocaleString('ko-KR');
+      scrollRows.appendChild(tr);
+    }
+    scrollStatus.textContent = scrollCount + ' / ' + SCROLL_MAX + '건 로드됨';
+  }
+
+  scrollBox.addEventListener('scroll', function () {
+    const atBottom =
+      scrollBox.scrollTop + scrollBox.clientHeight >= scrollBox.scrollHeight - 8;
+    if (atBottom && scrollCount < SCROLL_MAX) addScrollRows(10);
+  });
+
+  addScrollRows(10);
+
+  // ---- 3. 입력 폼 ------------------------------------------------------------
+  let memoCount = 0;
+  document.getElementById('memo-save').addEventListener('click', function () {
+    const title = document.getElementById('memo-title').value.trim();
+    const type = document.getElementById('memo-type').value;
+    const status = document.getElementById('memo-status');
+    if (!title) {
+      status.textContent = '제목을 입력하세요.';
+      return;
+    }
+    memoCount += 1;
+    const li = document.createElement('li');
+    li.textContent = '[' + type + '] ' + title;
+    document.getElementById('memo-list').appendChild(li);
+    status.textContent = memoCount + '건 저장됨 — 마지막: "' + title + '"';
+    document.getElementById('memo-title').value = '';
+  });
+})();
+</script>
+</body>
+</html>
