@@ -476,7 +476,7 @@
   "원본 자료로 돌아가기": "Back to source material",
   "원본 자료에 맞춘 예시 결과입니다.": "An example result based on the source material.",
   "예시 자료로 사용 순서를 살펴보세요.": "Explore the steps with sample material.",
-  "웹페이지에서 데이터 뽑기": "Extract web page data",
+  "웹브라우저 동작 자동화하기": "Automate browser actions",
   "기능별 사용 순서와 안내를 확인하세요.": "Explore the steps and guidance for each feature.",
   "CSV · XLSX 내보내기": "CSV · XLSX export",
   "고른 값을 파일로 저장하는 순서.": "From selected values to a saved file.",
