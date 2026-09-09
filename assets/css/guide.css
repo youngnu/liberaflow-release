@@ -1,0 +1,498 @@
+@charset "UTF-8";
+/* Guide layout and colors, matching the original Liberaflow logo. */
+:root {
+  color-scheme: light;
+  scroll-padding-top: 82px;
+  --brand: #496fd0;
+  --brand-hover: #3d62bc;
+  --brand-light: #9bbaff;
+  --bg: #101725;
+  --panel: #182237;
+  --ink: #f5f8ff;
+  --muted: #acbbd3;
+  --lime: var(--brand-light);
+  --line: #2c3950;
+  --paper: #f5f7fc;
+  --dark: #202d45;
+  --text-secondary: #536580;
+  --text-caption: #596c88;
+  --border-light: #d6dfef;
+  --blue-wash: #e8effd;
+}
+
+::selection {
+  background: #bbceff;
+  color: #172746;
+}
+.guide-page .site-header {
+  background: rgb(16 23 37 / 95%);
+}
+.guide-page .nav-links {
+  color: #c3cee1;
+}
+.guide-page .nav-links a:hover,
+.guide-page .nav-links a[aria-current="page"] {
+  color: var(--brand-light);
+}
+.guide-page .button-lime,
+.guide-page .guide-bottom .button {
+  background: var(--brand);
+  color: #fff;
+}
+.guide-page .button-lime:hover,
+.guide-page .guide-bottom .button:hover {
+  background: var(--brand-hover);
+}
+.guide-page .menu-toggle > span {
+  background: #c7d7f1;
+}
+.guide-page a:focus-visible,
+.guide-page button:focus-visible {
+  outline-color: var(--brand);
+}
+.guide-page .site-header :focus-visible,
+.guide-page .site-footer :focus-visible {
+  outline-color: var(--brand-light);
+}
+
+.guide-page .guide-hero,
+.guide-page .guide-section {
+  border-color: var(--border-light);
+}
+.guide-page .guide-hero .eyebrow,
+.guide-page .guide-section .feature-tag {
+  color: #486aa5;
+}
+.guide-page .guide-nav > span {
+  color: var(--text-caption);
+}
+.guide-page .guide-nav a,
+.guide-page .guide-hero > p,
+.guide-page .guide-section p,
+.guide-page .guide-section li,
+.guide-page .guide-section ul,
+.guide-page .guide-section ol {
+  color: var(--text-secondary);
+}
+.guide-page .guide-nav a:hover {
+  color: #315da9;
+}
+.guide-page .guide-section h3 {
+  color: #344e78;
+}
+.guide-page .guide-section a:not(.button):not(.download-card) {
+  color: #315da9;
+}
+.guide-page .guide-section a:not(.button):not(.download-card):hover {
+  color: #244783;
+}
+.guide-page .guide-section code {
+  background: #e7eefb;
+  color: #315aa5;
+}
+.guide-page .guide-section .guide-tip {
+  background: #eaf0fc;
+  border-color: #8baaf0;
+  color: #45608b;
+}
+
+.guide-page .guide-section .download-card {
+  background: #254681;
+  border-color: #587ac2;
+  color: #fff;
+}
+.guide-page .guide-section .download-card:hover {
+  background: #335bac;
+}
+.guide-page .guide-section .download-card strong,
+.guide-page .guide-section .download-arrow {
+  color: #fff;
+}
+.guide-page .guide-section .download-card small {
+  color: #c7d8f5;
+}
+.guide-page .guide-section .os-mark {
+  color: #cbdcff;
+}
+.guide-page .guide-section .windows-mark i {
+  background: #cbdcff;
+}
+
+.guide-page .guide-table td,
+.guide-page .guide-table th {
+  color: var(--text-secondary);
+  border-color: var(--border-light);
+}
+.guide-page .guide-table th {
+  background: #e8effd;
+  color: #344e78;
+}
+.guide-page .site-footer > p,
+.guide-page .site-footer > div,
+.guide-page .site-footer > div > span {
+  color: var(--muted);
+}
+.guide-page .site-footer a:hover {
+  color: var(--brand-light);
+}
+
+@media (max-width: 700px) {
+  .guide-page .nav-links {
+    background: #17243c;
+    border-color: #34496e;
+  }
+  .guide-page .guide-nav,
+  .guide-page .guide-nav a {
+    border-color: var(--border-light);
+  }
+  .guide-page .guide-nav a {
+    background: #edf3ff;
+  }
+  .guide-page .guide-nav a:hover {
+    background: #e0eaff;
+  }
+}
+
+.guide-page .guide-hero > p {
+  max-width: 620px;
+}
+.guide-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  margin-top: 26px;
+}
+.guide-quick-links a,
+.guide-back-top {
+  color: #315da9;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.guide-nav {
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+.guide-nav a {
+  display: flex;
+  gap: 13px;
+  border-radius: 4px;
+  padding: 9px 10px;
+}
+.guide-nav-number {
+  font:
+    11px/1.9 ui-monospace,
+    monospace;
+  opacity: 0.8;
+}
+.guide-page .guide-nav a[aria-current="location"] {
+  color: #315da9;
+  background: #e5edff;
+}
+.guide-content {
+  min-width: 0;
+}
+.guide-page .guide-section {
+  scroll-margin-top: 20px;
+}
+.guide-page .guide-subsection {
+  scroll-margin-top: 20px;
+  margin-top: 30px;
+}
+.guide-page .guide-nav .guide-nav-sub {
+  margin-left: 24px;
+  padding-block: 6px;
+  font-size: 12px;
+}
+.guide-input-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0;
+  color: #344e78;
+  font-size: 13px;
+}
+.formatting-table td:first-child {
+  width: 48%;
+  line-height: 2.2;
+}
+.formatting-table td:last-child {
+  vertical-align: middle;
+}
+.format-heading-one {
+  font-size: 20px;
+  font-weight: 650;
+  color: var(--dark);
+}
+.format-bold {
+  font-weight: 700;
+}
+.guide-practice,
+.guide-reference,
+.guide-workflow {
+  padding: 22px;
+  margin: 24px 0;
+  border: 1px solid var(--border-light);
+  border-radius: 7px;
+  background: #fcfdff;
+}
+.guide-practice h4 {
+  margin: 0 0 14px;
+  font-size: 17px;
+  color: var(--dark);
+}
+.guide-format-preview {
+  padding: 17px 20px;
+  margin-top: 18px;
+  background: var(--blue-wash);
+  border-radius: 5px;
+}
+.guide-example-label {
+  font-size: 11px;
+  color: var(--text-caption);
+}
+.guide-page .guide-check-preview {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+.guide-check-preview li > span {
+  color: #315da9;
+  margin-right: 8px;
+}
+.guide-reference {
+  background: var(--blue-wash);
+}
+.guide-page .guide-reference h3,
+.guide-page .guide-workflow h3 {
+  margin-top: 0;
+}
+.guide-automation-benefits {
+  padding-top: 8px;
+}
+.guide-roadmap {
+  margin: 28px 0;
+  padding: 22px;
+  border: 1px solid #b8c9ec;
+  border-radius: 7px;
+  background: #eaf0fc;
+}
+.guide-roadmap-label {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #d7e3ff;
+  color: #315da9;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+.guide-page .guide-roadmap h3 {
+  margin-top: 14px;
+}
+@media (max-width: 700px) {
+  .guide-page .guide-nav .guide-nav-sub {
+    margin-left: 0;
+    font-size: 11px;
+  }
+  .guide-practice,
+  .guide-reference,
+  .guide-workflow,
+  .guide-roadmap {
+    padding: 17px;
+  }
+  .guide-input-sequence {
+    gap: 7px;
+    font-size: 12px;
+  }
+  .formatting-table td:first-child {
+    width: 50%;
+  }
+}
+.guide-page .guide-section .download-card {
+  text-decoration: none;
+}
+.guide-format-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+.guide-format-card {
+  padding: 22px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: #fcfdff;
+}
+.guide-page .guide-format-card h3 {
+  color: var(--dark);
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+.guide-page .guide-format-card code {
+  display: inline-block;
+  line-height: 1.7;
+  font-size: 11px;
+}
+.guide-page .guide-format-card p {
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 14px 0 0;
+}
+.guide-inline-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+}
+.guide-table-wrap {
+  overflow-x: auto;
+}
+.guide-page .guide-table-wrap:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 4px;
+}
+.guide-table td {
+  vertical-align: top;
+}
+.shortcut-table {
+  min-width: 500px;
+}
+.shortcut-table td:first-child {
+  width: 40%;
+}
+.shortcut-table td:not(:first-child) {
+  white-space: nowrap;
+}
+.guide-page kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  min-width: 24px;
+  border: 1px solid #b8c9e7;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: #fff;
+  color: #344e78;
+  font:
+    12px/1.6 ui-monospace,
+    monospace;
+  text-align: center;
+}
+.guide-details {
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 15px 18px;
+  margin-top: 18px;
+}
+.guide-details summary {
+  cursor: pointer;
+  color: #344e78;
+  font-size: 14px;
+  font-weight: 600;
+}
+.guide-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+html[lang="en"] .guide-page {
+  word-break: normal;
+}
+@media (max-width: 900px) {
+  .guide-layout {
+    gap: 35px;
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+  .guide-format-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .guide-nav {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+  .guide-nav a {
+    gap: 6px;
+  }
+  .guide-nav-number {
+    font-size: 10px;
+    line-height: inherit;
+  }
+  .guide-quick-links {
+    gap: 12px 20px;
+  }
+  .guide-page .guide-section .download-card {
+    width: 100%;
+    min-width: 0;
+  }
+  .guide-page .guide-section .download-card small {
+    white-space: normal;
+  }
+  .guide-format-card {
+    padding: 20px;
+  }
+  .guide-page .guide-table td,
+  .guide-page .guide-table th {
+    padding: 12px 9px;
+  }
+  .guide-details {
+    padding: 14px;
+  }
+}
+
+/* Keep both platform shortcuts visible without sideways scrolling. */
+@media (max-width: 540px) {
+  .guide-page .shortcut-table {
+    min-width: 0;
+  }
+  .shortcut-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .shortcut-table tbody {
+    display: block;
+  }
+  .shortcut-table tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 10px;
+    border-bottom: 1px solid var(--border-light);
+    padding: 12px 0;
+  }
+  .guide-page .shortcut-table td {
+    border: 0;
+    padding: 5px 0;
+    width: auto;
+    white-space: normal;
+  }
+  .guide-page .shortcut-table td:first-child {
+    grid-column: 1 / -1;
+    color: var(--dark);
+    font-weight: 600;
+  }
+  .shortcut-table td:nth-child(2)::before,
+  .shortcut-table td:nth-child(3)::before {
+    display: block;
+    color: var(--text-caption);
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .shortcut-table td:nth-child(2)::before {
+    content: "macOS";
+  }
+  .shortcut-table td:nth-child(3)::before {
+    content: "Windows";
+  }
+  .guide-page .shortcut-table kbd {
+    font-size: 11px;
+    min-width: 20px;
+    padding: 2px 4px;
+  }
+}
