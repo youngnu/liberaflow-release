@@ -82,15 +82,6 @@
     });
   });
 
-  // Historical incoming homepage anchors remain useful after the redesign.
-  function resolveLegacyAnchor() {
-    const aliases = { "#features": "possibilities", "#vision": "your-data" };
-    const target = aliases[window.location.hash];
-    if (target) document.getElementById(target)?.scrollIntoView();
-  }
-  window.addEventListener("hashchange", resolveLegacyAnchor);
-  resolveLegacyAnchor();
-
   const panel = document.querySelector("#demo-panel");
   if (!panel) return;
   const documentPanel = document.querySelector("#demo-document");

@@ -34,7 +34,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 앱 저장소 `window_automation/assets/icon/Liberaflow_logo.png`와 같은 원본 로고를 그대로 사용합니다. 홈은 로고의 블루를 중심으로 네이비·차가운 흰색을 조합하고, 기존 레이아웃과 인터랙티브 데모를 유지합니다. 작은 글자의 명암 대비를 위해 버튼·링크의 블루는 용도에 맞게 밝기를 조정합니다.
 
-홈 전용 CSS와 `home.js`는 `index.html`에서만 불러옵니다. `docs.html`도 수정 범위에 포함하며 `guide.css`로 홈과 같은 색상을 적용합니다. 상단 메뉴 디자인과 언어 전환 동작은 두 페이지가 공유합니다. 공통 기반 `site.css`와 기존 `site.js`는 그대로 둡니다. `updates/appcast.xml`, `email-confirmation.html`, `reset-password.html`과 원본 로고는 수정하지 않습니다.
+홈 전용 CSS와 `home.js`는 `index.html`에서만 불러옵니다. `docs.html`도 수정 범위에 포함하며 `guide.css`로 홈과 같은 색상을 적용합니다. 상단 메뉴 디자인과 언어 전환 동작은 두 페이지가 공유합니다. 공통 기반 `site.css`와 기존 `site.js`는 그대로 둡니다. 홈·브랜드 개편에서는 `updates/appcast.xml`, `email-confirmation.html`, `reset-password.html`과 원본 로고를 수정하지 않습니다. 릴리스 또는 인증 보안 변경은 별도 작업으로 분리하고 실제 업데이트·Supabase 복귀 흐름까지 검증합니다.
 
 사용 안내는 앱 저장소의 `README.md`와 `ARCHITECTURE.md`를 기준으로 합니다. 본문이나 데모의 한국어를 바꿀 때는 해당 페이지의 `home-i18n.js` 또는 `guide-i18n.js` 번역도 함께 갱신하세요. 언어를 바꿔도 원본/결과 표시 상태, 선택한 탭·노트, 펼친 안내는 유지됩니다.
 
@@ -62,7 +62,9 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `extension-test.html`, `extract-test.html` — 브라우저 확장 진단 페이지
 - `release.sh`, `RELEASE_GUIDE.md`, `HOSTING_MIGRATION_GUIDE.md` — 기존 릴리스 운영 자료
 
-다운로드 버튼은 `macosBtn` / `windowsBtn` ID, `macOS` / `Windows` 텍스트, 실제 `.dmg` / `Setup.exe` href를 함께 유지합니다. 기존 다운로드 스크립트와 릴리스 스크립트의 탐지 조건입니다. 다른 목적의 링크에 운영체제 이름을 포함하면 다운로드 주소로 바뀔 수 있으므로 주의하세요. 릴리스 시 중앙 설정과 HTML의 JavaScript 미사용용 직접 링크도 함께 갱신하세요.
+다운로드 버튼의 `macosBtn` / `windowsBtn` ID는 중앙 설정을 적용하는 안정적인 연결 계약이므로 유지합니다. 릴리스 시 `assets/js/download-config.js`의 중앙 설정과 HTML의 JavaScript 미사용용 직접 링크를 함께 갱신하고, `release.sh --check`로 두 값과 appcast 메타데이터의 일치를 검사하세요.
+
+비밀번호 재설정 페이지는 `token_hash`와 `type=recovery`를 사용하는 Recovery 이메일 템플릿 또는 `type=recovery`가 포함된 implicit 토큰만 처리합니다. 데스크톱 앱에서 시작한 PKCE 코드의 verifier는 브라우저에 없으므로 `?code=`를 웹에서 교환하지 않습니다. Supabase Recovery 템플릿과 실제 이메일 링크를 함께 설정·검증하세요.
 
 기존 홈의 `#features`, `#vision` 앵커는 각각 새 기능 소개와 데이터 소유권 섹션에 연결됩니다. `#download`, `#faq` 주소도 유지됩니다.
 

@@ -1,125 +1,136 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Liberaflow Release Automation Script
-# 사용법: ./release.sh <version> <macos_file> <windows_file>
-# 예: ./release.sh 1.3.0 ~/Desktop/Liberaflow-1.3.0-macos.dmg ~/Desktop/Liberaflow_1.3.0_Setup.exe
+set -euo pipefail
 
-set -e  # 오류 발생 시 스크립트 중단
+script_directory=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+cd "$script_directory"
 
-# 색상 정의
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
-
-# 인자 확인
-if [ "$#" -lt 3 ]; then
-    echo -e "${RED}사용법: $0 <version> <macos_file> <windows_file>${NC}"
-    echo "예: $0 1.3.0 ~/Desktop/Liberaflow-1.3.0-macos.dmg ~/Desktop/Liberaflow_1.3.0_Setup.exe"
-    exit 1
-fi
-
-VERSION=$1
-MACOS_FILE=$2
-WINDOWS_FILE=$3
-
-# 파일 존재 확인
-if [ ! -f "$MACOS_FILE" ]; then
-    echo -e "${RED}오류: macOS 파일을 찾을 수 없습니다: $MACOS_FILE${NC}"
-    exit 1
-fi
-
-if [ ! -f "$WINDOWS_FILE" ]; then
-    echo -e "${RED}오류: Windows 파일을 찾을 수 없습니다: $WINDOWS_FILE${NC}"
-    exit 1
-fi
-
-# 파일명 추출
-MACOS_FILENAME=$(basename "$MACOS_FILE")
-WINDOWS_FILENAME=$(basename "$WINDOWS_FILE")
-
-# macOS 버전 추출 (파일명에서)
-MACOS_VERSION=$(echo "$MACOS_FILENAME" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
-# Windows 버전 추출
-WINDOWS_VERSION=$(echo "$WINDOWS_FILENAME" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
-
-echo -e "${GREEN}=== Liberaflow Release v$VERSION ===${NC}"
-echo "macOS 파일: $MACOS_FILENAME (버전: $MACOS_VERSION)"
-echo "Windows 파일: $WINDOWS_FILENAME (버전: $WINDOWS_VERSION)"
-echo ""
-
-# 1. 파일을 downloads 폴더로 복사
-echo -e "${YELLOW}[1/5] 파일을 downloads 폴더로 복사 중...${NC}"
-cp "$MACOS_FILE" downloads/
-cp "$WINDOWS_FILE" downloads/
-
-# 2. download-config.js 업데이트
-echo -e "${YELLOW}[2/5] download-config.js 업데이트 중...${NC}"
-cat > assets/js/download-config.js << EOF
-// 다운로드 링크 중앙 관리
-const DOWNLOAD_LINKS = {
-    macos: 'https://github.com/youngnu/liberaflow-release/releases/download/v${VERSION}/${MACOS_FILENAME}',
-    windows: 'https://github.com/youngnu/liberaflow-release/releases/download/v${VERSION}/${WINDOWS_FILENAME}'
-};
-
-// 다운로드 버튼 업데이트 함수
-function updateDownloadLinks() {
-    // macOS 다운로드 버튼 업데이트
-    const macosButtons = document.querySelectorAll('a[href*="macos.dmg"], a[href*="Download for macOS"]');
-    macosButtons.forEach(button => {
-        if (button.textContent.includes('macOS') || button.textContent.includes('Download for macOS')) {
-            button.href = DOWNLOAD_LINKS.macos;
-        }
-    });
-
-    // Windows 다운로드 버튼 업데이트
-    const windowsButtons = document.querySelectorAll('a[href*="Setup.exe"], a[href*="Download for Windows"]');
-    windowsButtons.forEach(button => {
-        if (button.textContent.includes('Windows') || button.textContent.includes('Download for Windows')) {
-            button.href = DOWNLOAD_LINKS.windows;
-        }
-    });
+usage() {
+  printf '%s\n' \
+    "사용법: ./release.sh --check [--remote]" \
+    "" \
+    "이 도구는 릴리스 파일을 업로드하거나 Git 커밋·푸시를 실행하지 않습니다." \
+    "R2 업로드와 메타데이터 수정을 마친 뒤 일관성만 검사합니다." >&2
 }
 
-// DOM이 로드되면 다운로드 링크 업데이트
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', updateDownloadLinks);
-} else {
-    updateDownloadLinks();
+fail() {
+  printf '오류: %s\n' "$1" >&2
+  exit 1
 }
-EOF
 
-echo -e "${GREEN}✓ download-config.js 업데이트 완료${NC}"
+if [[ ${1:-} != "--check" || $# -gt 2 ]]; then
+  usage
+  exit 1
+fi
 
-# 3. 변경사항 커밋
-echo -e "${YELLOW}[3/5] Git 변경사항 커밋 중...${NC}"
-git add assets/js/download-config.js
-git commit -m "Update download links to v${VERSION}
+check_remote=false
+if [[ ${2:-} == "--remote" ]]; then
+  check_remote=true
+elif [[ $# -eq 2 ]]; then
+  usage
+  exit 1
+fi
 
-macOS: ${MACOS_VERSION}
-Windows: ${WINDOWS_VERSION}"
+for command_name in node xmllint; do
+  command -v "$command_name" >/dev/null 2>&1 ||
+    fail "$command_name 명령을 찾을 수 없습니다."
+done
 
-# 4. GitHub에 푸시
-echo -e "${YELLOW}[4/5] GitHub에 푸시 중...${NC}"
-git push origin main
+download_config="assets/js/download-config.js"
+appcast="updates/appcast.xml"
+macos_url=$(sed -n "s/^[[:space:]]*macos:[[:space:]]*'\([^']*\)'.*/\1/p" "$download_config")
+windows_url=$(sed -n "s/^[[:space:]]*windows:[[:space:]]*'\([^']*\)'.*/\1/p" "$download_config")
 
-# 5. GitHub Release 생성
-echo -e "${YELLOW}[5/5] GitHub Release v${VERSION} 생성 중...${NC}"
-gh release create v${VERSION} \
-  "downloads/${MACOS_FILENAME}" \
-  "downloads/${WINDOWS_FILENAME}" \
-  --title "Version ${VERSION}" \
-  --notes "macOS: ${MACOS_VERSION}
-Windows: ${WINDOWS_VERSION}
+[[ -n "$macos_url" ]] || fail "macOS 다운로드 URL을 찾을 수 없습니다."
+[[ -n "$windows_url" ]] || fail "Windows 다운로드 URL을 찾을 수 없습니다."
 
-Download the appropriate installer for your platform.
+[[ "$macos_url" =~ ^https://downloads\.liberaflow\.com/Liberaflow-[0-9]+\.[0-9]+\.[0-9]+-macos\.dmg$ ]] ||
+  fail "macOS URL이 R2 배포 규칙과 다릅니다: $macos_url"
+[[ "$windows_url" =~ ^https://downloads\.liberaflow\.com/Liberaflow_[0-9]+\.[0-9]+\.[0-9]+_Setup\.exe$ ]] ||
+  fail "Windows URL이 R2 배포 규칙과 다릅니다: $windows_url"
 
-## Downloads
-- macOS: ${MACOS_FILENAME}
-- Windows: ${WINDOWS_FILENAME}"
+macos_version=${macos_url#https://downloads.liberaflow.com/Liberaflow-}
+macos_version=${macos_version%-macos.dmg}
+windows_version=${windows_url#https://downloads.liberaflow.com/Liberaflow_}
+windows_version=${windows_version%_Setup.exe}
 
-echo ""
-echo -e "${GREEN}✅ 릴리스 완료!${NC}"
-echo -e "${GREEN}릴리스 URL: https://github.com/youngnu/liberaflow-release/releases/tag/v${VERSION}${NC}"
-echo ""
-echo -e "${YELLOW}참고: appcast.xml을 수동으로 업데이트해야 합니다.${NC}"
+for page in index.html docs.html; do
+  [[ $(grep -Foc "href=\"$macos_url\"" "$page" || true) -eq 1 ]] ||
+    fail "${page}의 macOS 직접 다운로드 링크가 중앙 설정과 다릅니다."
+  [[ $(grep -Foc "href=\"$windows_url\"" "$page" || true) -eq 1 ]] ||
+    fail "${page}의 Windows 직접 다운로드 링크가 중앙 설정과 다릅니다."
+done
+
+[[ $(grep -Foc "url=\"$macos_url\"" "$appcast" || true) -eq 1 ]] ||
+  fail "appcast의 macOS URL이 중앙 설정과 다릅니다."
+[[ $(grep -Foc "url=\"$windows_url\"" "$appcast" || true) -eq 1 ]] ||
+  fail "appcast의 Windows URL이 중앙 설정과 다릅니다."
+
+xmllint --noout "$appcast"
+
+macos_title=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/../*[local-name()='title'])" "$appcast")
+macos_appcast_version=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/../*[local-name()='version'])" "$appcast")
+macos_short_version=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/../*[local-name()='shortVersionString'])" "$appcast")
+macos_pub_date=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/../*[local-name()='pubDate'])" "$appcast")
+macos_length=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/@length)" "$appcast")
+macos_type=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/@type)" "$appcast")
+macos_os=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/@*[local-name()='os'])" "$appcast")
+macos_signature=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$macos_url']/@*[local-name()='edSignature'])" "$appcast")
+
+windows_title=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$windows_url']/../*[local-name()='title'])" "$appcast")
+windows_pub_date=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$windows_url']/../*[local-name()='pubDate'])" "$appcast")
+windows_appcast_version=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$windows_url']/@*[local-name()='version'])" "$appcast")
+windows_length=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$windows_url']/@length)" "$appcast")
+windows_type=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$windows_url']/@type)" "$appcast")
+windows_os=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$windows_url']/@*[local-name()='os'])" "$appcast")
+windows_signature=$(xmllint --xpath "string(//*[local-name()='enclosure'][@url='$windows_url']/@*[local-name()='dsaSignature'])" "$appcast")
+
+[[ "$macos_title" == "Version $macos_version" ]] ||
+  fail "appcast의 macOS 제목과 URL 버전이 다릅니다."
+[[ "$macos_appcast_version" == "$macos_version" ]] ||
+  fail "appcast의 macOS 버전과 URL 버전이 다릅니다."
+[[ "$macos_short_version" == "$macos_version" ]] ||
+  fail "appcast의 macOS 표시 버전과 URL 버전이 다릅니다."
+[[ "$windows_title" == "Version $windows_version" ]] ||
+  fail "appcast의 Windows 제목과 URL 버전이 다릅니다."
+[[ "$windows_appcast_version" == "$windows_version" ]] ||
+  fail "appcast의 Windows 버전과 URL 버전이 다릅니다."
+[[ "$macos_type" == "application/x-apple-diskimage" && "$macos_os" == "macos" ]] ||
+  fail "appcast의 macOS 파일 유형 또는 운영체제 값이 잘못되었습니다."
+[[ "$windows_type" == "application/octet-stream" && "$windows_os" == "windows" ]] ||
+  fail "appcast의 Windows 파일 유형 또는 운영체제 값이 잘못되었습니다."
+
+rfc822_utc_pattern='^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), (0[1-9]|[12][0-9]|3[01]) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-9]{4} (0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9] \+0000$'
+[[ "$macos_pub_date" =~ $rfc822_utc_pattern ]] ||
+  fail "appcast의 macOS pubDate가 RFC 822 UTC 형식이 아닙니다."
+[[ "$windows_pub_date" =~ $rfc822_utc_pattern ]] ||
+  fail "appcast의 Windows pubDate가 RFC 822 UTC 형식이 아닙니다."
+
+[[ "$macos_length" =~ ^[1-9][0-9]*$ ]] ||
+  fail "appcast의 macOS length가 유효한 바이트 수가 아닙니다."
+[[ "$windows_length" =~ ^[1-9][0-9]*$ ]] ||
+  fail "appcast의 Windows length가 유효한 바이트 수가 아닙니다."
+[[ "$macos_signature" =~ ^[A-Za-z0-9+/]{20,}={0,2}$ ]] ||
+  fail "appcast의 macOS 업데이트 서명이 없거나 형식이 잘못되었습니다."
+[[ "$windows_signature" =~ ^[A-Za-z0-9+/]{20,}={0,2}$ ]] ||
+  fail "appcast의 Windows 업데이트 서명이 없거나 형식이 잘못되었습니다."
+
+for script_file in assets/js/*.js; do
+  node --check "$script_file" >/dev/null
+done
+
+if [[ "$check_remote" == true ]]; then
+  command -v curl >/dev/null 2>&1 || fail "curl 명령을 찾을 수 없습니다."
+  for download_spec in "$macos_url|$macos_length" "$windows_url|$windows_length"; do
+    download_url=${download_spec%|*}
+    expected_length=${download_spec##*|}
+    response_headers=$(curl --fail --silent --show-error --location --head --max-time 30 \
+      "$download_url") || fail "다운로드 URL을 열 수 없습니다: $download_url"
+    remote_length=$(printf '%s\n' "$response_headers" | tr -d '\r' | \
+      awk 'tolower($1) == "content-length:" { value=$2 } END { print value }')
+    [[ "$remote_length" == "$expected_length" ]] ||
+      fail "appcast length와 원격 파일 크기가 다릅니다: $download_url"
+  done
+fi
+
+printf '%s\n' "릴리스 메타데이터 검사가 통과했습니다."

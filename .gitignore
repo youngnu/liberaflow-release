@@ -4,3 +4,9 @@
 # Editor
 .vscode/
 .idea/
+.claude/settings.local.json
+
+# Release installers are hosted outside the Git repository.
+/downloads/
+/Liberaflow*.dmg
+/Liberaflow*.exe
