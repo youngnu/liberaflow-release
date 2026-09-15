@@ -6,6 +6,9 @@
   "use strict";
 
   const english = {
+  "Liberaflow — 노트·AI 문서 작성·업무 자동화": "Liberaflow — Notes, AI documents and work automation",
+  "내 노트를 바탕으로 AI와 문서를 만들고, 브라우저 반복 작업과 팀 협업까지 이어가는 데스크톱 작업 공간.": "Create documents with AI from your notes, automate repetitive browser tasks, and collaborate with your team in one desktop workspace.",
+  "Liberaflow의 노트와 AI 문서 작성 사용 예시, 브라우저 자동화·팀 협업 소개": "Liberaflow notes and AI document creation example, with browser automation and team collaboration",
   "그 지식으로 AI와 함께 일하세요.": "Put it to work with AI.",
   "Calendar · Tasks · Gantt · 위젯": "Calendar · Tasks · Gantt · Widgets",
   "Calendar · 일정과 할 일": "Calendar · Events and tasks",
