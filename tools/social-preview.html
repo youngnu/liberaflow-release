@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Liberaflow 공유 이미지 원본</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+      body { font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; background: #101725; color: #f5f8ff; }
+      .card { position: relative; width: 1200px; height: 630px; overflow: hidden; background: radial-gradient(ellipse at 88% 62%, #233d70 0, #162238 40%, #101725 75%); }
+      .brand { position: absolute; left: 56px; top: 42px; display: flex; align-items: center; gap: 13px; font-family: "Segoe UI", sans-serif; font-size: 33px; font-weight: 700; letter-spacing: -1.2px; }
+      .brand img { width: 43px; height: 43px; border-radius: 50%; }
+      .platform { position: absolute; right: 56px; top: 52px; color: #b7c8e5; font-size: 17px; letter-spacing: .3px; }
+      .copy { position: absolute; left: 56px; top: 147px; }
+      .eyebrow { margin: 0 0 17px; font-size: 19px; color: #a8c3ff; font-weight: 700; }
+      h1 { margin: 0; font-size: 57px; line-height: 1.27; letter-spacing: -3.8px; font-weight: 700; }
+      h1 span { color: #a7c3ff; }
+      .description { margin: 24px 0 0; font-size: 22px; line-height: 1.65; letter-spacing: -.8px; color: #c4d0e4; }
+      .product { position: absolute; left: 477px; top: 143px; width: 668px; }
+      .product-label { display: flex; justify-content: space-between; align-items: center; margin: 0 4px 14px; color: #f0f5ff; font-size: 20px; font-weight: 700; letter-spacing: -.6px; }
+      .product-label small { font-size: 14px; color: #b0c0db; font-weight: 400; letter-spacing: 0; }
+      .window { height: 382px; border: 1px solid #52688b; border-radius: 13px; overflow: hidden; background: #fff; box-shadow: 0 28px 65px #02081665; }
+      iframe { display: block; width: 1060px; height: 604px; border: 0; transform: scale(.63); transform-origin: top left; pointer-events: none; }
+      .footer { position: absolute; left: 56px; right: 56px; bottom: 32px; display: flex; justify-content: space-between; align-items: center; }
+      .features { display: flex; gap: 27px; color: #d6e2f7; font-size: 18px; font-weight: 700; letter-spacing: -.5px; }
+      .features span + span::before { content: "·"; padding-right: 27px; color: #809ed7; }
+      .domain { color: #a7c3ff; font-family: "Segoe UI", sans-serif; font-size: 21px; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="brand"><img src="../assets/images/Liberaflow_logo.png" alt="" />liberaflow</div>
+      <div class="platform">Windows · macOS</div>
+      <div class="copy">
+        <p class="eyebrow">내 지식으로 일하는 AI 작업 공간</p>
+        <h1>내 노트로,<br /><span>AI와 함께</span><br />일하세요.</h1>
+        <p class="description">문서 작성부터 반복 업무 자동화,<br />팀 협업까지 한곳에서.</p>
+      </div>
+      <section class="product" aria-label="홈페이지의 노트로 문서 만들기 사용 예시">
+        <div class="product-label">노트 → AI → 문서 <small>홈페이지 사용 예시</small></div>
+        <div class="window"><iframe id="workspace" title="노트로 문서를 만드는 사용 예시"></iframe></div>
+      </section>
+      <footer class="footer">
+        <div class="features"><span>노트 연결</span><span>AI 문서 작성</span><span>브라우저 자동화</span><span>팀 협업</span></div>
+        <span class="domain">liberaflow.com</span>
+      </footer>
+    </main>
+    <script>
+      // Render the existing homepage example. No AI or automation runs here.
+      // Serve the repository over HTTP, capture at 1200 × 630, and wait for
+      // document.documentElement.dataset.ready === "true".
+      const frame = document.getElementById("workspace");
+      frame.addEventListener("load", async () => {
+        const doc = frame.contentDocument;
+        const workspace = doc.querySelector(".workspace");
+        if (!workspace) return;
+        const style = doc.createElement("style");
+        style.textContent = [
+          "html, body { margin: 0 !important; padding: 0 !important; width: 1060px !important; height: 604px !important; overflow: hidden !important; background: #fff !important; }",
+          "body::before, body::after { display: none !important; }",
+          ".workspace { width: 1060px !important; margin: 0 !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }",
+          ".workspace-titlebar { height: 43px !important; font-size: 14px !important; }",
+          ".demo-prerequisites { font-size: 14px !important; }",
+          ".workspace-body { grid-template-columns: 155px minmax(0, 1fr) 320px !important; min-height: 512px !important; }",
+          ".demo-sidebar { display: flex !important; padding-inline: 14px !important; }",
+          ".demo-document, .demo-agent { min-width: 0 !important; }",
+          ".document-content { padding: 28px !important; }",
+          ".document-content h2 { font-size: 30px !important; }",
+          ".document-lead { font-size: 15px !important; }",
+          ".note-callout { padding: 16px 14px !important; font-size: 15px !important; }",
+          ".demo-source-list, .demo-facts { font-size: 15px !important; }",
+          ".demo-agent { display: flex !important; border-top: 0 !important; }",
+          ".agent-heading { font-size: 17px !important; }",
+          ".agent-welcome h3 { font-size: 20px !important; }",
+          ".agent-welcome p { font-size: 15px !important; }",
+          ".demo-instructions { display: none !important; }",
+          ".user-prompt { margin-top: 22px !important; padding: 17px !important; font-size: 16px !important; line-height: 1.75 !important; }",
+          ".agent-action { padding-top: 12px !important; }",
+          ".run-demo { font-size: 16px !important; }"
+        ].join("\n");
+        doc.head.append(style);
+        doc.body.replaceChildren(workspace);
+        await Promise.all([document.fonts.ready, doc.fonts.ready]);
+        await Promise.all([...document.images, ...doc.images].map(img => img.decode()));
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          document.documentElement.dataset.ready = "true";
+        }));
+      }, { once: true });
+      frame.src = "../index.html?lang=ko";
+    </script>
+  </body>
+</html>

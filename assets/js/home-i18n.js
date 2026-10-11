@@ -3,8 +3,11 @@ window.initializeLiberaflowLocale({
   "Liberaflow — 생각이 일이 되는 곳": "Liberaflow — Where ideas get to work",
   "내 컴퓨터의 노트에서 AI와 함께 만드는 결과물까지. 기록, 문서 작성, 브라우저 자동화와 팀 협업이 이어지는 데스크톱 작업 공간, Liberaflow.":
     "From local notes to work you create with AI. Liberaflow brings writing, documents, browser automation and teamwork into one desktop workspace.",
-  "노트에 담긴 생각을 AI와 함께 결과로. 당신의 일이 자연스럽게 이어지는 곳.":
-    "Turn the ideas in your notes into work with AI. A space where your next step comes naturally.",
+  "Liberaflow — 노트·AI 문서 작성·업무 자동화": "Liberaflow — Notes, AI documents and work automation",
+  "내 노트를 바탕으로 AI와 문서를 만들고, 브라우저 반복 작업과 팀 협업까지 이어가는 데스크톱 작업 공간.":
+    "Create documents with AI from your notes, automate repetitive browser tasks, and collaborate with your team in one desktop workspace.",
+  "Liberaflow의 노트와 AI 문서 작성 사용 예시, 브라우저 자동화·팀 협업 소개":
+    "Liberaflow notes and AI document creation example, with browser automation and team collaboration",
   "본문으로 건너뛰기": "Skip to content",
   "주 메뉴": "Main navigation",
   "Liberaflow 홈": "Liberaflow home",

@@ -30,6 +30,13 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 언어별 직접 미리보기는 `http://127.0.0.1:4173/?lang=ko`와 `http://127.0.0.1:4173/?lang=en`입니다. 주소의 언어 설정을 우선하고, 선택한 언어는 브라우저에 저장합니다. 아무 설정이 없으면 한국어로 시작합니다. JavaScript가 꺼져 있으면 한국어 본문과 다운로드를 제공합니다. 가이드는 `http://127.0.0.1:4173/docs.html?lang=ko`와 `http://127.0.0.1:4173/docs.html?lang=en`으로 확인합니다. 홈과 가이드 사이를 이동해도 언어를 유지합니다.
 
+## 링크 공유 미리보기
+
+- 홈페이지의 Open Graph와 Twitter 카드 이미지는 `assets/images/liberaflow-social-preview-v1.png`를 사용합니다. 1200 × 630 PNG에 서비스 설명과 홈페이지의 **노트로 문서 만들기 사용 예시**를 담았습니다. 앱 화면 캡처가 아닌 홈페이지 예시임을 이미지에 표시합니다.
+- 편집 원본은 `tools/social-preview.html`입니다. 위 로컬 미리보기 서버에서 해당 경로를 열면 현재 홈페이지의 노트 예시를 불러옵니다. 브라우저 크기를 1200 × 630으로 맞추고, `document.documentElement.dataset.ready === "true"`가 된 후 화면을 PNG로 캡처합니다. 홈페이지의 화면 구성이나 문구가 바뀌면 이미지도 다시 생성해 커밋하세요.
+- 이미지를 갱신할 때는 파일명 버전과 `index.html`의 `og:image`·`twitter:image` URL을 함께 바꾸세요. 이미지 크기·형식·대체 설명도 실제 파일과 맞추고, 공유 문구를 바꾸면 `assets/js/home-i18n.js`의 영어 번역도 갱신합니다. 공유 메타데이터는 JavaScript 없이 읽을 수 있도록 HTML에 둡니다.
+- 배포 후에도 카카오톡에서 이전 미리보기가 나오면 [카카오 초기화 도구](https://developers.kakao.com/tool)의 **OG(Open Graph) 캐시**에서 공유한 웹페이지 URL을 초기화합니다. 이미지 URL 변경만으로 기존 페이지 캐시가 즉시 갱신되지는 않습니다. [공식 FAQ](https://developers.kakao.com/docs/ko/message-template/faq)
+
 ## 브랜드와 수정 경계
 
 앱 저장소 `window_automation/assets/icon/Liberaflow_logo.png`와 같은 원본 로고를 그대로 사용합니다. 홈은 로고의 블루를 중심으로 네이비·차가운 흰색, 큰 제목과 SVG 흐름선을 조합합니다. 시각 효과는 `prefers-reduced-motion` 설정을 따릅니다. 기능 설명은 짧게 유지하고 상세 절차는 사용 가이드로 연결합니다.
