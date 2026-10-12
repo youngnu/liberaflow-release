@@ -31,14 +31,14 @@
             - 새 Windows 빌드 배포 시: R2에 .exe 업로드 → 이 url/length 갱신
         -->
         <item>
-            <title>Version 1.5.0</title>
-            <pubDate>Mon, 12 Oct 2026 17:32:57 +0000</pubDate>
+            <title>Version 1.5.1</title>
+            <pubDate>Tue, 13 Oct 2026 17:32:57 +0000</pubDate>
             <enclosure 
-                url="https://downloads.liberaflow.com/Liberaflow_1.5.0_Setup.exe"
+                url="https://downloads.liberaflow.com/Liberaflow_1.5.1_Setup.exe"
                 type="application/octet-stream"
-                length="290496504"
-                sparkle:dsaSignature="MDwCHD4rR3CHmDYJyhMaZUtKVhwdNLD8W0ogSWEkBgsCHAio9kHSXFbOhQblJKWXCxXEOnvm1bqbe5c8Cdo="
-                sparkle:version="1.5.0"
+                length="290513744"
+                sparkle:dsaSignature="MD0CHG01DIVZUpTXrKXv2Ea9RSV8N1PRW/XHkFLctaACHQDG4LZdfEZhq/sx85UpN3HfRXwIJhLj2twAeBD3"
+                sparkle:version="1.5.1"
                 sparkle:os="windows" />
         </item>
     </channel>
