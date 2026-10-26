@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#101725" />
-    <title>Liberaflow — 생각을 펼치면, 일이 흘러갑니다</title>
+    <meta name="theme-color" content="#080c16" />
+    <title>Liberaflow — 생각이 일이 되는 곳</title>
     <meta
       name="description"
-      content="내 컴퓨터에 남는 노트, 문서 옆 AI, 반복 업무 자동화와 팀 협업. 메모부터 결과물까지 하나로 이어지는 Liberaflow를 만나보세요."
+      content="내 컴퓨터의 노트에서 AI와 함께 만드는 결과물까지. 기록, 문서 작성, 브라우저 자동화와 팀 협업이 이어지는 데스크톱 작업 공간, Liberaflow."
     />
     <link rel="canonical" href="https://liberaflow.com/" />
     <meta
@@ -54,15 +54,66 @@
       type="image/png"
       href="assets/images/Liberaflow_logo.png"
     />
-    <link rel="stylesheet" href="assets/css/site.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="assets/css/navigation.css" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20260927" />
     <script src="assets/js/download-config.js?v=win-1.5.1" defer></script>
-    <script src="assets/js/home.js" defer></script>
+    <script src="assets/js/home.js?v=20260927" defer></script>
     <script src="assets/js/locale.js" defer></script>
-    <script src="assets/js/home-i18n.js" defer></script>
+    <script src="assets/js/home-i18n.js?v=20260927" defer></script>
   </head>
   <body>
+    <svg
+      class="icon-library"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-6-6 6 6-6 6" />
+      </symbol>
+      <symbol id="i-down" viewBox="0 0 24 24">
+        <path d="M12 4v15m-6-6 6 6 6-6" />
+      </symbol>
+      <symbol id="i-note" viewBox="0 0 24 24">
+        <path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h6" />
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24">
+        <path
+          d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4L12 3Z"
+        />
+      </symbol>
+      <symbol id="i-flow" viewBox="0 0 24 24">
+        <path d="M4 8V4h4m12 12v4h-4M4 4l5 5m11 11-5-5M20 4l-6 6M4 20l6-6" />
+        <path d="M16 4h4v4M4 16v4h4" />
+      </symbol>
+      <symbol id="i-people" viewBox="0 0 24 24">
+        <circle cx="9" cy="8" r="3" />
+        <path
+          d="M3 21v-3a6 6 0 0 1 12 0v3m2-16a3 3 0 0 1 0 6m1 3a5 5 0 0 1 3 4v3"
+        />
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="3" />
+        <path d="M7 3v4m10-4v4M3 11h18m-14 4h3m4 0h3m-10 3h3" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="m5 12 4 4L19 6" />
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="m8 5 11 7-11 7V5Z" />
+      </symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24">
+        <path d="M3 7V5h6l2 2h10v13H3V7Zm0 3h18" />
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <rect x="5" y="10" width="14" height="11" rx="2" />
+        <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2" />
+      </symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </symbol>
+    </svg>
     <a class="skip-link" href="#main">본문으로 건너뛰기</a>
     <header class="site-header">
       <nav class="nav wrap" aria-label="주 메뉴">
@@ -70,10 +121,34 @@
           ><img
             src="assets/images/Liberaflow_logo.png"
             alt=""
-            width="30"
-            height="30"
+            width="31"
+            height="31"
           />liberaflow</a
         >
+        <div class="nav-links" id="nav-links">
+          <a href="#possibilities">가능성</a><a href="#your-data">나의 공간</a
+          ><a href="docs.html">사용 가이드 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="language-switch" role="group" aria-label="언어 선택">
+          <button type="button" data-locale="ko" aria-pressed="true" lang="ko">
+            KO</button
+          ><span aria-hidden="true">/</span
+          ><button
+            type="button"
+            data-locale="en"
+            aria-pressed="false"
+            lang="en"
+          >
+            EN
+          </button>
+        </div>
+        <a
+          class="button button-small nav-download"
+          href="#download"
+          aria-label="앱 다운로드"
+          ><span class="download-nav-label">다운로드</span
+          ><svg class="icon" aria-hidden="true"><use href="#i-down" /></svg
+        ></a>
         <button
           class="menu-toggle"
           type="button"
@@ -83,602 +158,655 @@
         >
           <span></span><span></span>
         </button>
-        <div class="nav-links" id="nav-links">
-          <a href="#playground">사용 흐름 보기</a
-          ><a href="#possibilities">할 수 있는 일</a
-          ><a href="#your-data">내 데이터</a
-          ><a href="docs.html">시작 가이드 <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="language-switch" role="group" aria-label="언어 선택">
-          <button type="button" data-locale="ko" aria-pressed="true" lang="ko">KO</button>
-          <button type="button" data-locale="en" aria-pressed="false" lang="en">EN</button>
-        </div>
-        <a class="button button-small button-lime nav-download" href="#download" aria-label="앱 다운로드"
-          ><span class="download-nav-label">앱 다운로드</span> <span aria-hidden="true">↓</span></a
-        >
       </nav>
     </header>
     <main id="main">
-      <section class="hero wrap" aria-labelledby="hero-title">
-        <div class="hero-topline">
-          <span class="eyebrow"
-            ><i class="status-dot"></i> YOUR IDEAS. IN MOTION.</span
-          ><span class="hero-edition">THE AI WORKSPACE FOR YOUR DESKTOP</span>
-        </div>
-        <div class="hero-copy">
-          <h1 id="hero-title">
-            생각을 펼치면,<br />일이
-            <span class="flow-word"
-              >흘러갑니다<svg
-                viewBox="0 0 470 18"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path d="M3 12 Q110 1 235 9 T467 6" /></svg></span
-            >.
-          </h1>
-          <div class="hero-aside">
-            <p>
-              내 폴더의 노트를 연결해 지식을 쌓고,<br />
-              그 지식으로 AI와 함께 일하세요.<br />
-              문서 작성부터 반복 자동화, 팀 협업까지.
-            </p>
-            <a class="text-link" href="#playground"
-              >나의 다음 흐름 찾기 <span aria-hidden="true">↘</span></a
-            ><span class="platform-note">macOS · Windows / 로컬부터 시작</span>
-          </div>
-        </div>
-        <div class="playground" id="playground">
-          <div class="playground-heading">
-            <p>
-              <span class="small-index">01 —</span> 앱에서는 이렇게 사용합니다.
-            </p>
-            <span class="demo-label"
-              ><span class="outline-dot"></span> 사용 흐름 예시</span
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-aura" aria-hidden="true"></div>
+        <svg
+          class="flow-ribbon"
+          viewBox="0 0 1440 800"
+          fill="none"
+          aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            <linearGradient
+              id="ribbon-color"
+              x1="100"
+              y1="620"
+              x2="1350"
+              y2="300"
+              gradientUnits="userSpaceOnUse"
             >
+              <stop stop-color="#315cc4" stop-opacity="0" />
+              <stop offset=".3" stop-color="#5585ff" />
+              <stop offset=".6" stop-color="#a1cbff" />
+              <stop offset="1" stop-color="#3163df" stop-opacity="0" />
+            </linearGradient>
+            <filter id="ribbon-blur">
+              <feGaussianBlur stdDeviation="15" />
+            </filter>
+          </defs>
+          <path
+            class="ribbon-glow"
+            d="M-100 520C190 810 375 755 506 611S795 424 995 498 1203 560 1540 233"
+            stroke="url(#ribbon-color)"
+            stroke-width="20"
+            filter="url(#ribbon-blur)"
+          />
+          <g stroke="url(#ribbon-color)">
+            <path
+              d="M-100 520C190 810 375 755 506 611S795 424 995 498 1203 560 1540 233"
+              stroke-width="2"
+            />
+            <path
+              d="M-100 532C190 822 375 767 506 623S795 436 995 510 1203 572 1540 245"
+              opacity=".55"
+            />
+            <path
+              d="M-100 544C190 834 375 779 506 635S795 448 995 522 1203 584 1540 257"
+              opacity=".32"
+            />
+            <path
+              d="M-100 556C190 846 375 791 506 647S795 460 995 534 1203 596 1540 269"
+              opacity=".15"
+            />
+          </g>
+        </svg>
+        <div class="hero-content wrap">
+          <p class="eyebrow hero-eyebrow">
+            <span class="status-dot"></span> YOUR IDEAS. IN FLOW.
+          </p>
+          <h1 id="hero-title">
+            생각이<br />
+            <span class="hero-highlight">일이 되는 곳.</span>
+          </h1>
+          <p class="hero-description">
+            노트에 담긴 생각을 AI와 함께 결과로.<br />
+            <span>기록부터 실행까지, 하나로 이어지는 나의 작업 공간.</span>
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#download"
+              >나의 흐름 시작하기
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow" /></svg></a
+            ><a class="button button-text" href="#playground"
+              >어떻게 이어지나요?
+              <svg class="icon" aria-hidden="true"><use href="#i-down" /></svg
+            ></a>
           </div>
-          <div
-            class="scenario-tabs"
-            role="tablist"
-            aria-label="사용 방법을 볼 기능 선택"
-          >
-            <button id="tab-notes" class="scenario-tab" type="button" role="tab" aria-selected="true" aria-controls="demo-panel" tabindex="0" data-scenario="notes">
-              <span class="tab-number">01</span> 노트로 문서 만들기<span class="tab-arrow" aria-hidden="true">↗</span>
-            </button>
-            <button id="tab-browser" class="scenario-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-scenario="browser">
-              <span class="tab-number">02</span> 웹브라우저 동작 자동화하기<span class="tab-arrow" aria-hidden="true">↗</span>
-            </button>
-            <button id="tab-team" class="scenario-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-scenario="team">
-              <span class="tab-number">03</span> 채널에서 AI와 검토<span class="tab-arrow" aria-hidden="true">↗</span>
-            </button>
-            <button id="tab-calendar" class="scenario-tab" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-scenario="calendar">
-              <span class="tab-number">04</span> 일정과 오늘 할 일<span class="tab-arrow" aria-hidden="true">↗</span>
-            </button>
+          <p class="hero-platform">
+            macOS · Windows <span aria-hidden="true">/</span>
+            <span>로컬 노트는 로그인 없이</span>
+          </p>
+        </div>
+        <div class="showcase wrap" id="playground">
+          <div class="showcase-heading">
+            <span class="eyebrow">A SPACE FOR YOUR NEXT IDEA</span
+            ><span class="example-label">기능을 재구성한 예시</span>
           </div>
-          <div
-            class="workspace"
-            id="demo-panel"
-            role="tabpanel"
-            aria-labelledby="tab-notes"
-            tabindex="0"
-          >
-            <div class="workspace-titlebar">
+          <div class="app-window">
+            <div class="app-toolbar">
               <div class="window-dots" aria-hidden="true">
                 <i></i><i></i><i></i>
               </div>
-              <span
-                ><img
+              <div
+                class="scenario-tabs"
+                role="tablist"
+                aria-label="제품 미리보기"
+              >
+                <button
+                  type="button"
+                  id="tab-notes"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="panel-notes"
+                  tabindex="0"
+                  data-scene="notes"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-note" /></svg
+                  >노트 & AI
+                </button>
+                <button
+                  type="button"
+                  id="tab-automation"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-automation"
+                  tabindex="-1"
+                  data-scene="automation"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-flow" /></svg
+                  >반복 업무
+                </button>
+                <button
+                  type="button"
+                  id="tab-team"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-team"
+                  tabindex="-1"
+                  data-scene="team"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-people" /></svg
+                  >함께하는 일
+                </button>
+              </div>
+              <span class="toolbar-brand" aria-hidden="true">liberaflow</span>
+            </div>
+            <div
+              class="scene"
+              id="panel-notes"
+              role="tabpanel"
+              aria-labelledby="tab-notes"
+              tabindex="0"
+            >
+              <div class="app-rail" aria-hidden="true">
+                <img
                   src="assets/images/Liberaflow_logo.png"
                   alt=""
-                  width="15"
-                  height="15"
-                />
-                사용 예시 <span class="titlebar-divider">/</span>
-                <span id="workspace-context">Notes · 문서 작성 예시</span></span
-              ><span class="local-indicator"
-                ><i></i
-                ><span id="workspace-save-status">AI 모델 연결 후 사용</span></span
-              >
-            </div>
-            <div class="demo-prerequisites">
-              <strong>시작 전에</strong>
-              <p id="demo-prerequisite">내 보관함을 열고 OpenAI 또는 Claude 계정을 연결하세요.</p>
-            </div>
-            <div class="workspace-body">
-              <aside class="demo-sidebar" aria-label="데모 작업 공간">
-                <div class="workspace-name">
-                  나의 보관함 <span aria-hidden="true">⌄</span>
+                  width="25"
+                  height="25"
+                /><span class="rail-active"
+                  ><svg class="icon"><use href="#i-note" /></svg></span
+                ><span
+                  ><svg class="icon"><use href="#i-flow" /></svg></span
+                ><span
+                  ><svg class="icon"><use href="#i-people" /></svg></span
+                ><span
+                  ><svg class="icon"><use href="#i-calendar" /></svg></span
+                ><span class="rail-avatar">Y</span>
+              </div>
+              <div class="note-preview">
+                <div class="preview-breadcrumb">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-folder" /></svg
+                  ><span>내 보관함</span><span aria-hidden="true">/</span
+                  ><span>워크숍 노트.md</span>
                 </div>
-                <div class="sidebar-search">
-                  <span aria-hidden="true">⌕</span> 모든 생각의 시작
-                </div>
-                <div class="sidebar-label">WORKSPACE</div>
-                <div class="sidebar-item selected" id="sidebar-notes">
-                  <span aria-hidden="true">▤</span> 노트 <span>12</span>
-                </div>
-                <div class="sidebar-item" id="sidebar-browser">
-                  <span aria-hidden="true">⌘</span> 에이전트
-                </div>
-                <div class="sidebar-item" id="sidebar-team">
-                  <span aria-hidden="true">#</span> 채널
-                </div>
-                <div class="sidebar-item" id="sidebar-calendar">
-                  <span aria-hidden="true">▦</span> 캘린더
-                </div>
-                <div class="sidebar-label folders-label" id="sidebar-group-label">보관함 자료</div>
-                <div class="sidebar-folder">
-                  <span aria-hidden="true">⌄</span> <span id="sidebar-folder-label">출시 준비</span>
-                </div>
-                <div class="sidebar-file" id="sidebar-file">출시 준비.md</div>
-                <div class="sidebar-bottom">
-                  <span class="avatar avatar-tiny">나</span> 나만의 속도로,
-                  나답게.
-                </div>
-              </aside>
-              <div class="demo-document" id="demo-document">
-                <div class="document-breadcrumb">
-                  내 보관함 <span>/</span> 출시 준비.md
-                  <span class="document-format">MD</span>
-                </div>
-                <div class="document-content">
-                  <span class="document-eyebrow">입력 자료 · 노트 예시</span>
-                  <h2>출시 준비</h2>
-                  <p class="document-lead">팀에서 정한 내용과 아직 정하지 않은 내용을 함께 기록합니다.</p>
-                  <div class="note-callout">
-                    <span aria-hidden="true">↗</span>
-                    <p>다음 주에 고객 인터뷰를 시작한다.<br />대상은 개인 작업자 3명. 아직 섭외하지 않았다.</p>
+                <div class="note-paper">
+                  <span class="note-kicker">THE NEXT CHAPTER</span>
+                  <h2>우리의 다음 아이디어</h2>
+                  <p class="note-intro">작게 시작하고, 함께 만들어 가기.</p>
+                  <div class="note-divider"></div>
+                  <h3>이번 워크숍에서</h3>
+                  <p class="note-check">
+                    <span aria-hidden="true">✓</span>흩어진 아이디어를 한
+                    방향으로
+                  </p>
+                  <p class="note-check">
+                    <span aria-hidden="true">✓</span>지금 시작할 수 있는 일 찾기
+                  </p>
+                  <div class="note-links">
+                    <span>[[브랜드 방향]]</span><span>[[고객 리서치]]</span>
                   </div>
-                  <h3>질문 초안</h3>
-                  <ul class="demo-source-list">
-                    <li>자료를 어디에 저장하는가?</li>
-                    <li>자료를 다시 찾을 때 무엇이 어려운가?</li>
-                  </ul>
-                  <dl class="demo-facts">
-                    <div><dt>기한</dt><dd>이번 주 금요일까지 질문지 준비</dd></div>
-                    <div><dt>미정</dt><dd>섭외 담당자, 인터뷰 일정</dd></div>
-                  </dl>
+                  <p class="note-footer">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-check" /></svg
+                    >내 폴더에 남는 마크다운 노트
+                  </p>
                 </div>
               </div>
-              <template id="calendar-example">
-                <div class="document-breadcrumb">Calendar <span>/</span> 나의 하루 <span class="document-format">LOCAL</span></div>
-                <div class="document-content">
-                  <span class="document-eyebrow">PLAN YOUR DAY. SEE IT TOGETHER.</span>
-                  <h2>일정을 세우고, 오늘 할 일을 정리하세요.</h2>
-                  <p class="document-lead">Calendar에서 시간 계획과 할 일을 함께 관리합니다. 개인 일정과 할 일은 로그인 없이 시작할 수 있습니다.</p>
-                  <div class="calendar-overview">
-                    <div><span class="calendar-icon" aria-hidden="true">▦</span><span class="document-eyebrow">CALENDAR</span><h3>나의 일정</h3><p>날짜·시간을 정해 일정 만들기</p></div>
-                    <div><span class="calendar-icon" aria-hidden="true">☑</span><span class="document-eyebrow">TASKS</span><h3>오늘의 할 일</h3><p>할 일 추가하고 완료 표시하기</p></div>
+              <div class="ai-preview">
+                <div class="preview-heading">
+                  <span class="spark-icon"
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#i-spark" /></svg></span
+                  ><span>문서 옆의 AI</span><span class="preview-tag">AI</span>
+                </div>
+                <div class="prompt-bubble">
+                  <span class="mention-chip">@워크숍 노트</span>
+                  <p>이 노트로 제안서 초안을 만들어줘.</p>
+                </div>
+                <div class="ai-response">
+                  <span class="response-dot" aria-hidden="true">✳</span>
+                  <p>
+                    아이디어를 정리해<br />
+                    하나의 문서로 담았어요.
+                  </p>
+                </div>
+                <div class="file-result">
+                  <span class="file-icon">W</span>
+                  <div>
+                    <strong>워크숍 제안서.docx</strong
+                    ><span>열어서 확인하고, 이어서 다듬기</span>
                   </div>
-                  <p class="calendar-connection"><span aria-hidden="true">↔</span> 일정 · 할 일 · 간트 타임라인이 서로 연결됩니다.</p>
-                  <div class="calendar-next"><strong>함께할 때는, 로그인으로 연결.</strong><p>팀을 만들거나 사람을 팔로우하면, 그 사람들의 공개 일정도 내 일정과 한 화면에서 볼 수 있습니다.</p></div>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-note" />
+                  </svg>
                 </div>
-              </template>
-              <section class="demo-agent" aria-label="선택한 기능의 사용 순서">
-                <div class="agent-heading">
-                  <span><i class="sparkle" aria-hidden="true">✳</i><span id="demo-surface-title">노트 옆 AI</span></span>
+                <div class="preview-footnote">
+                  <span class="mini-line" aria-hidden="true"></span>내 자료에서
+                  시작하는 결과물
                 </div>
-                <div class="agent-conversation">
-                  <div class="agent-welcome">
-                    <h3 id="agent-title">노트를 지정하고, Word 초안을 요청하세요.</h3>
-                    <p id="agent-description">작성할 형식과 담을 내용을 요청에 함께 적습니다.</p>
+              </div>
+            </div>
+            <div
+              class="scene"
+              id="panel-automation"
+              role="tabpanel"
+              aria-labelledby="tab-automation"
+              tabindex="0"
+              hidden
+            >
+              <div class="app-rail" aria-hidden="true">
+                <img
+                  src="assets/images/Liberaflow_logo.png"
+                  alt=""
+                  width="25"
+                  height="25"
+                /><span
+                  ><svg class="icon"><use href="#i-note" /></svg></span
+                ><span class="rail-active"
+                  ><svg class="icon"><use href="#i-flow" /></svg></span
+                ><span
+                  ><svg class="icon"><use href="#i-people" /></svg></span
+                ><span
+                  ><svg class="icon"><use href="#i-calendar" /></svg
+                ></span>
+              </div>
+              <div class="automation-preview">
+                <div class="preview-breadcrumb">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-flow" /></svg
+                  >Browser Automation
+                </div>
+                <div class="workflow-paper">
+                  <span class="note-kicker"
+                    >LESS REPETITION. MORE CREATION.</span
+                  >
+                  <h2>반복은 흐름에 맡기고.</h2>
+                  <div class="workflow-steps">
+                    <div>
+                      <span class="step-symbol"
+                        ><svg class="icon" aria-hidden="true">
+                          <use href="#i-play" /></svg></span
+                      ><span>페이지 열기</span
+                      ><span class="step-type">BROWSER</span>
+                    </div>
+                    <i aria-hidden="true"></i>
+                    <div>
+                      <span class="step-symbol"
+                        ><svg class="icon" aria-hidden="true">
+                          <use href="#i-grid" /></svg></span
+                      ><span>데이터 뽑기</span
+                      ><span class="step-type">EXTRACT</span>
+                    </div>
+                    <i aria-hidden="true"></i>
+                    <div>
+                      <span class="step-symbol"
+                        ><svg class="icon" aria-hidden="true">
+                          <use href="#i-down" /></svg></span
+                      ><span>파일로 내보내기</span
+                      ><span class="step-type">EXPORT</span>
+                    </div>
                   </div>
-                  <ol class="demo-instructions" id="demo-instructions"><li><strong>자료 선택</strong><p>Notes의 AI 입력창에서 @를 입력하고 출시 준비 노트를 선택합니다.</p></li><li><strong>Word 파일 요청</strong><p>Word(.docx)로 만들어 달라고 요청하거나 /문서 명령을 사용합니다.</p></li><li><strong>미리보기에서 확인</strong><p>생성한 문서를 열어 확인하고, 수정할 부분을 선택해 AI에게 요청합니다. 공유는 공유 창에서 따로 선택합니다.</p></li></ol>
-                  <div class="user-prompt" id="demo-prompt"><span class="mention">@출시 준비</span>를 바탕으로 고객 인터뷰 계획을 Word(.docx)로 만들어줘. 목표·대상·질문·이번 주 할 일을 정리하고, 미정인 내용은 그대로 표시해줘.</div>
-                  <div class="agent-output" id="agent-output" hidden>
-                    <div class="result-file" id="result-file" hidden></div>
+                </div>
+              </div>
+              <div class="automation-result">
+                <div class="orbit-file" aria-hidden="true">
+                  <div class="orbit-ring"></div>
+                  <div class="orbit-ring second"></div>
+                  <span class="export-file">X<span>XLSX</span></span>
+                </div>
+                <h3>쓸 수 있는 파일로.</h3>
+                <p>
+                  수집한 자료를 CSV·Excel로.<br />
+                  결과는 내보낸 파일에서 확인하세요.
+                </p>
+                <span class="preview-footnote">브라우저 확장 연결 후 사용</span>
+              </div>
+            </div>
+            <div
+              class="scene"
+              id="panel-team"
+              role="tabpanel"
+              aria-labelledby="tab-team"
+              tabindex="0"
+              hidden
+            >
+              <div class="app-rail" aria-hidden="true">
+                <img
+                  src="assets/images/Liberaflow_logo.png"
+                  alt=""
+                  width="25"
+                  height="25"
+                /><span
+                  ><svg class="icon"><use href="#i-note" /></svg></span
+                ><span
+                  ><svg class="icon"><use href="#i-flow" /></svg></span
+                ><span class="rail-active"
+                  ><svg class="icon"><use href="#i-people" /></svg></span
+                ><span
+                  ><svg class="icon"><use href="#i-calendar" /></svg
+                ></span>
+              </div>
+              <div class="channel-preview">
+                <div class="preview-breadcrumb">
+                  <span aria-hidden="true">#</span
+                  ><span>우리의 다음 프로젝트</span
+                  ><span class="preview-tag">CHANNEL</span>
+                </div>
+                <div class="channel-messages">
+                  <div class="channel-message">
+                    <span class="person-avatar">Y</span>
+                    <div>
+                      <strong>나</strong>
+                      <p>
+                        <span class="mention-chip">#리뷰어</span>
+                        <span>공유한 제안서를 검토해줘.</span>
+                      </p>
+                      <span class="shared-file"
+                        ><svg class="icon" aria-hidden="true">
+                          <use href="#i-note" /></svg
+                        >워크숍 제안서.docx</span
+                      >
+                    </div>
+                  </div>
+                  <div class="channel-message">
+                    <span class="person-avatar agent-avatar"
+                      ><svg class="icon" aria-hidden="true">
+                        <use href="#i-spark" /></svg
+                    ></span>
+                    <div>
+                      <strong
+                        >리뷰어 <span class="preview-tag">AI</span></strong
+                      >
+                      <p>
+                        공유한 문서에서 검토할 내용을<br />
+                        함께 살펴볼게요.
+                      </p>
+                      <div class="review-note">
+                        <svg class="icon" aria-hidden="true">
+                          <use href="#i-check" /></svg
+                        >검토 의견도, 다음 할 일도 한 대화 안에.
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="agent-action">
-                  <button class="button button-lime run-demo" id="run-demo" type="button">
-                    <span id="run-label">예시 결과 보기</span><span id="run-icon" aria-hidden="true">↗</span>
-                  </button>
-                  <span id="demo-status" class="demo-status" role="status" aria-live="polite">예시 자료로 사용 순서를 살펴보세요.</span>
+              </div>
+              <div class="team-preview">
+                <span class="note-kicker">BETTER, TOGETHER.</span>
+                <div class="team-orbits" aria-hidden="true">
+                  <span class="team-orbit"></span
+                  ><span class="team-person human">Y</span
+                  ><span class="team-person bot"
+                    ><svg class="icon"><use href="#i-spark" /></svg></span
+                  ><span class="team-person colleague">J</span>
                 </div>
-              </section>
+                <h3>
+                  사람도, AI도.<br />
+                  같은 맥락 안에서.
+                </h3>
+                <p>
+                  문서를 공유하고,<br />
+                  역할에 맞는 AI 팀원을 부르세요.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="demo-caption">
-            <span><span aria-hidden="true">↳</span> 기능별 사용 순서와 안내를 확인하세요.</span>
-            <span>사용 방법을 요약한 예시입니다. 이 페이지에서 AI·브라우저를 실행하지 않습니다.</span>
+          <div class="showcase-caption">
+            <p>
+              <span class="caption-dot" aria-hidden="true"></span
+              ><span id="scene-caption"
+                >생각을 적던 자리에서, 다음 문서까지.</span
+              >
+            </p>
+            <a id="scene-guide" href="docs.html#ai"
+              >사용 방법 보기 <span aria-hidden="true">↗</span></a
+            >
           </div>
         </div>
-        <div class="hero-bottom">
-          <span>하나의 앱, 이어지는 가능성.</span>
-          <div>
-            <span>Markdown</span><i>+</i><span>AI agents</span><i>+</i
-            ><span>Automation</span><i>+</i><span>Your team</span>
-          </div>
-          <span class="scroll-hint" aria-hidden="true"
-            >SCROLL TO EXPLORE ↓</span
+        <div class="principles wrap">
+          <span
+            ><svg class="icon" aria-hidden="true"><use href="#i-folder" /></svg
+            >내 폴더에 남는 노트</span
+          ><span
+            ><svg class="icon" aria-hidden="true"><use href="#i-spark" /></svg
+            >내가 선택한 AI</span
+          ><span
+            ><svg class="icon" aria-hidden="true"><use href="#i-flow" /></svg
+            >나의 방식대로 이어지는 일</span
           >
         </div>
       </section>
 
       <section
-        class="possibilities light-section"
+        class="possibilities section-space"
         id="possibilities"
         aria-labelledby="possibilities-title"
       >
-        <span id="features" class="legacy-anchor" aria-hidden="true"></span>
+        <span class="anchor-alias" id="features"></span>
         <div class="wrap">
-          <div class="section-kicker">
-            <span>LESS SWITCHING. MORE DOING.</span
-            ><span>02 / POSSIBILITIES</span>
-          </div>
-          <div class="section-intro">
-            <h2 id="possibilities-title">
-              도구를 오가는 대신,<br />생각의 흐름을 따라.
-            </h2>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / MAKE ROOM FOR WHAT MATTERS</p>
+              <h2 id="possibilities-title">
+                더 적게 오가고.<br />
+                <span>더 멀리 생각하고.</span>
+              </h2>
+            </div>
             <p>
-              기록하고, 연결하고, 만들고, 함께 실행하세요.<br />필요한 순간에
-              필요한 도구가 바로 옆에 있습니다.
+              당신의 일에 필요한 것들이<br />
+              자연스럽게 이어집니다.
             </p>
           </div>
-          <div class="feature-pair">
-            <article class="feature feature-knowledge" id="knowledge">
-              <div class="feature-top">
-                <span class="feature-tag">01 / CREATE → CONNECT</span
-                ><span class="feature-symbol" aria-hidden="true">↗</span>
-              </div>
-              <h3>쌓이는 메모에서,<br />연결되는 지식으로.</h3>
-              <p>
-                마크다운 노트를 만들고, 위키링크·캔버스로 연결하세요.<br />따로 있던 생각 사이에서
-                새로운 맥락을 발견하세요.
-              </p>
-              <div class="knowledge-graph" aria-label="연결된 노트 체험">
-                <svg viewBox="0 0 500 230" aria-hidden="true">
-                  <path
-                    d="M250 115L80 60M250 115L405 45M250 115L425 170M250 115L130 190M80 60L130 190M405 45L425 170M250 115L265 215"
-                  /></svg
-                ><button
-                  class="graph-node graph-center active"
-                  data-note="start"
-                  type="button"
-                  aria-pressed="true"
-                >
-                  새로운 시작</button
-                ><button
-                  class="graph-node graph-one"
-                  data-note="interview"
-                  type="button"
-                  aria-pressed="false"
-                >
-                  고객 인터뷰</button
-                ><button
-                  class="graph-node graph-two"
-                  data-note="idea"
-                  type="button"
-                  aria-pressed="false"
-                >
-                  작은 아이디어</button
-                ><button
-                  class="graph-node graph-three"
-                  data-note="plan"
-                  type="button"
-                  aria-pressed="false"
-                >
-                  실행 계획</button
-                ><button
-                  class="graph-node graph-four"
-                  data-note="research"
-                  type="button"
-                  aria-pressed="false"
-                >
-                  리서치 노트</button
-                ><span class="graph-dot" aria-hidden="true"></span>
-              </div>
-              <div class="graph-readout" aria-live="polite">
-                <span aria-hidden="true">↳</span>
-                <p id="graph-description">
-                  노트를 눌러 연결된 생각을 따라가 보세요.
+          <div class="feature-grid">
+            <article class="feature-card knowledge-card" id="knowledge">
+              <div class="feature-copy">
+                <span class="feature-index">01 — KNOWLEDGE</span>
+                <h3>
+                  메모가 연결되면,<br />
+                  나만의 지식이 됩니다.
+                </h3>
+                <p>
+                  노트, 위키링크, 캔버스.<br />
+                  따로 있던 생각 사이에 길을 만드세요.
                 </p>
+                <a class="text-link" href="docs.html#notes"
+                  >노트 살펴보기 <span aria-hidden="true">↗</span></a
+                >
               </div>
-              <div class="feature-footer">
-                <span>내 컴퓨터에 남는 .md 파일</span
-                ><span>Wikilinks · Canvas · Graph</span>
+              <div class="knowledge-visual" aria-hidden="true">
+                <svg viewBox="0 0 450 270" fill="none">
+                  <path
+                    d="M226 134 77 65m149 69L365 53M226 134l128 97M226 134 80 226M226 134l4 109"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="226"
+                    cy="134"
+                    r="68"
+                    stroke="currentColor"
+                    stroke-dasharray="3 6"
+                    opacity=".4"
+                  /></svg
+                ><span class="graph-node graph-center"
+                  ><svg class="icon"><use href="#i-spark" /></svg>나의
+                  아이디어</span
+                ><span class="graph-node node-one">리서치</span
+                ><span class="graph-node node-two">영감의 조각</span
+                ><span class="graph-node node-three">다음 프로젝트</span
+                ><span class="graph-node node-four">오늘의 메모</span>
               </div>
             </article>
-            <article class="feature feature-ai" id="ai">
-              <div class="feature-top">
-                <span class="feature-tag">02 / AI</span
-                ><span class="feature-symbol" aria-hidden="true">✳</span>
-              </div>
-              <h3>대답에서 멈추지 않는,<br />내 문서 옆 AI.</h3>
-              <p>
-                자료를 읽고, 초안을 쓰고, 문서를 다듬고.<br />이미 쓰는 AI
-                계정을 연결해 결과물까지 만드세요.
-              </p>
-              <div class="creation-demo">
-                <div class="creation-source">
-                  <span aria-hidden="true">▤</span> 내 노트 + 참고 자료
-                </div>
-                <div class="creation-line" aria-hidden="true"></div>
-                <div class="creation-prompt">
-                  <span class="sparkle" aria-hidden="true">✳</span
-                  ><span>“Word·Excel·PowerPoint 파일로 정리해줘.”</span>
-                </div>
-                <div class="creation-files">
-                  <span class="file-tile"
-                    ><i class="file-icon word">W</i>제안서.docx</span
-                  ><span class="file-tile"
-                    ><i class="file-icon excel">X</i>분석표.xlsx</span
-                  ><span class="file-tile"
-                    ><i class="file-icon slides">P</i>발표자료.pptx</span
-                  >
-                </div>
-              </div>
-              <div class="feature-footer">
-                <span>OpenAI · Claude · OpenRouter</span
-                ><a href="#playground" data-demo-link="notes"
-                  >사용 흐름 보기 ↗</a
+            <article class="feature-card automation-card" id="automation">
+              <div class="feature-copy">
+                <span class="feature-index">02 — AUTOMATION</span>
+                <h3>
+                  한 번 만든 흐름,<br />
+                  여러 번의 여유.
+                </h3>
+                <p>
+                  브라우저의 클릭과 입력을 기록하고,<br />
+                  엑셀·CSV의 여러 행을 따라 반복하세요.
+                </p>
+                <a class="text-link" href="docs.html#automation"
+                  >자동화 살펴보기 <span aria-hidden="true">↗</span></a
                 >
+              </div>
+              <div class="automation-visual" aria-hidden="true">
+                <div class="auto-track">
+                  <span
+                    ><svg class="icon"><use href="#i-play" /></svg></span
+                  ><i></i
+                  ><span
+                    ><svg class="icon"><use href="#i-flow" /></svg></span
+                  ><i></i
+                  ><span
+                    ><svg class="icon"><use href="#i-check" /></svg
+                  ></span>
+                </div>
+                <div class="auto-labels">
+                  <span>기록</span><span>반복</span><span>완료</span>
+                </div>
+                <div class="data-chip">CSV <span>↗</span> XLSX</div>
+              </div>
+            </article>
+            <article class="feature-card team-card" id="team">
+              <div class="feature-copy">
+                <span class="feature-index">03 — COLLABORATION</span>
+                <h3>
+                  좋은 생각 옆에,<br />
+                  함께할 동료.
+                </h3>
+                <p>
+                  공유 문서와 채널, 그리고 AI 팀원.<br />
+                  같은 자료를 보며 다음 일을 만드세요.
+                </p>
+                <a class="text-link" href="docs.html#team"
+                  >협업 살펴보기 <span aria-hidden="true">↗</span></a
+                >
+              </div>
+              <div class="collaboration-visual" aria-hidden="true">
+                <div class="collab-avatars">
+                  <span>Y</span
+                  ><span
+                    ><svg class="icon"><use href="#i-spark" /></svg></span
+                  ><span>J</span>
+                </div>
+                <div class="collab-line"><span>@</span><i></i><i></i></div>
+                <div class="collab-line short">
+                  <span>#</span><i></i
+                  ><svg class="icon"><use href="#i-check" /></svg>
+                </div>
               </div>
             </article>
           </div>
-          <article class="automation-feature" id="automation">
-            <div class="automation-copy">
-              <span class="feature-tag">03 / AUTOMATE</span>
-              <h3>한 번 해본 일,<br />다시 하지 않도록.</h3>
-              <p>
-                브라우저의 클릭과 입력을 녹화하세요.<br />엑셀·CSV의 여러 행을
-                따라 반복 실행하고,<br />데이터 뽑기로 고른 값은 하나의 파일로.
-              </p>
-              <a
-                class="text-link dark-link"
-                href="#playground"
-                data-demo-link="browser"
-                >반복 업무의 다음 모습 <span aria-hidden="true">↗</span></a
-              >
+          <div class="calendar-strip" id="organize">
+            <span class="calendar-mark"
+              ><svg class="icon" aria-hidden="true">
+                <use href="#i-calendar" /></svg
+            ></span>
+            <div>
+              <h3>오늘의 계획도, 같은 공간에서.</h3>
+              <p>캘린더 · 할 일 · 간트 · 바탕화면 위젯</p>
             </div>
-            <div class="automation-flow">
-              <div class="flow-window">
-                <div class="flow-window-head">
-                  <span class="record-dot"></span> 나의 브라우저 워크플로
-                  <span>Chrome / Edge</span>
-                </div>
-                <ol class="flow-steps">
-                  <li>
-                    <span class="flow-step-icon">01</span>
-                    <div>
-                      <strong>평소처럼 클릭하고 입력</strong
-                      ><span>내가 하는 일을 한 번 녹화</span>
-                    </div>
-                    <span class="step-check">✓</span>
-                  </li>
-                  <li>
-                    <span class="flow-step-icon">02</span>
-                    <div>
-                      <strong>반복할 데이터를 연결</strong
-                      ><span>엑셀·CSV 열을 녹화한 입력칸에 연결</span>
-                    </div>
-                    <span class="step-check">✓</span>
-                  </li>
-                  <li>
-                    <span class="flow-step-icon">03</span>
-                    <div>
-                      <strong>원하는 값을 골라 수집</strong
-                      ><span>데이터 뽑기로 선택 · 재생 후 파일로 내보내기</span>
-                    </div>
-                    <span class="step-check">✓</span>
-                  </li>
-                </ol>
-                <a
-                  href="#playground"
-                  data-demo-link="browser"
-                  class="flow-replay"
-                  >내 반복 업무도 이렇게 <span aria-hidden="true">→</span></a
-                >
-              </div>
-              <span class="automation-footnote"
-                >브라우저 확장 연결 후 사용 · 실행 결과를 확인할 수
-                있습니다</span
-              >
+            <div class="calendar-days" aria-hidden="true">
+              <span>M</span><span>T</span><span class="today">W<i></i></span
+              ><span>T</span><span>F</span>
             </div>
-          </article>
-          <div class="feature-pair lower-pair">
-            <article class="feature feature-team" id="team">
-              <div class="feature-top">
-                <span class="feature-tag">04 / TOGETHER</span
-                ><span class="login-pill">로그인으로 연결</span>
-              </div>
-              <h3>사람도 AI도,<br />같은 방향으로.</h3>
-              <p>
-                문서는 필요한 사람에게 공유하고,<br />채널에서는 AI 팀원을 불러
-                함께 일을 진행하세요.
-              </p>
-              <div class="team-chat">
-                <div class="chat-line">
-                  <span class="avatar human-avatar">나</span>
-                  <div>
-                    <strong>우리 팀 <span>지금</span></strong>
-                    <p>
-                      <b>#Reviewer</b> <b>@프로젝트 제안서</b> 검토해줘.<br /><b
-                        >#Worker</b
-                      >
-                      다음 할 일을 정리해줘.
-                    </p>
-                  </div>
-                </div>
-                <div class="chat-line">
-                  <span class="avatar reviewer-avatar">R</span>
-                  <div>
-                    <strong>Reviewer <span class="ai-badge">AI</span></strong>
-                    <p>공유한 문서를 바탕으로 검토할게요.</p>
-                  </div>
-                </div>
-                <div class="team-file">
-                  <span aria-hidden="true">▧</span
-                  ><span>우리 팀의 지식 공간</span
-                  ><span class="stacked-avatars" aria-hidden="true"
-                    ><i>나</i><i>R</i><i>W</i></span
-                  >
-                </div>
-              </div>
-              <div class="feature-footer">
-                <span>공유 · Spaces · AI 팀원 · Channel</span
-                ><a href="#playground" data-demo-link="team"
-                  >협업 흐름 보기 ↗</a
-                >
-              </div>
-            </article>
-            <article class="feature feature-time" id="organize">
-              <div class="feature-top"><span class="feature-tag">05 / CALENDAR</span><span class="feature-symbol" aria-hidden="true">▦</span></div>
-              <h3>나의 하루를 계획하고,<br />함께 볼 일정까지.</h3>
-              <p>Calendar에서 일정을 세우고 오늘 할 일을 만드세요. 로그인해 팀을 만들거나 사람을 팔로우하면, 서로의 공개 일정도 한 화면에 담을 수 있습니다.</p>
-              <div class="calendar-feature-summary">
-                <div><span aria-hidden="true">▦</span><div><strong>개인 일정 + 오늘의 할 일</strong><p>로그인 없이 시작하는 나의 하루</p></div></div>
-                <div><span aria-hidden="true">↗</span><div><strong>팀 동료 + 팔로우한 사람</strong><p>연결된 사람들의 공개 일정을 함께 확인</p></div></div>
-                <p class="calendar-feature-note">같은 팀이면 별도 팔로우 없이. 비공개 일정은 나와 참석자에게만.</p>
-              </div>
-              <div class="feature-footer"><span>Calendar · Tasks · Gantt · 위젯</span><a href="#playground" data-demo-link="calendar">일정 사용 흐름 보기 ↗</a></div>
-            </article>
+            <a class="text-link" href="docs.html#schedule"
+              >일정 살펴보기 <span aria-hidden="true">↗</span></a
+            >
           </div>
         </div>
       </section>
 
       <section
-        class="ownership"
+        class="ownership wrap section-space"
         id="your-data"
         aria-labelledby="ownership-title"
       >
-        <span id="vision" class="legacy-anchor" aria-hidden="true"></span>
-        <div class="wrap ownership-grid">
-          <div class="ownership-copy">
-            <span class="eyebrow">YOUR FILES. YOUR PACE.</span>
-            <h2 id="ownership-title">내 생각의 주인은,<br />언제나 나.</h2>
-            <p>
-              계정 없이 시작하는 로컬 노트.<br />앱 밖에서도 열리는 마크다운
-              파일.<br />연결은 필요해지는 순간에, 내가 선택합니다.
-            </p>
-            <a class="text-link dark-link" href="#getting-started"
-              >이미 쓰던 보관함으로 시작하기
-              <span aria-hidden="true">↗</span></a
-            >
+        <span class="anchor-alias" id="vision"></span>
+        <div class="ownership-art" aria-hidden="true">
+          <div class="ownership-ring ring-outer"></div>
+          <div class="ownership-ring ring-inner"></div>
+          <div class="local-folder">
+            <svg viewBox="0 0 180 145" fill="none">
+              <path
+                d="M8 32C8 24 14 18 22 18h47l17 18h71c8 0 15 7 15 15v73c0 8-7 15-15 15H22c-8 0-14-7-14-15V32Z"
+                fill="#396cde"
+              />
+              <path
+                d="M8 62c0-8 6-14 14-14h135c8 0 15 6 15 14v62c0 8-7 15-15 15H22c-8 0-14-7-14-15V62Z"
+                fill="#729afb"
+              />
+              <path
+                d="M8 63c0-8 6-14 14-14h135c8 0 15 6 15 14"
+                stroke="#b4cdff"
+              /></svg
+            ><span>.md</span>
           </div>
-          <div class="ownership-panel">
-            <div
-              class="mode-switch"
-              role="group"
-              aria-label="저장 및 협업 방식 비교"
-            >
-              <button
-                type="button"
-                class="active"
-                data-mode="local"
-                aria-pressed="true"
-              >
-                내 컴퓨터에서</button
-              ><button type="button" data-mode="connected" aria-pressed="false">
-                연결이 필요할 때
-              </button>
-            </div>
-            <div
-              class="ownership-details"
-              id="ownership-details"
-              aria-live="polite"
-            >
-              <div class="ownership-icon" aria-hidden="true">↳</div>
-              <span class="ownership-label">START LOCAL</span>
-              <h3>로그인 없이, 바로 시작.</h3>
-              <ul>
-                <li>노트는 내 폴더 안의 .md 파일로</li>
-                <li>노트·캔버스·그래프·일정·할 일</li>
-                <li>기존 마크다운 보관함도 그대로 열기</li>
-              </ul>
-              <p>AI 기능은 별도의 모델 계정 연결과 네트워크가 필요합니다.</p>
-            </div>
-          </div>
+          <span class="local-label"
+            ><svg class="icon"><use href="#i-lock" /></svg>LOCAL. YOURS.</span
+          >
         </div>
-      </section>
-
-      <section class="getting-started light-section" id="getting-started" aria-labelledby="getting-started-title">
-        <div class="wrap">
-          <div class="section-kicker"><span>A GOOD PLACE TO START.</span><span>03 / GETTING STARTED</span></div>
-          <div class="section-intro">
-            <h2 id="getting-started-title">첫 노트부터,<br />나만의 흐름까지.</h2>
-            <p>내 폴더를 여는 것으로 시작하세요.<br />필요한 기능을 하나씩 더하면 됩니다.</p>
-          </div>
-          <ol class="getting-started-steps">
-            <li class="getting-started-step">
-              <span class="guide-step-number">01</span>
-              <h3>내 보관함 열기</h3>
-              <p>앱을 설치하고 첫 실행에서 보관함 폴더를 고르세요. 새 폴더를 만들거나 Obsidian에서 쓰던 마크다운 폴더를 열면, 노트는 내 컴퓨터의 .md 파일로 남습니다.</p>
-              <details class="guide-tip"><summary>노트를 연결하고 규칙 정하기</summary><p>[[노트 제목]]으로 생각을 연결하고 캔버스·그래프에서 살펴보세요. AI 연결 후 채팅에 /init을 보내면 보관함을 살펴보고 AGENTS.md 규칙서를 만들거나 개선할 점을 제안합니다.</p></details>
-            </li>
-            <li class="getting-started-step">
-              <span class="guide-step-number">02</span>
-              <h3>내 문서 옆에 AI 연결</h3>
-              <p>노트 옆 채팅에서 OpenAI 또는 Claude를 고르고 본인 계정을 연결하세요. @로 노트·파일을 불러오거나 끌어다 놓은 뒤, 자료를 바탕으로 초안과 결과물을 요청해보세요.</p>
-              <details class="guide-tip"><summary>문서 만들기와 모델 이용 안내</summary><p>/문서 · /스프레드시트 · /프레젠테이션으로 Word·Excel·PowerPoint 파일을 만들고, 미리보기에서 수정할 부분을 선택해 다듬으세요. AI 연결은 Liberaflow 로그인과 별개이며 인터넷과 모델 사용 권한이 필요합니다. OpenRouter·웹 검색·지식 공간 검색은 Liberaflow 로그인 후 사용할 수 있습니다.</p></details>
-            </li>
-            <li class="getting-started-step">
-              <span class="guide-step-number">03</span>
-              <h3>반복할 일은 에이전트에게</h3>
-              <p>에이전트 허브에서 스킬과 예약 작업을 관리하세요. Browser Automation에서 Chrome·Edge 확장을 연결해 클릭·입력을 녹화하고, 엑셀·CSV 열을 입력칸에 연결해 여러 행을 반복 실행할 수 있습니다.</p>
-              <details class="guide-tip"><summary>예약 작업은 언제 실행되나요?</summary><p>한 번·매일·매주 실행할 AI 작업을 예약할 수 있습니다. 예약 작업은 앱이 켜져 있을 때 실행되므로 해당 컴퓨터의 앱을 열어두세요. 실행 기록에서 결과와 실패 사유를 확인할 수 있습니다.</p></details>
-            </li>
-            <li class="getting-started-step">
-              <span class="guide-step-number">04</span>
-              <h3>일정과 사람 연결하기</h3>
-              <p>Calendar에서 일정과 오늘 할 일을 만드세요. 함께 보려면 로그인 후 설정 → 팀에서 팀을 만들어 멤버를 초대하거나, 설정 → 사람에서 팔로우를 요청하세요. 상대가 수락하면 공개 일정을 한 화면에서 볼 수 있습니다.</p>
-              <details class="guide-tip"><summary>일정의 공개 범위와 함께 쓰는 기능</summary><p>공개 일정은 팔로워와 같은 팀원에게 표시됩니다. 비공개 일정은 나와 참석자만 볼 수 있습니다. 로그인하면 문서 공유·보관함 동기화·채널 협업도 사용할 수 있습니다.</p></details>
-            </li>
-          </ol>
-          <p class="getting-started-note">더 자세한 기능과 설정이 궁금하다면 <a href="docs.html">전체 사용 가이드 ↗</a></p>
+        <div class="ownership-copy">
+          <p class="eyebrow">02 / YOUR SPACE, YOUR RULES</p>
+          <h2 id="ownership-title">
+            생각은 자유롭게.<br />
+            <span>파일은 내 곁에.</span>
+          </h2>
+          <p>
+            노트는 내 컴퓨터의 마크다운 파일로 남습니다.<br />
+            이미 쓰던 Obsidian 폴더도 그대로 여세요.<br />
+            동기화와 공유는 필요할 때 선택하면 됩니다.
+          </p>
+          <a class="text-link" href="docs.html#data"
+            >내 데이터 알아보기 <span aria-hidden="true">↗</span></a
+          >
         </div>
       </section>
 
       <section class="faq-section wrap" id="faq" aria-labelledby="faq-title">
-        <div class="faq-intro">
-          <span class="eyebrow">A FEW THINGS TO KNOW</span>
-          <h2 id="faq-title">시작하기 전에.</h2>
+        <div>
+          <p class="eyebrow">A FEW THINGS TO KNOW</p>
+          <h2 id="faq-title">
+            시작 전,<br />
+            궁금한 것들.
+          </h2>
           <a class="text-link" href="docs.html"
-            >시작 가이드 읽기 <span aria-hidden="true">↗</span></a
+            >자세한 사용 가이드 <span aria-hidden="true">↗</span></a
           >
         </div>
         <div class="faq-list">
           <details>
             <summary>
-              무료로 시작할 수 있나요?<span aria-hidden="true">+</span>
+              계정 없이도 쓸 수 있나요?<span aria-hidden="true">+</span>
             </summary>
             <p>
-              현재 베타 기간에는 Liberaflow와 로그인 기능을 무료로 제공합니다.
-              AI는 본인의 OpenAI·Claude 계정 등을 연결해 사용하며, 모델 제공자의
-              요금과 이용 한도는 별도로 적용됩니다. 향후 가격 정책은 별도로
-              안내할 예정입니다.
+              네. 노트, 캔버스, 그래프, 개인 일정과 할 일은 Liberaflow 로그인
+              없이 시작합니다. 기기 간 동기화와 팀 공유에는 로그인이 필요합니다.
             </p>
+          </details>
+          <details id="ai">
+            <summary>
+              AI는 어떻게 연결하나요?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              본인의 OpenAI 또는 Claude 계정을 연결해 사용합니다. 인터넷 연결이
+              필요하며, 모델 제공자의 요금과 이용 한도가 별도로 적용됩니다. AI
+              요청에 필요한 문서와 대화 맥락은 해당 제공자에게 전송될 수
+              있습니다.
+            </p>
+            <a class="text-link" href="docs.html#ai"
+              >AI 연결 가이드 <span aria-hidden="true">↗</span></a
+            >
           </details>
           <details>
             <summary>
-              로그인이 꼭 필요한가요?<span aria-hidden="true">+</span>
+              기존 노트도 가져올 수 있나요?<span aria-hidden="true">+</span>
             </summary>
             <p>
-              아니요. 노트, 캔버스, 그래프, 캘린더와 할 일은 Liberaflow 계정
-              없이 시작할 수 있습니다. 여러 기기 동기화, 팀 공유, 채널과 지식
-              공간을 이용할 때 계정을 추가하면 됩니다. AI 계정 연결은 Liberaflow
-              로그인과 별개입니다.
-            </p>
-          </details>
-          <details>
-            <summary>
-              Obsidian에서 쓰던 노트도 열 수 있나요?<span aria-hidden="true"
-                >+</span
-              >
-            </summary>
-            <p>
-              네. 기존 마크다운 폴더를 보관함으로 열 수 있습니다. 위키링크,
-              마크다운 하이라이트, 수식과 노트 속성을 지원합니다. Obsidian
-              플러그인이나 모든 전용 기능의 호환을 의미하지는 않습니다.
-            </p>
-          </details>
-          <details>
-            <summary>
-              AI가 내 컴퓨터에서 실행되나요?<span aria-hidden="true">+</span>
-            </summary>
-            <p>
-              파일 작업과 에이전트 실행은 데스크톱 앱에서 관리하지만, 모델의
-              응답은 연결한 AI 제공자를 통해 생성됩니다. AI 요청에 필요한 문서와
-              대화 맥락이 해당 제공자에게 전송될 수 있습니다.
+              기존 마크다운 폴더를 보관함으로 열 수 있습니다. Obsidian의
+              위키링크, 하이라이트, 수식과 노트 속성을 지원합니다. Obsidian
+              플러그인이나 모든 전용 기능이 호환되는 것은 아닙니다.
             </p>
           </details>
           <details>
@@ -687,22 +815,7 @@
             </summary>
             <p>
               Windows 11 이상, 또는 macOS 15 이상이 설치된 Apple Silicon Mac(M1
-              이상)을 지원합니다. 현재 제공되는 Mac 빌드는 Intel Mac용이
-              아닙니다.
-            </p>
-          </details>
-          <details>
-            <summary>
-              브라우저 자동화는 어떻게 시작하나요?<span aria-hidden="true"
-                >+</span
-              >
-            </summary>
-            <p>
-              앱의 에이전트 허브에서 Browser Automation을 열고 Chrome 또는 Edge
-              확장을 연결합니다. 녹화 안내에 동의한 뒤 클릭과 입력을 기록하고
-              재생할 수 있습니다. 화면 캡처 설정은 확장 팝업에서 확인·변경할 수 있으며, 녹화와 AI 전송은 별도 동의 절차를 따릅니다.
-              <a href="privacy/browser-automation/">개인정보처리방침</a>에서
-              자세히 확인하세요.
+              이상)을 지원합니다.
             </p>
           </details>
         </div>
@@ -713,44 +826,40 @@
         id="download"
         aria-labelledby="download-title"
       >
+        <div class="download-glow" aria-hidden="true"></div>
         <div class="wrap">
-          <div class="download-top">
-            <span class="eyebrow"
-              ><i class="status-dot"></i> A LITTLE LESS BUSY. A LOT MORE
-              YOU.</span
-            ><span class="download-beta">현재 무료 베타</span>
-          </div>
+          <p class="eyebrow">LESS FRICTION. MORE FLOW.</p>
           <h2 id="download-title">
-            다음 아이디어는,<br /><span>여기서 시작하세요.</span>
+            이제,<br />
+            <span>당신의 흐름으로.</span>
           </h2>
-          <div class="download-bottom">
-            <p>
-              설치하고, 보관함을 열면 준비 끝.<br />이제 나의 흐름을 만들
-              차례입니다.
-            </p>
-            <div class="download-options">
-              <a
-                class="download-card"
-                id="macosBtn"
-                href="https://downloads.liberaflow.com/Liberaflow-1.4.3-macos.dmg"
-                ><span class="os-mark" aria-hidden="true">⌘</span
-                ><span
-                  ><strong>macOS 다운로드</strong
-                  ><small>macOS 15+ · Apple Silicon</small></span
-                ><span class="download-arrow" aria-hidden="true">↓</span></a
-              ><a
-                class="download-card"
-                id="windowsBtn"
-                href="https://downloads.liberaflow.com/Liberaflow_1.5.1_Setup.exe"
-                ><span class="windows-mark" aria-hidden="true"
-                  ><i></i><i></i><i></i><i></i></span
-                ><span
-                  ><strong>Windows 다운로드</strong
-                  ><small>Windows 11 이상</small></span
-                ><span class="download-arrow" aria-hidden="true">↓</span></a
-              >
-            </div>
+          <p class="download-description">노트 한 장에서 시작해 보세요.</p>
+          <div class="download-options">
+            <a
+              class="download-button"
+              id="macosBtn"
+              href="https://downloads.liberaflow.com/Liberaflow-1.4.9-macos.dmg"
+              ><span class="os-symbol" aria-hidden="true">⌘</span
+              ><span
+                ><strong>macOS 다운로드</strong
+                ><small>macOS 15+ · Apple Silicon</small></span
+              ><svg class="icon" aria-hidden="true">
+                <use href="#i-down" /></svg></a
+            ><a
+              class="download-button windows-download"
+              id="windowsBtn"
+              href="https://downloads.liberaflow.com/Liberaflow_1.5.1_Setup.exe"
+              ><svg class="icon os-symbol" aria-hidden="true">
+                <use href="#i-grid" /></svg
+              ><span
+                ><strong>Windows 다운로드</strong
+                ><small>Windows 11 이상</small></span
+              ><svg class="icon" aria-hidden="true"><use href="#i-down" /></svg
+            ></a>
           </div>
+          <a class="download-guide" href="docs.html#install"
+            >설치부터 차근차근, 시작 가이드 <span aria-hidden="true">↗</span></a
+          >
         </div>
       </section>
     </main>
@@ -759,22 +868,22 @@
         ><img
           src="assets/images/Liberaflow_logo.png"
           alt=""
-          width="26"
-          height="26"
+          width="25"
+          height="25"
         />liberaflow</a
       >
-      <p>생각에서 실행까지, 나의 흐름대로.</p>
+      <p>© <span data-year>2026</span> Liberaflow</p>
       <div>
-        <a href="docs.html">시작 가이드</a
+        <a href="docs.html">사용 가이드</a
         ><a href="privacy/browser-automation/"
           >브라우저 자동화 개인정보처리방침</a
-        ><span>© <span data-year>2026</span> Liberaflow</span>
+        >
       </div>
     </footer>
     <noscript
       ><p class="noscript-message">
-        인터랙티브 데모를 이용하려면 JavaScript를 켜주세요. 제품 소개, 시작
-        가이드와 앱 다운로드는 그대로 이용할 수 있습니다.
+        제품 소개와 다운로드는 바로 이용할 수 있습니다. 다른 미리보기와 언어
+        전환은 JavaScript를 켜면 사용할 수 있습니다.
       </p></noscript
     >
   </body>
