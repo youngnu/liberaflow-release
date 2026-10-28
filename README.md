@@ -6,6 +6,7 @@
 
 - `index.html` — 한국어·영어 제품 소개: 핵심 메시지, 노트 & AI·반복 업무·협업의 세 가지 미리보기, 기능 소개, 로컬 데이터, FAQ, 다운로드
 - `docs.html` — KO/EN 사용 가이드: 작업별 빠른 찾기, 설치·보관함·노트·지원 문서·편집 단축키·AI·자동화·협업·Calendar·저장과 동기화, 섹션별 실제 사용 순서
+- `notices.html` — KO/EN 공지사항: 새 판에서 바뀐 점과 서비스 안내, 최신 공지가 맨 위. 앱의 설정 → 공지사항이 이 주소(`https://liberaflow.com/notices.html`)를 엽니다
 - `assets/css/site.css` — 사용 가이드와 기존 기능 연결 페이지의 공통 디자인
 - `assets/css/home.css` — 홈 전용 레이아웃·내비게이션·브랜드 블루 시각 효과·반응형·동작 줄이기 설정
 - `assets/css/navigation.css` — 사용 가이드의 상단 메뉴·KO/EN 선택·모바일 메뉴 디자인
@@ -14,6 +15,7 @@
 - `assets/js/guide.js` — 읽는 위치에 맞춘 가이드 목차 표시
 - `assets/js/locale.js` — 홈·가이드 공통 언어 전환과 페이지 간 언어 유지
 - `assets/js/guide-i18n.js` — 가이드 본문·단축키·문서 안내·접근성·메타데이터 번역
+- `assets/js/notices-i18n.js` — 공지사항 본문·접근성·메타데이터 번역. 공지를 더할 때 한국어와 영어를 함께 적습니다
 - `assets/js/home.js` — 홈의 모바일 메뉴·키보드 탭 탐색·미리보기 전환·기존 AI 앵커 연결
 - `assets/js/home-i18n.js` — 홈 본문·접근성·메타데이터·동적 데모 번역
 - `features/*.html` — 기존 기능 소개 주소를 새 홈의 해당 섹션으로 연결하는 호환 페이지
