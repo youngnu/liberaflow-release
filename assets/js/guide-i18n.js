@@ -570,8 +570,8 @@ window.initializeLiberaflowLocale({
     "Enable All day for an event that occupies the whole day. Changing the start time preserves the existing duration, so check the resulting end time before saving.",
   "로그인한 상태에서는 상세의 참석자에서 함께할 사람을 고릅니다. 참석자에게만 보일 회의는 공개 범위를 비공개로 지정하세요.":
     "When signed in, choose the people joining you under Attendees in the Details section. Set a meeting to Private if it should only be visible to you and its attendees.",
-  "알림에서 30분 전 같은 시점을 고르고, 다른 간격이 필요하면 사용자 지정을 사용합니다. 알림 권한 안내가 나오면 시스템 설정에서 Liberaflow의 알림을 허용하세요.":
-    "Choose a reminder such as 30 minutes before, or use a custom interval. If prompted for notification permission, allow Liberaflow notifications in your system settings.",
+  "알림에서 30분 전 같은 시점을 고르고, 다른 간격이 필요하면 사용자 지정을 사용합니다. macOS에서 알림 시각을 처음 고르면 알림 허용 창이 뜨니 허용하세요. 전에 허용하지 않았다면 앱이 시스템 설정을 열어 주므로 그곳에서 Liberaflow의 알림을 켭니다.":
+    "Choose a reminder such as 30 minutes before, or use a custom interval. On macOS, the first time you pick a reminder a notification permission prompt appears — allow it. If you declined earlier, the app opens System Settings so you can turn on Liberaflow notifications there.",
   "프로젝트 업무를 오늘의 할 일과 연결하기":
     "Connect project work to today’s tasks",
   "프로젝트의 간트 타임라인에서는 업무의 담당자와 참여자를 지정하고 날짜를 조절할 수 있습니다. 하위 업무가 없는 오늘 날짜의 작업 중 내가 담당자나 참여자인 항목은 오늘의 할일에도 나타납니다. 같은 일정과 연결된 작업은 완료 여부와 날짜가 함께 반영되므로, 한 화면에서 바꾼 뒤 다른 화면에서도 확인해 보세요.":
