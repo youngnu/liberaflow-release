@@ -36,14 +36,14 @@
       <div class="copy">
         <p class="eyebrow">내 지식으로 일하는 AI 작업 공간</p>
         <h1>내 노트로,<br /><span>AI와 함께</span><br />일하세요.</h1>
-        <p class="description">문서 작성부터 반복 업무 자동화,<br />팀 협업까지 한곳에서.</p>
+        <p class="description">문서 작성부터 팀 협업까지<br />한곳에서.</p>
       </div>
       <section class="product" aria-label="홈페이지의 노트로 문서 만들기 사용 예시">
         <div class="product-label">노트 → AI → 문서 <small>홈페이지 사용 예시</small></div>
         <div class="window"><iframe id="workspace" title="노트로 문서를 만드는 사용 예시"></iframe></div>
       </section>
       <footer class="footer">
-        <div class="features"><span>노트 연결</span><span>AI 문서 작성</span><span>브라우저 자동화</span><span>팀 협업</span></div>
+        <div class="features"><span>노트 연결</span><span>AI 문서 작성</span><span>팀 협업</span></div>
         <span class="domain">liberaflow.com</span>
       </footer>
     </main>
@@ -54,34 +54,23 @@
       const frame = document.getElementById("workspace");
       frame.addEventListener("load", async () => {
         const doc = frame.contentDocument;
-        const workspace = doc.querySelector(".workspace");
+        // 2026-11-05: the homepage example is now the showcase app window
+        // (#playground .app-window) with the notes & AI scene selected by default.
+        const workspace = doc.querySelector(".app-window");
         if (!workspace) return;
         const style = doc.createElement("style");
         style.textContent = [
           "html, body { margin: 0 !important; padding: 0 !important; width: 1060px !important; height: 604px !important; overflow: hidden !important; background: #fff !important; }",
           "body::before, body::after { display: none !important; }",
-          ".workspace { width: 1060px !important; margin: 0 !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }",
-          ".workspace-titlebar { height: 43px !important; font-size: 14px !important; }",
-          ".demo-prerequisites { font-size: 14px !important; }",
-          ".workspace-body { grid-template-columns: 155px minmax(0, 1fr) 320px !important; min-height: 512px !important; }",
-          ".demo-sidebar { display: flex !important; padding-inline: 14px !important; }",
-          ".demo-document, .demo-agent { min-width: 0 !important; }",
-          ".document-content { padding: 28px !important; }",
-          ".document-content h2 { font-size: 30px !important; }",
-          ".document-lead { font-size: 15px !important; }",
-          ".note-callout { padding: 16px 14px !important; font-size: 15px !important; }",
-          ".demo-source-list, .demo-facts { font-size: 15px !important; }",
-          ".demo-agent { display: flex !important; border-top: 0 !important; }",
-          ".agent-heading { font-size: 17px !important; }",
-          ".agent-welcome h3 { font-size: 20px !important; }",
-          ".agent-welcome p { font-size: 15px !important; }",
-          ".demo-instructions { display: none !important; }",
-          ".user-prompt { margin-top: 22px !important; padding: 17px !important; font-size: 16px !important; line-height: 1.75 !important; }",
-          ".agent-action { padding-top: 12px !important; }",
-          ".run-demo { font-size: 16px !important; }"
+          ".app-window { width: 1060px !important; margin: 0 !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; transform: none !important; }",
+          ".scene { min-height: 560px !important; }",
+          ".scene.scene-enter { animation: none !important; }"
         ].join("\n");
         doc.head.append(style);
-        doc.body.replaceChildren(workspace);
+        // Keep the icon sprite (<svg class="icon-library"> with the <symbol>
+        // definitions) — the window's <use href="#i-…"> icons point at it.
+        const sprite = doc.querySelector("svg.icon-library");
+        doc.body.replaceChildren(...(sprite ? [sprite] : []), workspace);
         await Promise.all([document.fonts.ready, doc.fonts.ready]);
         await Promise.all([...document.images, ...doc.images].map(img => img.decode()));
         requestAnimationFrame(() => requestAnimationFrame(() => {

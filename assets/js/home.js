@@ -36,10 +36,6 @@
 
   const scenes = {
     notes: { caption: "생각을 적던 자리에서, 다음 문서까지.", guide: "ai" },
-    automation: {
-      caption: "반복하던 동작을, 다시 쓸 수 있는 흐름으로.",
-      guide: "automation",
-    },
     team: {
       caption: "사람과 AI가 같은 자료를 보며, 함께 앞으로.",
       guide: "team",

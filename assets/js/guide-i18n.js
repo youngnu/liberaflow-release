@@ -56,8 +56,8 @@ window.initializeLiberaflowLocale({
   "앱 안에서 미리 보고 부분을 선택해 AI에게 원본 수정을 요청합니다. 미리보기에서 직접 타이핑하거나 셀을 편집하는 방식은 아닙니다. 복잡한 서식은 수정 후 확인하세요.":
     "Preview documents and select a part to ask AI to edit the original file. The preview is not a direct typing or cell editor. Check complex formatting after edits.",
   "CSV와 TSV": "CSV and TSV",
-  "표 형태로 미리 봅니다. 미리보기만으로 원본이 바뀌지는 않습니다. 브라우저 자동화의 수집 결과는 CSV 또는 XLSX로 내보낼 수 있습니다.":
-    "Preview data as a table without changing the source. Browser Automation can export collected data as CSV or XLSX.",
+  "표 형태로 미리 봅니다. 미리보기만으로 원본이 바뀌지는 않습니다.":
+    "Preview data as a table without changing the source.",
   이미지: "Images",
   "이미지를 열어 확대하거나 이동하며 살펴보고, AI 대화의 참고 자료로 첨부합니다. 원본 이미지를 직접 수정하는 편집기는 제공하지 않습니다.":
     "Open, zoom and pan images, or attach them as reference material in AI chat. The viewer does not directly edit the original image.",
@@ -213,8 +213,8 @@ window.initializeLiberaflowLocale({
   "일정과 오늘 할 일": "Calendar & tasks",
   "저장과 동기화": "Storage & sync",
   "사용 가이드 — Liberaflow": "User Guide — Liberaflow",
-  "Liberaflow 설치, 노트 편집 단축키, 지원 문서, AI 작업, 브라우저 자동화, 캘린더와 협업 사용법.":
-    "Learn to install Liberaflow, edit notes with keyboard shortcuts, work with documents and AI, automate browser tasks, and use calendars and collaboration.",
+  "Liberaflow 설치, 노트 편집 단축키, 지원 문서, AI 작업, 캘린더와 협업 사용법.":
+    "Learn to install Liberaflow, edit notes with keyboard shortcuts, work with documents and AI, and use calendars and collaboration.",
   "사용 가이드": "User guide",
   "설치부터 노트 편집, 문서 작업과 협업까지. 필요한 기능과 사용 방법을 찾아보세요.":
     "From installation to editing notes, working with documents and collaborating. Find the feature and instructions you need.",

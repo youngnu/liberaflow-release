@@ -7,14 +7,14 @@
     <title>사용 가이드 — Liberaflow</title>
     <meta
       name="description"
-      content="Liberaflow 설치, 노트 편집 단축키, 지원 문서, AI 작업, 브라우저 자동화, 캘린더와 협업 사용법."
+      content="Liberaflow 설치, 노트 편집 단축키, 지원 문서, AI 작업, 캘린더와 협업 사용법."
     />
     <link rel="canonical" href="https://liberaflow.com/docs.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="사용 가이드 — Liberaflow" />
     <meta
       property="og:description"
-      content="Liberaflow 설치, 노트 편집 단축키, 지원 문서, AI 작업, 브라우저 자동화, 캘린더와 협업 사용법."
+      content="Liberaflow 설치, 노트 편집 단축키, 지원 문서, AI 작업, 캘린더와 협업 사용법."
     />
     <meta property="og:url" content="https://liberaflow.com/docs.html" />
     <link
@@ -118,17 +118,14 @@
           ><a href="#ai"
             ><span class="guide-nav-number">06</span>
             <span>AI와 문서 작업</span></a
-          ><a href="#automation"
-            ><span class="guide-nav-number">07</span>
-            <span>브라우저 자동화</span></a
           ><a href="#team"
-            ><span class="guide-nav-number">08</span>
+            ><span class="guide-nav-number">07</span>
             <span>공유와 채널</span></a
           ><a href="#schedule"
-            ><span class="guide-nav-number">09</span>
+            ><span class="guide-nav-number">08</span>
             <span>일정과 오늘 할 일</span></a
           ><a href="#data"
-            ><span class="guide-nav-number">10</span>
+            ><span class="guide-nav-number">09</span>
             <span>저장과 동기화</span></a
           >
         </nav>
@@ -445,8 +442,7 @@
                 <code>.csv · .tsv</code>
                 <p>
                   표 형태로 미리 봅니다. 미리보기만으로 원본이 바뀌지는
-                  않습니다. 브라우저 자동화의 수집 결과는 CSV 또는 XLSX로 내보낼
-                  수 있습니다.
+                  않습니다.
                 </p>
               </article>
               <article class="guide-format-card">
@@ -937,264 +933,8 @@
               </p>
             </section>
           </section>
-          <section class="guide-section" id="automation">
-            <span class="feature-tag">07 / BROWSER AUTOMATION</span>
-            <h2>녹화한 작업을 실행하고, 가이드로 남기기</h2>
-            <nav
-              class="guide-section-links"
-              aria-label="브라우저 자동화 활용 안내"
-            >
-              <a href="#workflow-library">저장·이동</a
-              ><a href="#workflow-edit">단계 수정</a
-              ><a href="#workflow-troubleshoot">실행 점검</a>
-            </nav>
-            <p>
-              에이전트 → Browser Automation에서 Chrome 또는 Edge 확장을
-              연결하세요. 클릭·입력을 녹화해 반복 실행하고, 기록한 절차를 따라
-              할 수 있는 가이드 문서로 만듭니다. 웹페이지에서 고른 값은
-              CSV·XLSX로 저장할 수 있습니다.
-            </p>
-            <h3>클릭과 입력을 반복하기</h3>
-            <ol>
-              <li>
-                브라우저에서 작업할 탭을 연 뒤, 앱 또는 확장 팝업에서 녹화를
-                시작합니다. 안내를 확인하고 동의한 뒤 클릭과 입력을 기록합니다.
-              </li>
-              <li>
-                녹화를 마치고 저장된 단계를 확인합니다. 여러 건을 처리하려면
-                Excel·CSV 데이터를 불러와 열을 녹화한 입력에 연결합니다.
-              </li>
-              <li>Replay로 재생하고 실행 결과를 확인합니다.</li>
-            </ol>
-            <section
-              class="guide-subsection guide-workflow"
-              id="workflow-guide"
-            >
-              <h3>녹화한 작업으로 가이드 문서 만들기</h3>
-              <p>
-                녹화한 순서와 설명을 마크다운 문서로 정리해, 작업을 다시
-                익히거나 다른 사람에게 절차를 전달할 때 활용하세요. 캡처한
-                화면이 있으면 문서에 함께 담습니다.
-              </p>
-              <ol>
-                <li>
-                  녹화한 워크플로를 연 뒤 상단 ⋮ 메뉴에서 가이드 문서 만들기
-                  (md)를 선택합니다.
-                </li>
-                <li>
-                  이름과 설명(선택)을 입력하고 만들기를 누릅니다. 선택한 AI로
-                  가이드를 생성합니다.
-                </li>
-                <li>
-                  완료되면 폴더 열기로 결과를 확인합니다. 현재 Notes 보관함의
-                  Browser Automation 가이드 폴더에 .md 문서와 images 폴더가
-                  저장됩니다.
-                </li>
-                <li>
-                  Notes에서 문서를 열어 확인하고 다듬습니다. 일반 마크다운
-                  파일이므로 Obsidian에서도 열 수 있습니다.
-                </li>
-              </ol>
-              <p>
-                화면 캡처가 없으면 글로만 가이드를 만듭니다. 이미지를 포함하려면
-                녹화 전에 확장 팝업에서 화면 캡처를 켜세요.
-              </p>
-              <p class="guide-tip">
-                가이드 생성에는 워크플로 단계·기록된 입력값·URL·이미지 파일명이
-                선택한 AI에 전달됩니다. 가이드에 넣을 이미지 자체는 AI에 보내지
-                않고 로컬 문서에 저장합니다.
-              </p>
-            </section>
-            <h3>페이지의 값을 CSV·XLSX로 저장하기</h3>
-            <ol>
-              <li>
-                확장 팝업의 데이터 뽑기를 열고 필요한 값을 클릭합니다. 반복
-                목록과 페이지 제목처럼 한 번 나오는 값을 함께 고를 수 있습니다.
-              </li>
-              <li>
-                앱으로 보내기를 누른 뒤 Liberaflow에 도착한 카드에서 단계로
-                추가를 누릅니다.
-              </li>
-              <li>
-                추출 단계 뒤에 파일 내보내기 단계를 추가합니다. CSV 또는 XLSX를
-                고르고 파일 이름·저장 위치를 확인합니다.
-              </li>
-              <li>
-                Replay 실행 후 완료 창에서 파일명·행 수를 확인하고 파일 열기로
-                결과를 엽니다.
-              </li>
-            </ol>
-            <p>
-              데이터 뽑기에 녹화나 입력 CSV는 필수가 아닙니다. 수집 결과는
-              내보낸 파일에서 확인합니다.
-            </p>
-            <div class="guide-automation-benefits">
-              <h3>저장된 절차를 재사용하고, 필요한 곳에만 AI 쓰기</h3>
-              <p>
-                녹화한 클릭·입력, 데이터 뽑기와 CSV·XLSX 저장은 정해진 단계대로
-                실행합니다. AI가 매번 페이지를 탐색하고 판단하는 호출을 줄여,
-                반복 실행의 토큰 사용량을 줄일 수 있습니다.
-              </p>
-              <p>
-                AI는 실패 복구, 직접 추가한 AI 작업, 가이드 생성처럼 필요한
-                지점에 사용합니다. 일반 클릭·입력마다 내용을 AI에 보낼 필요가
-                줄어들어, 민감한 업무를 포함한 브라우저 자동화에서도 외부 전송
-                범위를 관리하기 좋습니다.
-              </p>
-              <p>
-                비밀번호·인증번호·카드 보안코드로 식별한 입력값은 녹화에서
-                제외합니다.
-              </p>
-              <h3>AI 사용과 전송 범위 조절하기</h3>
-              <p>
-                상단 ⋮ 메뉴의 실패 시 AI 자가치유 허용, 외부 AI 전송 차단,
-                자가치유 스크린샷 전송에서 설정을 확인하세요. AI를 사용할 때는
-                제공자와 목적에 따른 전송 동의를 확인합니다.
-              </p>
-              <p>
-                외부 AI 전송을 차단하면 가이드 생성 등 Browser Automation의 AI
-                기능도 사용할 수 없습니다.
-              </p>
-            </div>
-            <aside class="guide-roadmap" aria-label="브라우저 자동화 개발 계획">
-              <span class="guide-roadmap-label">개발 예정</span>
-              <h3>저장한 워크플로를 AI 스킬로 호출하기</h3>
-              <p>
-                앞으로는 저장된 브라우저 워크플로를 스킬 형태로 AI 대화에서
-                호출할 수 있도록 연결할 계획입니다. 기록해 둔 절차를 재사용하고,
-                필요한 판단이나 예외 처리에 AI를 더하는 방향입니다.
-              </p>
-            </aside>
-            <p class="guide-tip">
-              화면 캡처 여부는 확장 팝업의 클릭 전후 화면 캡처·AI 자가치유 화면
-              캡처에서 확인하고 변경하세요. 녹화와 AI 전송은 별도 동의 절차를
-              따릅니다.
-            </p>
-            <a href="privacy/browser-automation/"
-              >브라우저 자동화 개인정보처리방침</a
-            >
-
-            <section class="guide-subsection guide-howto" id="workflow-library">
-              <h3>저장한 워크플로를 다시 쓰거나 다른 기기로 옮기기</h3>
-              <p>
-                작업을 다시 쓸 예정이라면 알아보기 쉬운 이름과 설명을 붙여
-                저장하세요.
-              </p>
-              <ol>
-                <li>
-                  Browser Automation 상단 ⋮ → 워크플로 저장에서 이름과
-                  설명(선택)을 적고 저장을 누릅니다.
-                </li>
-                <li>
-                  다음에는 ⋮ → 워크플로 불러오기에서 워크플로 라이브러리를 열고
-                  저장한 항목을 선택합니다.
-                </li>
-                <li>
-                  실행 전에 단계와 입력 데이터를 확인하고, 바뀐 작업에 맞게
-                  수정한 뒤 다시 저장합니다.
-                </li>
-              </ol>
-              <p>
-                다른 기기로 절차를 옮기려면 워크플로 저장에서 공유 가능한
-                JSON으로 내보내기를 선택하고 파일을 저장합니다.
-              </p>
-              <p>
-                공유 파일은 실제 입력값을 변수 자리로 바꾸고, 입력 데이터와 화면
-                캡처는 제외합니다.
-              </p>
-              <p>
-                받는 쪽에서는 ⋮ → 공유 워크플로 가져오기를 선택해 해당 JSON
-                파일을 엽니다.
-              </p>
-              <p>
-                가져온 단계에 필요한 데이터와 값을 다시 연결한 뒤 실행하세요.
-              </p>
-              <p class="guide-tip">
-                이름·설명·열 이름·화면 요소 정보·직접 적은 단계 지시는 공유
-                파일에 남으므로, 전달할 내용인지 확인하세요.
-              </p>
-            </section>
-            <section class="guide-subsection guide-howto" id="workflow-edit">
-              <h3>전체를 다시 녹화하지 않고 단계 수정하기</h3>
-              <p>
-                녹화한 단계 카드를 누르면 옆 패널에서 대상과 입력 내용을 확인할
-                수 있습니다.
-              </p>
-              <ol>
-                <li>일반 입력 단계는 입력 값을 고치고 저장을 누릅니다.</li>
-                <li>
-                  행마다 다른 값을 넣으려면 불러온 데이터의 열 이름을 {{열
-                  이름}} 형태로 입력 값에 연결합니다.
-                </li>
-                <li>
-                  직접 추가한 AI 작업은 지시문을 고친 뒤 변경 저장을 누릅니다.
-                </li>
-                <li>
-                  순서를 바꾸려면 카드 오른쪽 손잡이를 끌어 단계 사이의 + 위에
-                  놓습니다.
-                </li>
-                <li>
-                  수정한 동작은 카드의 단계 메뉴 → 이 단계만 실행으로 확인할 수
-                  있습니다.
-                </li>
-                <li>
-                  반복 입력 데이터가 여러 행이면 단일 실행 데이터 선택에서
-                  시험할 한 행을 고릅니다.
-                </li>
-              </ol>
-              <p class="guide-tip">
-                한 단계 실행은 앞선 페이지 이동이나 다른 단계를 자동으로
-                실행하지 않으므로, 브라우저를 해당 동작을 할 화면에 먼저 두세요.
-              </p>
-              <p>
-                수정이 끝나면 상단 ⋮ → 워크플로 저장으로 변경한 절차를
-                저장합니다.
-              </p>
-            </section>
-            <section
-              class="guide-subsection guide-howto"
-              id="workflow-troubleshoot"
-            >
-              <h3>멈춘 단계를 찾고 실행 결과 확인하기</h3>
-              <p>
-                실행이 예상과 다르면 먼저 어느 단계와 어느 데이터 행에서 문제가
-                생겼는지 확인하세요.
-              </p>
-              <ol>
-                <li>
-                  상단 ⋮ → 실행 이력을 열면 실행 시각과 성공·실패 건수를 볼 수
-                  있습니다.
-                </li>
-                <li>
-                  기록을 펼쳐 실행 단계 요약과 행별 실행 요약에서
-                  실패·건너뜀·자가치유 결과와 오류 코드를 확인합니다.
-                </li>
-                <li>
-                  AI 호출 합계와 실패 복구 시도를 함께 보면 그 실행에서 AI가
-                  얼마나 호출되었는지도 확인할 수 있습니다.
-                </li>
-                <li>
-                  녹화 화면을 남겼다면 해당 단계 카드를 선택하고 클릭 전·클릭 후
-                  탭에서 녹화 당시 화면을 확인합니다.
-                </li>
-              </ol>
-              <p>
-                내보낸 파일의 완료 창을 닫았더라도 파일을 만든 단계 카드나 상단
-                파일 메뉴에서 최근 실행의 파일을 다시 열 수 있습니다.
-              </p>
-              <p>
-                실행 이력에는 수집한 표 전체가 표시되지 않으므로 실제 값은
-                내보낸 CSV·XLSX에서 확인하세요.
-              </p>
-              <p class="guide-tip">
-                실행 이력을 더 오래 보관하려면 ⋮ → 설정에서 오래된 실행 기록
-                자동 삭제와 보관 기간을 조절하세요. 이 설정은 실행 기록에만
-                적용되며 저장한 워크플로와 화면 캡처를 자동 삭제하지 않습니다.
-              </p>
-            </section>
-          </section>
           <section class="guide-section" id="team">
-            <span class="feature-tag">08 / SHARE & COLLABORATE</span>
+            <span class="feature-tag">07 / SHARE & COLLABORATE</span>
             <h2>필요한 자료로 함께 일하기</h2>
             <nav class="guide-section-links" aria-label="협업 활용 안내">
               <a href="#shared-note-review">노트 수정 제안</a
@@ -1377,7 +1117,7 @@
             </section>
           </section>
           <section class="guide-section" id="schedule">
-            <span class="feature-tag">09 / CALENDAR & TASKS</span>
+            <span class="feature-tag">08 / CALENDAR & TASKS</span>
             <h2>내 일정부터 함께 보는 일정까지</h2>
             <nav class="guide-section-links" aria-label="일정 활용 안내">
               <a href="#calendar-details">회의·프로젝트</a
@@ -1526,7 +1266,7 @@
             </section>
           </section>
           <section class="guide-section" id="data">
-            <span class="feature-tag">10 / STORAGE & SYNC</span>
+            <span class="feature-tag">09 / STORAGE & SYNC</span>
             <h2>로컬 저장, 동기화, 공유 구분하기</h2>
             <nav class="guide-section-links" aria-label="저장 상태 안내">
               <a href="#save-status-recovery">저장 상태·복구</a>

@@ -1,13 +1,13 @@
 /* Homepage copy. locale.js also translates metadata and accessible names. */
 window.initializeLiberaflowLocale({
   "Liberaflow — 생각이 일이 되는 곳": "Liberaflow — Where ideas get to work",
-  "내 컴퓨터의 노트에서 AI와 함께 만드는 결과물까지. 기록, 문서 작성, 브라우저 자동화와 팀 협업이 이어지는 데스크톱 작업 공간, Liberaflow.":
-    "From local notes to work you create with AI. Liberaflow brings writing, documents, browser automation and teamwork into one desktop workspace.",
-  "Liberaflow — 노트·AI 문서 작성·업무 자동화": "Liberaflow — Notes, AI documents and work automation",
-  "내 노트를 바탕으로 AI와 문서를 만들고, 브라우저 반복 작업과 팀 협업까지 이어가는 데스크톱 작업 공간.":
-    "Create documents with AI from your notes, automate repetitive browser tasks, and collaborate with your team in one desktop workspace.",
-  "Liberaflow의 노트와 AI 문서 작성 사용 예시, 브라우저 자동화·팀 협업 소개":
-    "Liberaflow notes and AI document creation example, with browser automation and team collaboration",
+  "내 컴퓨터의 노트에서 AI와 함께 만드는 결과물까지. 기록, 문서 작성과 팀 협업이 이어지는 데스크톱 작업 공간, Liberaflow.":
+    "From local notes to work you create with AI. Liberaflow brings writing, documents and teamwork into one desktop workspace.",
+  "Liberaflow — 노트·AI 문서 작성·팀 협업": "Liberaflow — Notes, AI documents and teamwork",
+  "내 노트를 바탕으로 AI와 문서를 만들고, 팀 협업까지 이어가는 데스크톱 작업 공간.":
+    "Create documents with AI from your notes and collaborate with your team in one desktop workspace.",
+  "Liberaflow의 노트와 AI 문서 작성 사용 예시, 팀 협업 소개":
+    "Liberaflow notes and AI document creation example, with team collaboration",
   "본문으로 건너뛰기": "Skip to content",
   "주 메뉴": "Main navigation",
   "Liberaflow 홈": "Liberaflow home",
@@ -31,7 +31,6 @@ window.initializeLiberaflowLocale({
   "기능을 재구성한 예시": "Illustrative product preview",
   "제품 미리보기": "Product preview",
   "노트 & AI": "Notes & AI",
-  "반복 업무": "Automation",
   "함께하는 일": "Teamwork",
   "내 보관함": "My vault",
   "워크숍 노트.md": "Workshop notes.md",
@@ -52,15 +51,7 @@ window.initializeLiberaflowLocale({
   "워크숍 제안서.docx": "Workshop proposal.docx",
   "열어서 확인하고, 이어서 다듬기": "Open, review and keep refining",
   "내 자료에서 시작하는 결과물": "Work that starts with your own material",
-  "반복은 흐름에 맡기고.": "Give routines a flow.",
-  "페이지 열기": "Open a page",
   "데이터 뽑기": "Extract data",
-  "파일로 내보내기": "Export to a file",
-  "쓸 수 있는 파일로.": "Ready to work with.",
-  "수집한 자료를 CSV·Excel로.": "Your collected data, in CSV or Excel.",
-  "결과는 내보낸 파일에서 확인하세요.":
-    "Review the results in your exported file.",
-  "브라우저 확장 연결 후 사용": "Requires the browser extension",
   "우리의 다음 프로젝트": "Our next project",
   나: "Me",
   "#리뷰어": "#Reviewer",
@@ -76,8 +67,6 @@ window.initializeLiberaflowLocale({
   "역할에 맞는 AI 팀원을 부르세요.": "Bring in the right AI teammate.",
   "생각을 적던 자리에서, 다음 문서까지.":
     "From the place you write, to the next thing you create.",
-  "반복하던 동작을, 다시 쓸 수 있는 흐름으로.":
-    "Turn a recurring task into a flow you can use again.",
   "사람과 AI가 같은 자료를 보며, 함께 앞으로.":
     "People and AI, working from the same material.",
   "사용 방법 보기": "Explore the guide",
@@ -98,13 +87,6 @@ window.initializeLiberaflowLocale({
   "영감의 조각": "Inspiration",
   "다음 프로젝트": "Next project",
   "오늘의 메모": "Today’s notes",
-  "한 번 만든 흐름,": "Build a flow once.",
-  "여러 번의 여유.": "Make room for more.",
-  "브라우저의 클릭과 입력을 기록하고,":
-    "Record your browser clicks and typing.",
-  "엑셀·CSV의 여러 행을 따라 반복하세요.":
-    "Replay them across Excel or CSV rows.",
-  "자동화 살펴보기": "Explore automation",
   기록: "Record",
   반복: "Repeat",
   완료: "Done",
