@@ -10,3 +10,6 @@
 /downloads/
 /Liberaflow*.dmg
 /Liberaflow*.exe
+
+# Internal notes (benchmarks, planning) stay local; this repository is public.
+/internal/
