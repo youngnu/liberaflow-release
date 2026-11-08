@@ -358,18 +358,52 @@ window.initializeLiberaflowLocale({
     "A shared HTML or Office preview is a snapshot, so after editing the source, open the preview and revisit its sharing dialog to publish the current version. The existing share link and recipients stay the same.",
   "로그인한 뒤, 사이드바의 공유받은 문서 또는 팀 섹션에서 검토할 노트를 엽니다. 예를 들어 팀의 행사 계획서에서 일정과 준비물만 고치고 싶을 때 이 흐름을 사용하세요.":
     "Sign in, then open a note from Shared with me or a team section in the sidebar. Use this workflow, for example, to propose changes to the schedule and supply list in a team event plan.",
-  "채널의 결정과 근거를 다시 확인하기":
-    "Revisit channel decisions and their sources",
-  "긴 채널 대화에서 합의한 조건이나 결정만 다시 찾고 싶다면 채널 메뉴의 채널 메모를 엽니다. 이 화면에는 AI가 대화 중 정리한 조건·결정·진행 상황이 모입니다.":
-    "When you want to find agreed conditions or decisions in a long conversation, open Channel memory from the channel menu. It collects conditions, decisions and progress recorded by AI during the conversation.",
-  "메모 내용 검색에 “행사 장소”처럼 찾을 말을 입력하거나 조건·결정·진행 상황 필터를 고릅니다. 기록이 아직 없다면 채널 대화에서 AI 팀원에게 확정된 내용을 정리해 달라고 요청하세요.":
-    "Enter a term such as “event venue” in the memory search box, or filter by conditions, decisions or progress. If there are no records yet, ask an AI teammate in the channel conversation to summarize what has been confirmed.",
-  "메모 아래 근거 대화를 펼치고 해당 대화를 열어 실제 발언을 확인합니다. 요약에 나온 날짜나 수치가 맞는지 원문과 비교해 보세요.":
-    "Expand the source conversations beneath a memory and open a source message to check what was actually said. Compare dates or figures in the summary with the original message.",
-  "잘못 정리된 내용은 메모 수정에서 바로잡고 저장합니다. 새로운 결정이나 추가 요청은 채널 대화에 남겨 다른 멤버와 AI 팀원도 알 수 있게 하세요.":
-    "Correct inaccurate information with Edit memory and save it. Post new decisions or requests in the channel conversation so other members and AI teammates can see them.",
-  "읽기 전용으로 표시되는 기록은 수정할 수 없습니다. 다른 사람이 먼저 수정했다는 안내가 나오면 현재 저장된 내용과 내 초안을 비교한 뒤 다시 저장하세요.":
-    "Records marked read-only cannot be edited. If someone else has changed a record first, compare the saved version with your draft before saving again.",
+  "채널 메모로 결정과 근거 확인하기":
+    "Check decisions and their sources in channel memos",
+  "채널 메모는 채널의 사람과 AI 팀원이 함께 보는 작업 기록입니다. 팀원마다 대화가 따로 이어지기 때문에, 모두가 알아야 할 조건과 결정은 이곳에 모입니다. 메모는 AI 팀원이 일하면서 직접 적고, 다음에 불릴 때 다시 읽습니다. 새 메모를 만드는 버튼은 따로 없습니다.":
+    "Channel memos are a work record shared by the people and AI teammates in a channel. Each teammate works in its own conversation, so the conditions and decisions everyone needs to know are collected here. AI teammates write memos as they work and read them again the next time they are called. There is no button for creating a memo yourself.",
+  "채널 메모의 종류": "Types of channel memos",
+  종류: "Type",
+  "담는 내용": "What it records",
+  예: "Example",
+  조건: "Condition",
+  "지켜야 할 제약이나 사실": "A constraint or fact to respect",
+  "예산은 100만 원 이내": "The budget stays within ₩1,000,000",
+  결정: "Decision",
+  "정해진 내용과 끝난 작업": "What was settled, including finished work",
+  "행사 장소는 2층 회의실": "The event is in the second-floor meeting room",
+  "진행 상황": "Progress",
+  "요청했지만 아직 끝나지 않은 일":
+    "Work that was requested but is not finished yet",
+  "초대장 초안 검토 중": "Reviewing the invitation draft",
+  "진행 상황에 있던 일이 끝나면 AI 팀원이 결정으로 옮겨 적습니다.":
+    "When work under Progress is finished, an AI teammate records it as a Decision.",
+  "대화 오른쪽 패널에서 ‘채널 메모’를 누릅니다. 패널이 닫혀 있으면 오른쪽 위의 ‘채널 자료 열기’를 먼저 누르세요. Cloud 채널에서는 채널 메뉴로도 열 수 있습니다.":
+    "Click ‘Channel memos’ in the panel to the right of the conversation. If the panel is closed, first click ‘Open channel resources’ at the top right. In Cloud channels, you can also open it from the channel menu.",
+  "‘메모 내용 검색’에 “행사 장소”처럼 찾을 말을 입력하거나, 전체·조건·결정·진행 상황 중 하나를 고릅니다. 메모가 아직 없다면 채널에서 AI 팀원에게 “중요한 내용을 채널 메모로 정리해줘”라고 요청하세요.":
+    "Enter a term such as “event venue” in ‘Search memos’, or choose All, Condition, Decision or Progress. If there are no memos yet, ask an AI teammate in the channel: “Summarize the important points in the channel memos.”",
+  "메모의 제목 줄을 누르면 전체 내용이 펼쳐집니다. 본문의 링크를 누르면 근거가 된 채널 대화의 원문이 열립니다. 요약한 날짜나 수치가 원문과 같은지 확인해 보세요.":
+    "Click a memo’s title row to expand the full text. Click a link in the body to open the original channel message it is based on. Check that the dates and figures in the summary match the original.",
+  "잘못 적힌 내용은 ‘메모 수정’으로 바로잡고 저장합니다. 필요 없어진 메모는 ‘메모 삭제’로 지웁니다. 메모를 지워도 근거가 된 채널 대화는 그대로 남습니다.":
+    "Correct anything inaccurate with ‘Edit memo’ and save. Remove memos you no longer need with ‘Delete memo’. Deleting a memo leaves the channel messages it was based on in place.",
+  "새로운 결정이나 요청은 메모를 고치기보다 채널 대화에 남기세요. 그래야 다른 멤버와 AI 팀원도 알 수 있습니다. Cloud 채널에서는 메모를 고치거나 지우는 버튼이 채널 관리자에게만 보이고, 다른 멤버에게는 ‘관리자만 수정·삭제’가 표시됩니다.":
+    "Post new decisions or requests in the channel conversation rather than editing a memo, so other members and AI teammates can see them. In Cloud channels, only channel managers see the buttons for editing or deleting memos; other members see ‘Only managers can edit or delete’.",
+  "AI 팀원의 채널 기억 확인하기":
+    "Check what an AI teammate remembers in a channel",
+  "AI 팀원은 채널마다 따로 기억을 남깁니다. 채널 메모가 모두의 작업 기록이라면, 팀원의 기억에는 그 팀원이 이 채널에서 어떻게 일할지가 담깁니다. 같은 채널의 같은 팀원은 누가 부르든 같은 기억을 이어 씁니다. 진행 중인 일은 기억이 아니라 채널 메모에 남습니다.":
+    "Each AI teammate keeps separate memories for each channel. If channel memos are everyone’s work record, a teammate’s memories describe how that teammate works in this channel. The same teammate in the same channel keeps the same memories, no matter who calls it. Work in progress goes in channel memos, not in memories.",
+  "대화에서 AI 팀원의 이름이나 아바타를 누릅니다. Cloud 채널에서는 멤버 목록에서 팀원을 골라도 됩니다. 오른쪽에 팀원 정보가 열립니다.":
+    "Click an AI teammate’s name or avatar in the conversation. In Cloud channels, you can also choose the teammate from the member list. The teammate’s details open on the right.",
+  "Memories 탭을 고릅니다. 위쪽 Ground에는 이 채널에서 맡은 역할, 사람들이 바라는 방식, 지켜야 할 규칙이 한 장에 적혀 있습니다. 아래쪽 Cards에는 오래 기억할 사실이나 교훈이 한 장에 하나씩 담깁니다.":
+    "Choose the Memories tab. Ground, at the top, is a single page with the teammate’s role in this channel, how people want it to work and the rules it must follow. Cards, below, hold lasting facts or lessons, one per card.",
+  "잘못 적힌 기억은 ‘기억 수정’으로 바로잡습니다. 더는 필요 없는 카드는 ‘기억 삭제’로 지웁니다.":
+    "Correct inaccurate memories with ‘Edit memory’. Remove cards you no longer need with ‘Delete memory’.",
+  "원하는 보고 방식이나 지켜야 할 규칙을 채널에서 말해 두면, 팀원이 이를 기억에 적고 다음 대화에서도 따릅니다. 고친 Ground는 팀원이 새 대화를 시작할 때부터 반영됩니다. 앱을 다시 켠 뒤 팀원을 부르거나, 그 팀원의 이전 작업이 끝나고 30분 넘게 지나서 다시 부르면 새 대화가 시작됩니다.":
+    "If you tell a teammate in the channel how you want reports or which rules to follow, it records this in its memories and follows it in later conversations. An edited Ground takes effect when the teammate starts a new conversation. A new conversation starts when you call the teammate after restarting the app, or more than 30 minutes after its previous task ended.",
+  "팀원 기억": "Teammate memories",
+  "채널 메모·팀원 기억": "Channel memos & memories",
+  "대화에서 합의한 조건과 결정은 AI 팀원이 채널 메모에 정리합니다. 대화 오른쪽 패널의 ‘채널 메모’에서 확인하세요.":
+    "AI teammates record the conditions and decisions agreed in the conversation in channel memos. Check them under ‘Channel memos’ in the panel to the right of the conversation.",
   "지식 공간에 자료를 모아 질문하기":
     "Build a Space and ask questions about its sources",
   "Liberaflow에 로그인한 뒤 Spaces에서 공간 만들기를 선택합니다. “신규 입사자 안내”처럼 용도가 드러나는 제목과 설명을 적고 계속을 누르세요.":
@@ -425,7 +459,7 @@ window.initializeLiberaflowLocale({
   "스킬 만들기": "Create a skill",
   "예약 만들기·종료": "Create or stop a schedule",
   "노트 수정 제안": "Propose note edits",
-  "채널 메모": "Channel memory",
+  "채널 메모": "Channel memos",
   "지식 공간": "Knowledge spaces",
   "회의·프로젝트": "Meetings and projects",
   "바탕화면 위젯": "Desktop widgets",
@@ -563,8 +597,8 @@ window.initializeLiberaflowLocale({
     "Use the left panel in Calendar to switch between Calendar, Projects, Memos, Routine, Schedules and Custom view. Keep the things you do every day in Routine and check them off daily. In Custom view, you can place the panels you need wherever you want.",
   "Calendar의 예약에서는 AI 작업을 한 번만 실행하거나 매일·매주 반복하도록 정할 수 있습니다. AI 대화에서 “매주 월요일 9시에 주간 보고 초안을 만들도록 예약해줘”처럼 말해 예약을 만들 수도 있습니다. 앱이 켜져 있어야 실행되며, 실행 기록에서 결과와 실패 사유를 확인할 수 있습니다.":
     "In Calendar’s Schedules, you can set an AI task to run once or repeat daily or weekly. You can also create a schedule by asking in an AI chat, for example “Schedule a draft of the weekly report every Monday at 9.” Tasks run only while the app is open, and the run history shows results and reasons for failure.",
-  "Local 채널은 Liberaflow에 로그인하지 않고도 이 컴퓨터에서 쓸 수 있습니다. 채널을 만들 때 함께할 AI 팀원을 확인하세요. 처음에는 사용 중인 팀원이 모두 선택되어 있습니다. 나중에 더 넣으려면 팀원 관리 창의 ‘팀원 추가’를 쓰세요. 대화와 메모는 이 컴퓨터에만 저장됩니다.":
-    "You can use Local channels on this computer without signing in to Liberaflow. When you create a channel, check which AI teammates will join it; all the teammates you use are selected at first. To add more later, use ‘Add teammate’ in the teammate management window. Conversations and notes are stored only on this computer.",
+  "Local 채널은 Liberaflow에 로그인하지 않고도 이 컴퓨터에서 쓸 수 있습니다. 채널을 만들 때 함께할 AI 팀원을 확인하세요. 처음에는 사용 중인 팀원이 모두 선택되어 있습니다. 나중에 더 넣으려면 팀원 관리 창의 ‘팀원 추가’를 쓰세요. 대화, 채널 메모, 팀원의 기억은 이 컴퓨터에만 저장됩니다.":
+    "You can use Local channels on this computer without signing in to Liberaflow. When you create a channel, check which AI teammates will join it; all the teammates you use are selected at first. To add more later, use ‘Add teammate’ in the teammate management window. Conversations, channel memos and teammate memories are stored only on this computer.",
   "결과가 마음에 들지 않으면 대화의 ‘이 작업 전으로 되돌리기’를 누릅니다. AI가 고친 파일은 고치기 전으로 돌아가고, AI가 새로 만든 파일은 보관함의 .trash 폴더로 이동합니다.":
     "If you don’t like the result, click ‘Undo to before this task’ in the chat. Files AI edited go back to how they were, and files AI created move to the vault’s .trash folder.",
   "권한을 ‘편집 전 승인’으로 두면, AI는 파일을 바꾸거나 인터넷에 접속하기 전에 매번 승인 카드를 띄웁니다. 이 승인 카드는 ChatGPT(OpenAI)나 OpenRouter 모델로 대화할 때 나타납니다. 바뀔 파일과 실행할 명령을 확인한 뒤 ‘허용’, ‘이 대화에서 계속 허용’, ‘거절’ 중 하나를 누르세요. 거절하면 AI는 그 일만 빼고 다른 방법으로 이어 갑니다.":
