@@ -1,0 +1,9 @@
+# GitHub Pages builds this site from main with Jekyll. Pages are plain HTML;
+# this file only keeps maintainer documents and tools in the repository
+# without publishing them on liberaflow.com.
+exclude:
+  - README.md
+  - RELEASE_GUIDE.md
+  - HOSTING_MIGRATION_GUIDE.md
+  - release.sh
+  - tools/

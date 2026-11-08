@@ -71,6 +71,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `naverbc95ad0893d4f5b76c2c91972731d8bb.html`, `robots.txt` — 사이트 인증과 크롤러 정책
 - `extension-test.html`, `extract-test.html` — 브라우저 확장 진단 페이지
 - `release.sh`, `RELEASE_GUIDE.md`, `HOSTING_MIGRATION_GUIDE.md` — 기존 릴리스 운영 자료
+- `_config.yml` — GitHub Pages(Jekyll)가 사이트에 내보내지 않을 관리 자료 목록: 이 README, `RELEASE_GUIDE.md`, `HOSTING_MIGRATION_GUIDE.md`, `release.sh`, `tools/`. 저장소가 공개라 GitHub에서는 보이지만 liberaflow.com 주소로는 열리지 않습니다. 사이트에 둘 필요 없는 관리 파일을 더하면 여기에도 적으세요
 
 다운로드 버튼의 `macosBtn` / `windowsBtn` ID는 중앙 설정을 적용하는 안정적인 연결 계약이므로 유지합니다. 릴리스 시 `assets/js/download-config.js`의 중앙 설정과 HTML의 JavaScript 미사용용 직접 링크를 함께 갱신하고, `release.sh --check`로 두 값과 appcast 메타데이터의 일치를 검사하세요.
 
