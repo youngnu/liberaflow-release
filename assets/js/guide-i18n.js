@@ -98,18 +98,6 @@ window.initializeLiberaflowLocale({
   "문서 공유": "Share documents",
   "Liberaflow에 로그인하고 보관함의 클라우드 동기화를 켠 뒤, 문서의 공유 창에서 사람이나 팀을 선택합니다. 공유한 노트는 작성자의 것으로 남고, 공유를 해제하면 접근을 거둘 수 있습니다.":
     "Sign into Liberaflow, enable cloud sync for the vault, then choose people or teams in the document’s sharing dialog. Shared notes remain the author’s; disabling sharing revokes access.",
-  "채널에서 AI 팀원과 검토하기": "Review with AI teammates in a channel",
-  "팀 채널 또는 개인 채널을 만들고, 에이전트 허브에서 설정한 AI 팀원을 멤버 창의 내 팀원 초대로 추가합니다.":
-    "Create a team or personal channel. In the member panel, use Invite my teammate to add an AI teammate configured in the Agent Hub.",
-  "채널 메뉴의 내 문서 채널에 공유에서 자료를 공유한 뒤, 입력창의 @ 목록에서 문서를 선택합니다.":
-    "Share material using Share my documents to channel in the channel menu, then select the document from the @ list.",
-  "# 목록에서 AI 팀원을 고르고 작업을 요청합니다. AI 팀원을 부르지 않은 메시지는 사람들에게만 전달됩니다.":
-    "Choose an AI teammate from the # list and request a task. Messages that do not call an AI teammate go only to people.",
-  "여러 AI 팀원을 한 요청에 넣으면 함께 실행됩니다. 팀원 답변 속 멘션은 다음 팀원에게 작업을 넘길 수 있습니다.":
-    "Mentioning several AI teammates in one request runs them together. A mention in a teammate’s reply can hand work to another teammate.",
-  "Spaces에서 팀의 지식 찾기": "Find team knowledge in Spaces",
-  "Spaces에 문서를 모아 의미로 검색하고 근거와 함께 답을 받습니다. AI 대화에 지식 공간을 연결해 자료를 참고할 수 있습니다.":
-    "Collect documents in Spaces to search by meaning and get answers with supporting sources. Connect a space to AI chat to use that material.",
   "채널의 @ 목록에는 멤버가 접근할 수 있는 공유 문서가 표시됩니다. 채널 AI는 호출한 사람의 컴퓨터와 모델 연결로 실행됩니다.":
     "The channel’s @ list shows shared documents members can access. Channel AI runs on the caller’s computer using the caller’s model connection.",
   "필요한 자료로 함께 일하기": "Work together with shared material",
@@ -127,8 +115,6 @@ window.initializeLiberaflowLocale({
   "일정·할 일·프로젝트 간트 타임라인을 연결해 관리합니다. 할 일·스티키 메모·캘린더는 독립된 데스크톱 위젯으로 띄울 수 있습니다.":
     "Manage connected events, tasks and project Gantt timelines. Open tasks, sticky notes and calendars as independent desktop widgets.",
   "AI 작업 예약하기": "Schedule AI tasks",
-  "에이전트 허브에서 한 번 또는 매일·매주 실행할 작업을 예약합니다. 앱이 켜져 있어야 실행되며, 실행 기록에서 결과와 실패 사유를 확인할 수 있습니다.":
-    "Schedule one-time, daily or weekly tasks in the Agent Hub. The app must be running; check run history for results and failure reasons.",
   "앱이 꺼져 있어 놓친 예약은 24시간 이내인 경우 다음 실행 때 처리합니다. 24시간을 넘긴 예약은 실패로 기록됩니다.":
     "Missed tasks are picked up on the next app launch if they are less than 24 hours late. Older missed tasks are recorded as failed.",
   "내 일정부터 함께 보는 일정까지": "Plan your day and see schedules together",
@@ -139,9 +125,6 @@ window.initializeLiberaflowLocale({
     "Syncs privately. Direct PDF sharing is not provided.",
   "비공개 파일로 동기화합니다. 멤버 공유를 선택하면 공유 시점의 사본을 전달합니다.":
     "Syncs privately. Sharing with a member sends a copy from the time of sharing.",
-  "Office·CSV 등 다른 파일": "Other files, including Office and CSV",
-  "열어볼 수 있다는 것이 자동 동기화를 의미하지는 않습니다. 보관함의 모든 파일이 클라우드로 동기화되는 것은 아닙니다.":
-    "Being able to open a file does not mean it syncs automatically. Cloud sync does not cover every file in the vault.",
   "저장과 공유 범위": "Storage and sharing scope",
   자료: "Material",
   "동기화와 공유": "Sync and sharing",
@@ -181,8 +164,6 @@ window.initializeLiberaflowLocale({
   "/프레젠테이션": "/presentation",
   "동기화를 켜면 내용과 삭제가 다른 기기에 반영됩니다. 노트는 사람·팀을 지정해 공유하고, 캔버스는 공개 설정 또는 팀 공유를 사용합니다.":
     "With sync enabled, content changes and deletions reach other devices. Share notes with selected people or teams; canvases support public visibility or team sharing.",
-  "AI 작업을 되돌리면 해당 턴의 체크포인트에 포함된 보관함 파일 변경을 복구합니다.":
-    "Undoing an AI turn restores vault file changes included in that turn’s checkpoint.",
   "선택한 글자 강조 켜기·끄기": "Toggle highlight on selected text",
   인용문: "Block quote",
   "번호 목록": "Numbered list",
@@ -350,8 +331,6 @@ window.initializeLiberaflowLocale({
     "Choose the material and time, then manage upcoming runs",
   "예약 작업에도 참고할 자료와 원하는 결과를 함께 적어 두세요.":
     "Include the source material and the result you want in a scheduled task.",
-  "에이전트 → 예약에서 예약 만들기를 누릅니다.":
-    "In Agents → Schedules, click Create schedule.",
   "작업 지시를 입력하고, 필요한 노트·PDF·폴더·파일은 @로 찾아 선택합니다.":
     "Enter the instructions and use @ to find and select any notes, PDFs, folders or files the task needs.",
   "사용할 AI를 고른 뒤 실행 주기를 한 번·매일·매주 중에서 선택합니다.":
@@ -395,16 +374,12 @@ window.initializeLiberaflowLocale({
     "Build a Space and ask questions about its sources",
   "Liberaflow에 로그인한 뒤 Spaces에서 공간 만들기를 선택합니다. “신규 입사자 안내”처럼 용도가 드러나는 제목과 설명을 적고 계속을 누르세요.":
     "Sign in to Liberaflow and choose Create Space in Spaces. Enter a clear title such as “New employee handbook,” add a description and continue.",
-  "콘텐츠 추가에서 파일이나 노트를 골라 참고할 자료를 모읍니다. 선택된 콘텐츠 목록을 확인하고 추가를 누른 뒤 처리가 끝날 때까지 기다리세요.":
-    "Choose files or notes under Add content to collect your reference material. Review the selected content, click Add and wait for processing to finish.",
   "노트 옆 AI 대화에서 스페이스 검색을 켜고 이번 질문에 사용할 공간을 선택합니다. 선택한 스페이스에서 검색이라는 입력 안내가 보이면 “휴가 신청 절차를 정리하고 근거 문서를 알려줘”처럼 질문하세요.":
     "Enable Space search in the AI chat beside your notes and choose the Space to use. When the input indicates that it will search the selected Spaces, ask a question such as “Summarize the leave request process and identify the source documents.”",
   "답변과 함께 제시된 근거를 확인하고, 필요한 조건을 더해 질문을 좁힙니다. 예를 들어 “신입 직원에게 적용되는 절차만 체크리스트로 바꿔줘”라고 이어갈 수 있습니다.":
     "Check the sources provided with the answer, then narrow your question with more specific conditions. For example, follow up with “Turn only the steps that apply to new employees into a checklist.”",
   "나만 쓸 공간과 함께 쓸 공간 나누기":
     "Choose whether a Space is personal or shared",
-  "공간 만들기의 공유 설정에서 사람이나 팀을 고르지 않으면 나만 보는 공간으로 시작합니다. 함께 쓸 때는 공간 카드의 공유 버튼에서 받는 사람을 지정하고, 받은 공간은 공유 공간 탭에서 찾으세요.":
-    "A new Space starts as personal if you do not select people or teams in its sharing settings. To use it together, choose recipients with the Share button on the Space card; recipients can find it in the Shared Spaces tab.",
   "Spaces는 로그인과 인터넷 연결이 필요한 지식 검색 기능이며, 보관함 동기화를 켜지 않아도 사용할 수 있습니다.":
     "Spaces requires sign-in and an internet connection, but you can use it without enabling vault synchronization.",
   "회의 일정과 프로젝트 할 일 맞추기": "Coordinate meetings and project tasks",
@@ -440,8 +415,6 @@ window.initializeLiberaflowLocale({
     "Open a channel notification to jump to the relevant message. Reading the channel also clears its unread badge.",
   "메시지가 많은 채널은 채널 메뉴의 알림 끄기로 일반 글의 배지를 숨깁니다. 이 설정은 다른 기기에도 적용되지만, 나를 부른 글의 호출 알림은 계속 받을 수 있습니다.":
     "For a busy channel, choose Mute notifications from its menu to hide badges for ordinary messages. This setting applies across devices, but messages that mention you can still notify you.",
-  "호출 알림 전체를 끄려면 설정 → 시스템 · 알림에서 채널에서 나를 부르면 알림을 끄세요. 일반 채널 글이나 AI 답변마다 시스템 알림이 오는 것은 아니며, 현재 보고 있는 채널의 호출은 별도 알림을 띄우지 않습니다.":
-    "To turn off mention notifications altogether, open Settings → System · Notifications and disable Notify when I’m mentioned in a channel. Ordinary channel posts and AI replies do not each trigger a system notification, and mentions in the channel you are currently viewing do not trigger a separate notification.",
   "화면 설정": "Appearance",
   "자료 가져오기·정리": "Import and organize",
   "자료 검색": "Find material",
@@ -480,7 +453,8 @@ window.initializeLiberaflowLocale({
   도움말: "Help",
   정책: "Policies",
   공지사항: "Notices",
-  "생각은 자유롭게, 일은 흐르게.": "Think freely. Let work flow.",
+  "자유롭게 생각하고, 남들과 다르게 일하세요.":
+    "Think freely. Work like no one else.",
   "사용 예시 보기": "See examples",
   "설치부터 노트와 문서, 코딩 프로젝트, 팀 협업까지. 필요한 기능과 사용 방법을 찾아보세요.":
     "From installation to notes and documents, coding projects and teamwork. Find the features you need and how to use them.",
@@ -546,4 +520,71 @@ window.initializeLiberaflowLocale({
     "PRs are opened and merged with the GitHub CLI on this computer, so run",
   "을 해 두세요. 팀원에게 기본 브랜치에 올리지 말라고 일러 두지만 앱이 막는 것은 아니므로, 실제로 막으려면 GitHub에서 기본 브랜치 보호를 켜 두세요. 연결한 폴더 경로는 이 기기에만 저장됩니다.":
     "first. Teammates are told not to push to the default branch, but the app does not enforce it; turn on default branch protection in GitHub to actually block it. The connected folder path is stored only on this device.",
+  "# 목록에서 AI 팀원을 고르고 할 일을 적습니다. AI 팀원을 부르지 않은 글은 사람들에게만 전달됩니다.":
+    "Pick an AI teammate from the # list and describe the work. Messages that don’t call an AI teammate go only to the people in the channel.",
+  "AI 팀원 설정하기": "Set up AI teammates",
+  "질문·승인·되돌리기": "Questions, approvals & undo",
+  "AI가 묻거나 허락을 구할 때": "When AI asks a question or needs permission",
+  "Calendar 왼쪽 패널의 예약에서 예약 만들기를 누릅니다.":
+    "In the left panel of Calendar, open Schedules and click Create schedule.",
+  "Cloud 채널에서 자료를 함께 보려면 채널 메뉴의 ‘내 문서 채널에 공유’로 문서를 올린 뒤, 입력창의 @ 목록에서 고릅니다.":
+    "To work on documents together in a Cloud channel, add them with ‘Share my documents to channel’ in the channel menu, then pick them from the @ list in the message box.",
+  "Office·CSV·영상·코드 등 그 밖의 파일":
+    "Office, CSV, video, code and other files",
+  "같은 안내에서 AI 연결 상태를 확인합니다. 연결되어 있지 않다면 쓰고 있는 ChatGPT나 Claude 계정으로 로그인하거나, 설정 → 내 연결에 OpenRouter 키를 넣으세요.":
+    "In the same guide, check your AI connection. If it isn’t connected yet, sign in with the ChatGPT or Claude account you already use, or add an OpenRouter key in Settings → My connections.",
+  "노트 옆 AI 대화에서 @를 입력해 방금 쓴 노트를 고르고, 원하는 결과를 적어 보냅니다. 예: “이 메모로 기획안 Word 문서를 만들어줘.”":
+    "In the AI chat beside your notes, type @ to pick the note you just wrote, then describe the result you want. Example: “Turn this memo into a Word proposal.”",
+  "보관함의 영상을 앱 안에서 재생합니다(MKV·AVI는 컴퓨터의 기본 앱으로 엽니다). AI 대화에 붙이면 AI가 이 컴퓨터의 영상 도구(ffmpeg 등)로 다룹니다. 영상은 이 컴퓨터에만 두며 동기화하지 않습니다.":
+    "Play videos from your vault in the app (MKV and AVI open in your computer’s default app). Attach one to an AI chat and AI handles it with video tools on this computer, such as ffmpeg. Videos stay on this computer and are not synced.",
+  "앱을 설치하고 처음 켜면 첫 안내가 나옵니다. 안내에 따라 자료를 둘 보관함(폴더)을 새로 만들거나, 쓰던 마크다운 폴더를 엽니다.":
+    "Install the app and open it for the first time to see the welcome guide. Follow it to create a vault (folder) for your files, or open a Markdown folder you already use.",
+  영상: "Video",
+  "이 컴퓨터에만 두며 클라우드로 동기화하지 않습니다. 다른 기기에서 쓰려면 파일을 직접 옮기세요.":
+    "These stay on this computer and are not synced to the cloud. Move the files yourself to use them on another device.",
+  "일정도 AI에게 말로 맡길 수 있습니다. 노트 옆 AI 대화나 채널에서 “목요일 2시에 디자인 리뷰 잡아줘”처럼 요청하세요.":
+    "You can also hand your schedule to AI just by asking. In the AI chat beside your notes or in a channel, try “Set up a design review on Thursday at 2.”",
+  "지식 공간에서 팀 자료 찾기": "Find team material in knowledge spaces",
+  "채널에서 AI 팀원과 일하기": "Work with AI teammates in channels",
+  "채널은 사람과 AI 팀원이 함께 쓰는 대화방입니다. 왼쪽 메뉴의 Channel에서 Local과 Cloud를 오갑니다.":
+    "A channel is a chat room where people and AI teammates work together. Switch between Local and Cloud under Channel in the left menu.",
+  "처음 시작하기": "Quick start",
+  "처음이라면, 첫 결과물까지 따라 해 보세요":
+    "New here? Follow along to your first result",
+  "앱 설치부터 AI로 첫 문서를 만들고 확인하기까지 다섯 단계입니다. Liberaflow에 로그인하지 않아도 따라 할 수 있습니다.":
+    "Five steps take you from installing the app to creating and checking your first document with AI. You can follow along without signing in to Liberaflow.",
+  "노트 목록 위의 ‘노트 만들기’ 단추로 새 노트를 만들고, 떠오른 생각을 몇 줄 적습니다. 예: “고객 문의를 유형별로 나눠 담당자에게 넘기는 기능을 만들고 싶다.”":
+    "Create a new note with the ‘Create note’ button above the note list, and write down an idea in a few lines. Example: “I want a feature that sorts customer inquiries by type and passes them to the right person.”",
+  "보관함에 생긴 문서를 열어 확인합니다. 고칠 곳은 짚어서 다시 요청하고, 결과가 마음에 들지 않으면 대화의 ‘이 작업 전으로 되돌리기’를 누르세요.":
+    "Open the new document in your vault. Point at what to change and ask again, and if you don’t like the result, click ‘Undo to before this task’ in the chat.",
+  "AI가 작업 방향을 물으면 입력창 자리에 질문이 나타납니다. 방향키로 보기를 고르고 Enter를 누르거나, 직접 적어서 ‘답변 보내기’를 누르세요. Esc를 누르면 작업이 그 자리에서 멈춥니다. 계획 모드(Plan Mode)에서는 AI가 파일을 만들거나 고치지 않습니다. 파일 작업까지 맡기려면 입력창에 /plan off를 입력해 계획 모드를 끈 뒤, 같은 대화에서 다시 요청하세요.":
+    "When AI asks which way to go, a question appears where the message box is. Pick an option with the arrow keys and press Enter, or type your own answer and click ‘Send answer’. Press Esc to stop the task right there. In Plan Mode, AI does not create or edit files. To have it work on files, type /plan off in the message box to turn Plan Mode off, then ask again in the same chat.",
+  "Calendar 왼쪽 패널에서 캘린더·프로젝트·메모·루틴·예약·맞춤 보기를 오갑니다. 매일 챙길 일은 루틴에 적어 두고 날마다 체크합니다. 맞춤 보기에서는 필요한 패널을 원하는 자리에 놓을 수 있습니다.":
+    "Use the left panel in Calendar to switch between Calendar, Projects, Memos, Routine, Schedules and Custom view. Keep the things you do every day in Routine and check them off daily. In Custom view, you can place the panels you need wherever you want.",
+  "Calendar의 예약에서는 AI 작업을 한 번만 실행하거나 매일·매주 반복하도록 정할 수 있습니다. AI 대화에서 “매주 월요일 9시에 주간 보고 초안을 만들도록 예약해줘”처럼 말해 예약을 만들 수도 있습니다. 앱이 켜져 있어야 실행되며, 실행 기록에서 결과와 실패 사유를 확인할 수 있습니다.":
+    "In Calendar’s Schedules, you can set an AI task to run once or repeat daily or weekly. You can also create a schedule by asking in an AI chat, for example “Schedule a draft of the weekly report every Monday at 9.” Tasks run only while the app is open, and the run history shows results and reasons for failure.",
+  "Local 채널은 Liberaflow에 로그인하지 않고도 이 컴퓨터에서 쓸 수 있습니다. 채널을 만들 때 함께할 AI 팀원을 확인하세요. 처음에는 사용 중인 팀원이 모두 선택되어 있습니다. 나중에 더 넣으려면 팀원 관리 창의 ‘팀원 추가’를 쓰세요. 대화와 메모는 이 컴퓨터에만 저장됩니다.":
+    "You can use Local channels on this computer without signing in to Liberaflow. When you create a channel, check which AI teammates will join it; all the teammates you use are selected at first. To add more later, use ‘Add teammate’ in the teammate management window. Conversations and notes are stored only on this computer.",
+  "결과가 마음에 들지 않으면 대화의 ‘이 작업 전으로 되돌리기’를 누릅니다. AI가 고친 파일은 고치기 전으로 돌아가고, AI가 새로 만든 파일은 보관함의 .trash 폴더로 이동합니다.":
+    "If you don’t like the result, click ‘Undo to before this task’ in the chat. Files AI edited go back to how they were, and files AI created move to the vault’s .trash folder.",
+  "권한을 ‘편집 전 승인’으로 두면, AI는 파일을 바꾸거나 인터넷에 접속하기 전에 매번 승인 카드를 띄웁니다. 이 승인 카드는 ChatGPT(OpenAI)나 OpenRouter 모델로 대화할 때 나타납니다. 바뀔 파일과 실행할 명령을 확인한 뒤 ‘허용’, ‘이 대화에서 계속 허용’, ‘거절’ 중 하나를 누르세요. 거절하면 AI는 그 일만 빼고 다른 방법으로 이어 갑니다.":
+    "If you set permissions to ‘Approve before edits’, AI shows an approval card every time before it changes files or goes online. These approval cards appear when you chat with ChatGPT (OpenAI) or OpenRouter models. Check which files will change and which command will run, then choose ‘Allow’, ‘Always allow in this chat’ or ‘Decline’. If you decline, AI skips only that step and continues another way.",
+  "누가 볼지는 공간을 만들거나 고치는 창의 공개 설정에서 정합니다. 비공개는 나만 볼 수 있고, 멤버만은 지정한 사람이, 조직은 지정한 팀이 볼 수 있습니다.":
+    "Choose who can see a space under Visibility in the window where you create or edit it. Private is visible only to you, Members only to the people you choose, and Organization to the teams you choose.",
+  "되돌리기는 AI가 고치거나 만든 파일에만 적용됩니다. 그 사이 내가 직접 고친 다른 파일은 그대로 남습니다. 셸 명령처럼 기록 없이 바뀐 파일은 되돌릴 수 없으며, 그런 파일이 있으면 앱이 알려 줍니다.":
+    "Undo covers only the files AI edited or created. Other files you edited yourself in the meantime stay as they are. Files changed without a record, such as by shell commands, can’t be undone, and the app tells you when there are such files.",
+  "로그인하면 문서·노트·웹페이지·유튜브 영상을 지식 공간(Spaces)에 모을 수 있습니다. 정확한 단어가 기억나지 않아도 관련 자료를 찾고, 근거와 함께 답을 받습니다. AI 대화에 지식 공간을 연결해 자료를 참고할 수도 있습니다.":
+    "Sign in to gather documents, notes, web pages and YouTube videos in knowledge spaces (Spaces). You can find related material even when you don’t remember the exact words, and get answers with sources. You can also connect a knowledge space to an AI chat for reference.",
+  "사람과 함께 쓰려면 로그인한 뒤 Cloud에서 팀 채널이나 개인 채널을 만듭니다. AI 팀원은 채널 관리자만 넣을 수 있습니다. 넣을 때는 멤버 창의 ‘AI 팀원 초대’를 누릅니다.":
+    "To work with people, sign in and create a team or personal channel in Cloud. Only the channel admin can add AI teammates, using ‘Invite AI teammate’ in the members window.",
+  "사이드바의 에이전트 화면에서 AI 팀원을 관리합니다. 처음부터 CEO, Reviewer, Worker 세 팀원이 있습니다. 카드에서 이름·역할 지시문·실행 모델을 고치거나 새 팀원을 만들 수 있습니다. 팀원을 부를 때는 노트 옆 AI 대화나 채널에서 #이름을 입력합니다.":
+    "Manage AI teammates on the Agents screen in the sidebar. CEO, Reviewer and Worker are there from the start. Use their cards to edit the name, role instructions and model, or create a new teammate. To call a teammate, type #name in the AI chat beside your notes or in a channel.",
+  "설정 → 시스템 · 알림에 있는 ‘채널 호출·AI 완료 알림’은 누가 나를 #으로 부르거나 내가 요청한 AI 답변이 끝났을 때 알려 주는 설정입니다. 다른 화면을 보고 있거나 앱이 뒤에 있을 때 알림이 옵니다. 이 설정을 끄면 두 알림이 모두 오지 않습니다. 일반 글은 배지로만 표시되며, 채널 메뉴의 ‘알림 끄기’와는 따로 동작합니다.":
+    "‘Channel mentions & AI completion alerts’ in Settings → System · Notifications alerts you when someone calls you with # or when an AI reply you asked for finishes. The alerts arrive while you are on another screen or the app is in the background. Turning the setting off stops both alerts. Ordinary messages show only as badges, and this works separately from ‘Mute notifications’ in the channel menu.",
+  "여러 팀원을 한 번에 부르면 함께 일합니다. 팀원이 답변에 다른 팀원의 #이름을 적으면 그 팀원에게 일을 넘깁니다.":
+    "Call several teammates at once and they work together. When a teammate writes another teammate’s #name in a reply, the work passes to that teammate.",
+  "첫 안내를 다시 보려면 설정 → 정보 → ‘첫 안내 다시 보기’를 누르세요. Liberaflow 로그인은 여러 기기에서 쓰거나 다른 사람과 함께 일할 때 하면 됩니다.":
+    "To see the welcome guide again, go to Settings → About → ‘Show the welcome guide again’. Sign in to Liberaflow when you want to use more than one device or work with other people.",
+  "콘텐츠 추가에서 참고할 자료를 모읍니다. 파일과 노트는 고르고, 웹페이지는 주소를, 유튜브 영상은 링크를 붙여 넣습니다. 선택된 콘텐츠 목록을 확인하고 추가를 누른 뒤 처리가 끝날 때까지 기다리세요.":
+    "Gather reference material in Add content. Pick files and notes, and paste a web page address or a YouTube link. Check the list of selected content, click Add, and wait until processing finishes.",
 });

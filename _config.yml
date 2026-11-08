@@ -4,6 +4,5 @@
 exclude:
   - README.md
   - RELEASE_GUIDE.md
-  - HOSTING_MIGRATION_GUIDE.md
   - release.sh
   - tools/

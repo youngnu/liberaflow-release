@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Guide and notices pages. Same light look as the homepage (home.css):
-   sky hero card, ink text, blue links, pill buttons. Header and footer
+/* Guide and notices pages. Same look as the homepage (home.css): a small
+   night-sea hero card, then light pages with ink text, blue links, pills. Header and footer
    live in navigation.css. These pages do not load site.css. */
 :root {
   color-scheme: light;
@@ -140,19 +140,77 @@ h4 {
   background: #283040;
 }
 
-/* Hero card: the homepage sky, smaller. */
+/* Hero card: the homepage night sea, smaller. */
 .guide-hero {
+  --horizon: 34px;
+  position: relative;
   margin-top: 12px;
-  padding: 56px 56px 48px;
+  padding: 56px 56px 78px;
+  overflow: hidden;
+  isolation: isolate;
   border-radius: 24px;
+  color: white;
   background:
-    radial-gradient(38% 46% at 12% 22%, #ffffffd9, transparent 70%),
-    radial-gradient(30% 40% at 88% 16%, #ffffffbf, transparent 72%),
-    radial-gradient(40% 46% at 78% 92%, #ffffffa6, transparent 72%),
-    linear-gradient(180deg, #a9cdff 0%, #c8e0ff 46%, #e6f0ff 80%, #f4f8ff 100%);
+    radial-gradient(
+      60% 50% at 50% calc(100% - var(--horizon)),
+      #2f6bed4d,
+      #2f6bed00 70%
+    ),
+    linear-gradient(
+      180deg,
+      #02040b 0%,
+      #050c22 45%,
+      #0c2357 calc(100% - var(--horizon)),
+      #050c22 calc(100% - var(--horizon) + 1px),
+      #030816 100%
+    );
+}
+.guide-hero::before,
+.guide-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+.guide-hero::before {
+  inset: 0 0 var(--horizon);
+  background-image:
+    radial-gradient(1.2px 1.2px at 23px 41px, #fff, #fff0),
+    radial-gradient(1px 1px at 141px 87px, #ffffffd9, #fff0),
+    radial-gradient(1.4px 1.4px at 211px 173px, #fff, #fff0),
+    radial-gradient(1px 1px at 67px 199px, #ffffffbf, #fff0),
+    radial-gradient(1.6px 1.6px at 97px 131px, #dfe8ff, #fff0),
+    radial-gradient(1px 1px at 311px 263px, #ffffffcc, #fff0),
+    radial-gradient(1.3px 1.3px at 271px 61px, #fff, #fff0);
+  background-size:
+    260px 260px,
+    260px 260px,
+    260px 260px,
+    260px 260px,
+    330px 330px,
+    390px 390px,
+    390px 390px;
+  -webkit-mask-image: linear-gradient(#000 0%, #000 50%, #0000 100%);
+  mask-image: linear-gradient(#000 0%, #000 50%, #0000 100%);
+}
+.guide-hero::after {
+  inset: auto 0 0;
+  height: var(--horizon);
+  background:
+    linear-gradient(
+        90deg,
+        #8fb4ff00,
+        #8fb4ff80 25%,
+        #d6e4ff 50%,
+        #8fb4ff80 75%,
+        #8fb4ff00
+      )
+      top / 100% 1px no-repeat,
+    repeating-linear-gradient(180deg, #8fb4ff00 0 4px, #8fb4ff14 4px 5px) 0
+      1px / 100% 100% no-repeat;
 }
 .guide-hero .eyebrow {
-  color: #2552b8;
+  color: #8fb4ff;
 }
 .guide-hero h1 {
   margin: 14px 0 12px;
@@ -162,12 +220,12 @@ h4 {
 }
 .guide-hero > p {
   max-width: 640px;
-  color: #2b3446;
+  color: #c0cbe0;
   font-size: 17px;
 }
 .guide-hero > .guide-index-label {
   margin-top: 30px;
-  color: #3d4a60;
+  color: #98a6c2;
   font-size: 12px;
   font-weight: 600;
 }
@@ -181,18 +239,19 @@ h4 {
   display: flex;
   align-items: center;
   padding: 13px 16px;
-  border: 1px solid #ffffffcc;
+  border: 1px solid #ffffff21;
   border-radius: 14px;
-  background: #ffffffb8;
-  color: #1d2533;
+  background: #ffffff0d;
+  color: #e3eaf8;
   font-size: 14px;
   font-weight: 550;
   line-height: 1.5;
   backdrop-filter: blur(8px);
 }
 .guide-quick-links a:hover {
-  background: white;
-  color: var(--blue);
+  border-color: #ffffff4d;
+  background: #ffffff1a;
+  color: white;
 }
 
 /* Table of contents and content column. */
@@ -591,7 +650,7 @@ kbd {
     width: calc(100% - 40px);
   }
   .guide-hero {
-    padding: 44px 32px 36px;
+    padding: 44px 32px 64px;
   }
   .guide-quick-links {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -610,7 +669,7 @@ kbd {
   }
   .guide-hero {
     margin-top: 8px;
-    padding: 34px 22px 26px;
+    padding: 34px 22px 56px;
     border-radius: 20px;
   }
   .guide-hero > p {

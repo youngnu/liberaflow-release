@@ -75,7 +75,6 @@ window.initializeLiberaflowLocale({
   // Works with
   연결: "Connect",
   "한글(HWPX)": "Hangul (HWPX)",
-  "Google Calendar(로그인 시)": "Google Calendar (signed in)",
 
   // Capabilities
   "@프로젝트 폴더 지난달 회의에서 정한 것만 모아줘.":
@@ -145,10 +144,9 @@ window.initializeLiberaflowLocale({
   // Who it's for
   "지식으로 일하는 팀": "Teams that run on knowledge",
   "반복 업무가 많은 실무자": "People buried in routine work",
-  "매주 같은 보고서를 처음부터 쓴다면":
-    "You write the same report from scratch every week",
-  "예약해 둔 AI 작업이 정한 시간에 초안을 만들어 둡니다.":
-    "A scheduled AI task has the draft ready when you need it.",
+  "매번 같은 업무를 반복한다면": "You repeat the same work again and again",
+  "전달한 서식을 지키면서 AI가 초안을 만들고, 예약해 둔 작업을 정해진 시간에 해 줍니다.":
+    "AI drafts in the format you give it, and runs scheduled work at the time you set.",
 
   // FAQ
   "자주 묻는 질문": "Frequently asked questions",
@@ -170,7 +168,6 @@ window.initializeLiberaflowLocale({
     "Windows 11 or later, and Apple Silicon Macs (M1 or later) running macOS 15 or later. Intel Macs are not supported.",
 
   // Download
-  "생각이 일이 되는 곳.": "Where ideas get to work.",
   "macOS 다운로드": "Download for macOS",
   "Windows 다운로드": "Download for Windows",
   "Windows 11 이상": "Windows 11 or later",
@@ -235,15 +232,16 @@ window.initializeLiberaflowLocale({
     "It uses the same subscription, but AI reads the notes and documents in your vault directly, without uploading files each time. Results are created and edited as Word, Excel, PowerPoint and Hangul files in your vault, and in the code you connect, not just as chat replies.",
 
   // Journey copy (hero flow, scenes, flow stages, FAQ)
-  "Liberaflow — 생각은 자유롭게, 일은 흐르게": "Liberaflow — Think freely. Let work flow.",
+  "Liberaflow — 자유롭게 생각하고, 남들과 다르게 일하세요":
+    "Liberaflow — Think freely. Work like no one else.",
   "아이디어 한 줄에서 코드와 문서로, 쌓인 노트는 연결된 지식으로, 그 지식은 팀의 자산으로. 그 사이의 일은 AI 에이전트가 맡는 데스크톱 앱, Liberaflow.":
     "One idea becomes code and documents, notes become connected knowledge, and knowledge becomes your team’s asset. Liberaflow is the desktop app where AI agents handle the work in between.",
   "아이디어에서 코드와 문서로, 내 지식에서 팀의 지식으로. 일의 흐름을 AI 에이전트에게 맡기는 데스크톱 앱.":
     "From ideas to code and documents, from your knowledge to your team’s. A desktop app that hands your workflow to AI agents.",
   "흐름": "Flow",
   "Liberaflow의 흐름": "How Liberaflow flows",
-  "생각은 자유롭게,": "Think freely.",
-  "일은 흐르게.": "Let work flow.",
+  "자유롭게 생각하고,": "Think freely.",
+  "남들과 다르게 일하세요.": "Work like no one else.",
   "아이디어 한 줄에서 코드와 문서로, 쌓인 노트는 연결된 지식으로, 그 지식은 팀의 자산으로.":
     "One idea becomes code and documents. Notes become connected knowledge. Knowledge becomes your team’s asset.",
   "그 사이의 일은 AI 에이전트가 맡습니다.": "AI agents handle the work in between.",
@@ -354,21 +352,22 @@ window.initializeLiberaflowLocale({
   "떠오른 생각을 적으면": "Write down a thought",
   "메모 한 줄을 @로 붙여 말하면, AI가 기획안·보고서·발표 자료로 펼칩니다.":
     "Attach a one-line memo with @ and say what you need. AI expands it into a plan, a report or a slide deck.",
-  "/문서 이 메모로 기획안 초안 만들어줘.": "/문서 (document) Draft a plan from this memo.",
+  "@주말 아이디어.md 이 메모를 보고 한글 보고서를 만들어줘.":
+    "@Weekend idea.md Turn this memo into a Hangul (HWPX) report.",
   "02 · 코드·문서": "02 · Code & docs",
   "프로젝트로 자라고": "It grows into a project",
-  "채널에 코드 폴더를 연결하면 AI 팀원이 코드를 고치고, 바뀐 줄을 보여 준 뒤 부탁하면 커밋까지 합니다.":
-    "Connect a code folder to a channel. AI teammates edit the code, show the changed lines, and commit when you ask.",
-  "#Worker 이 기획대로 만들고, 테스트 통과하면 커밋해줘.":
-    "#Worker Build this plan, and commit once the tests pass.",
+  "채널에 코드 폴더를 연결하여 AI 팀원에게 코드 변경을 요청하고, 커밋까지 맡길 수 있습니다.":
+    "Connect a code folder to a channel, ask AI teammates for code changes, and have them commit too.",
+  "#CEO 이 기획대로 만들고, 테스트 통과하면 Reviewer에게 검토 맡긴 뒤 커밋해줘.":
+    "#CEO Build this plan. Once the tests pass, have Reviewer review it, then commit.",
   "03 · 내 지식": "03 · My knowledge",
   "쌓인 노트는 연결된 지식으로": "Notes become connected knowledge",
-  "노트는 내 컴퓨터의 마크다운 파일입니다. 위키링크·그래프·캔버스로 잇고, LLM Wiki로 자료를 AI가 정리한 위키로 키웁니다.":
-    "Notes are Markdown files on your computer. Link them with wikilinks, the graph and canvas, and grow your sources into a wiki that AI keeps organized with LLM Wiki.",
+  "노트는 내 컴퓨터의 마크다운 파일입니다. 위키링크로 잇고, LLM Wiki로 자료를 관리합니다.":
+    "Notes are Markdown files on your computer. Link them with wikilinks and manage your sources with LLM Wiki.",
   "04 · 팀 지식": "04 · Team knowledge",
   "그 지식은 팀의 자산으로": "Knowledge becomes your team’s asset",
-  "로그인하면 노트를 팀에 공유하고, 문서를 지식 공간에 모아 뜻으로 찾습니다. Cloud 채널에서는 사람과 AI 팀원이 함께 일합니다.":
-    "Sign in to share notes with your team and gather documents in Spaces you can search by meaning. In Cloud channels, people and AI teammates work together.",
+  "로그인하면 노트를 팀에 공유할 수 있고, 노트·웹페이지·오피스 자료뿐 아니라 유튜브 자료까지 지식 공간(Spaces)에 묶어 팀의 자산으로 활용할 수 있습니다.":
+    "Sign in to share notes with your team, and bring notes, web pages, Office files and even YouTube videos together in Spaces as shared team knowledge.",
   "작년과 달라진 환불 기준, 근거와 함께 알려줘.":
     "How did our refund rules change since last year? Cite the sources.",
   "코딩 프로젝트 연결": "Connect a coding project",
@@ -407,8 +406,8 @@ window.initializeLiberaflowLocale({
     "Attach a memo with @ and AI turns it into a plan and to-dos.",
   "혼자 만드는 메이커": "Solo makers",
   "같은 질문이 팀 안에서 되풀이된다면": "The same questions keep coming up on your team",
-  "팀 문서를 지식 공간에 모으면, 누구나 뜻으로 찾고 근거와 함께 답을 받습니다.":
-    "Gather team documents in Spaces, and anyone can search by meaning and get answers with sources.",
+  "팀 문서를 지식 공간(Spaces)에 모으면, 공유받은 누구나 그 지식을 재활용할 수 있습니다.":
+    "Gather team documents in Spaces, and everyone they are shared with can reuse that knowledge.",
   "Liberaflow는 어떤 앱인가요?": "What is Liberaflow?",
   "노트에서 시작해 문서와 코드, 팀의 지식까지 다루는 AI 에이전트 데스크톱 앱입니다. 이름은 Liberation(해방)과 Workflow(일의 흐름)를 합친 말로, 일의 흐름에서 되풀이되는 부분을 AI에게 맡기자는 뜻을 담았습니다.":
     "An AI agent desktop app that starts with notes and reaches documents, code and your team’s knowledge. The name joins Liberation and Workflow: hand the repetitive parts of your workflow to AI.",
@@ -421,5 +420,5 @@ window.initializeLiberaflowLocale({
   "네. 쓰던 마크다운 폴더를 보관함으로 그대로 엽니다. 위키링크, 하이라이트, 수식과 노트 속성을 지원하고, 다른 앱이 넣은 속성도 편집·동기화할 때 그대로 둡니다. 다른 노트 앱의 플러그인은 쓸 수 없습니다.":
     "Yes. Open your existing Markdown folder as a vault. Wikilinks, highlights, equations and note properties are supported, and properties added by other apps stay as they are when you edit or sync. Plugins from other note apps don’t work.",
   "아이디어 한 줄에서 시작해 보세요.": "Start with a single idea.",
-  "생각은 자유롭게, 일은 흐르게.": "Think freely. Let work flow.",
+  "자유롭게 생각하고, 남들과 다르게 일하세요.": "Think freely. Work like no one else.",
 });

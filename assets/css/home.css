@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* Homepage only. Light, product-first layout: sky hero card, segmented
-   example tabs over a mock app window, then plain sections. */
+/* Homepage only. Product-first layout: a night-sea hero (stars over an open
+   ocean), segmented example tabs over a mock app window, then light sections. */
 :root {
   color-scheme: light;
   --bg: #ffffff;
@@ -137,20 +137,97 @@ h4 {
   color: #1a4fc2;
 }
 
-/* Hero card */
+/* Hero: a night sea. Stars fill the sky over an open horizon, and the
+   example window rises from the sea below it. */
 .hero-shell {
+  --horizon: 132px;
   position: relative;
-  margin: 12px 12px 0;
   padding-bottom: 150px;
-  border-radius: 24px;
   overflow: hidden;
   isolation: isolate;
+  color: white;
   background:
-    radial-gradient(38% 30% at 14% 26%, #ffffffd9, transparent 70%),
-    radial-gradient(30% 26% at 86% 18%, #ffffffbf, transparent 72%),
-    radial-gradient(42% 30% at 78% 78%, #ffffffa6, transparent 72%),
-    radial-gradient(36% 26% at 22% 86%, #ffffff99, transparent 72%),
-    linear-gradient(180deg, #8ebdff 0%, #b5d4ff 38%, #dceaff 70%, #f4f8ff 100%);
+    radial-gradient(
+      70% 34% at 50% calc(100% - var(--horizon)),
+      #2f6bed59,
+      #2f6bed00 70%
+    ),
+    linear-gradient(
+      180deg,
+      #02040b 0%,
+      #040a1d 34%,
+      #08163d 72%,
+      #11306f calc(100% - var(--horizon)),
+      #050c22 calc(100% - var(--horizon) + 1px),
+      #030816 100%
+    );
+}
+/* Stars: three tiled layers of different sizes, faded toward the horizon. */
+.hero-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 var(--horizon);
+  z-index: -2;
+  background-image:
+    radial-gradient(1.2px 1.2px at 23px 41px, #fff, #fff0),
+    radial-gradient(1px 1px at 141px 87px, #ffffffd9, #fff0),
+    radial-gradient(1.4px 1.4px at 211px 173px, #fff, #fff0),
+    radial-gradient(1px 1px at 67px 199px, #ffffffbf, #fff0),
+    radial-gradient(1px 1px at 179px 21px, #ffffffb3, #fff0),
+    radial-gradient(1.8px 1.8px at 97px 131px, #dfe8ff, #fff0),
+    radial-gradient(1px 1px at 311px 263px, #ffffffcc, #fff0),
+    radial-gradient(1.3px 1.3px at 271px 61px, #fff, #fff0),
+    radial-gradient(1px 1px at 37px 307px, #ffffffa6, #fff0),
+    radial-gradient(1.6px 1.6px at 353px 151px, #fff7e6, #fff0);
+  background-size:
+    260px 260px,
+    260px 260px,
+    260px 260px,
+    260px 260px,
+    260px 260px,
+    330px 330px,
+    390px 390px,
+    390px 390px,
+    390px 390px,
+    470px 470px;
+  -webkit-mask-image: linear-gradient(#000 0%, #000 55%, #0000 100%);
+  mask-image: linear-gradient(#000 0%, #000 55%, #0000 100%);
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+/* Sea: a bright horizon line and soft swells. */
+.hero-shell::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: var(--horizon);
+  z-index: -2;
+  background:
+    linear-gradient(
+        90deg,
+        #8fb4ff00,
+        #8fb4ff80 25%,
+        #d6e4ff 50%,
+        #8fb4ff80 75%,
+        #8fb4ff00
+      )
+      top / 100% 1px no-repeat,
+    repeating-linear-gradient(180deg, #8fb4ff00 0 3px, #8fb4ff17 3px 4px) 0
+      1px / 100% 24px no-repeat,
+    repeating-linear-gradient(180deg, #8fb4ff00 0 6px, #8fb4ff12 6px 7px) 0
+      25px / 100% 42px no-repeat,
+    repeating-linear-gradient(180deg, #8fb4ff00 0 11px, #8fb4ff0d 11px 12px) 0
+      67px / 100% 100% no-repeat,
+    linear-gradient(180deg, #0b1f52 0%, #050d26 55%, #030816 100%);
+  -webkit-mask-image: linear-gradient(90deg, #0008, #000 35% 65%, #0008);
+  mask-image: linear-gradient(90deg, #0008, #000 35% 65%, #0008);
+}
+@keyframes twinkle {
+  from {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .site-header {
   position: relative;
@@ -175,15 +252,15 @@ h4 {
   justify-content: center;
   gap: 28px;
   flex: 1;
-  color: #1d2533;
+  color: #d5def0;
   font-size: 14.5px;
   font-weight: 500;
 }
 .nav-links a:hover {
-  color: var(--blue);
+  color: white;
 }
 .nav-links a span {
-  color: #5f6b80;
+  color: #8d9bb8;
 }
 .nav-actions {
   display: flex;
@@ -194,20 +271,20 @@ h4 {
   display: flex;
   align-items: center;
   gap: 2px;
-  color: #6c7a92;
+  color: #6f7e9c;
   font-size: 12px;
 }
 .language-switch button {
   padding: 6px 4px;
   border: 0;
   background: transparent;
-  color: #5a6880;
+  color: #93a1bd;
   font-size: 12px;
   font-weight: 600;
 }
 .language-switch button[aria-pressed="true"],
 .language-switch button:hover {
-  color: var(--ink);
+  color: white;
 }
 .nav-download {
   display: inline-flex;
@@ -215,13 +292,13 @@ h4 {
   gap: 8px;
   padding: 9px 16px;
   border-radius: 999px;
-  background: var(--ink);
-  color: white;
+  background: white;
+  color: var(--ink);
   font-size: 14px;
   font-weight: 600;
 }
 .nav-download:hover {
-  background: #283040;
+  background: #dfe8fb;
 }
 .nav-download .icon {
   width: 16px;
@@ -239,16 +316,16 @@ h4 {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  border: 1px solid #ffffffcc;
+  border: 1px solid #ffffff2e;
   border-radius: 999px;
-  background: #ffffff9e;
-  color: #22324d;
+  background: #ffffff12;
+  color: #d5def0;
   font-size: 13.5px;
   font-weight: 500;
   backdrop-filter: blur(8px);
 }
 .hero-badge:hover {
-  background: #ffffffd9;
+  background: #ffffff21;
 }
 .badge-dot {
   width: 7px;
@@ -258,7 +335,7 @@ h4 {
   box-shadow: 0 0 0 3px #2fb36d2e;
 }
 .badge-name b {
-  color: var(--blue);
+  color: #8fb4ff;
   font-weight: 700;
 }
 .hero h1 {
@@ -268,12 +345,18 @@ h4 {
   line-height: 1.16;
   letter-spacing: -0.04em;
 }
-.hero h1 span {
-  color: var(--blue);
+/* The second line flows from the brand blue into sea light. */
+.hero h1 span,
+.download-card h2 span {
+  color: #8fb4ff;
+  background: linear-gradient(90deg, #6f9dff, #8fd3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-description {
   margin-top: 22px;
-  color: #2c3647;
+  color: #c0cbe0;
   font-size: 18px;
   line-height: 1.7;
 }
@@ -289,10 +372,10 @@ h4 {
   align-items: center;
   gap: 7px;
   padding: 6px 13px;
-  border: 1px solid #ffffffcc;
+  border: 1px solid #ffffff26;
   border-radius: 999px;
-  background: #ffffffa6;
-  color: #22324d;
+  background: #ffffff0f;
+  color: #dbe4f6;
   font-size: 13.5px;
   font-weight: 550;
   backdrop-filter: blur(6px);
@@ -300,7 +383,7 @@ h4 {
 .hero-scope .icon {
   width: 15px;
   height: 15px;
-  color: var(--blue);
+  color: #8fb4ff;
 }
 /* The four stages read as one path: idea → code and documents → knowledge. */
 .hero-flow {
@@ -313,7 +396,7 @@ h4 {
   content: "→";
   position: absolute;
   left: -22px;
-  color: #6b7c99;
+  color: #6f80a3;
   font-weight: 500;
 }
 .hero-actions {
@@ -330,26 +413,26 @@ h4 {
   gap: 10px;
   height: 50px;
   padding: 0 24px;
-  border: 1px solid #cdd6e4;
+  border: 1px solid #ffffff40;
   border-radius: 999px;
-  background: white;
-  color: var(--ink);
+  background: #ffffff0d;
+  color: white;
   font-size: 15.5px;
   font-weight: 600;
 }
 .hero-download:hover {
   transform: translateY(-1px);
-  border-color: #aab7cc;
+  border-color: #ffffff80;
 }
 .hero-download.is-primary {
   order: -1;
-  border-color: var(--ink);
-  background: var(--ink);
-  color: white;
-  box-shadow: 0 8px 24px -10px #0c0e1299;
+  border-color: white;
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 8px 30px -8px #8fb4ff80;
 }
 .hero-download.is-primary:hover {
-  background: #283040;
+  background: #e4ecfc;
 }
 .hero-download .os-symbol {
   font-size: 19px;
@@ -357,7 +440,7 @@ h4 {
 }
 .hero-meta {
   margin-top: 16px;
-  color: #4d5a70;
+  color: #98a6c2;
   font-size: 13.5px;
 }
 
@@ -374,11 +457,11 @@ h4 {
   margin: 0 auto 14px;
   padding: 4px;
   gap: 2px;
-  border: 1px solid #ffffffcc;
+  border: 1px solid #ffffff24;
   border-radius: 999px;
-  background: #ffffffd9;
-  box-shadow: 0 6px 20px -12px #1e3a8a55;
-  backdrop-filter: blur(10px);
+  background: #0a1633b3;
+  box-shadow: 0 10px 30px -14px #000c;
+  backdrop-filter: blur(12px);
 }
 .scenario-tabs button {
   display: inline-flex;
@@ -388,18 +471,18 @@ h4 {
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: #4a5466;
+  color: #c3cde3;
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
 }
 .scenario-tabs button:hover {
-  color: var(--ink);
-  background: #eef1f6;
+  color: white;
+  background: #ffffff14;
 }
 .scenario-tabs button[aria-selected="true"] {
-  background: var(--ink);
-  color: white;
+  background: white;
+  color: var(--ink);
 }
 .scenario-tabs .icon {
   width: 16px;
@@ -1662,25 +1745,88 @@ html[lang="en"] .source-list li::before {
   font-size: 13.5px;
 }
 
-/* Closing download card */
+/* Closing download card: the hero's night sea again, as a card. */
 .download-section {
   padding-block: 120px 90px;
 }
 .download-card {
-  padding: 84px 24px 72px;
+  --horizon: 64px;
+  position: relative;
+  padding: 84px 24px 128px;
+  overflow: hidden;
+  isolation: isolate;
   border-radius: 24px;
+  color: white;
   text-align: center;
   background:
-    radial-gradient(40% 40% at 18% 20%, #ffffffb3, transparent 72%),
-    radial-gradient(36% 36% at 84% 82%, #ffffff99, transparent 72%),
-    linear-gradient(180deg, #f4f8ff 0%, #d6e7ff 55%, #a9cdff 100%);
+    radial-gradient(
+      60% 40% at 50% calc(100% - var(--horizon)),
+      #2f6bed59,
+      #2f6bed00 70%
+    ),
+    linear-gradient(
+      180deg,
+      #02040b 0%,
+      #050c22 45%,
+      #0c2357 calc(100% - var(--horizon)),
+      #050c22 calc(100% - var(--horizon) + 1px),
+      #030816 100%
+    );
+}
+.download-card::before,
+.download-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+.download-card::before {
+  inset: 0 0 var(--horizon);
+  background-image:
+    radial-gradient(1.2px 1.2px at 23px 41px, #fff, #fff0),
+    radial-gradient(1px 1px at 141px 87px, #ffffffd9, #fff0),
+    radial-gradient(1.4px 1.4px at 211px 173px, #fff, #fff0),
+    radial-gradient(1px 1px at 67px 199px, #ffffffbf, #fff0),
+    radial-gradient(1.6px 1.6px at 97px 131px, #dfe8ff, #fff0),
+    radial-gradient(1px 1px at 311px 263px, #ffffffcc, #fff0),
+    radial-gradient(1.3px 1.3px at 271px 61px, #fff, #fff0);
+  background-size:
+    260px 260px,
+    260px 260px,
+    260px 260px,
+    260px 260px,
+    330px 330px,
+    390px 390px,
+    390px 390px;
+  -webkit-mask-image: linear-gradient(#000 0%, #000 50%, #0000 100%);
+  mask-image: linear-gradient(#000 0%, #000 50%, #0000 100%);
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+.download-card::after {
+  inset: auto 0 0;
+  height: var(--horizon);
+  background:
+    linear-gradient(
+        90deg,
+        #8fb4ff00,
+        #8fb4ff80 25%,
+        #d6e4ff 50%,
+        #8fb4ff80 75%,
+        #8fb4ff00
+      )
+      top / 100% 1px no-repeat,
+    repeating-linear-gradient(180deg, #8fb4ff00 0 3px, #8fb4ff17 3px 4px) 0
+      1px / 100% 20px no-repeat,
+    repeating-linear-gradient(180deg, #8fb4ff00 0 7px, #8fb4ff10 7px 8px) 0
+      21px / 100% 100% no-repeat;
 }
 .download-kicker {
   display: inline-block;
   padding: 5px 13px;
+  border: 1px solid #ffffff2e;
   border-radius: 999px;
-  background: #ffffffb3;
-  color: #22324d;
+  background: #ffffff12;
+  color: #d5def0;
   font-size: 13.5px;
   font-weight: 600;
 }
@@ -1692,7 +1838,7 @@ html[lang="en"] .source-list li::before {
 }
 .download-description {
   margin-top: 12px;
-  color: #3c4759;
+  color: #c0cbe0;
   font-size: 17px;
 }
 .download-options {
@@ -1707,15 +1853,16 @@ html[lang="en"] .source-list li::before {
   gap: 12px;
   min-width: 230px;
   padding: 11px 22px;
-  border: 1px solid var(--ink);
+  border: 1px solid white;
   border-radius: 999px;
-  background: var(--ink);
-  color: white;
+  background: white;
+  color: var(--ink);
   text-align: left;
+  box-shadow: 0 8px 30px -8px #8fb4ff80;
 }
 .download-button:hover {
   transform: translateY(-1px);
-  background: #283040;
+  background: #e4ecfc;
 }
 .download-button .os-symbol {
   font-size: 22px;
@@ -1732,19 +1879,21 @@ html[lang="en"] .source-list li::before {
 }
 .download-button small {
   display: block;
-  color: #b8c2d4;
+  color: var(--muted);
   font-size: 11.5px;
 }
 .windows-download {
-  border-color: #c9d3e3;
-  background: white;
-  color: var(--ink);
+  border-color: #ffffff40;
+  background: #ffffff0d;
+  color: white;
+  box-shadow: none;
 }
 .windows-download:hover {
-  background: #f6f8fb;
+  border-color: #ffffff80;
+  background: #ffffff1a;
 }
 .windows-download small {
-  color: var(--muted);
+  color: #a9b6cf;
 }
 .download-steps {
   display: flex;
@@ -1752,7 +1901,7 @@ html[lang="en"] .source-list li::before {
   gap: 10px;
   margin-top: 26px;
   counter-reset: download-step;
-  color: #2c3647;
+  color: #c0cbe0;
   font-size: 14px;
 }
 .download-steps li {
@@ -1779,7 +1928,7 @@ html[lang="en"] .source-list li::before {
   width: 18px;
   height: 1px;
   margin-right: 3px;
-  background: #8fa3c4;
+  background: #ffffff38;
 }
 .download-links {
   display: flex;
@@ -1791,10 +1940,10 @@ html[lang="en"] .source-list li::before {
   font-weight: 600;
 }
 .download-links a {
-  color: #1f3f86;
+  color: #8fb4ff;
 }
 .download-links a:hover {
-  color: var(--blue);
+  color: white;
 }
 
 /* Footer */
@@ -1907,6 +2056,10 @@ html[lang="en"] .hero h1 {
     padding: 12px 14px;
     border-radius: 10px;
   }
+  .nav-links,
+  .nav-links a:hover {
+    color: var(--ink);
+  }
   .nav-links a:hover {
     background: var(--tint);
   }
@@ -1931,14 +2084,14 @@ html[lang="en"] .hero h1 {
     width: 38px;
     height: 38px;
     padding: 0;
-    border: 1px solid #ffffffcc;
+    border: 1px solid #ffffff38;
     border-radius: 50%;
-    background: #ffffffb3;
+    background: #ffffff14;
   }
   .menu-toggle > span {
     width: 16px;
     height: 1.5px;
-    background: var(--ink);
+    background: white;
     transition: transform 0.15s;
   }
   .menu-toggle[aria-expanded="true"] > span:first-child {
@@ -1983,9 +2136,8 @@ html[lang="en"] .hero h1 {
 }
 @media (max-width: 720px) {
   .hero-shell {
-    margin: 8px 8px 0;
+    --horizon: 104px;
     padding-bottom: 120px;
-    border-radius: 20px;
   }
   .nav {
     height: 64px;
@@ -2118,7 +2270,8 @@ html[lang="en"] .hero h1 {
     padding-block: 76px 56px;
   }
   .download-card {
-    padding: 60px 18px 52px;
+    --horizon: 48px;
+    padding: 60px 18px 96px;
     border-radius: 20px;
   }
   .download-options {

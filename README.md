@@ -4,7 +4,7 @@
 
 ## 사이트 구조
 
-- `index.html` — 한국어·영어 제품 소개: 첫 문구 "생각은 자유롭게, 일은 흐르게."(Liberation + Workflow)와 흐름(아이디어 → 코드·문서 → 내 지식 → 팀 지식), OS별 바로 받기, 그 흐름을 따라가는 탭 6개 사용 예시(아이디어·코딩 프로젝트·오피스·한글·내 지식·팀 지식·반복 업무), 쓰던 AI·파일, 흐름 4단계, 할 수 있는 일, 시작 3단계, 안심하고 쓰기, 누가 쓰나, FAQ, 다운로드
+- `index.html` — 한국어·영어 제품 소개: 첫 문구 "자유롭게 생각하고, 남들과 다르게 일하세요."와 Liberation + Workflow 배지, 흐름(아이디어 → 코드·문서 → 내 지식 → 팀 지식), OS별 바로 받기, 그 흐름을 따라가는 탭 6개 사용 예시(아이디어·코딩 프로젝트·오피스·한글·내 지식·팀 지식·반복 업무), 쓰던 AI·파일, 흐름 4단계, 할 수 있는 일, 시작 3단계, 안심하고 쓰기, 누가 쓰나, FAQ, 다운로드
 - `docs.html` — KO/EN 사용 가이드: 작업별 빠른 찾기, 설치·보관함·노트·지원 문서(주석 달아 고치기)·편집 단축키·AI·협업(코딩 프로젝트 연결)·Calendar·저장과 동기화, 섹션별 실제 사용 순서
 - `notices.html` — KO/EN 공지사항: 새 판에서 바뀐 점과 서비스 안내, 최신 공지가 맨 위. 앱의 설정 → 공지사항이 이 주소(`https://liberaflow.com/notices.html`)를 엽니다
 - `assets/css/site.css` — 옛 기능 주소(`features/*.html`) 안내 카드의 디자인. 홈·사용 가이드·공지사항은 쓰지 않습니다
@@ -70,8 +70,8 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `privacy/browser-automation/` — 확장 프로그램 개인정보처리방침
 - `naverbc95ad0893d4f5b76c2c91972731d8bb.html`, `robots.txt` — 사이트 인증과 크롤러 정책
 - `extension-test.html`, `extract-test.html` — 브라우저 확장 진단 페이지
-- `release.sh`, `RELEASE_GUIDE.md`, `HOSTING_MIGRATION_GUIDE.md` — 기존 릴리스 운영 자료
-- `_config.yml` — GitHub Pages(Jekyll)가 사이트에 내보내지 않을 관리 자료 목록: 이 README, `RELEASE_GUIDE.md`, `HOSTING_MIGRATION_GUIDE.md`, `release.sh`, `tools/`. 저장소가 공개라 GitHub에서는 보이지만 liberaflow.com 주소로는 열리지 않습니다. 사이트에 둘 필요 없는 관리 파일을 더하면 여기에도 적으세요
+- `release.sh`, `RELEASE_GUIDE.md` — 릴리스 운영 자료
+- `_config.yml` — GitHub Pages(Jekyll)가 사이트에 내보내지 않을 관리 자료 목록: 이 README, `RELEASE_GUIDE.md`, `release.sh`, `tools/`. 저장소가 공개라 GitHub에서는 보이지만 liberaflow.com 주소로는 열리지 않습니다. 사이트에 둘 필요 없는 관리 파일을 더하면 여기에도 적으세요
 
 다운로드 버튼의 `macosBtn` / `windowsBtn` ID는 중앙 설정을 적용하는 안정적인 연결 계약이므로 유지합니다. 릴리스 시 `assets/js/download-config.js`의 중앙 설정과 HTML의 JavaScript 미사용용 직접 링크를 함께 갱신하고, `release.sh --check`로 두 값과 appcast 메타데이터의 일치를 검사하세요.
 
