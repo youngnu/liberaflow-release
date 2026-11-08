@@ -4,19 +4,19 @@
 
 ## 사이트 구조
 
-- `index.html` — 한국어·영어 제품 소개: 핵심 메시지, 노트 & AI·협업의 두 가지 미리보기, 기능 소개, 로컬 데이터, FAQ, 다운로드
-- `docs.html` — KO/EN 사용 가이드: 작업별 빠른 찾기, 설치·보관함·노트·지원 문서·편집 단축키·AI·협업·Calendar·저장과 동기화, 섹션별 실제 사용 순서
+- `index.html` — 한국어·영어 제품 소개: 첫 문구 "생각은 자유롭게, 일은 흐르게."(Liberation + Workflow)와 흐름(아이디어 → 코드·문서 → 내 지식 → 팀 지식), OS별 바로 받기, 그 흐름을 따라가는 탭 6개 사용 예시(아이디어·코딩 프로젝트·오피스·한글·내 지식·팀 지식·반복 업무), 쓰던 AI·파일, 흐름 4단계, 할 수 있는 일, 시작 3단계, 안심하고 쓰기, 누가 쓰나, FAQ, 다운로드
+- `docs.html` — KO/EN 사용 가이드: 작업별 빠른 찾기, 설치·보관함·노트·지원 문서(주석 달아 고치기)·편집 단축키·AI·협업(코딩 프로젝트 연결)·Calendar·저장과 동기화, 섹션별 실제 사용 순서
 - `notices.html` — KO/EN 공지사항: 새 판에서 바뀐 점과 서비스 안내, 최신 공지가 맨 위. 앱의 설정 → 공지사항이 이 주소(`https://liberaflow.com/notices.html`)를 엽니다
-- `assets/css/site.css` — 사용 가이드와 기존 기능 연결 페이지의 공통 디자인
-- `assets/css/home.css` — 홈 전용 레이아웃·내비게이션·브랜드 블루 시각 효과·반응형·동작 줄이기 설정
-- `assets/css/navigation.css` — 사용 가이드의 상단 메뉴·KO/EN 선택·모바일 메뉴 디자인
-- `assets/css/guide.css` — 가이드의 브랜드 블루, 문서 카드·단축키 표·목차·안내 박스와 반응형 레이아웃
-- `assets/js/site.js` — 가이드의 기존 공통 메뉴 동작 (보존)
+- `assets/css/site.css` — 옛 기능 주소(`features/*.html`) 안내 카드의 디자인. 홈·사용 가이드·공지사항은 쓰지 않습니다
+- `assets/css/home.css` — 홈 전용 밝은 디자인: 하늘색 히어로 카드·탭과 앱 창 미리보기·섹션 레이아웃·반응형·동작 줄이기 설정
+- `assets/css/navigation.css` — 사용 가이드·공지사항의 상단 메뉴·KO/EN 선택·모바일 메뉴·바닥글. 홈과 같은 모양
+- `assets/css/guide.css` — 사용 가이드·공지사항의 밝은 디자인(홈과 같은 색·하늘색 머리 카드·알약 버튼), 문서 카드·단축키 표·목차·안내 박스와 반응형 레이아웃
+- `assets/js/site.js` — 가이드·공지사항의 메뉴 동작(키보드로 열면 첫 메뉴로 초점 이동, Esc·바깥 초점 이동 시 닫기)
 - `assets/js/guide.js` — 읽는 위치에 맞춘 가이드 목차 표시
 - `assets/js/locale.js` — 홈·가이드 공통 언어 전환과 페이지 간 언어 유지
 - `assets/js/guide-i18n.js` — 가이드 본문·단축키·문서 안내·접근성·메타데이터 번역
 - `assets/js/notices-i18n.js` — 공지사항 본문·접근성·메타데이터 번역. 공지를 더할 때 한국어와 영어를 함께 적습니다
-- `assets/js/home.js` — 홈의 모바일 메뉴·키보드 탭 탐색·미리보기 전환·기존 AI 앵커 연결
+- `assets/js/home.js` — 홈의 모바일 메뉴·키보드 탭 탐색·미리보기 전환·첫 화면 다운로드 버튼(방문자 OS 우선, 주소는 `download-config.js`)·첫 요청 문장 복사·기존 AI 앵커 연결
 - `assets/js/home-i18n.js` — 홈 본문·접근성·메타데이터·동적 데모 번역
 - `features/*.html` — 기존 기능 소개 주소를 새 홈의 해당 섹션으로 연결하는 호환 페이지
 
@@ -43,7 +43,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 앱 저장소 `window_automation/assets/icon/Liberaflow_logo.png`와 같은 원본 로고를 그대로 사용합니다. 홈은 로고의 블루를 중심으로 네이비·차가운 흰색, 큰 제목과 SVG 흐름선을 조합합니다. 시각 효과는 `prefers-reduced-motion` 설정을 따릅니다. 기능 설명은 짧게 유지하고 상세 절차는 사용 가이드로 연결합니다.
 
-홈은 `home.css` 하나로 디자인하며 `site.css`·`navigation.css`의 기존 가이드 스타일에 의존하지 않습니다. 언어 전환 동작은 `locale.js`로 공유합니다. 개편한 CSS·JavaScript URL에는 버전 쿼리를 붙여 이전 자산 캐시와 새 HTML이 섞이지 않게 합니다. 사용 가이드의 디자인과 동작은 별도로 유지합니다. 홈·브랜드 개편에서는 `updates/appcast.xml`, `email-confirmation.html`, `reset-password.html`과 원본 로고를 수정하지 않습니다. 릴리스 또는 인증 보안 변경은 별도 작업으로 분리하고 실제 업데이트·Supabase 복귀 흐름까지 검증합니다.
+홈은 `home.css` 하나로 디자인하며 `site.css`·`navigation.css`의 기존 가이드 스타일에 의존하지 않습니다. 언어 전환 동작은 `locale.js`로 공유합니다. 개편한 CSS·JavaScript URL에는 버전 쿼리를 붙여 이전 자산 캐시와 새 HTML이 섞이지 않게 합니다. 사용 가이드와 공지사항은 `guide.css`·`navigation.css`로 홈과 같은 색·메뉴·바닥글을 씁니다. 홈·브랜드 개편에서는 `updates/appcast.xml`, `email-confirmation.html`, `reset-password.html`과 원본 로고를 수정하지 않습니다. 릴리스 또는 인증 보안 변경은 별도 작업으로 분리하고 실제 업데이트·Supabase 복귀 흐름까지 검증합니다.
 
 사용 안내는 앱 저장소의 `README.md`와 `ARCHITECTURE.md`를 기준으로 합니다. 본문이나 데모의 한국어를 바꿀 때는 해당 페이지의 `home-i18n.js` 또는 `guide-i18n.js` 번역도 함께 갱신하세요. 언어를 바꿔도 선택한 미리보기 탭과 펼친 FAQ 상태는 유지됩니다.
 
@@ -71,6 +71,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `naverbc95ad0893d4f5b76c2c91972731d8bb.html`, `robots.txt` — 사이트 인증과 크롤러 정책
 - `extension-test.html`, `extract-test.html` — 브라우저 확장 진단 페이지
 - `release.sh`, `RELEASE_GUIDE.md`, `HOSTING_MIGRATION_GUIDE.md` — 기존 릴리스 운영 자료
+- `_config.yml` — GitHub Pages(Jekyll)가 사이트에 내보내지 않을 관리 자료 목록: 이 README, `RELEASE_GUIDE.md`, `HOSTING_MIGRATION_GUIDE.md`, `release.sh`, `tools/`. 저장소가 공개라 GitHub에서는 보이지만 liberaflow.com 주소로는 열리지 않습니다. 사이트에 둘 필요 없는 관리 파일을 더하면 여기에도 적으세요
 
 다운로드 버튼의 `macosBtn` / `windowsBtn` ID는 중앙 설정을 적용하는 안정적인 연결 계약이므로 유지합니다. 릴리스 시 `assets/js/download-config.js`의 중앙 설정과 HTML의 JavaScript 미사용용 직접 링크를 함께 갱신하고, `release.sh --check`로 두 값과 appcast 메타데이터의 일치를 검사하세요.
 

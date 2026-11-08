@@ -8,22 +8,15 @@ window.initializeLiberaflowLocale({
   "macOS 다운로드": "Download for macOS",
   "Windows 다운로드": "Download for Windows",
   "Windows 11 이상": "Windows 11 or later",
-  "운영체제에 맞는 앱을 설치하세요. 현재 베타 기간에는 무료로 시작할 수 있습니다.":
-    "Install the app for your operating system. You can get started for free during the current beta.",
   "macOS 15 이상과 M1 이상의 Apple Silicon, 또는 Windows 11 이상을 지원합니다. 현재 Mac 설치 파일은 Intel Mac용이 아닙니다.":
     "Requires macOS 15 or later on Apple Silicon (M1 or newer), or Windows 11 or later. The current Mac installer does not support Intel Macs.",
   "앱 설치하기": "Install",
   "보관함은 노트와 작업 자료를 두는 내 컴퓨터의 폴더입니다. 첫 실행에서 보관함을 선택하고 로그인 없이 시작하세요.":
     "A vault is a folder on your computer for notes and working files. Choose a vault when you first launch the app; no Liberaflow account is required.",
-  "새 보관함을 만들거나 기존 마크다운 폴더를 엽니다. Obsidian에서 사용하던 폴더도 열 수 있습니다.":
-    "Create a vault or open an existing Markdown folder, including a folder you use with Obsidian.",
   "노트 사이드바 아래의 보관함 스위처에서 보관함을 추가하거나 바꿉니다.":
     "Use the vault switcher at the bottom of the Notes sidebar to add or switch vaults.",
   "여러 기기에서 이어서 쓰려면 로그인 후 해당 보관함의 클라우드 동기화를 켭니다.":
     "To use a vault across devices, sign in and enable cloud sync for that vault.",
-  "Obsidian과 함께 쓰기": "Using an Obsidian vault",
-  "노트는 일반 .md 파일로 저장됩니다. 위키링크·수식·노트 속성을 지원하지만, Obsidian의 플러그인과 앱 전용 기능까지 모두 호환되지는 않습니다.":
-    "Notes are saved as standard .md files. Wikilinks, math and note properties are supported; Obsidian plugins and app-specific features are not all compatible.",
   "LLM Wiki로 자료 정리하기": "Organize knowledge with LLM Wiki",
   "새 보관함에서 LLM Wiki 스타일을 고르거나, 보관함 관리 → 보관함 스타일 적용에서 추가하세요. /llm-wiki 또는 “위키에 넣어줘”처럼 요청해 원본 자료를 위키로 정리합니다.":
     "Choose the LLM Wiki style for a new vault, or add it via Manage vaults → Apply vault style. Use /llm-wiki or ask “Add this to the wiki” to organize source material into wiki pages.",
@@ -50,21 +43,11 @@ window.initializeLiberaflowLocale({
   "로컬 HTML을 미리 보고 요소의 텍스트·스타일·배치를 직접 수정합니다. 소스 보기는 읽기 전용이며, 공유받은 원격 HTML도 열람 전용입니다.":
     "Preview local HTML and directly edit element text, styles and layout. The source view is read-only, as are remotely shared HTML files.",
   PDF: "PDF",
-  "앱 안에서 읽고, 텍스트를 검색하고, 확대·축소합니다. AI 대화에 첨부해 분석을 요청할 수 있습니다. PDF 본문을 직접 편집하는 화면은 아닙니다.":
-    "Read, search text and zoom in the app. Attach a PDF to AI chat for analysis. The viewer does not directly edit PDF content.",
   "Office와 한글 문서": "Office and HWPX",
-  "앱 안에서 미리 보고 부분을 선택해 AI에게 원본 수정을 요청합니다. 미리보기에서 직접 타이핑하거나 셀을 편집하는 방식은 아닙니다. 복잡한 서식은 수정 후 확인하세요.":
-    "Preview documents and select a part to ask AI to edit the original file. The preview is not a direct typing or cell editor. Check complex formatting after edits.",
   "CSV와 TSV": "CSV and TSV",
   "표 형태로 미리 봅니다. 미리보기만으로 원본이 바뀌지는 않습니다.":
     "Preview data as a table without changing the source.",
   이미지: "Images",
-  "이미지를 열어 확대하거나 이동하며 살펴보고, AI 대화의 참고 자료로 첨부합니다. 원본 이미지를 직접 수정하는 편집기는 제공하지 않습니다.":
-    "Open, zoom and pan images, or attach them as reference material in AI chat. The viewer does not directly edit the original image.",
-  "파일 종류마다 보는 방법과 수정 방법이 다릅니다. 노트처럼 직접 편집하는 문서와, 미리보기를 보며 AI에게 수정을 요청하는 문서를 구분해 사용하세요.":
-    "Viewing and editing work differently for each file type. Some documents have a direct editor; others use a preview with AI-assisted edits to the source.",
-  "구형 .hwp·.doc·.xls·.ppt, Numbers·Keynote 등 인앱 미리보기를 지원하지 않는 형식은 컴퓨터의 기본 앱으로 엽니다. 문서 미리보기가 변환에 실패한 경우에도 외부 앱으로 열 수 있습니다.":
-    "Legacy .hwp, .doc, .xls and .ppt files, Numbers, Keynote and other unsupported preview formats open in your computer’s default app. You can also open a file externally if preview conversion fails.",
   "어떤 문서를 다룰 수 있나요?": "Which documents can I work with?",
   굵게: "Bold",
   기울임: "Italic",
@@ -92,8 +75,6 @@ window.initializeLiberaflowLocale({
   동작: "Action",
   "선택 강조 단축키는 노트 본문용입니다. 표·코드블록의 별도 편집창에서는 같은 동작을 보장하지 않습니다. 현재 노트 찾기는 주 편집기를 대상으로 하며, PDF·HTML 미리보기는 해당 뷰어의 찾기를 사용하세요.":
     "The highlight shortcut is for the note body, not the separate table or code-block editors. Find in the current note targets the main editor; PDF and HTML previews use their own search controls.",
-  "노트 옆 AI 대화에서 OpenAI 또는 Claude 계정을 연결하세요. Liberaflow 로그인과 AI 제공자 로그인은 별개이며, 모델 제공자의 이용 한도와 요금이 적용됩니다.":
-    "Connect your OpenAI or Claude account in the AI chat beside your note. This is separate from signing into Liberaflow; the model provider’s limits and charges apply.",
   "@를 입력하고 목록에서 참고할 노트·폴더·PDF·이미지·Office 문서를 선택합니다. 파일을 끌어다 놓거나 붙여넣어 첨부할 수도 있습니다.":
     "Type @ and select a note, folder, PDF, image or Office document. You can also drag or paste files into the chat.",
   "원하는 파일 형식과 작업을 구체적으로 요청합니다. 예: “이 회의 메모로 결정 사항과 미정 항목을 구분한 Word 문서를 만들어줘.”":
@@ -110,29 +91,9 @@ window.initializeLiberaflowLocale({
   "AI 대화 명령": "AI chat commands",
   입력: "Input",
   용도: "Purpose",
-  "로그인하면 OpenRouter 모델과 Spaces 검색도 사용할 수 있습니다. 반복해서 쓰는 작업은 에이전트 스킬로 만들고 /스킬명으로 실행할 수 있습니다.":
-    "Signing in also enables OpenRouter models and Spaces search. Turn repeated tasks into agent skills and run them with /skill-name.",
   "AI 응답에는 네트워크 연결이 필요합니다. 요청에 필요한 자료와 대화 맥락이 선택한 모델 제공자에게 전달됩니다.":
     "AI responses require a network connection. The selected model provider receives the material and conversation context needed for the request.",
   "참고 자료를 연결하고 결과물 만들기": "Use your files to create with AI",
-  "클릭과 입력을 반복하기": "Repeat clicks and typing",
-  "녹화를 마치고 저장된 단계를 확인합니다. 여러 건을 처리하려면 Excel·CSV 데이터를 불러와 열을 녹화한 입력에 연결합니다.":
-    "Finish recording and review the steps. To process multiple records, import Excel or CSV data and connect a column to a recorded input.",
-  "Replay로 재생하고 실행 결과를 확인합니다.":
-    "Use Replay and review the run results.",
-  "페이지의 값을 CSV·XLSX로 저장하기": "Save web page values as CSV or XLSX",
-  "확장 팝업의 데이터 뽑기를 열고 필요한 값을 클릭합니다. 반복 목록과 페이지 제목처럼 한 번 나오는 값을 함께 고를 수 있습니다.":
-    "Open Extract data in the extension popup and click the values you need. You can select repeated list values alongside page-level values such as a title.",
-  "앱으로 보내기를 누른 뒤 Liberaflow에 도착한 카드에서 단계로 추가를 누릅니다.":
-    "Click Send to app, then Add as step on the card in Liberaflow.",
-  "추출 단계 뒤에 파일 내보내기 단계를 추가합니다. CSV 또는 XLSX를 고르고 파일 이름·저장 위치를 확인합니다.":
-    "Add a File export step after extraction. Choose CSV or XLSX and check the file name and destination.",
-  "Replay 실행 후 완료 창에서 파일명·행 수를 확인하고 파일 열기로 결과를 엽니다.":
-    "After Replay finishes, check the file name and row count in the completion dialog, then click Open file.",
-  "데이터 뽑기에 녹화나 입력 CSV는 필수가 아닙니다. 수집 결과는 내보낸 파일에서 확인합니다.":
-    "Recording or an input CSV is not required for data extraction. View the collected results in the exported file.",
-  "화면 캡처 여부는 확장 팝업의 클릭 전후 화면 캡처·AI 자가치유 화면 캡처에서 확인하고 변경하세요. 녹화와 AI 전송은 별도 동의 절차를 따릅니다.":
-    "Check or change the screenshot options in the extension popup: before/after-click screenshots and AI self-healing screenshots. Recording and AI transmission have separate consent steps.",
   "브라우저 자동화 개인정보처리방침": "Browser Automation Privacy Policy",
   "문서 공유": "Share documents",
   "Liberaflow에 로그인하고 보관함의 클라우드 동기화를 켠 뒤, 문서의 공유 창에서 사람이나 팀을 선택합니다. 공유한 노트는 작성자의 것으로 남고, 공유를 해제하면 접근을 거둘 수 있습니다.":
@@ -194,13 +155,10 @@ window.initializeLiberaflowLocale({
   "주 메뉴": "Main navigation",
   "Liberaflow 홈": "Liberaflow home",
   "메뉴 열기": "Open menu",
-  "할 수 있는 일": "What you can do",
-  "내 데이터": "Your data",
   "시작 가이드": "Getting started",
   "언어 선택": "Choose language",
   "앱 다운로드": "Download app",
   "메뉴 닫기": "Close menu",
-  "사용 흐름 보기": "See how it works",
   "가이드 목차": "Guide contents",
   목차: "CONTENTS",
   "보관함 열기": "Your vault",
@@ -208,7 +166,6 @@ window.initializeLiberaflowLocale({
   "지원 문서": "Document types",
   "편집 단축키": "Keyboard shortcuts",
   "AI와 문서 작업": "Work with AI",
-  "브라우저 자동화": "Browser automation",
   "공유와 채널": "Share & collaborate",
   "일정과 오늘 할 일": "Calendar & tasks",
   "저장과 동기화": "Storage & sync",
@@ -216,18 +173,12 @@ window.initializeLiberaflowLocale({
   "Liberaflow 설치, 노트 편집 단축키, 지원 문서, AI 작업, 캘린더와 협업 사용법.":
     "Learn to install Liberaflow, edit notes with keyboard shortcuts, work with documents and AI, and use calendars and collaboration.",
   "사용 가이드": "User guide",
-  "설치부터 노트 편집, 문서 작업과 협업까지. 필요한 기능과 사용 방법을 찾아보세요.":
-    "From installation to editing notes, working with documents and collaborating. Find the feature and instructions you need.",
   "지원 문서 확인 ↘": "Explore document types ↘",
   "편집 단축키 찾기 ↘": "Find editing shortcuts ↘",
-  "생각에서 실행까지, 나의 흐름대로.":
-    "From ideas to action, at your own pace.",
   "맨 위로 ↑": "Back to top ↑",
   "/문서": "/document",
   "/스프레드시트": "/spreadsheet",
   "/프레젠테이션": "/presentation",
-  "브라우저에서 작업할 탭을 연 뒤, 앱 또는 확장 팝업에서 녹화를 시작합니다. 안내를 확인하고 동의한 뒤 클릭과 입력을 기록합니다.":
-    "Open the tab you want to work in, then start recording from the app or extension popup. Review and accept the notice, then record clicks and typing.",
   "동기화를 켜면 내용과 삭제가 다른 기기에 반영됩니다. 노트는 사람·팀을 지정해 공유하고, 캔버스는 공개 설정 또는 팀 공유를 사용합니다.":
     "With sync enabled, content changes and deletions reach other devices. Share notes with selected people or teams; canvases support public visibility or team sharing.",
   "AI 작업을 되돌리면 해당 턴의 체크포인트에 포함된 보관함 파일 변경을 복구합니다.":
@@ -244,14 +195,6 @@ window.initializeLiberaflowLocale({
   "표 셀을 편집할 때 Esc는 현재 셀을 저장하고 편집을 마칩니다.":
     "When editing a table cell, Esc saves the cell and ends editing.",
   "입력으로 서식 만들기": "Format as you type",
-  "줄 시작에서 #~##### 뒤에 Space를 누르면 제목 1~5로 바뀝니다.":
-    "At the start of a line, type # through ##### followed by Space for headings 1–5.",
-  "줄 시작에서 - 또는 * + Space는 글머리 목록, 1. + Space는 번호 목록, [] + Space는 체크 목록입니다.":
-    "At the start of a line, - or * then Space creates a bullet list; 1. then Space creates a numbered list; [] then Space creates a checklist.",
-  "줄 시작에서 > + Space는 인용문, 백틱 세 개 + Space는 코드블록, $$ + Space는 블록 수식입니다.":
-    "At the start of a line, > then Space creates a quote, three backticks then Space creates a code block, and $$ then Space creates a math block.",
-  "빈 목록 줄에서 Enter를 누르면 목록을 끝냅니다. **굵게** 같은 인라인 마크다운은 입력 즉시 서식으로 바뀌지 않으므로 글자 서식 단축키를 사용하세요.":
-    "Press Enter on an empty list item to end the list. Inline Markdown such as **bold** does not convert as you type; use text-formatting shortcuts instead.",
   "노트에 삽입한 이미지도 동기화됩니다. 보관함에 따로 놓은 이미지 파일 전체가 동기화되는 것은 아닙니다.":
     "Images embedded in notes also sync. Standalone image files elsewhere in the vault do not all sync automatically.",
   "노트 제목 아래의 빈 본문 줄에서 기호를 입력한 다음 Space를 누르세요. 서식이 바뀌면 내용을 이어서 작성합니다.":
@@ -290,43 +233,6 @@ window.initializeLiberaflowLocale({
     "In the AI input box, type @ followed by a name, then select a document or folder from the list. Continue writing your request with that reference selected.",
   "노트·폴더뿐 아니라 PDF·이미지·Office 문서도 참고 자료로 연결할 수 있습니다.":
     "You can reference notes and folders as well as PDFs, images and Office documents.",
-  "녹화한 작업을 실행하고, 가이드로 남기기":
-    "Replay recorded work and turn it into a guide",
-  "에이전트 → Browser Automation에서 Chrome 또는 Edge 확장을 연결하세요. 클릭·입력을 녹화해 반복 실행하고, 기록한 절차를 따라 할 수 있는 가이드 문서로 만듭니다. 웹페이지에서 고른 값은 CSV·XLSX로 저장할 수 있습니다.":
-    "Connect the Chrome or Edge extension in Agents → Browser Automation. Record clicks and typing to replay work, and turn the recorded steps into a guide others can follow. Save selected web page values as CSV or XLSX.",
-  "녹화한 작업으로 가이드 문서 만들기": "Create a guide from a recording",
-  "녹화한 순서와 설명을 마크다운 문서로 정리해, 작업을 다시 익히거나 다른 사람에게 절차를 전달할 때 활용하세요. 캡처한 화면이 있으면 문서에 함께 담습니다.":
-    "Turn recorded steps and explanations into a Markdown guide for revisiting a task or teaching the procedure to someone else. Captured screenshots are included when available.",
-  "녹화한 워크플로를 연 뒤 상단 ⋮ 메뉴에서 가이드 문서 만들기 (md)를 선택합니다.":
-    "Open the recorded workflow and choose Create guide document (md) from the top ⋮ menu.",
-  "이름과 설명(선택)을 입력하고 만들기를 누릅니다. 선택한 AI로 가이드를 생성합니다.":
-    "Enter a name and an optional description, then click Create. The selected AI generates the guide.",
-  "완료되면 폴더 열기로 결과를 확인합니다. 현재 Notes 보관함의 Browser Automation 가이드 폴더에 .md 문서와 images 폴더가 저장됩니다.":
-    "When complete, click Open folder. The .md document and images folder are saved in the current Notes vault’s Browser Automation guide folder.",
-  "Notes에서 문서를 열어 확인하고 다듬습니다. 일반 마크다운 파일이므로 Obsidian에서도 열 수 있습니다.":
-    "Open the document in Notes to review and refine it. It is a standard Markdown file, so you can also open it in Obsidian.",
-  "화면 캡처가 없으면 글로만 가이드를 만듭니다. 이미지를 포함하려면 녹화 전에 확장 팝업에서 화면 캡처를 켜세요.":
-    "Without captured screenshots, the guide contains text only. To include images, enable screenshot capture in the extension popup before recording.",
-  "가이드 생성에는 워크플로 단계·기록된 입력값·URL·이미지 파일명이 선택한 AI에 전달됩니다. 가이드에 넣을 이미지 자체는 AI에 보내지 않고 로컬 문서에 저장합니다.":
-    "Guide generation sends workflow steps, recorded input values, URLs and image file names to the selected AI. The guide’s image files themselves stay in the local document and are not sent to the AI.",
-  "저장된 절차를 재사용하고, 필요한 곳에만 AI 쓰기":
-    "Reuse recorded steps and use AI where it helps",
-  "녹화한 클릭·입력, 데이터 뽑기와 CSV·XLSX 저장은 정해진 단계대로 실행합니다. AI가 매번 페이지를 탐색하고 판단하는 호출을 줄여, 반복 실행의 토큰 사용량을 줄일 수 있습니다.":
-    "Recorded clicks and inputs, data extraction and CSV/XLSX export follow defined steps. Reusing those steps reduces repeated AI calls to navigate and interpret pages, which can lower token usage for recurring work.",
-  "AI는 실패 복구, 직접 추가한 AI 작업, 가이드 생성처럼 필요한 지점에 사용합니다. 일반 클릭·입력마다 내용을 AI에 보낼 필요가 줄어들어, 민감한 업무를 포함한 브라우저 자동화에서도 외부 전송 범위를 관리하기 좋습니다.":
-    "Use AI at specific points, such as recovery from failures, explicitly added AI tasks and guide generation. Reducing the need to send content to AI for ordinary clicks and inputs makes it easier to control external data transfer, including in workflows that involve sensitive work.",
-  "AI 사용과 전송 범위 조절하기": "Control AI use and data transfer",
-  "상단 ⋮ 메뉴의 실패 시 AI 자가치유 허용, 외부 AI 전송 차단, 자가치유 스크린샷 전송에서 설정을 확인하세요. AI를 사용할 때는 제공자와 목적에 따른 전송 동의를 확인합니다.":
-    "Check Allow AI self-healing on failure, Block external AI transmission and Send self-healing screenshots in the top ⋮ menu. When using AI, review the data-transfer consent for the provider and purpose.",
-  "브라우저 자동화 개발 계획": "Browser Automation roadmap",
-  "개발 예정": "PLANNED",
-  "저장한 워크플로를 AI 스킬로 호출하기": "Call saved workflows as AI skills",
-  "앞으로는 저장된 브라우저 워크플로를 스킬 형태로 AI 대화에서 호출할 수 있도록 연결할 계획입니다. 기록해 둔 절차를 재사용하고, 필요한 판단이나 예외 처리에 AI를 더하는 방향입니다.":
-    "We plan to make saved browser workflows callable as skills from AI chat. The aim is to reuse recorded procedures and add AI where judgment or exception handling is needed.",
-  "비밀번호·인증번호·카드 보안코드로 식별한 입력값은 녹화에서 제외합니다.":
-    "Input values identified as passwords, verification codes or card security codes are excluded from recordings.",
-  "외부 AI 전송을 차단하면 가이드 생성 등 Browser Automation의 AI 기능도 사용할 수 없습니다.":
-    "Blocking external AI transmission also disables AI features in Browser Automation, including guide generation.",
   또는: "or",
   "내 눈에 편한 화면으로 바꾸기": "Make the app comfortable to read",
   "설정 → 화면 · 에디터에서 읽기 편한 화면을 맞추세요.":
@@ -378,8 +284,6 @@ window.initializeLiberaflowLocale({
     "Drag the divider to give each pane the space you need.",
   "참고 창을 따로 두고 싶다면 탭 메뉴의 새 창에서 열기를 사용합니다.":
     "For a separate reference window, choose Open in new window from the tab menu.",
-  "분할 보기에서도 문서의 편집 권한은 그대로 적용됩니다. 공유받은 문서를 나란히 연다고 원본 수정 권한이 생기지는 않습니다.":
-    "The document’s editing permissions still apply in split view. Opening a shared document beside your note does not grant permission to edit its original.",
   "긴 노트의 특정 제목으로 연결하기": "Link to a heading inside a long note",
   "문서 전체보다 특정 부분을 가리키고 싶다면 노트 링크에 제목 위치를 지정하세요.":
     "When you want to point to a specific part of a document, add a heading target to its note link.",
@@ -409,8 +313,6 @@ window.initializeLiberaflowLocale({
     "When the task finishes, check the updated preview. If you edited the original in another app, use Refresh to render it again.",
   "원본 파일 열기를 누르면 연결된 기본 앱에서 실제 문서를 열 수 있습니다.":
     "Choose Open original file to open the actual document in its default app.",
-  "배율 변경과 선택만으로 파일 내용이 바뀌지는 않습니다. Office 미리보기의 요소 선택은 AI 요청의 대상을 정하는 기능이며, 셀에 직접 타이핑하는 편집 기능은 아닙니다.":
-    "Changing the zoom or selection does not change the file. Element selection in an Office preview identifies the target for an AI request; it does not let you type directly into cells.",
   "저장 상태가 평소와 다를 때 확인하기": "Check unexpected save states",
   "클라우드 동기화를 쓰는 노트는 이 기기의 저장과 다른 기기의 반영 상태를 함께 확인하세요.":
     "For notes with cloud sync, distinguish saving on this computer from updates reaching other devices.",
@@ -464,64 +366,6 @@ window.initializeLiberaflowLocale({
     "To change the time or instructions, cancel the pending task or end its recurrence, then create a new schedule.",
   "반복을 종료해도 이미 끝난 실행의 기록은 남습니다. 예약에 사용하는 AI 계정이 연결되어 있는지도 확인하세요.":
     "Ending a recurrence keeps the history of completed runs. Check that the AI account used by the schedule is connected.",
-  "저장한 워크플로를 다시 쓰거나 다른 기기로 옮기기":
-    "Reuse a saved workflow or move it to another device",
-  "작업을 다시 쓸 예정이라면 알아보기 쉬운 이름과 설명을 붙여 저장하세요.":
-    "Give a workflow a recognizable name and description when you plan to reuse it.",
-  "Browser Automation 상단 ⋮ → 워크플로 저장에서 이름과 설명(선택)을 적고 저장을 누릅니다.":
-    "Open the top ⋮ menu in Browser Automation, choose Save workflow, enter a name and optional description, then click Save.",
-  "다음에는 ⋮ → 워크플로 불러오기에서 워크플로 라이브러리를 열고 저장한 항목을 선택합니다.":
-    "Next time, choose ⋮ → Load workflow to open the workflow library and select the saved item.",
-  "실행 전에 단계와 입력 데이터를 확인하고, 바뀐 작업에 맞게 수정한 뒤 다시 저장합니다.":
-    "Before running it, review the steps and input data, update them for the task and save again.",
-  "다른 기기로 절차를 옮기려면 워크플로 저장에서 공유 가능한 JSON으로 내보내기를 선택하고 파일을 저장합니다.":
-    "To move the procedure to another device, select Export as shareable JSON in Save workflow and save the file.",
-  "공유 파일은 실제 입력값을 변수 자리로 바꾸고, 입력 데이터와 화면 캡처는 제외합니다.":
-    "The shared file replaces actual input values with variable placeholders and leaves out input data and screenshots.",
-  "가져온 단계에 필요한 데이터와 값을 다시 연결한 뒤 실행하세요.":
-    "Connect the data and values needed by the imported steps before running them.",
-  "이름·설명·열 이름·화면 요소 정보·직접 적은 단계 지시는 공유 파일에 남으므로, 전달할 내용인지 확인하세요.":
-    "The shared file keeps the name, description, column names, page-element information and instructions you wrote for steps, so review them before sharing.",
-  "받는 쪽에서는 ⋮ → 공유 워크플로 가져오기를 선택해 해당 JSON 파일을 엽니다.":
-    "On the receiving device, choose ⋮ → Import shared workflow and open the JSON file.",
-  "전체를 다시 녹화하지 않고 단계 수정하기":
-    "Edit individual steps without recording everything again",
-  "녹화한 단계 카드를 누르면 옆 패널에서 대상과 입력 내용을 확인할 수 있습니다.":
-    "Click a recorded step card to inspect its target and input in the side panel.",
-  "일반 입력 단계는 입력 값을 고치고 저장을 누릅니다.":
-    "For an ordinary input step, edit Input value and click Save.",
-  "행마다 다른 값을 넣으려면 불러온 데이터의 열 이름을 {{열 이름}} 형태로 입력 값에 연결합니다.":
-    "To use a different value for each row, put the imported data’s column name in the input as {{column name}}.",
-  "직접 추가한 AI 작업은 지시문을 고친 뒤 변경 저장을 누릅니다.":
-    "For an AI task you added, edit its instructions and click Save changes.",
-  "순서를 바꾸려면 카드 오른쪽 손잡이를 끌어 단계 사이의 + 위에 놓습니다.":
-    "To change the order, drag the handle on the right of a card onto the + between steps.",
-  "수정한 동작은 카드의 단계 메뉴 → 이 단계만 실행으로 확인할 수 있습니다.":
-    "Check the edited action by choosing Run this step only from the card’s step menu.",
-  "반복 입력 데이터가 여러 행이면 단일 실행 데이터 선택에서 시험할 한 행을 고릅니다.":
-    "If the repeated-input data has multiple rows, choose one to test in Select data for a single run.",
-  "한 단계 실행은 앞선 페이지 이동이나 다른 단계를 자동으로 실행하지 않으므로, 브라우저를 해당 동작을 할 화면에 먼저 두세요.":
-    "Running one step does not automatically perform earlier navigation or other steps, so first open the browser page where that action should happen.",
-  "수정이 끝나면 상단 ⋮ → 워크플로 저장으로 변경한 절차를 저장합니다.":
-    "When the edits are complete, use the top ⋮ → Save workflow to save the updated procedure.",
-  "멈춘 단계를 찾고 실행 결과 확인하기":
-    "Find a failed step and review run results",
-  "실행이 예상과 다르면 먼저 어느 단계와 어느 데이터 행에서 문제가 생겼는지 확인하세요.":
-    "When a run behaves unexpectedly, first identify the step and data row where the problem occurred.",
-  "상단 ⋮ → 실행 이력을 열면 실행 시각과 성공·실패 건수를 볼 수 있습니다.":
-    "Open the top ⋮ → Run history to see when each run finished and its success and failure counts.",
-  "기록을 펼쳐 실행 단계 요약과 행별 실행 요약에서 실패·건너뜀·자가치유 결과와 오류 코드를 확인합니다.":
-    "Expand a record and review the step and per-row summaries for failures, skipped steps, self-healing results and error codes.",
-  "AI 호출 합계와 실패 복구 시도를 함께 보면 그 실행에서 AI가 얼마나 호출되었는지도 확인할 수 있습니다.":
-    "The total AI-call count and recovery attempts also show how often AI was invoked during that run.",
-  "녹화 화면을 남겼다면 해당 단계 카드를 선택하고 클릭 전·클릭 후 탭에서 녹화 당시 화면을 확인합니다.":
-    "If screenshots were captured, select the step card and use Before click and After click to view the recorded screens.",
-  "내보낸 파일의 완료 창을 닫았더라도 파일을 만든 단계 카드나 상단 파일 메뉴에서 최근 실행의 파일을 다시 열 수 있습니다.":
-    "Even after closing the export completion dialog, you can reopen files from the latest run through the export step card or the file menu in the top bar.",
-  "실행 이력에는 수집한 표 전체가 표시되지 않으므로 실제 값은 내보낸 CSV·XLSX에서 확인하세요.":
-    "Run history does not display the full collected table, so inspect the exported CSV or XLSX to check the actual values.",
-  "실행 이력을 더 오래 보관하려면 ⋮ → 설정에서 오래된 실행 기록 자동 삭제와 보관 기간을 조절하세요. 이 설정은 실행 기록에만 적용되며 저장한 워크플로와 화면 캡처를 자동 삭제하지 않습니다.":
-    "To keep run history longer, adjust Automatically delete old run records and Retention period under ⋮ → Settings. This setting applies only to run records; it does not automatically delete saved workflows or screenshots.",
   "공유받은 노트에 수정 제안하기": "Suggest changes to a shared note",
   "노트에서 바꿀 부분을 수정하고, 하단의 병합 요청 버튼을 누릅니다. 일반 공유 수신자가 작성한 수정안은 이 단계에서 원본에 바로 저장되지 않습니다.":
     "Edit the relevant part of the note, then use the merge request button at the bottom. Changes drafted by an ordinary recipient are not saved directly to the original.",
@@ -607,9 +451,6 @@ window.initializeLiberaflowLocale({
   "저장 상태·복구": "Save status and recovery",
   "스킬 만들기": "Create a skill",
   "예약 만들기·종료": "Create or stop a schedule",
-  "저장·이동": "Save and transfer",
-  "단계 수정": "Edit steps",
-  "실행 점검": "Check a run",
   "노트 수정 제안": "Propose note edits",
   "채널 메모": "Channel memory",
   "지식 공간": "Knowledge spaces",
@@ -623,11 +464,86 @@ window.initializeLiberaflowLocale({
   "저장 상태 안내": "Storage topics",
   "AI 활용 안내": "AI topics",
   "일정 활용 안내": "Calendar topics",
-  "브라우저 자동화 활용 안내": "Browser Automation topics",
   "협업 활용 안내": "Collaboration topics",
   "작업별 빠른 찾기": "Find a task",
   "자료 검색하기 ↘": "Find your material ↘",
   "문서 일부 수정하기 ↘": "Revise part of a document ↘",
   "스킬 만들기 ↘": "Create a skill ↘",
   "바탕화면 위젯 쓰기 ↘": "Use desktop widgets ↘",
+  "사용 예시": "Examples",
+  흐름: "Flow",
+  기능: "Features",
+  시작하기: "Get started",
+  다운로드: "Download",
+  "바닥글 메뉴": "Footer menu",
+  제품: "Product",
+  도움말: "Help",
+  정책: "Policies",
+  공지사항: "Notices",
+  "생각은 자유롭게, 일은 흐르게.": "Think freely. Let work flow.",
+  "사용 예시 보기": "See examples",
+  "설치부터 노트와 문서, 코딩 프로젝트, 팀 협업까지. 필요한 기능과 사용 방법을 찾아보세요.":
+    "From installation to notes and documents, coding projects and teamwork. Find the features you need and how to use them.",
+  "주석 달아 고치기 ↘": "Fix with comments ↘",
+  "코딩 프로젝트 연결 ↘": "Connect a coding project ↘",
+  "주석 달아 고치기": "Fix with comments",
+  "코딩 프로젝트 연결": "Connect a coding project",
+  "운영체제에 맞는 앱을 설치하세요. 로그인 없이 바로 시작할 수 있습니다.":
+    "Install the app for your operating system. You can start right away without signing in.",
+  "새 보관함을 만들거나 기존 마크다운 폴더를 엽니다. 다른 노트 앱에서 쓰던 폴더도 그대로 열 수 있습니다.":
+    "Create a vault or open an existing Markdown folder, including one you used with another notes app.",
+  "쓰던 마크다운 폴더와 함께 쓰기": "Using your existing Markdown folder",
+  "노트는 일반 .md 파일로 저장됩니다. 위키링크·수식·노트 속성을 지원하지만, 다른 노트 앱의 플러그인과 앱 전용 기능까지 모두 호환되지는 않습니다.":
+    "Notes are saved as standard .md files. Wikilinks, math and note properties are supported; plugins and app-specific features of other notes apps are not all compatible.",
+  "파일 종류마다 보는 방법과 고치는 방법이 다릅니다. 직접 고칠 수도 있고, 고칠 곳을 짚어 AI에게 맡길 수도 있습니다.":
+    "Each file type is viewed and edited a little differently. You can edit it yourself, or point at what to change and hand it to AI.",
+  "앱 안에서 읽고, 텍스트를 검색하고, 확대·축소합니다. AI 대화에 첨부해 분석을 요청하고, 영역을 골라 주석을 달아 보내면 AI가 원본은 그대로 두고 사본을 만들어 고칩니다.":
+    "Read, search and zoom inside the app. Attach a PDF to an AI chat for analysis, or select an area and send a comment; AI leaves the original untouched and edits a copy.",
+  "앱 안에서 미리 보고, 주석을 달거나 부분을 골라 AI에게 원본 수정을 요청합니다. Word·Excel·PowerPoint는 셀·문단을 더블클릭해 직접 고치거나 편집기로 통째로 고칠 수도 있습니다. 한글(HWPX)은 고칠 부분을 골라 요청합니다. 복잡한 서식은 수정 후 확인하세요.":
+    "Preview in the app, then add comments or select parts and ask AI to edit the original. In Word, Excel and PowerPoint you can also double-click a cell or paragraph to edit it yourself, or open the whole file in the editor. For Hangul (HWPX), select the part to change and make a request. Check complex formatting after edits.",
+  "이미지를 열어 확대하거나 이동하며 살펴보고, AI 대화의 참고 자료로 첨부합니다. 영역을 골라 주석을 달아 보내면 AI가 원본은 두고 사본을 고칩니다(SVG 제외).":
+    "Open images to zoom and pan, and attach them to an AI chat as reference. Select an area and send a comment; AI keeps the original and edits a copy (not SVG).",
+  "옛 한글 문서(.hwp)는 처음 한 번 물어본 뒤 같은 자리에 .hwpx로 바꿔 두어 AI가 읽고 고칠 수 있게 합니다. 구형 .doc·.xls·.ppt, Numbers·Keynote 등 인앱 미리보기를 지원하지 않는 형식은 컴퓨터의 기본 앱으로 엽니다. 문서 미리보기가 변환에 실패한 경우에도 외부 앱으로 열 수 있습니다.":
+    "Older Hangul files (.hwp) are converted to .hwpx in the same place after asking you once, so AI can read and edit them. Legacy .doc, .xls and .ppt, Numbers, Keynote and other formats without in-app preview open in your computer’s default app. You can also open a file in an external app if its preview fails to convert.",
+  "배율 변경과 선택만으로 파일 내용이 바뀌지는 않습니다. 요소 선택은 AI 요청의 대상을 정하는 기능입니다. 글자를 직접 고치려면 Word·Excel·PowerPoint 미리보기에서 셀이나 문단을 더블클릭하세요.":
+    "Zooming and selecting do not change the file. Selecting elements only sets the target of your AI request. To edit text yourself, double-click a cell or paragraph in a Word, Excel or PowerPoint preview.",
+  "주석을 달아 여러 곳을 한 번에 고치기":
+    "Fix several places at once with comments",
+  "Word·Excel·PowerPoint 미리보기에서는 고칠 곳마다 주석을 남긴 뒤 한 번에 보낼 수 있습니다. PDF와 이미지는 영역을 골라 주석을 답니다.":
+    "In Word, Excel and PowerPoint previews, leave a comment on each place to change and send them all at once. For PDFs and images, select an area to comment on.",
+  "문서를 열고 주석 모드를 켭니다. PDF·이미지는 보기 도구줄의 영역 선택 단추를 켜고 끌어서 영역을 지정합니다.":
+    "Open the document and turn on comment mode. For PDFs and images, turn on Select area in the viewer toolbar and drag to mark an area.",
+  "고칠 곳마다 무엇을 바꿀지 주석으로 적습니다. 예: “이 셀은 14일로”, “이 문단은 두 문장으로 줄여줘.”":
+    "Write what to change in a comment on each spot. Example: “Make this cell 14 days,” “Shorten this paragraph to two sentences.”",
+  "다 적었으면 한 번에 보냅니다. 채널에서는 받을 AI 팀원을 고릅니다. 팀원이 한 명이면 고르지 않아도 됩니다.":
+    "When you are done, send them all at once. In a channel, pick the AI teammate who should receive them; with only one teammate there is nothing to pick.",
+  "AI가 원본 문서를 고치면 미리보기가 다시 그려집니다. PDF와 이미지는 원본을 그대로 두고 같은 폴더에 ‘이름 (수정)’ 사본을 만들어 고칩니다.":
+    "When AI edits the original document, the preview redraws. For PDFs and images, AI keeps the original and edits a copy in the same folder.",
+  "파일 전체를 손보려면 미리보기 머리줄의 편집기 단추를 누르세요. Excel·Word·PowerPoint 파일을 앱 안에서 통째로 고치고, 저장하면 바뀐 부분만 원본에 씁니다.":
+    "To rework a whole file, click Editor in the preview header. You can edit Excel, Word and PowerPoint files in the app, and saving writes only the changed parts back to the original.",
+  "한글(HWPX)은 아직 주석 대신 고칠 부분을 골라 요청합니다. Word·Excel·PowerPoint에서 직접 고친 글자·서식은 원본 파일에 바로 저장되며, 첫 편집 전 원본은 옆에 .bak으로 한 번 보관합니다.":
+    "Hangul (HWPX) files do not take comments yet; select the part to change and make a request. Text and formatting you edit yourself in Word, Excel and PowerPoint are saved to the original right away, and the original is kept once as a .bak file before the first edit.",
+  "노트 옆 AI 대화에서 ChatGPT(OpenAI)나 Claude 계정으로 로그인하거나, 설정 → 내 연결에 OpenRouter 키를 넣으세요. Liberaflow 로그인과 AI 제공자 로그인은 별개이며, 모델 제공자의 이용 한도와 요금이 적용됩니다.":
+    "In the AI chat beside your notes, sign in with your ChatGPT (OpenAI) or Claude account, or add an OpenRouter key in Settings → My connections. Signing in to Liberaflow is separate from signing in to an AI provider, and the provider’s usage limits and pricing apply.",
+  "OpenRouter 키는 Liberaflow 로그인 없이도 쓸 수 있고 이 컴퓨터에만 저장됩니다. Liberaflow에 로그인하면 지식 공간(Spaces) 검색도 사용할 수 있습니다. 반복해서 쓰는 작업은 에이전트 스킬로 만들고 /스킬명으로 실행할 수 있습니다.":
+    "An OpenRouter key works without signing in to Liberaflow and is stored only on this computer. Sign in to Liberaflow to also search knowledge spaces (Spaces). Turn repeated work into agent skills and run them with /skill-name.",
+  "채널에 코딩 프로젝트 연결하기": "Connect a coding project to a channel",
+  "아이디어가 프로젝트가 되면 채널에 코드 폴더를 연결하세요. 채널의 AI 팀원이 그 코드를 읽고 고치며, 바뀐 줄을 보여 줍니다.":
+    "When an idea becomes a project, connect its code folder to a channel. The channel’s AI teammates read and change that code and show you the lines they changed.",
+  "채널 대화 오른쪽 패널 맨 위의 코딩 프로젝트 카드에서 코딩 프로젝트 연결을 누릅니다. Local 채널은 내 컴퓨터의 코드 폴더를 고르고, Cloud 채널은 GitHub 저장소 연결과 로컬 폴더 연결 중 하나를 고릅니다.":
+    "In the coding project card at the top of the channel’s right panel, click Connect coding project. A Local channel picks a code folder on your computer; a Cloud channel chooses between connecting a GitHub repository and a local folder.",
+  "연결하면 카드에 폴더·브랜치와 열기·터미널이 생기고, 파일·변경· 최근 커밋을 대화를 떠나지 않고 그 자리에서 봅니다. 입력창에서 @를 치면 프로젝트의 파일을 골라 붙일 수 있습니다.":
+    "Once connected, the card shows the folder and branch with Open and Terminal, and files, changes and recent commits open right there without leaving the conversation. Type @ in the message box to pick a project file.",
+  "# 목록에서 AI 팀원을 불러 할 일을 적습니다. 예: “이 기획대로 분류 기능을 만들고, 테스트가 통과하면 커밋해줘.” 팀원이 파일을 고치면 바뀐 줄이 diff 카드로 보입니다.":
+    "Call an AI teammate from the # list and describe the work. Example: “Build the sorting feature from this plan, and commit once the tests pass.” When a teammate edits files, the changed lines appear in a diff card.",
+  "커밋은 부탁할 때만 합니다. 혼자 쓰는 채널에서는 연결한 폴더에서 바로 고치고, “커밋 푸시”를 부탁하면 지금 브랜치에 커밋해 올립니다.":
+    "Teammates commit only when you ask. In a channel you use alone, they edit the connected folder directly, and asking to “commit and push” commits to the current branch and pushes it.",
+  "다른 사람과 함께 쓰는 채널에 Git 저장소를 연결했다면, 저장소 옆의 AI 전용 작업 폴더에서 새 브랜치를 만들어 일하므로 내 작업과 섞이지 않습니다. “커밋 푸시”를 부탁하면 브랜치를 올리고 PR을 열어 두며, 동료가 PR 카드에서 검토하고 병합합니다. Git 저장소가 아닌 폴더는 어느 채널에서든 연결한 폴더에서 바로 고칩니다.":
+    "When a Git repository is connected to a channel shared with others, teammates work on a new branch in an AI-only work folder next to the repository, so their work never mixes with yours. Asking to “commit and push” pushes the branch and opens a PR, which a colleague reviews and merges from the PR card. A folder that is not a Git repository is edited in place in any channel.",
+  "팀 채널 관리자가 GitHub 저장소를 채널에 걸어 두면, 멤버는 오른쪽 패널의 이 컴퓨터에서 준비 카드에서 같은 코드를 내 컴퓨터로 받거나 이미 받아 둔 폴더를 연결합니다.":
+    "When a team channel’s admin attaches a GitHub repository to the channel, members use the Set up on this computer card in the right panel to download the same code or connect a copy they already have.",
+  "PR을 열고 병합하는 일은 이 컴퓨터의 GitHub CLI로 하므로":
+    "PRs are opened and merged with the GitHub CLI on this computer, so run",
+  "을 해 두세요. 팀원에게 기본 브랜치에 올리지 말라고 일러 두지만 앱이 막는 것은 아니므로, 실제로 막으려면 GitHub에서 기본 브랜치 보호를 켜 두세요. 연결한 폴더 경로는 이 기기에만 저장됩니다.":
+    "first. Teammates are told not to push to the default branch, but the app does not enforce it; turn on default branch protection in GitHub to actually block it. The connected folder path is stored only on this device.",
 });
