@@ -20,7 +20,7 @@ window.initializeLiberaflowLocale({
   제품: "Product",
   도움말: "Help",
   정책: "Policies",
-  "생각은 자유롭게, 일은 흐르게.": "Think freely. Let work flow.",
+  "자유롭게 생각하고, 남들과 다르게 일하세요.": "Think freely. Work like no one else.",
   "사용 가이드": "User guide",
   "브라우저 자동화 개인정보처리방침": "Browser Automation Privacy Policy",
 

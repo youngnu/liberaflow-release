@@ -480,7 +480,8 @@ window.initializeLiberaflowLocale({
   도움말: "Help",
   정책: "Policies",
   공지사항: "Notices",
-  "생각은 자유롭게, 일은 흐르게.": "Think freely. Let work flow.",
+  "자유롭게 생각하고, 남들과 다르게 일하세요.":
+    "Think freely. Work like no one else.",
   "사용 예시 보기": "See examples",
   "설치부터 노트와 문서, 코딩 프로젝트, 팀 협업까지. 필요한 기능과 사용 방법을 찾아보세요.":
     "From installation to notes and documents, coding projects and teamwork. Find the features you need and how to use them.",
