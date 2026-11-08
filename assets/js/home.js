@@ -12,8 +12,12 @@
     menu.classList.toggle("is-open", open);
     if (returnFocus) menuButton.focus();
   }
-  menuButton.addEventListener("click", () => {
-    setMenu(menuButton.getAttribute("aria-expanded") !== "true");
+  menuButton.addEventListener("click", (event) => {
+    const open = menuButton.getAttribute("aria-expanded") !== "true";
+    setMenu(open);
+    // The button sits after the links, so a keyboard opening (detail 0)
+    // moves focus into the menu instead of past it.
+    if (open && event.detail === 0) menu.querySelector("a")?.focus();
   });
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => setMenu(false));
@@ -82,24 +86,30 @@
   }
 
   const scenes = {
-    notes: {
+    idea: {
       caption:
-        "채널에서 부탁하면, AI 팀원이 마크다운 노트를 정리하고 관련 노트와 잇습니다.",
-      guide: "notes",
-    },
-    office: {
-      caption:
-        "고칠 곳에 주석을 달아 AI 팀원에게 보내면, 원본 파일이 고쳐집니다.",
-      guide: "office-review-details",
-    },
-    hwpx: {
-      caption: "한글 문서도 문단이나 표를 골라 AI 팀원에게 맡기면 됩니다.",
-      guide: "documents",
+        "떠오른 생각을 메모해 @로 붙이면, AI가 기획안 문서와 할 일로 펼칩니다.",
+      guide: "ai",
     },
     code: {
       caption:
-        "채널에 코드 폴더를 연결하면, AI 팀원이 고치고 바뀐 줄을 보여 준 뒤 커밋까지 합니다.",
-      guide: "team",
+        "아이디어가 프로젝트가 되면 채널에 코드 폴더를 연결합니다. AI 팀원이 고치고, 바뀐 줄을 보여 준 뒤 커밋까지 합니다.",
+      guide: "coding-projects",
+    },
+    office: {
+      caption:
+        "고칠 곳에 주석을 달아 보내면, AI가 원본 파일을 고칩니다. 한글 문서는 문단이나 표를 골라 맡깁니다.",
+      guide: "office-comments",
+    },
+    wiki: {
+      caption:
+        "자료를 위키에 넣으라고 하면, AI가 페이지로 정리하고 위키링크로 잇습니다.",
+      guide: "llm-wiki",
+    },
+    space: {
+      caption:
+        "로그인하면 팀의 문서를 지식 공간에 모아, 뜻으로 찾고 근거와 함께 답을 받습니다.",
+      guide: "spaces-workflow",
     },
     schedule: {
       caption: "한 번 말해 두면, 정한 시간에 AI가 알아서 실행합니다.",
@@ -109,7 +119,7 @@
   const tabs = [...document.querySelectorAll("[data-scene]")];
   const caption = document.getElementById("scene-caption");
   const guide = document.getElementById("scene-guide");
-  // The mock sidebar highlights the channel each example happens in.
+  // The mock sidebar highlights where each example happens.
   const sidebarItems = [
     ...document.querySelectorAll(".mock-sidebar [data-for]"),
   ];
@@ -156,7 +166,7 @@
     });
   });
 
-  highlightSidebar("notes");
+  highlightSidebar("idea");
 
   // Keep links from the earlier website useful, including the former AI section.
   function revealLinkedDetail() {

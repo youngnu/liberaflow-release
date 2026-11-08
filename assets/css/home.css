@@ -257,6 +257,10 @@ h4 {
   background: #2fb36d;
   box-shadow: 0 0 0 3px #2fb36d2e;
 }
+.badge-name b {
+  color: var(--blue);
+  font-weight: 700;
+}
 .hero h1 {
   margin-top: 26px;
   font-size: clamp(40px, 5.4vw, 66px);
@@ -297,6 +301,20 @@ h4 {
   width: 15px;
   height: 15px;
   color: var(--blue);
+}
+/* The four stages read as one path: idea → code and documents → knowledge. */
+.hero-flow {
+  column-gap: 30px;
+}
+.hero-flow li {
+  position: relative;
+}
+.hero-flow li + li::before {
+  content: "→";
+  position: absolute;
+  left: -22px;
+  color: #6b7c99;
+  font-weight: 500;
 }
 .hero-actions {
   display: flex;
@@ -443,41 +461,12 @@ h4 {
   color: #3a4252;
   font-size: 12.5px;
 }
-.mock-switch {
-  display: flex;
-  gap: 2px;
-  margin: 0 4px;
-  padding: 3px;
-  border-radius: 8px;
-  background: #eceff4;
-  font-size: 11.5px;
-  font-weight: 600;
-}
-.mock-switch span {
-  flex: 1;
-  padding: 4px 0;
-  border-radius: 6px;
-  color: var(--muted);
-  text-align: center;
-}
-.mock-switch .is-on {
-  background: white;
-  color: var(--ink);
-  box-shadow: 0 1px 2px #0c0e1214;
-}
 .mock-group {
   margin-top: 16px;
   padding: 0 8px 6px;
   color: var(--muted);
   font-size: 11.5px;
   font-weight: 600;
-}
-.mock-members .avatar {
-  flex-basis: 20px;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  font-size: 10px;
 }
 .mock-sidebar li {
   display: flex;
@@ -529,6 +518,12 @@ h4 {
 }
 .badge-schedule {
   background: #5a5fd0;
+}
+.badge-pdf {
+  width: auto;
+  padding: 0 3px;
+  background: #c8372d;
+  font-size: 8px;
 }
 .file-badge .icon {
   width: 12px;
@@ -826,6 +821,94 @@ h4 {
   height: 14px;
   color: #2f9e64;
 }
+.memo-text {
+  margin-top: 14px;
+  color: #3e4757;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* Knowledge scenes: wiki graph and the team's knowledge space */
+.mini-graph {
+  display: block;
+  width: 100%;
+  height: 92px;
+  margin-top: 18px;
+}
+.mini-graph path {
+  fill: none;
+  stroke: #c5d3f3;
+  stroke-width: 1.5;
+}
+.mini-graph circle {
+  fill: #e3ebfd;
+  stroke: var(--blue);
+  stroke-width: 1.5;
+}
+.mini-graph .is-hub {
+  fill: var(--blue);
+}
+.source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.source-list li {
+  padding: 2px 8px;
+  border: 1px solid #e1e6ef;
+  border-radius: 6px;
+  background: #f7f9fc;
+  color: #4b5a74;
+  font-size: 12px;
+}
+.source-list li::before {
+  content: "근거 ";
+  color: var(--blue);
+  font-weight: 600;
+}
+html[lang="en"] .source-list li::before {
+  content: "Source ";
+}
+.space-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid #dfe5f0;
+  border-radius: 9px;
+  background: #f7f9fc;
+  color: #2a3346;
+  font-size: 13px;
+}
+.space-search .icon {
+  width: 15px;
+  height: 15px;
+  color: var(--blue);
+}
+.space-search span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+.space-docs {
+  display: grid;
+  gap: 2px;
+  margin-top: 12px;
+}
+.space-docs li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 4px;
+  border-bottom: 1px solid #eef0f4;
+  color: #2c3443;
+  font-size: 13px;
+}
+.space-docs .owner {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
 .mention-chip + p {
   margin-top: 4px;
 }
@@ -967,53 +1050,7 @@ h4 {
   font-size: 12.5px;
 }
 
-/* HWPX scene */
-.hwp-title {
-  font-size: 19px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.03em;
-}
-.hwp-meta {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 12px;
-  text-align: center;
-}
-.hwp-paper h4 {
-  margin-top: 20px;
-  font-size: 13.5px;
-}
-.hwp-selected {
-  position: relative;
-  margin-top: 16px;
-  padding: 12px 13px 10px;
-  border: 1.5px solid #5b8def;
-  border-radius: 6px;
-  background: #eef4ff;
-  color: #3d4c66;
-  font-size: 12.5px;
-  line-height: 1.8;
-}
-.selection-label {
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  padding: 1px 7px;
-  border-radius: 4px;
-  background: #5b8def;
-  color: white;
-  font-size: 10px;
-  line-height: 1.6;
-}
-.hwp-item {
-  margin-top: 6px;
-  color: #4b5a74;
-  font-size: 12.5px;
-}
-
 /* Team scene */
-
 .avatar {
   display: grid;
   place-items: center;
@@ -1316,9 +1353,28 @@ h4 {
   font-size: 14px;
   font-weight: 650;
 }
-.relay li > p:last-child {
+.flow-stages {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 24px;
+}
+.flow-stages li {
+  grid-template-rows: auto auto 1fr auto;
+}
+.flow-stages .prompt-sample {
+  align-self: end;
+}
+.flow-stages h3 {
+  font-size: 19px;
+  font-weight: 650;
+}
+.flow-text {
   color: var(--muted);
-  font-size: 14.5px;
+  font-size: 15px;
+}
+.flow-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
 }
 .start-steps {
   display: grid;
@@ -1532,35 +1588,6 @@ h4 {
 }
 .toggle.is-on::after {
   left: 14px;
-}
-.channel-facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 30px;
-}
-.channel-facts li {
-  display: flex;
-  gap: 12px;
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--tint);
-}
-.channel-facts .icon {
-  width: 20px;
-  height: 20px;
-  margin-top: 2px;
-  color: var(--blue);
-}
-.channel-facts h3 {
-  font-size: 15.5px;
-  font-weight: 650;
-}
-.channel-facts p {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 14px;
 }
 .audience-grid {
   display: grid;
@@ -1846,7 +1873,8 @@ html[lang="en"] .hero h1 {
     padding-inline: 18px;
   }
   .audience-grid,
-  .trust-grid {
+  .trust-grid,
+  .flow-stages {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .footer-links {
@@ -1919,6 +1947,16 @@ html[lang="en"] .hero h1 {
   .menu-toggle[aria-expanded="true"] > span:last-child {
     transform: translateY(-3.75px) rotate(-45deg);
   }
+  .scenario-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    border-radius: 18px;
+  }
+  .scenario-tabs button {
+    flex: 1 1 30%;
+    justify-content: center;
+  }
   .app-body {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1932,14 +1970,12 @@ html[lang="en"] .hero h1 {
   .capability-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .relay,
   .start-steps,
-  .channel-facts,
   .audience-grid {
     grid-template-columns: minmax(0, 1fr);
   }
   .relay {
-    gap: 20px;
+    gap: 24px 20px;
   }
   .site-footer {
     grid-template-columns: minmax(0, 1fr);
@@ -1987,15 +2023,7 @@ html[lang="en"] .hero h1 {
   .showcase {
     margin-top: -92px;
   }
-  .scenario-tabs {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    border-radius: 18px;
-  }
   .scenario-tabs button {
-    flex: 1 1 30%;
-    justify-content: center;
     padding: 9px 6px;
     font-size: 13px;
   }
@@ -2029,6 +2057,15 @@ html[lang="en"] .hero h1 {
   .hero-scope li {
     font-size: 12.5px;
     padding: 5px 11px;
+  }
+  .hero-flow {
+    column-gap: 24px;
+  }
+  .hero-flow li + li::before {
+    left: -18px;
+  }
+  .flow-stages {
+    grid-template-columns: minmax(0, 1fr);
   }
   .note-title {
     font-size: 24px;

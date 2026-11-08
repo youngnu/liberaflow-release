@@ -1,6 +1,5 @@
 /* Homepage copy. locale.js also translates metadata and accessible names. */
 window.initializeLiberaflowLocale({
-  "Liberaflow — 생각이 일이 되는 곳": "Liberaflow — Where ideas get to work",
   "Liberaflow의 노트와 AI 문서 작성 사용 예시, 팀 협업 소개":
     "Liberaflow notes and AI document creation example, with team collaboration",
   "본문으로 건너뛰기": "Skip to content",
@@ -17,23 +16,17 @@ window.initializeLiberaflowLocale({
   "메뉴 닫기": "Close menu",
 
   // Hero
-  "베타 기간 무료 · 로그인 없이 시작": "Free during the beta · No sign-in to start",
   "macOS용 다운로드": "Download for macOS",
   "Windows용 다운로드": "Download for Windows",
-  "macOS 15+ (Apple Silicon) · Windows 11 이상 · 쓰던 ChatGPT·Claude 구독 그대로":
-    "macOS 15+ (Apple Silicon) · Windows 11 or later · Use your ChatGPT or Claude subscription",
 
   // Example tabs and mock window
-  "한글 문서": "Hangul documents",
   "AI 팀원": "AI teammates",
   "기능을 재구성한 예시": "Illustrative product preview",
   "내 보관함": "My vault",
   "3분기 매출.xlsx": "Q3 sales.xlsx",
-  "고객지원 개선 계획.hwpx": "Support improvement plan.hwpx",
   채널: "Channels",
   예약: "Scheduled",
   "내 폴더에 남는 마크다운 노트": "A Markdown note in my own folder",
-  "열어서 확인하고, 이어서 다듬기": "Open, review and keep refining",
   "내 보관함 / 3분기 매출.xlsx": "My vault / Q3 sales.xlsx",
   "주석 모드": "Annotate",
   지역: "Region",
@@ -57,26 +50,6 @@ window.initializeLiberaflowLocale({
   "원본에 반영하고 미리보기를 새로 그림":
     "Saved to the original, preview redrawn",
   "마음에 안 들면 한 턴 되돌리기": "Not right? Undo the whole turn",
-  "내 보관함 / 고객지원 개선 계획.hwpx":
-    "My vault / Support improvement plan.hwpx",
-  "2026년 하반기 고객지원 개선 계획(안)":
-    "Customer support improvement plan, H2 2026 (draft)",
-  "고객지원팀 · 2026. 11.": "Customer Support · Nov 2026",
-  "1. 추진 배경": "1. Background",
-  "선택한 문단": "Selected paragraph",
-  "상반기 고객 문의는 전년보다 32% 늘었으나, 처리 기준이 부서마다 달라 답변이 늦어지고 같은 문의가 되풀이해 접수되는 문제가 있었음. 이에 하반기에는 문의 유형별 처리 기준을 정비하고자 함.":
-    "Customer inquiries rose 32% year over year in the first half, but each department handled them differently, so replies were slow and the same questions kept coming back. In the second half, we will set handling standards for each type of inquiry.",
-  "2. 추진 과제": "2. Tasks",
-  "가. 문의 유형별 답변 기준 마련": "a. Set reply standards for each inquiry type",
-  "나. 담당 부서 연결 절차 단순화": "b. Simplify handoffs between departments",
-  "두 문장으로 줄여줘. 숫자는 그대로 두고.":
-    "Cut this to two sentences. Keep the numbers.",
-  "고객지원 개선 계획.hwpx 문단 수정":
-    "Edited a paragraph in Support improvement plan.hwpx",
-  "숫자는 그대로 두고, 두 문장으로 고쳤어요.":
-    "I kept the numbers and cut it to two sentences.",
-  "옛 .hwp 파일은 .hwpx로 바꿔 둡니다":
-    "Older .hwp files are converted to .hwpx",
   나: "Me",
   "캘린더 / 예약": "Calendar / Scheduled",
   "주간 보고 초안": "Weekly report draft",
@@ -100,15 +73,11 @@ window.initializeLiberaflowLocale({
   "사용 방법 보기": "Explore the guide",
 
   // Works with
-  마크다운: "Markdown",
   연결: "Connect",
   "한글(HWPX)": "Hangul (HWPX)",
-  "Obsidian 폴더": "Obsidian folders",
   "Google Calendar(로그인 시)": "Google Calendar (signed in)",
 
   // Capabilities
-  "@로 노트·폴더·PDF·오피스 문서를 붙여 묻고 시킵니다. 마음에 안 드는 변경은 한 턴 단위로 되돌립니다.":
-    "Use @ to bring in notes, folders, PDFs and Office files, then ask. Undo any turn you don’t like.",
   "@프로젝트 폴더 지난달 회의에서 정한 것만 모아줘.":
     "@Project folder Collect only what we decided in last month’s meetings.",
   "AI 대화 알아보기": "About AI chat",
@@ -127,24 +96,8 @@ window.initializeLiberaflowLocale({
   "매일 아침 8시에 어제 메모로 오늘 할 일 정리해줘.":
     "Every morning at 8, turn yesterday’s notes into today’s to-do list.",
   "예약과 일정": "Scheduling and calendar",
-  "노트 살펴보기": "Explore notes",
 
   // AI teammates
-  부르고: "Call",
-  "#Reviewer 공유한 제안서를 검토해줘.":
-    "#Reviewer Review the shared proposal.",
-  "역할에 맞는 팀원이 자기 지시문과 모델로 답합니다.":
-    "The right teammate answers with its own instructions and model.",
-  넘기고: "Hand off",
-  "고칠 곳 세 군데를 정리했어요. #Worker 반영 부탁해요.":
-    "I found three things to fix. #Worker please apply them.",
-  "팀원 답변 속 #이름은 그 팀원을 실제로 불러 일을 넘깁니다.":
-    "A #name inside a teammate’s reply really calls that teammate and hands over the work.",
-  보고받습니다: "Report back",
-  "세 군데 모두 반영했어요. 워크숍 제안서.docx":
-    "All three are fixed. Workshop proposal.docx",
-  "누가 어떤 모델로 답했는지와 결과가 같은 대화에 남습니다.":
-    "Who answered, with which model, and the result stay in the same conversation.",
   "AI 팀원과 채널": "AI teammates and channels",
 
   // Get started
@@ -155,18 +108,11 @@ window.initializeLiberaflowLocale({
   "macOS 15 이상 Apple Silicon Mac, 또는 Windows 11 이상에서 설치합니다.":
     "Install on an Apple Silicon Mac with macOS 15 or later, or on Windows 11 or later.",
   "보관함 고르기": "Choose a vault",
-  "노트를 둘 폴더를 새로 만들거나, 쓰던 Obsidian 폴더를 그대로 엽니다.":
-    "Create a new folder for your notes, or open the Obsidian folder you already use.",
   "보관함 알아보기": "About vaults",
   "AI 연결": "Connect AI",
   "쓰던 ChatGPT·Claude 계정으로 로그인하거나, OpenRouter 키를 넣습니다.":
     "Sign in with your ChatGPT or Claude account, or add an OpenRouter key.",
   "AI 연결 가이드": "AI setup guide",
-  "첫 요청은 이렇게. @로 노트를 고른 뒤 적어 보세요.":
-    "Try this first: pick a note with @, then type",
-  "@회의 메모": "@Meeting notes",
-  "이 메모로 결정 사항과 할 일을 나눈 Word 문서를 만들어줘.":
-    "Make a Word document from these notes that separates decisions from to-dos.",
   "문장 복사": "Copy",
   복사했어요: "Copied",
 
@@ -197,18 +143,7 @@ window.initializeLiberaflowLocale({
     "Sign in when you want sync and sharing. Material needed for an AI request is sent to the AI provider you chose.",
 
   // Who it's for
-  "이런 일이 많다면,": "If this sounds like you,",
-  "Liberaflow가 맞습니다.": "Liberaflow fits.",
-  "글로 생각하는 개인": "People who think in writing",
-  "메모는 쌓이는데, 다시 꺼내 쓰기 어렵다면":
-    "Your notes pile up, but you rarely use them again",
-  "연결된 노트를 AI가 읽고 보고서와 발표 자료 초안을 만듭니다.":
-    "AI reads your linked notes and drafts reports and slides.",
   "지식으로 일하는 팀": "Teams that run on knowledge",
-  "자료와 대화와 AI가 따로 논다면":
-    "Files, conversations and AI all live in different places",
-  "같은 채널에서 사람과 AI 팀원이 같은 문서를 보며 일합니다.":
-    "People and AI teammates work from the same documents in one channel.",
   "반복 업무가 많은 실무자": "People buried in routine work",
   "매주 같은 보고서를 처음부터 쓴다면":
     "You write the same report from scratch every week",
@@ -218,14 +153,9 @@ window.initializeLiberaflowLocale({
   // FAQ
   "자주 묻는 질문": "Frequently asked questions",
   "자세한 사용 가이드": "Read the full guide",
-  "무료인가요?": "Is it free?",
-  "현재 베타 기간에는 앱과 로그인 기능을 무료로 제공합니다. AI 사용에는 연결한 ChatGPT·Claude 구독이나 OpenRouter의 요금과 이용 한도가 적용됩니다.":
-    "During the beta, the app and its sign-in features are free. AI use follows the pricing and limits of the ChatGPT or Claude subscription, or OpenRouter account, you connect.",
   "계정 없이도 쓸 수 있나요?": "Can I start without an account?",
   "로그인하면 무엇이 더해지나요?": "What does signing in add?",
   "AI는 어떻게 연결하나요?": "How do I connect AI?",
-  "이미 쓰고 있는 ChatGPT(OpenAI) 또는 Claude 계정으로 로그인하거나, 설정의 내 연결에서 OpenRouter 키를 넣고 모델을 고릅니다. 인터넷 연결이 필요하며, AI 요청에 필요한 문서와 대화 맥락은 해당 제공자에게 전송될 수 있습니다.":
-    "Sign in with the ChatGPT (OpenAI) or Claude account you already use, or add an OpenRouter key under Settings › 내 연결 (My connections) and pick a model. AI needs an internet connection, and documents and conversation context needed for your request may be sent to that provider.",
   "어떤 문서를 다룰 수 있나요? 한글(HWP)도 되나요?":
     "Which documents can it handle? Does it work with Hangul (HWP)?",
   "Word(.docx)·Excel(.xlsx)·PowerPoint(.pptx)·한글(.hwpx)을 앱 안에서 보고 AI에게 고쳐 달라고 할 수 있습니다. 옛 .hwp는 처음 한 번 물어본 뒤 .hwpx로 바꿔 둡니다. PDF·이미지·CSV는 열어 보고 AI 대화에 붙일 수 있고, 구형 .doc·.xls·.ppt는 컴퓨터의 기본 앱으로 엽니다.":
@@ -233,7 +163,6 @@ window.initializeLiberaflowLocale({
   "AI가 잘못 고치면 어떻게 하나요?": "What if AI gets an edit wrong?",
   "대화의 한 턴 단위로 되돌립니다. AI가 고친 파일은 고치기 전 내용으로 돌아가고, 새로 만든 파일은 보관함의 .trash 폴더로 옮겨집니다. PDF와 이미지는 원본을 두고 사본을 고칩니다. 셸 명령 등으로 기록 없이 바뀐 파일은 되돌리지 못하며, 그런 파일이 있으면 알려 줍니다.":
     "Undo that turn of the conversation. Files AI edited return to their earlier content, and files it created move to the vault’s .trash folder. PDFs and images are edited as copies. Files changed without a record, such as by a shell command, can’t be restored, and the app tells you when that happens.",
-  "Obsidian과 무엇이 다른가요?": "How is it different from Obsidian?",
   "ChatGPT·Claude 앱과 무엇이 다른가요?":
     "How is it different from the ChatGPT or Claude apps?",
   "어떤 컴퓨터에서 사용할 수 있나요?": "Which computers are supported?",
@@ -241,9 +170,7 @@ window.initializeLiberaflowLocale({
     "Windows 11 or later, and Apple Silicon Macs (M1 or later) running macOS 15 or later. Intel Macs are not supported.",
 
   // Download
-  "베타 기간 무료": "Free during the beta",
   "생각이 일이 되는 곳.": "Where ideas get to work.",
-  "노트 한 장에서 시작해 보세요.": "It starts with a single note.",
   "macOS 다운로드": "Download for macOS",
   "Windows 다운로드": "Download for Windows",
   "Windows 11 이상": "Windows 11 or later",
@@ -263,101 +190,11 @@ window.initializeLiberaflowLocale({
   "제품 소개와 다운로드는 바로 이용할 수 있습니다. 다른 사용 예시와 언어 전환은 JavaScript를 켜면 사용할 수 있습니다.":
     "The product overview and downloads work right away. Turn on JavaScript for the other examples and language switching.",
 
-  // Channel-centric copy: hero, examples, features, channels and FAQ
-  "Obsidian처럼 마크다운으로 적고, Word·Excel·PowerPoint·한글 문서와 코드는 채널에서 AI 팀원과 함께 만들고 고치는 데스크톱 앱, Liberaflow.":
-    "Write in Markdown like Obsidian, and create and edit Word, Excel, PowerPoint and Hangul documents, and code, with AI teammates in a channel. The Liberaflow desktop app.",
-  "Liberaflow — 생각은 노트에, 일은 AI 팀원에게":
-    "Liberaflow — Think in notes. Work with AI teammates.",
-  "마크다운 노트, 오피스·한글 문서, 코드까지. 채널에서 AI 팀원과 함께 만드는 데스크톱 앱.":
-    "Markdown notes, Office and Hangul documents, and code. A desktop app where you build them with AI teammates in a channel.",
-  "생각은 노트에,":
-    "Think in notes.",
-  "일은 AI 팀원에게.":
-    "Work with AI teammates.",
-  "Obsidian처럼 마크다운으로 적고, Word·Excel·PowerPoint·한글 문서와 코드는":
-    "Write in Markdown like Obsidian. Create and edit Word, Excel, PowerPoint and Hangul documents, and code,",
-  "채널에서 AI 팀원과 함께 만들고 고칩니다.":
-    "together with AI teammates in a channel.",
-  "다루는 일":
-    "What it handles",
-  "마크다운 노트":
-    "Markdown notes",
-  "오피스·한글 문서":
-    "Office & Hangul documents",
+  // Examples, features and FAQ shared with the previous layout
   "코딩 프로젝트":
     "Coding projects",
-  "채널과 AI 팀원":
-    "Channels & AI teammates",
-  "노트":
-    "Notes",
-  "오피스 문서":
-    "Office docs",
-  "코딩":
-    "Code",
-  "회의록 정리":
-    "meeting-notes",
-  "3분기 보고":
-    "q3-report",
-  "사업계획":
-    "business-plan",
-  "웹사이트":
-    "website",
-  "주간 보고":
-    "weekly-report",
-  "# 회의록 정리":
-    "# meeting-notes",
-  "# 3분기 보고":
-    "# q3-report",
-  "# 사업계획":
-    "# business-plan",
-  "# 웹사이트":
-    "# website",
-  "# 주간 보고":
-    "# weekly-report",
-  "@회의록":
-    "@Meeting minutes",
-  "이번 주 회의록을 ‘결정 사항’ 노트로 정리하고, 관련 노트와 이어 줘.":
-    "Turn this week’s meeting minutes into a ‘Decisions’ note and link the related notes.",
-  "회의록 3개 읽음":
-    "Read 3 meeting minutes",
-  "결정 사항.md 만듦":
-    "Created Decisions.md",
-  "결정 사항 세 가지를 정리하고, 제품 로드맵 노트와 이었어요.":
-    "I listed three decisions and linked them to the product roadmap note.",
-  "내 보관함 / 결정 사항.md":
-    "My vault / Decisions.md",
-  "결정 사항":
-    "Decisions",
-  "결정 사항.md":
-    "Decisions.md",
-  "#결정":
-    "#decision",
-  "출처 · 회의록 3개":
-    "Source · 3 meeting minutes",
-  "이번 주에 정한 것":
-    "Decided this week",
-  "베타 신청 페이지는 다음 주에 연다":
-    "Open the beta sign-up page next week",
-  "요금 안내는 공지사항에 먼저 올린다":
-    "Post the pricing notice on the notices page first",
-  "소개 영상은 3분 안으로 만든다":
-    "Keep the intro video under three minutes",
-  "[[제품 로드맵]]":
-    "[[Product roadmap]]",
-  "[[회의록 11-04]]":
-    "[[Minutes 11-04]]",
-  "[[회의록 11-06]]":
-    "[[Minutes 11-06]]",
-  "첫 화면 다운로드 버튼을 방문자 OS 순서로 바꾸고, 커밋 푸시해줘.":
-    "Put the visitor’s OS first in the hero download buttons, then commit and push.",
-  "index.html, home.js 수정":
-    "Edited index.html, home.js",
-  "검사 통과":
-    "Checks passed",
   "main에 커밋·푸시":
     "Committed and pushed to main",
-  "Windows 방문자에게는 Windows 버튼이 먼저 보여요.":
-    "Windows visitors now see the Windows button first.",
   "열기":
     "Open",
   "터미널":
@@ -368,68 +205,20 @@ window.initializeLiberaflowLocale({
     "Changes 2",
   "최근 커밋":
     "Recent commits",
-  "다운로드 버튼을 방문자 OS 순서로":
-    "Order download buttons by visitor OS",
   "매주 월요일 아침 9시에, 지난주 노트로 주간 보고 초안을 만들도록 예약해줘.":
     "Every Monday at 9 AM, have a weekly report draft made from last week’s notes.",
   "3분기 매출.xlsx 수정":
     "Edited Q3 sales.xlsx",
-  "채널에서 부탁하면, AI 팀원이 마크다운 노트를 정리하고 관련 노트와 잇습니다.":
-    "Ask in a channel, and an AI teammate organizes your Markdown notes and links related ones.",
-  "고칠 곳에 주석을 달아 AI 팀원에게 보내면, 원본 파일이 고쳐집니다.":
-    "Annotate what needs changing, send it to an AI teammate, and the original file is updated.",
-  "한글 문서도 문단이나 표를 골라 AI 팀원에게 맡기면 됩니다.":
-    "In Hangul documents too, pick a paragraph or table and hand it to an AI teammate.",
-  "채널에 코드 폴더를 연결하면, AI 팀원이 고치고 바뀐 줄을 보여 준 뒤 커밋까지 합니다.":
-    "Connect a code folder to a channel, and an AI teammate edits it, shows the changed lines and commits.",
   "쓰던 AI, 쓰던 파일 그대로.":
     "The AI and files you already use.",
-  "ChatGPT·Claude 계정으로 로그인하거나 OpenRouter 키를 넣으면 됩니다. 쓰던 Obsidian 폴더도, 작업 중인 코드 폴더도 그대로 엽니다.":
-    "Sign in with your ChatGPT or Claude account, or add an OpenRouter key. Your Obsidian folder and the code folder you’re working in open as they are.",
   "코드 폴더":
     "Code folders",
-  "노트, 문서, 코드.":
-    "Notes, documents, code.",
-  "다루는 방법은 하나입니다.":
-    "One way to work with all of them.",
-  "자료를 @로 붙이고 원하는 결과를 말하세요. 만들고 고친 것은 모두 내 폴더의 파일로 남습니다.":
-    "Add material with @ and describe the result you want. Everything created or edited stays as files in your folder.",
-  "Obsidian처럼, 마크다운 노트":
-    "Markdown notes, like Obsidian",
-  "위키링크·그래프·캔버스·수식까지. 쓰던 Obsidian 폴더를 그대로 열고, LLM Wiki로 자료를 정리합니다.":
-    "Wikilinks, graph, canvas and equations. Open your Obsidian folder as it is, and organize sources with an LLM Wiki.",
   "/llm-wiki 이 자료들 위키에 넣어줘.":
     "/llm-wiki Add these sources to the wiki.",
   "/문서, /스프레드시트, /프레젠테이션 한마디로 만들고, 미리보기에서 짚거나 주석을 달아 고칩니다.":
     "Create with /document, /spreadsheet or /presentation (shown in Korean as /문서, /스프레드시트, /프레젠테이션), then edit by selecting or annotating in the preview.",
-  "채널에 코드 폴더를 연결하면 AI 팀원이 고치고, 바뀐 줄을 diff로 보여 주고, 부탁하면 커밋과 푸시까지 합니다.":
-    "Connect a code folder to a channel. AI teammates edit it, show the changed lines as a diff, and commit and push when you ask.",
-  "#Worker 이 버그 고치고 커밋 푸시해줘.":
-    "#Worker Fix this bug, then commit and push.",
-  "채널에서 일하는 법":
-    "How channels work",
   "내 자료를 읽는 AI":
     "AI that reads your material",
-  "채널 하나에,":
-    "One channel.",
-  "사람과 AI 팀원이 함께.":
-    "People and AI teammates, together.",
-  "Local 채널은 이 컴퓨터에서 나와 내 AI 팀원만, Cloud 채널은 로그인한 뒤 사람과 함께 씁니다. 역할을 정한 팀원을 #으로 부르면 나란히 일하고 서로 일을 넘깁니다.":
-    "Local channels stay on this computer, with just you and your AI teammates. Cloud channels let you work with people after you sign in. Call teammates with their roles using # and they work side by side, handing work to each other.",
-  "코딩 프로젝트 패널":
-    "Coding project panel",
-  "대화 오른쪽에 연결한 폴더·브랜치와 파일, 변경, 최근 커밋이 열립니다.":
-    "The connected folder and branch, its files, changes and recent commits open beside the conversation.",
-  "채널 메모":
-    "Channel memos",
-  "합의한 조건과 결정, 진행 상황을 팀원들이 함께 읽고 적습니다.":
-    "Teammates read and record agreed conditions, decisions and progress together.",
-  "팀원별 기억":
-    "Per-teammate memory",
-  "팀원마다 이 채널에서 맡은 역할과 지킬 규칙을 기억하고, 내가 읽고 고칠 수 있습니다.":
-    "Each teammate remembers its role and rules in this channel, and you can read and edit what it keeps.",
-  "코드와 문서를 함께 다루는 메이커":
-    "Makers who juggle code and documents",
   "코드, 문서, 일정을 앱마다 따로 챙긴다면":
     "You keep code, documents and schedules in separate apps",
   "코드 폴더를 채널에 연결하고, 같은 AI 팀원에게 코드와 문서를 함께 맡깁니다.":
@@ -442,10 +231,195 @@ window.initializeLiberaflowLocale({
     "Can I use it for coding?",
   "네. 채널에 코드 폴더를 연결하면(Cloud 채널은 GitHub 저장소도 가능) AI 팀원이 그 코드를 고치고 바뀐 줄을 보여 줍니다. 혼자 쓰는 채널에서는 부탁하면 지금 브랜치에 커밋·푸시하고, 여럿이 쓰는 채널에서는 AI 전용 작업 폴더의 브랜치에서 일한 뒤 PR을 열어 둡니다. 커밋은 부탁할 때만 합니다.":
     "Yes. Connect a code folder to a channel (Cloud channels can also use a GitHub repository), and AI teammates edit the code and show the changed lines. In a channel you use alone, they commit and push to the current branch when you ask. In a shared channel, they work on a branch in a separate AI work folder and open a pull request. They commit only when you ask.",
-  "같은 마크다운 폴더를 그대로 열고, 위키링크·하이라이트·수식과 노트 속성을 지원합니다. 여기에 문서와 코드를 만들고 고치는 AI, AI 팀원과 채널, 캘린더와 예약 작업이 한 앱에 들어 있습니다. Obsidian 플러그인은 호환되지 않습니다.":
-    "It opens the same Markdown folder and supports wikilinks, highlights, equations and note properties. On top of that, one app gives you AI that creates and edits documents and code, AI teammates and channels, a calendar and scheduled tasks. Obsidian plugins are not supported.",
   "같은 구독을 쓰지만, 파일을 매번 올리지 않아도 AI가 내 보관함의 노트와 문서를 직접 읽습니다. 결과를 대화창의 답으로 끝내지 않고 보관함의 Word·Excel·PowerPoint·한글 파일과 연결한 코드로 만들고 고칩니다.":
     "It uses the same subscription, but AI reads the notes and documents in your vault directly, without uploading files each time. Results are created and edited as Word, Excel, PowerPoint and Hangul files in your vault, and in the code you connect, not just as chat replies.",
-  "생각은 노트에, 일은 AI 팀원에게.":
-    "Think in notes. Work with AI teammates.",
+
+  // Journey copy (hero flow, scenes, flow stages, FAQ)
+  "Liberaflow — 생각은 자유롭게, 일은 흐르게": "Liberaflow — Think freely. Let work flow.",
+  "아이디어 한 줄에서 코드와 문서로, 쌓인 노트는 연결된 지식으로, 그 지식은 팀의 자산으로. 그 사이의 일은 AI 에이전트가 맡는 데스크톱 앱, Liberaflow.":
+    "One idea becomes code and documents, notes become connected knowledge, and knowledge becomes your team’s asset. Liberaflow is the desktop app where AI agents handle the work in between.",
+  "아이디어에서 코드와 문서로, 내 지식에서 팀의 지식으로. 일의 흐름을 AI 에이전트에게 맡기는 데스크톱 앱.":
+    "From ideas to code and documents, from your knowledge to your team’s. A desktop app that hands your workflow to AI agents.",
+  "흐름": "Flow",
+  "Liberaflow의 흐름": "How Liberaflow flows",
+  "생각은 자유롭게,": "Think freely.",
+  "일은 흐르게.": "Let work flow.",
+  "아이디어 한 줄에서 코드와 문서로, 쌓인 노트는 연결된 지식으로, 그 지식은 팀의 자산으로.":
+    "One idea becomes code and documents. Notes become connected knowledge. Knowledge becomes your team’s asset.",
+  "그 사이의 일은 AI 에이전트가 맡습니다.": "AI agents handle the work in between.",
+  "아이디어": "Idea",
+  "코드·문서": "Code & docs",
+  "내 지식": "My knowledge",
+  "팀 지식": "Team knowledge",
+  "macOS 15+ (Apple Silicon) · Windows 11 이상 · 로그인 없이 시작 · 쓰던 ChatGPT·Claude 구독 그대로":
+    "macOS 15+ (Apple Silicon) · Windows 11 or later · No sign-in to start · Use your ChatGPT or Claude subscription",
+  "오피스·한글": "Office & Hangul",
+  "반복 업무": "Routine work",
+  "주말 아이디어.md": "Weekend idea.md",
+  "문의 분류": "inquiry-routing",
+  "# 문의 분류": "# inquiry-routing",
+  "팀 · 지식 공간": "Team · Spaces",
+  "고객지원팀": "Support team",
+  "캘린더": "Calendar",
+  "AI 대화": "AI chat",
+  "@주말 아이디어": "@Weekend idea",
+  "이 메모를 기획안 Word 문서로 만들고, 할 일은 메모에 체크리스트로 넣어줘.":
+    "Turn this memo into a plan in Word, and add the to-dos to the memo as a checklist.",
+  "주말 아이디어.md 읽음": "Read Weekend idea.md",
+  "문의 자동 분류 기획안.docx 만듦": "Created Inquiry routing plan.docx",
+  "목표·범위·일정으로 나눈 기획안을 만들고, 메모에 할 일 세 가지를 넣었어요.":
+    "I wrote a plan split into goals, scope and timeline, and added three to-dos to your memo.",
+  "문의 자동 분류 기획안.docx": "Inquiry routing plan.docx",
+  "보관함에 저장, 미리보기로 바로 열기": "Saved to your vault, ready in the preview",
+  "내 보관함 / 주말 아이디어.md": "My vault / Weekend idea.md",
+  "주말 아이디어": "Weekend idea",
+  "#아이디어": "#idea",
+  "메모": "memo",
+  "고객 문의가 들어오면 유형별로 나눠서 담당자에게 바로 넘기면 어떨까? 자주 오는 문의는 답변 초안까지 붙이고.":
+    "What if customer inquiries were sorted by type and sent straight to the right person? Frequent questions could even come with a draft reply.",
+  "할 일": "To-dos",
+  "문의 유형 10개 정리": "List 10 inquiry types",
+  "분류 규칙 초안 쓰기": "Draft the routing rules",
+  "담당자 연결 흐름 그리기": "Sketch the hand-off to owners",
+  "@문의 자동 분류 기획안": "@Inquiry routing plan",
+  "이 기획대로 분류 기능을 만들고, 테스트가 통과하면 커밋 푸시해줘.":
+    "Build the routing from this plan, and commit and push once the tests pass.",
+  "src/classify.py 만듦": "Created src/classify.py",
+  "테스트 12개 통과": "12 tests passed",
+  "기획안의 문의 유형을 규칙으로 옮겼어요. 맞는 규칙이 없는 문의는 ‘일반’으로 보냅니다.":
+    "I turned the plan’s inquiry types into rules. Anything no rule matches goes to “general”.",
+  "채널에 코드 폴더를 연결하면 AI 팀원이 그 코드로 일합니다":
+    "Connect a code folder to a channel and AI teammates work in that code",
+  "문의 유형별 자동 분류 추가": "Add routing by inquiry type",
+  "Word·PowerPoint도 주석으로, 한글(HWPX)은 문단을 골라 요청":
+    "Annotate Word and PowerPoint too; in Hangul (HWPX), select a paragraph and ask",
+  "@고객 인터뷰 5개": "@5 customer interviews",
+  "위키에 넣고, 이미 있는 페이지와 이어 줘.":
+    "Add these to the wiki and link them to existing pages.",
+  "원본 5개를 raw/에 보관": "Kept the 5 sources in raw/",
+  "위키 페이지 3개 만듦 · 2개 고침": "Created 3 wiki pages · updated 2",
+  "인터뷰에서 겹치는 주제 세 가지를 페이지로 만들고, ‘가격 정책’ 페이지와 이었어요.":
+    "I made pages for the three themes the interviews share, and linked them to your “Pricing policy” page.",
+  "위키를 근거로 답하고, 모순·고아 페이지도 점검":
+    "Answers from the wiki, and checks for contradictions and orphan pages",
+  "내 보관함 / llmwiki / wiki / 결제 단계 이탈.md":
+    "My vault / llmwiki / wiki / Checkout drop-off.md",
+  "결제 단계 이탈": "Checkout drop-off",
+  "sources · 인터뷰 3개": "sources · 3 interviews",
+  "인터뷰 5개 중 3개에서, 배송비가 결제 마지막 단계에서야 보여 그만두었다는 이야기가 나왔다.":
+    "In 3 of 5 interviews, people said they gave up because shipping costs only appeared at the last step of checkout.",
+  "[[가격 정책]]": "[[Pricing policy]]",
+  "[[온보딩 흐름]]": "[[Onboarding flow]]",
+  "[[고객 인터뷰 11-02]]": "[[Customer interview 11-02]]",
+  "지식 공간 · 고객지원팀": "Space · Support team",
+  "환불 기준이 작년과 무엇이 달라졌는지, 근거와 함께 알려줘.":
+    "What changed in our refund rules since last year? Show me the sources.",
+  "지식 공간에서 문서 4개 찾음": "Found 4 documents in the Space",
+  "환불 신청 기간이 7일에서 14일로 늘었고, 부분 환불 조건이 새로 생겼어요.":
+    "The refund window grew from 7 to 14 days, and there is a new rule for partial refunds.",
+  "환불 정책 2026.pdf · 2쪽": "Refund policy 2026.pdf · p. 2",
+  "응대 매뉴얼.docx": "Support handbook.docx",
+  "로그인하면 · 공개 범위는 비공개, 멤버만, 조직 중에서":
+    "With sign-in · Visible to just you, chosen members, or your organization",
+  "지식 공간 / 고객지원팀": "Spaces / Support team",
+  "조직 공개": "Organization",
+  "환불 기준 바뀐 점": "refund rule changes",
+  "문서 4개": "4 documents",
+  "환불 정책 2026.pdf": "Refund policy 2026.pdf",
+  "도윤": "Doyun",
+  "하늘": "Haneul",
+  "서준": "Seojun",
+  "문의 유형 정리.hwpx": "Inquiry types.hwpx",
+  "문의 통계 2026.xlsx": "Inquiry stats 2026.xlsx",
+  "팀원이 올린 문서를 뜻으로 찾고, 근거와 함께 답합니다":
+    "Finds your team’s documents by meaning and answers with sources",
+  "떠오른 생각을 메모해 @로 붙이면, AI가 기획안 문서와 할 일로 펼칩니다.":
+    "Jot down an idea and attach it with @. AI turns it into a plan document and to-dos.",
+  "아이디어가 프로젝트가 되면 채널에 코드 폴더를 연결합니다. AI 팀원이 고치고, 바뀐 줄을 보여 준 뒤 커밋까지 합니다.":
+    "When an idea becomes a project, connect its code folder to a channel. AI teammates edit it, show the changed lines, and commit.",
+  "고칠 곳에 주석을 달아 보내면, AI가 원본 파일을 고칩니다. 한글 문서는 문단이나 표를 골라 맡깁니다.":
+    "Annotate what needs fixing and send it, and AI edits the original file. In Hangul documents, select a paragraph or table and ask.",
+  "자료를 위키에 넣으라고 하면, AI가 페이지로 정리하고 위키링크로 잇습니다.":
+    "Ask AI to add sources to the wiki, and it writes pages and links them with wikilinks.",
+  "로그인하면 팀의 문서를 지식 공간에 모아, 뜻으로 찾고 근거와 함께 답을 받습니다.":
+    "Sign in to gather your team’s documents in Spaces, search them by meaning, and get answers with sources.",
+  "ChatGPT·Claude 계정으로 로그인하거나 OpenRouter 키를 넣으면 됩니다. 쓰던 마크다운 폴더도, 작업 중인 코드 폴더도 그대로 엽니다.":
+    "Sign in with your ChatGPT or Claude account, or add an OpenRouter key. Your Markdown folder and the code folder you’re working in open as they are.",
+  "마크다운 폴더": "Markdown folders",
+  "아이디어 하나에서,": "From one idea",
+  "팀의 지식까지.": "to your team’s knowledge.",
+  "Liberaflow는 Liberation(해방)과 Workflow(일의 흐름)를 합친 이름입니다. 흐름 속의 반복되는 일은 AI 에이전트가 맡고, 사람은 생각하는 일에 집중합니다.":
+    "Liberaflow is Liberation plus Workflow. AI agents take the repetitive work along the way, so people can stay with the thinking.",
+  "01 · 아이디어": "01 · Idea",
+  "떠오른 생각을 적으면": "Write down a thought",
+  "메모 한 줄을 @로 붙여 말하면, AI가 기획안·보고서·발표 자료로 펼칩니다.":
+    "Attach a one-line memo with @ and say what you need. AI expands it into a plan, a report or a slide deck.",
+  "/문서 이 메모로 기획안 초안 만들어줘.": "/문서 (document) Draft a plan from this memo.",
+  "02 · 코드·문서": "02 · Code & docs",
+  "프로젝트로 자라고": "It grows into a project",
+  "채널에 코드 폴더를 연결하면 AI 팀원이 코드를 고치고, 바뀐 줄을 보여 준 뒤 부탁하면 커밋까지 합니다.":
+    "Connect a code folder to a channel. AI teammates edit the code, show the changed lines, and commit when you ask.",
+  "#Worker 이 기획대로 만들고, 테스트 통과하면 커밋해줘.":
+    "#Worker Build this plan, and commit once the tests pass.",
+  "03 · 내 지식": "03 · My knowledge",
+  "쌓인 노트는 연결된 지식으로": "Notes become connected knowledge",
+  "노트는 내 컴퓨터의 마크다운 파일입니다. 위키링크·그래프·캔버스로 잇고, LLM Wiki로 자료를 AI가 정리한 위키로 키웁니다.":
+    "Notes are Markdown files on your computer. Link them with wikilinks, the graph and canvas, and grow your sources into a wiki that AI keeps organized with LLM Wiki.",
+  "04 · 팀 지식": "04 · Team knowledge",
+  "그 지식은 팀의 자산으로": "Knowledge becomes your team’s asset",
+  "로그인하면 노트를 팀에 공유하고, 문서를 지식 공간에 모아 뜻으로 찾습니다. Cloud 채널에서는 사람과 AI 팀원이 함께 일합니다.":
+    "Sign in to share notes with your team and gather documents in Spaces you can search by meaning. In Cloud channels, people and AI teammates work together.",
+  "작년과 달라진 환불 기준, 근거와 함께 알려줘.":
+    "How did our refund rules change since last year? Cite the sources.",
+  "코딩 프로젝트 연결": "Connect a coding project",
+  "노트와 지식": "Notes and knowledge",
+  "지식 공간": "Spaces",
+  "일은 맡기고,": "Hand off the work.",
+  "결과는 파일로 받습니다.": "Get files back.",
+  "자료를 @로 붙이고 원하는 결과를 말하세요. AI가 만들고 고친 것은 모두 내 폴더의 파일로 남고, 마음에 안 들면 한 턴씩 되돌립니다.":
+    "Attach material with @ and describe the result you want. Everything AI creates or edits stays as files in your folder, and you can undo it one turn at a time.",
+  "@로 노트·폴더·PDF·오피스 문서를 붙여 묻고 시킵니다. 내 노트와 나에게 공유된 팀 문서는 따로 켜지 않아도 참고합니다.":
+    "Attach notes, folders, PDFs and Office documents with @, then ask or assign. AI always draws on your notes and the team documents shared with you, with nothing to turn on.",
+  "역할을 정한 팀원을 #으로 부르면 자기 모델로 답하고, 답 속의 #이름으로 서로 일을 넘긴 뒤 결과를 보고합니다.":
+    "Call a teammate with a role using #. It answers with its own model, hands work to others with #name in its reply, and reports back.",
+  "#Reviewer 이 제안서 검토하고, 고칠 곳은 #Worker에게 넘겨줘.":
+    "#Reviewer Review this proposal and pass the fixes to #Worker.",
+  "자주 하는 일은 스킬로": "Turn routines into skills",
+  "되풀이하는 작업을 /스킬 이름 한마디로 실행합니다. 스킬을 만드는 것도 대화로 합니다.":
+    "Run a recurring task with a single /skill-name. You create skills by chatting, too.",
+  "매주 하는 거래처 정리를 스킬로 만들어줘.": "Make my weekly client cleanup into a skill.",
+  "스킬 만들기": "Create skills",
+  "노트를 둘 폴더를 새로 만들거나, 쓰던 마크다운 폴더를 그대로 엽니다.":
+    "Create a new folder for your notes, or open the Markdown folder you already use.",
+  "첫 요청은 이렇게. @로 메모를 고른 뒤 적어 보세요.":
+    "Try this first: pick a memo with @, then type",
+  "@아이디어 메모": "@Idea memo",
+  "이 메모를 목표와 할 일로 나눈 기획안 Word 문서로 만들어줘.":
+    "Turn this memo into a Word plan with goals and to-dos.",
+  "이런 일에서,": "Break free",
+  "자유로워집니다.": "from work like this.",
+  "일을 대신하는 것은 AI 에이전트, 무엇을 할지 정하는 것은 나입니다.":
+    "AI agents do the work. You decide what the work should be.",
+  "아이디어가 많은 개인": "People full of ideas",
+  "떠오른 생각이 메모로만 쌓이고 일이 되지 않는다면":
+    "Your ideas pile up as memos and never become work",
+  "메모를 @로 붙이면 AI가 기획안과 할 일로 펼칩니다.":
+    "Attach a memo with @ and AI turns it into a plan and to-dos.",
+  "혼자 만드는 메이커": "Solo makers",
+  "같은 질문이 팀 안에서 되풀이된다면": "The same questions keep coming up on your team",
+  "팀 문서를 지식 공간에 모으면, 누구나 뜻으로 찾고 근거와 함께 답을 받습니다.":
+    "Gather team documents in Spaces, and anyone can search by meaning and get answers with sources.",
+  "Liberaflow는 어떤 앱인가요?": "What is Liberaflow?",
+  "노트에서 시작해 문서와 코드, 팀의 지식까지 다루는 AI 에이전트 데스크톱 앱입니다. 이름은 Liberation(해방)과 Workflow(일의 흐름)를 합친 말로, 일의 흐름에서 되풀이되는 부분을 AI에게 맡기자는 뜻을 담았습니다.":
+    "An AI agent desktop app that starts with notes and reaches documents, code and your team’s knowledge. The name joins Liberation and Workflow: hand the repetitive parts of your workflow to AI.",
+  "이미 쓰고 있는 ChatGPT(OpenAI) 또는 Claude 계정으로 로그인하거나, 설정의 내 연결에서 OpenRouter 키를 넣고 모델을 고릅니다. AI 사용에는 연결한 서비스의 요금과 이용 한도가 적용됩니다. 인터넷 연결이 필요하며, AI 요청에 필요한 문서와 대화 맥락은 해당 제공자에게 전송될 수 있습니다.":
+    "Sign in with the ChatGPT (OpenAI) or Claude account you already use, or add an OpenRouter key under Settings › 내 연결 (My connections) and pick a model. AI use follows the pricing and limits of the service you connect. AI needs an internet connection, and documents and conversation context needed for your request may be sent to that provider.",
+  "팀과 함께 쓰려면 어떻게 하나요?": "How do I use it with my team?",
+  "로그인한 뒤 팀을 만들고 멤버를 초대합니다. 노트와 캔버스를 팀에 공유하고, 문서를 지식 공간에 모아 함께 찾고, Cloud 채널에서 사람과 AI 팀원이 같이 일합니다. 공유해도 문서는 작성자의 것이고, 공유를 끄면 바로 팀에서 내려갑니다.":
+    "Sign in, create a team and invite members. Share notes and canvases with the team, gather documents in Spaces to search together, and work with people and AI teammates in Cloud channels. Shared documents still belong to their authors, and turning sharing off removes them from the team right away.",
+  "쓰던 마크다운 노트를 그대로 쓸 수 있나요?": "Can I keep using my existing Markdown notes?",
+  "네. 쓰던 마크다운 폴더를 보관함으로 그대로 엽니다. 위키링크, 하이라이트, 수식과 노트 속성을 지원하고, 다른 앱이 넣은 속성도 편집·동기화할 때 그대로 둡니다. 다른 노트 앱의 플러그인은 쓸 수 없습니다.":
+    "Yes. Open your existing Markdown folder as a vault. Wikilinks, highlights, equations and note properties are supported, and properties added by other apps stay as they are when you edit or sync. Plugins from other note apps don’t work.",
+  "아이디어 한 줄에서 시작해 보세요.": "Start with a single idea.",
+  "생각은 자유롭게, 일은 흐르게.": "Think freely. Let work flow.",
 });

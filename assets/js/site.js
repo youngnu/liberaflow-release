@@ -11,11 +11,14 @@
     menu.classList.remove("is-open");
   }
   if (menuButton && menu) {
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener("click", (event) => {
       const open = menuButton.getAttribute("aria-expanded") !== "true";
       menuButton.setAttribute("aria-expanded", String(open));
       menuButton.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
       menu.classList.toggle("is-open", open);
+      // The button sits after the links, so a keyboard opening (detail 0)
+      // moves focus into the menu instead of past it.
+      if (open && event.detail === 0) menu.querySelector("a")?.focus();
     });
     menu
       .querySelectorAll("a")
@@ -32,6 +35,9 @@
     document.addEventListener("click", (event) => {
       if (!menu.contains(event.target) && !menuButton.contains(event.target))
         closeMenu();
+    });
+    document.addEventListener("focusin", (event) => {
+      if (!event.target.closest(".nav")) closeMenu();
     });
     const desktop = window.matchMedia("(min-width: 701px)");
     desktop.addEventListener("change", (event) => {
