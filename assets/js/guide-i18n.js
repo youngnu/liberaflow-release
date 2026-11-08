@@ -94,7 +94,6 @@ window.initializeLiberaflowLocale({
   "AI 응답에는 네트워크 연결이 필요합니다. 요청에 필요한 자료와 대화 맥락이 선택한 모델 제공자에게 전달됩니다.":
     "AI responses require a network connection. The selected model provider receives the material and conversation context needed for the request.",
   "참고 자료를 연결하고 결과물 만들기": "Use your files to create with AI",
-  "브라우저 자동화 개인정보처리방침": "Browser Automation Privacy Policy",
   "문서 공유": "Share documents",
   "Liberaflow에 로그인하고 보관함의 클라우드 동기화를 켠 뒤, 문서의 공유 창에서 사람이나 팀을 선택합니다. 공유한 노트는 작성자의 것으로 남고, 공유를 해제하면 접근을 거둘 수 있습니다.":
     "Sign into Liberaflow, enable cloud sync for the vault, then choose people or teams in the document’s sharing dialog. Shared notes remain the author’s; disabling sharing revokes access.",
@@ -485,7 +484,6 @@ window.initializeLiberaflowLocale({
   "바닥글 메뉴": "Footer menu",
   제품: "Product",
   도움말: "Help",
-  정책: "Policies",
   공지사항: "Notices",
   "자유롭게 생각하고, 남들과 다르게 일하세요.":
     "Think freely. Work like no one else.",
@@ -501,8 +499,8 @@ window.initializeLiberaflowLocale({
   "새 보관함을 만들거나 기존 마크다운 폴더를 엽니다. 다른 노트 앱에서 쓰던 폴더도 그대로 열 수 있습니다.":
     "Create a vault or open an existing Markdown folder, including one you used with another notes app.",
   "쓰던 마크다운 폴더와 함께 쓰기": "Using your existing Markdown folder",
-  "노트는 일반 .md 파일로 저장됩니다. 위키링크·수식·노트 속성을 지원하지만, 다른 노트 앱의 플러그인과 앱 전용 기능까지 모두 호환되지는 않습니다.":
-    "Notes are saved as standard .md files. Wikilinks, math and note properties are supported; plugins and app-specific features of other notes apps are not all compatible.",
+  "노트는 일반 .md 파일로 저장됩니다. 위키링크·수식·노트 속성을 지원합니다.":
+    "Notes are saved as standard .md files. Wikilinks, math and note properties are supported.",
   "파일 종류마다 보는 방법과 고치는 방법이 다릅니다. 직접 고칠 수도 있고, 고칠 곳을 짚어 AI에게 맡길 수도 있습니다.":
     "Each file type is viewed and edited a little differently. You can edit it yourself, or point at what to change and hand it to AI.",
   "앱 안에서 읽고, 텍스트를 검색하고, 확대·축소합니다. AI 대화에 첨부해 분석을 요청하고, 영역을 골라 주석을 달아 보내면 AI가 원본은 그대로 두고 사본을 만들어 고칩니다.":

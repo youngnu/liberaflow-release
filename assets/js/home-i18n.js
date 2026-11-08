@@ -154,8 +154,6 @@ window.initializeLiberaflowLocale({
   도움말: "Help",
   "시작 가이드": "Getting started",
   공지사항: "Notices",
-  정책: "Policies",
-  "브라우저 자동화 개인정보처리방침": "Browser automation privacy policy",
   "제품 소개와 다운로드는 바로 이용할 수 있습니다. 다른 사용 예시와 언어 전환은 JavaScript를 켜면 사용할 수 있습니다.":
     "The product overview and downloads work right away. Turn on JavaScript for the other examples and language switching.",
 
@@ -260,7 +258,7 @@ window.initializeLiberaflowLocale({
   "문의 통계 2026.xlsx": "Inquiry stats 2026.xlsx",
   "팀원이 올린 문서를 뜻으로 찾고, 근거와 함께 답합니다":
     "Finds your team’s documents by meaning and answers with sources",
-  "떠오른 생각을 메모해 @로 붙이면, AI가 기획안 문서와 할 일로 펼칩니다.":
+  "떠오른 생각을 메모해 @로 붙이면, AI가 기획안 문서와 할 일로 만듭니다.":
     "Jot down an idea and attach it with @. AI turns it into a plan document and to-dos.",
   "채널에서 #으로 AI 팀원을 부르고, @로 문서와 폴더를 붙여 일을 맡깁니다. 팀원은 연결된 코드 폴더에서 바로 작업을 시작합니다.":
     "In a channel, call an AI teammate with # and attach documents and folders with @. The teammate starts working right away in the connected code folder.",
@@ -279,8 +277,8 @@ window.initializeLiberaflowLocale({
     "Liberaflow is Liberation plus Workflow. AI agents take the repetitive work along the way, so people can stay with the thinking.",
   "01 · 아이디어": "01 · Idea",
   "떠오른 생각을 적으면": "Write down a thought",
-  "메모 한 줄을 @로 붙여 말하면, AI가 기획안·보고서·발표 자료로 펼칩니다.":
-    "Attach a one-line memo with @ and say what you need. AI expands it into a plan, a report or a slide deck.",
+  "메모 한 줄을 @로 붙여 말하면, AI가 기획안·보고서·발표 자료로 만듭니다.":
+    "Attach a one-line memo with @ and say what you need. AI turns it into a plan, a report or a slide deck.",
   "@주말 아이디어.md 이 메모를 보고 한글 보고서를 만들어줘.":
     "@Weekend idea.md Turn this memo into a Hangul (HWPX) report.",
   "02 · 코드·문서": "02 · Code & docs",
@@ -326,12 +324,10 @@ window.initializeLiberaflowLocale({
     "Turn this memo into a Word plan with goals and to-dos.",
   "이런 일에서,": "Break free",
   "자유로워집니다.": "from work like this.",
-  "일을 대신하는 것은 AI 에이전트, 무엇을 할지 정하는 것은 나입니다.":
-    "AI agents do the work. You decide what the work should be.",
   "아이디어가 많은 개인": "People full of ideas",
   "떠오른 생각이 메모로만 쌓이고 일이 되지 않는다면":
     "Your ideas pile up as memos and never become work",
-  "메모를 @로 붙이면 AI가 기획안과 할 일로 펼칩니다.":
+  "메모를 @로 붙이면 AI가 기획안과 할 일로 만듭니다.":
     "Attach a memo with @ and AI turns it into a plan and to-dos.",
   "혼자 만드는 메이커": "Solo makers",
   "같은 질문이 팀 안에서 되풀이된다면": "The same questions keep coming up on your team",
@@ -346,8 +342,8 @@ window.initializeLiberaflowLocale({
   "로그인한 뒤 팀을 만들고 멤버를 초대합니다. 노트와 캔버스를 팀에 공유하고, 문서를 지식 공간에 모아 함께 찾고, Cloud 채널에서 사람과 AI 팀원이 같이 일합니다. 공유해도 문서는 작성자의 것이고, 공유를 끄면 바로 팀에서 내려갑니다.":
     "Sign in, create a team and invite members. Share notes and canvases with the team, gather documents in Spaces to search together, and work with people and AI teammates in Cloud channels. Shared documents still belong to their authors, and turning sharing off removes them from the team right away.",
   "쓰던 마크다운 노트를 그대로 쓸 수 있나요?": "Can I keep using my existing Markdown notes?",
-  "네. 쓰던 마크다운 폴더를 보관함으로 그대로 엽니다. 위키링크, 하이라이트, 수식과 노트 속성을 지원하고, 다른 앱이 넣은 속성도 편집·동기화할 때 그대로 둡니다. 다른 노트 앱의 플러그인은 쓸 수 없습니다.":
-    "Yes. Open your existing Markdown folder as a vault. Wikilinks, highlights, equations and note properties are supported, and properties added by other apps stay as they are when you edit or sync. Plugins from other note apps don’t work.",
+  "네. 쓰던 마크다운 폴더를 보관함으로 그대로 엽니다. 위키링크, 하이라이트, 수식과 노트 속성을 지원하고, 다른 앱이 넣은 속성도 편집·동기화할 때 그대로 둡니다.":
+    "Yes. Open your existing Markdown folder as a vault. Wikilinks, highlights, equations and note properties are supported, and properties added by other apps stay as they are when you edit or sync.",
   "아이디어 한 줄에서 시작해 보세요.": "Start with a single idea.",
   "자유롭게 생각하고, 남들과 다르게 일하세요.": "Think freely. Work like no one else.",
 });

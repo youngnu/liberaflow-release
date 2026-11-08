@@ -19,10 +19,8 @@ window.initializeLiberaflowLocale({
   "바닥글 메뉴": "Footer menu",
   제품: "Product",
   도움말: "Help",
-  정책: "Policies",
   "자유롭게 생각하고, 남들과 다르게 일하세요.": "Think freely. Work like no one else.",
   "사용 가이드": "User guide",
-  "브라우저 자동화 개인정보처리방침": "Browser Automation Privacy Policy",
 
   공지사항: "Notices",
   "새 판에서 바뀐 점과 서비스 안내를 알려 드립니다.":
