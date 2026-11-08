@@ -83,20 +83,22 @@
 
   const scenes = {
     notes: {
-      caption: "@로 노트를 붙이고 말하면, Word 문서가 보관함에 생깁니다.",
-      guide: "ai",
+      caption:
+        "채널에서 부탁하면, AI 팀원이 마크다운 노트를 정리하고 관련 노트와 잇습니다.",
+      guide: "notes",
     },
-    annotate: {
-      caption: "고칠 곳에 주석을 달아 한 번에 보내면, 원본 파일이 고쳐집니다.",
+    office: {
+      caption:
+        "고칠 곳에 주석을 달아 AI 팀원에게 보내면, 원본 파일이 고쳐집니다.",
       guide: "office-review-details",
     },
     hwpx: {
-      caption: "한글 문서도 문단이나 표를 골라 고쳐 달라고 하면 됩니다.",
+      caption: "한글 문서도 문단이나 표를 골라 AI 팀원에게 맡기면 됩니다.",
       guide: "documents",
     },
-    team: {
+    code: {
       caption:
-        "#으로 AI 팀원을 부르면, 팀원끼리 일을 넘기고 결과를 보고합니다.",
+        "채널에 코드 폴더를 연결하면, AI 팀원이 고치고 바뀐 줄을 보여 준 뒤 커밋까지 합니다.",
       guide: "team",
     },
     schedule: {
@@ -107,7 +109,7 @@
   const tabs = [...document.querySelectorAll("[data-scene]")];
   const caption = document.getElementById("scene-caption");
   const guide = document.getElementById("scene-guide");
-  // The mock sidebar highlights the file or channel each example works on.
+  // The mock sidebar highlights the channel each example happens in.
   const sidebarItems = [
     ...document.querySelectorAll(".mock-sidebar [data-for]"),
   ];
