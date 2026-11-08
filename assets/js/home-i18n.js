@@ -22,54 +22,26 @@ window.initializeLiberaflowLocale({
   // Example tabs and mock window
   "AI 팀원": "AI teammates",
   "기능을 재구성한 예시": "Illustrative product preview",
+  "실제 앱 화면": "Recorded in the app",
+  "일시 정지": "Pause",
+  재생: "Play",
+  "PPT 미리보기에서 글자 색과 위치, 문구를 고치는 앱 화면 녹화":
+    "App recording: changing text color, position and wording in a PowerPoint preview",
+  "채널에서 AI 팀원에게 문서와 폴더를 붙여 일을 맡기는 앱 화면 녹화":
+    "App recording: handing work to an AI teammate in a channel with a document and folder attached",
+  "노트 그래프를 검색어로 좁히고 로컬 그래프를 여는 앱 화면 녹화":
+    "App recording: narrowing the note graph with a search and opening a local graph",
+  "매주 할 일을 AI에게 말로 예약하는 앱 화면 녹화":
+    "App recording: asking AI in plain words to schedule a weekly task",
   "내 보관함": "My vault",
   "3분기 매출.xlsx": "Q3 sales.xlsx",
   채널: "Channels",
   예약: "Scheduled",
   "내 폴더에 남는 마크다운 노트": "A Markdown note in my own folder",
-  "내 보관함 / 3분기 매출.xlsx": "My vault / Q3 sales.xlsx",
-  "주석 모드": "Annotate",
-  지역: "Region",
-  "7월": "Jul",
-  "8월": "Aug",
-  "9월": "Sep",
-  합계: "Total",
-  서울: "Seoul",
-  부산: "Busan",
-  대구: "Daegu",
-  "합계가 안 맞아요. 수식으로 다시 계산해 주세요.":
-    "The total is wrong. Recalculate it with a formula.",
-  "9월 옆에 전월 대비 증감률 열을 넣어 주세요.":
-    "Add a month-over-month change column next to September.",
-  "주석 2개 · 3분기 매출.xlsx": "2 notes · Q3 sales.xlsx",
-  "주석 단 곳을 고쳐줘.": "Fix the places I noted.",
-  "3분기 매출.xlsx 읽음": "Read Q3 sales.xlsx",
-  "합계 수식, 증감률 열 수정": "Fixed the total formula, added a change column",
-  "합계를 수식으로 다시 계산하고, 9월 옆에 증감률 열을 넣었어요.":
-    "I recalculated the total with a formula and added a change column next to September.",
-  "원본에 반영하고 미리보기를 새로 그림":
-    "Saved to the original, preview redrawn",
   "마음에 안 들면 한 턴 되돌리기": "Not right? Undo the whole turn",
   나: "Me",
-  "캘린더 / 예약": "Calendar / Scheduled",
-  "주간 보고 초안": "Weekly report draft",
-  "매주 월 · 오전 9:00": "Every Mon · 9:00 AM",
-  "지난주 노트로 주간 보고 초안을 만들어줘.":
-    "Draft the weekly report from last week’s notes.",
-  "다음 실행 · 월요일 오전 9:00": "Next run · Monday 9:00 AM",
-  "실행 기록": "Run history",
-  "지난주 월요일 · 완료": "Last Monday · Done",
-  "2주 전 월요일 · 완료": "Monday two weeks ago · Done",
-  "주간 보고.docx": "Weekly report.docx",
-  "예약했어요. 매주 월요일 오전 9시에 실행합니다.":
-    "Scheduled. It runs every Monday at 9:00 AM.",
-  "예약 · 주간 보고 초안": "Scheduled · Weekly report draft",
-  "예약 목록에서 기록 확인·취소":
-    "Check runs or cancel in the scheduled list (예약)",
-  "앱이 켜져 있을 때 실행 · 24시간 안에 놓친 예약은 다음 실행 때 처리":
-    "Runs while the app is open · runs missed within 24 hours catch up next time",
-  "한 번 말해 두면, 정한 시간에 AI가 알아서 실행합니다.":
-    "Ask once, and AI runs the task at the time you set.",
+  "‘매주 월요일’처럼 말로 맡기면 AI가 예약해 두고, 앱이 켜져 있는 동안 정한 시간에 실행합니다. 만든 예약은 캘린더에서 확인합니다.":
+    "Say “every Monday” and AI schedules the task, then runs it on time while the app is open. You can check it in Calendar.",
   "사용 방법 보기": "Explore the guide",
 
   // Works with
@@ -190,20 +162,8 @@ window.initializeLiberaflowLocale({
   // Examples, features and FAQ shared with the previous layout
   "코딩 프로젝트":
     "Coding projects",
-  "main에 커밋·푸시":
-    "Committed and pushed to main",
-  "열기":
-    "Open",
-  "터미널":
-    "Terminal",
   "파일":
     "Files",
-  "변경 2":
-    "Changes 2",
-  "최근 커밋":
-    "Recent commits",
-  "매주 월요일 아침 9시에, 지난주 노트로 주간 보고 초안을 만들도록 예약해줘.":
-    "Every Monday at 9 AM, have a weekly report draft made from last week’s notes.",
   "3분기 매출.xlsx 수정":
     "Edited Q3 sales.xlsx",
   "쓰던 AI, 쓰던 파일 그대로.":
@@ -255,7 +215,6 @@ window.initializeLiberaflowLocale({
   "반복 업무": "Routine work",
   "주말 아이디어.md": "Weekend idea.md",
   "문의 분류": "inquiry-routing",
-  "# 문의 분류": "# inquiry-routing",
   "팀 · 지식 공간": "Team · Spaces",
   "고객지원팀": "Support team",
   "캘린더": "Calendar",
@@ -279,36 +238,6 @@ window.initializeLiberaflowLocale({
   "문의 유형 10개 정리": "List 10 inquiry types",
   "분류 규칙 초안 쓰기": "Draft the routing rules",
   "담당자 연결 흐름 그리기": "Sketch the hand-off to owners",
-  "@문의 자동 분류 기획안": "@Inquiry routing plan",
-  "이 기획대로 분류 기능을 만들고, 테스트가 통과하면 커밋 푸시해줘.":
-    "Build the routing from this plan, and commit and push once the tests pass.",
-  "src/classify.py 만듦": "Created src/classify.py",
-  "테스트 12개 통과": "12 tests passed",
-  "기획안의 문의 유형을 규칙으로 옮겼어요. 맞는 규칙이 없는 문의는 ‘일반’으로 보냅니다.":
-    "I turned the plan’s inquiry types into rules. Anything no rule matches goes to “general”.",
-  "채널에 코드 폴더를 연결하면 AI 팀원이 그 코드로 일합니다":
-    "Connect a code folder to a channel and AI teammates work in that code",
-  "문의 유형별 자동 분류 추가": "Add routing by inquiry type",
-  "Word·PowerPoint도 주석으로, 한글(HWPX)은 문단을 골라 요청":
-    "Annotate Word and PowerPoint too; in Hangul (HWPX), select a paragraph and ask",
-  "@고객 인터뷰 5개": "@5 customer interviews",
-  "위키에 넣고, 이미 있는 페이지와 이어 줘.":
-    "Add these to the wiki and link them to existing pages.",
-  "원본 5개를 raw/에 보관": "Kept the 5 sources in raw/",
-  "위키 페이지 3개 만듦 · 2개 고침": "Created 3 wiki pages · updated 2",
-  "인터뷰에서 겹치는 주제 세 가지를 페이지로 만들고, ‘가격 정책’ 페이지와 이었어요.":
-    "I made pages for the three themes the interviews share, and linked them to your “Pricing policy” page.",
-  "위키를 근거로 답하고, 모순·고아 페이지도 점검":
-    "Answers from the wiki, and checks for contradictions and orphan pages",
-  "내 보관함 / llmwiki / wiki / 결제 단계 이탈.md":
-    "My vault / llmwiki / wiki / Checkout drop-off.md",
-  "결제 단계 이탈": "Checkout drop-off",
-  "sources · 인터뷰 3개": "sources · 3 interviews",
-  "인터뷰 5개 중 3개에서, 배송비가 결제 마지막 단계에서야 보여 그만두었다는 이야기가 나왔다.":
-    "In 3 of 5 interviews, people said they gave up because shipping costs only appeared at the last step of checkout.",
-  "[[가격 정책]]": "[[Pricing policy]]",
-  "[[온보딩 흐름]]": "[[Onboarding flow]]",
-  "[[고객 인터뷰 11-02]]": "[[Customer interview 11-02]]",
   "지식 공간 · 고객지원팀": "Space · Support team",
   "환불 기준이 작년과 무엇이 달라졌는지, 근거와 함께 알려줘.":
     "What changed in our refund rules since last year? Show me the sources.",
@@ -333,12 +262,12 @@ window.initializeLiberaflowLocale({
     "Finds your team’s documents by meaning and answers with sources",
   "떠오른 생각을 메모해 @로 붙이면, AI가 기획안 문서와 할 일로 펼칩니다.":
     "Jot down an idea and attach it with @. AI turns it into a plan document and to-dos.",
-  "아이디어가 프로젝트가 되면 채널에 코드 폴더를 연결합니다. AI 팀원이 고치고, 바뀐 줄을 보여 준 뒤 커밋까지 합니다.":
-    "When an idea becomes a project, connect its code folder to a channel. AI teammates edit it, show the changed lines, and commit.",
-  "고칠 곳에 주석을 달아 보내면, AI가 원본 파일을 고칩니다. 한글 문서는 문단이나 표를 골라 맡깁니다.":
-    "Annotate what needs fixing and send it, and AI edits the original file. In Hangul documents, select a paragraph or table and ask.",
-  "자료를 위키에 넣으라고 하면, AI가 페이지로 정리하고 위키링크로 잇습니다.":
-    "Ask AI to add sources to the wiki, and it writes pages and links them with wikilinks.",
+  "채널에서 #으로 AI 팀원을 부르고, @로 문서와 폴더를 붙여 일을 맡깁니다. 팀원은 연결된 코드 폴더에서 바로 작업을 시작합니다.":
+    "In a channel, call an AI teammate with # and attach documents and folders with @. The teammate starts working right away in the connected code folder.",
+  "AI가 만든 PPT를 앱 안 미리보기에서 바로 손봅니다. 글자 색과 위치를 바꾸고, 문구도 그 자리에서 고칩니다.":
+    "Touch up an AI-made PowerPoint right in the app’s preview. Change text color and position, and rewrite the wording in place.",
+  "쌓인 노트를 그래프로 한눈에 봅니다. 검색어로 좁혀 원하는 노트를 열고, 로컬 그래프로 그 노트에 이어진 것만 따로 봅니다.":
+    "See all your notes at a glance as a graph. Narrow it with a search, open the note you want, and use the local graph to see only what links to it.",
   "로그인하면 팀의 문서를 지식 공간에 모아, 뜻으로 찾고 근거와 함께 답을 받습니다.":
     "Sign in to gather your team’s documents in Spaces, search them by meaning, and get answers with sources.",
   "ChatGPT·Claude 계정으로 로그인하거나 OpenRouter 키를 넣으면 됩니다. 쓰던 마크다운 폴더도, 작업 중인 코드 폴더도 그대로 엽니다.":

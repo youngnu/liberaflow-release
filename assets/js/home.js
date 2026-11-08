@@ -93,18 +93,18 @@
     },
     code: {
       caption:
-        "아이디어가 프로젝트가 되면 채널에 코드 폴더를 연결합니다. AI 팀원이 고치고, 바뀐 줄을 보여 준 뒤 커밋까지 합니다.",
+        "채널에서 #으로 AI 팀원을 부르고, @로 문서와 폴더를 붙여 일을 맡깁니다. 팀원은 연결된 코드 폴더에서 바로 작업을 시작합니다.",
       guide: "coding-projects",
     },
     office: {
       caption:
-        "고칠 곳에 주석을 달아 보내면, AI가 원본 파일을 고칩니다. 한글 문서는 문단이나 표를 골라 맡깁니다.",
-      guide: "office-comments",
+        "AI가 만든 PPT를 앱 안 미리보기에서 바로 손봅니다. 글자 색과 위치를 바꾸고, 문구도 그 자리에서 고칩니다.",
+      guide: "office-review-details",
     },
     wiki: {
       caption:
-        "자료를 위키에 넣으라고 하면, AI가 페이지로 정리하고 위키링크로 잇습니다.",
-      guide: "llm-wiki",
+        "쌓인 노트를 그래프로 한눈에 봅니다. 검색어로 좁혀 원하는 노트를 열고, 로컬 그래프로 그 노트에 이어진 것만 따로 봅니다.",
+      guide: "notes",
     },
     space: {
       caption:
@@ -112,7 +112,8 @@
       guide: "spaces-workflow",
     },
     schedule: {
-      caption: "한 번 말해 두면, 정한 시간에 AI가 알아서 실행합니다.",
+      caption:
+        "‘매주 월요일’처럼 말로 맡기면 AI가 예약해 두고, 앱이 켜져 있는 동안 정한 시간에 실행합니다. 만든 예약은 캘린더에서 확인합니다.",
       guide: "schedule",
     },
   };
@@ -132,8 +133,46 @@
     });
   }
 
+  // Recorded scenes play muted while the window is on screen. The toggle
+  // stops all of them; reduced-motion visitors start from the poster.
+  const appWindow = document.querySelector(".app-window");
+  const windowLabel = appWindow.querySelector(".example-label");
+  const videoToggle = appWindow.querySelector(".video-toggle");
+  let activeVideo = null;
+  let videoPaused = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  let windowVisible = true;
+
+  function syncVideo() {
+    videoToggle.textContent = videoPaused ? "재생" : "일시 정지";
+    if (!activeVideo) return;
+    if (videoPaused || !windowVisible) {
+      activeVideo.pause();
+      return;
+    }
+    const video = activeVideo;
+    video.play().catch((error) => {
+      // A blocked autoplay leaves the poster and offers the play button.
+      if (error.name !== "NotAllowedError" || video !== activeVideo) return;
+      videoPaused = true;
+      syncVideo();
+    });
+  }
+  videoToggle.addEventListener("click", () => {
+    videoPaused = !videoPaused;
+    syncVideo();
+  });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([entry]) => {
+      windowVisible = entry.isIntersecting;
+      syncVideo();
+    }).observe(appWindow);
+  }
+
   function selectScene(tab, focus = false) {
     const scene = scenes[tab.dataset.scene];
+    let video = null;
     tabs.forEach((candidate) => {
       const selected = candidate === tab;
       candidate.setAttribute("aria-selected", String(selected));
@@ -143,7 +182,18 @@
       );
       panel.hidden = !selected;
       panel.classList.toggle("scene-enter", selected);
+      const panelVideo = panel.querySelector("video");
+      if (selected) video = panelVideo;
+      else panelVideo?.pause();
     });
+    if (video !== activeVideo) {
+      activeVideo = video;
+      if (video) video.currentTime = 0;
+    }
+    appWindow.classList.toggle("is-video", Boolean(video));
+    windowLabel.textContent = video ? "실제 앱 화면" : "기능을 재구성한 예시";
+    videoToggle.hidden = !video;
+    syncVideo();
     caption.textContent = scene.caption;
     highlightSidebar(tab.dataset.scene);
     // Shared locale.js keeps this language when the guide is opened.
@@ -166,7 +216,9 @@
     });
   });
 
-  highlightSidebar("idea");
+  selectScene(
+    tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0],
+  );
 
   // Keep links from the earlier website useful, including the former AI section.
   function revealLinkedDetail() {

@@ -54,11 +54,11 @@
       type="image/png"
       href="assets/images/Liberaflow_logo.png"
     />
-    <link rel="stylesheet" href="assets/css/home.css?v=20261108j" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20261109a" />
     <script src="assets/js/download-config.js?v=win-1.5.1" defer></script>
-    <script src="assets/js/home.js?v=20261108f" defer></script>
+    <script src="assets/js/home.js?v=20261109a" defer></script>
     <script src="assets/js/locale.js" defer></script>
-    <script src="assets/js/home-i18n.js?v=20261108j" defer></script>
+    <script src="assets/js/home-i18n.js?v=20261109a" defer></script>
   </head>
   <body>
     <svg
@@ -264,9 +264,9 @@
             type="button"
             id="tab-idea"
             role="tab"
-            aria-selected="true"
+            aria-selected="false"
             aria-controls="panel-idea"
-            tabindex="0"
+            tabindex="-1"
             data-scene="idea"
           >
             <svg class="icon" aria-hidden="true"><use href="#i-bulb" /></svg
@@ -288,9 +288,9 @@
             type="button"
             id="tab-office"
             role="tab"
-            aria-selected="false"
+            aria-selected="true"
             aria-controls="panel-office"
-            tabindex="-1"
+            tabindex="0"
             data-scene="office"
           >
             <svg class="icon" aria-hidden="true"><use href="#i-table" /></svg
@@ -340,7 +340,10 @@
               <i></i><i></i><i></i>
             </div>
             <span class="app-title">Liberaflow</span>
-            <span class="example-label">기능을 재구성한 예시</span>
+            <div class="titlebar-end">
+              <span class="example-label">실제 앱 화면</span>
+              <button class="video-toggle" type="button">일시 정지</button>
+            </div>
           </div>
           <div class="app-body">
             <div class="mock-sidebar" aria-hidden="true">
@@ -380,6 +383,7 @@
               role="tabpanel"
               aria-labelledby="tab-idea"
               tabindex="0"
+              hidden
             >
               <div class="chat-pane">
                 <p class="chat-head">AI 대화</p>
@@ -450,268 +454,62 @@
             </div>
 
             <div
-              class="scene"
+              class="scene scene-video"
               id="panel-code"
               role="tabpanel"
               aria-labelledby="tab-code"
               tabindex="0"
               hidden
             >
-              <div class="chat-pane">
-                <p class="chat-head"># 문의 분류</p>
-                <div class="msg">
-                  <span class="avatar">Y</span>
-                  <div>
-                    <strong>나</strong>
-                    <p>
-                      <span class="mention-chip">#Worker</span>
-                      <span class="mention-chip">@문의 자동 분류 기획안</span>
-                      <span
-                        >이 기획대로 분류 기능을 만들고, 테스트가 통과하면 커밋
-                        푸시해줘.</span
-                      >
-                    </p>
-                  </div>
-                </div>
-                <div class="msg">
-                  <span class="avatar avatar-worker">W</span>
-                  <div>
-                    <strong>Worker <span class="ai-tag">AI</span></strong>
-                    <ul class="ai-steps">
-                      <li>src/classify.py 만듦</li>
-                      <li>테스트 12개 통과</li>
-                      <li>main에 커밋·푸시</li>
-                    </ul>
-                    <p>
-                      기획안의 문의 유형을 규칙으로 옮겼어요. 맞는 규칙이 없는
-                      문의는 ‘일반’으로 보냅니다.
-                    </p>
-                    <div class="diff-mini">
-                      <span>src/classify.py</span><span class="add">+6</span>
-                    </div>
-                  </div>
-                </div>
-                <p class="ai-foot">
-                  채널에 코드 폴더를 연결하면 AI 팀원이 그 코드로 일합니다
-                </p>
-              </div>
-              <div class="preview-pane">
-                <div class="project-card">
-                  <p class="project-name">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-folder" /></svg
-                    ><strong>inquiry-router</strong
-                    ><span class="branch"
-                      ><svg class="icon" aria-hidden="true">
-                        <use href="#i-branch" /></svg
-                      >main</span
-                    >
-                  </p>
-                  <p class="project-actions">
-                    <span>열기</span><span>터미널</span>
-                  </p>
-                </div>
-                <p class="pane-tabs">
-                  <span>파일</span><span class="is-on">변경 2</span
-                  ><span>최근 커밋</span>
-                </p>
-                <div class="diff-card">
-                  <p class="diff-file">
-                    src/classify.py <span class="add">+6</span>
-                  </p>
-                  <pre><code><span class="add">+RULES = load_rules("rules.yaml")</span><span class="add">+def classify(text):</span><span class="add">+    for rule in RULES:</span><span class="add">+        if rule.match(text):</span><span class="add">+            return rule.team</span><span class="add">+    return "general"</span></code></pre>
-                </div>
-                <p class="commit-line">
-                  <span class="sha">b7e2d41</span
-                  ><span>문의 유형별 자동 분류 추가</span>
-                </p>
-              </div>
+              <video
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="assets/videos/home-code.webp"
+                aria-label="채널에서 AI 팀원에게 문서와 폴더를 붙여 일을 맡기는 앱 화면 녹화"
+              >
+                <source src="assets/videos/home-code.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div
-              class="scene"
+              class="scene scene-video"
               id="panel-office"
               role="tabpanel"
               aria-labelledby="tab-office"
               tabindex="0"
-              hidden
             >
-              <div class="chat-pane">
-                <p class="chat-head">AI 대화</p>
-                <div class="msg">
-                  <span class="avatar">Y</span>
-                  <div>
-                    <strong>나</strong>
-                    <p>
-                      <span class="mention-chip"
-                        >주석 2개 · 3분기 매출.xlsx</span
-                      >
-                      <span>주석 단 곳을 고쳐줘.</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="msg">
-                  <span class="avatar avatar-ai">AI</span>
-                  <div>
-                    <strong>ChatGPT <span class="ai-tag">AI</span></strong>
-                    <ul class="ai-steps">
-                      <li>3분기 매출.xlsx 읽음</li>
-                      <li>합계 수식, 증감률 열 수정</li>
-                    </ul>
-                    <p>
-                      합계를 수식으로 다시 계산하고, 9월 옆에 증감률 열을
-                      넣었어요.
-                    </p>
-                    <div class="file-result">
-                      <span class="file-badge badge-excel">X</span>
-                      <div>
-                        <strong>3분기 매출.xlsx</strong
-                        ><span>원본에 반영하고 미리보기를 새로 그림</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="ai-foot">
-                  Word·PowerPoint도 주석으로, 한글(HWPX)은 문단을 골라 요청
-                </p>
-              </div>
-              <div class="preview-pane">
-                <p class="doc-path">
-                  내 보관함 / 3분기 매출.xlsx
-                  <span class="mode-chip">주석 모드</span>
-                </p>
-                <div class="paper">
-                  <table class="mini-sheet">
-                    <thead>
-                      <tr>
-                        <th scope="col">지역</th>
-                        <th scope="col">7월</th>
-                        <th scope="col">8월</th>
-                        <th scope="col" class="is-noted">
-                          9월<span class="note-pin">2</span>
-                        </th>
-                        <th scope="col">합계</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">서울</th>
-                        <td>1,240</td>
-                        <td>1,310</td>
-                        <td>1,420</td>
-                        <td>3,970</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">부산</th>
-                        <td>860</td>
-                        <td>910</td>
-                        <td>880</td>
-                        <td>2,650</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">대구</th>
-                        <td>540</td>
-                        <td>600</td>
-                        <td>630</td>
-                        <td>1,770</td>
-                      </tr>
-                      <tr class="sheet-total">
-                        <th scope="row">합계</th>
-                        <td>2,640</td>
-                        <td>2,820</td>
-                        <td>2,930</td>
-                        <td class="is-noted">
-                          7,930<span class="note-pin">1</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <ol class="annotation-list">
-                    <li>
-                      <span class="note-pin">1</span>합계가 안 맞아요. 수식으로
-                      다시 계산해 주세요.
-                    </li>
-                    <li>
-                      <span class="note-pin">2</span>9월 옆에 전월 대비 증감률
-                      열을 넣어 주세요.
-                    </li>
-                  </ol>
-                </div>
-              </div>
+              <video
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="assets/videos/home-office.webp"
+                aria-label="PPT 미리보기에서 글자 색과 위치, 문구를 고치는 앱 화면 녹화"
+              >
+                <source src="assets/videos/home-office.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div
-              class="scene"
+              class="scene scene-video"
               id="panel-wiki"
               role="tabpanel"
               aria-labelledby="tab-wiki"
               tabindex="0"
               hidden
             >
-              <div class="chat-pane">
-                <p class="chat-head">AI 대화</p>
-                <div class="msg">
-                  <span class="avatar">Y</span>
-                  <div>
-                    <strong>나</strong>
-                    <p>
-                      <span class="mention-chip">/llm-wiki</span>
-                      <span class="mention-chip">@고객 인터뷰 5개</span>
-                      <span>위키에 넣고, 이미 있는 페이지와 이어 줘.</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="msg">
-                  <span class="avatar avatar-ai">AI</span>
-                  <div>
-                    <strong>Claude <span class="ai-tag">AI</span></strong>
-                    <ul class="ai-steps">
-                      <li>원본 5개를 raw/에 보관</li>
-                      <li>위키 페이지 3개 만듦 · 2개 고침</li>
-                    </ul>
-                    <p>
-                      인터뷰에서 겹치는 주제 세 가지를 페이지로 만들고, ‘가격
-                      정책’ 페이지와 이었어요.
-                    </p>
-                  </div>
-                </div>
-                <p class="ai-foot">
-                  위키를 근거로 답하고, 모순·고아 페이지도 점검
-                </p>
-              </div>
-              <div class="preview-pane">
-                <p class="doc-path">
-                  내 보관함 / llmwiki / wiki / 결제 단계 이탈.md
-                </p>
-                <div class="paper md-paper">
-                  <h3 class="note-title">결제 단계 이탈</h3>
-                  <p class="md-props">
-                    <span>type · topic</span><span>sources · 인터뷰 3개</span>
-                  </p>
-                  <p class="memo-text">
-                    인터뷰 5개 중 3개에서, 배송비가 결제 마지막 단계에서야 보여
-                    그만두었다는 이야기가 나왔다.
-                  </p>
-                  <svg
-                    class="mini-graph"
-                    viewBox="0 0 260 92"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M44 50 128 24l88 18M128 24l-8 54M44 50l76 28m96-36-96 36M128 24 66 12"
-                    />
-                    <circle cx="66" cy="12" r="5" />
-                    <circle cx="44" cy="50" r="6" />
-                    <circle class="is-hub" cx="128" cy="24" r="8" />
-                    <circle cx="216" cy="42" r="6" />
-                    <circle cx="120" cy="78" r="6" />
-                  </svg>
-                  <p class="note-links">
-                    <span>[[가격 정책]]</span><span>[[온보딩 흐름]]</span
-                    ><span>[[고객 인터뷰 11-02]]</span>
-                  </p>
-                </div>
-              </div>
+              <video
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="assets/videos/home-wiki.webp"
+                aria-label="노트 그래프를 검색어로 좁히고 로컬 그래프를 여는 앱 화면 녹화"
+              >
+                <source src="assets/videos/home-wiki.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div
@@ -803,86 +601,35 @@
             </div>
 
             <div
-              class="scene"
+              class="scene scene-video"
               id="panel-schedule"
               role="tabpanel"
               aria-labelledby="tab-schedule"
               tabindex="0"
               hidden
             >
-              <div class="chat-pane">
-                <p class="chat-head">AI 대화</p>
-                <div class="msg">
-                  <span class="avatar">Y</span>
-                  <div>
-                    <strong>나</strong>
-                    <p>
-                      매주 월요일 아침 9시에, 지난주 노트로 주간 보고 초안을
-                      만들도록 예약해줘.
-                    </p>
-                  </div>
-                </div>
-                <div class="msg">
-                  <span class="avatar avatar-ai">AI</span>
-                  <div>
-                    <strong>ChatGPT <span class="ai-tag">AI</span></strong>
-                    <p>예약했어요. 매주 월요일 오전 9시에 실행합니다.</p>
-                    <div class="file-result">
-                      <span class="file-badge badge-schedule"
-                        ><svg class="icon" aria-hidden="true">
-                          <use href="#i-repeat" /></svg
-                      ></span>
-                      <div>
-                        <strong>예약 · 주간 보고 초안</strong
-                        ><span>예약 목록에서 기록 확인·취소</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="ai-foot">
-                  앱이 켜져 있을 때 실행 · 24시간 안에 놓친 예약은 다음 실행 때
-                  처리
-                </p>
-              </div>
-              <div class="preview-pane">
-                <p class="doc-path">캘린더 / 예약</p>
-                <div class="task-card">
-                  <div class="task-head">
-                    <strong>주간 보고 초안</strong
-                    ><span class="repeat-chip">매주 월 · 오전 9:00</span>
-                  </div>
-                  <p class="task-prompt">
-                    지난주 노트로 주간 보고 초안을 만들어줘.
-                  </p>
-                  <p class="task-next">
-                    <svg class="icon" aria-hidden="true">
-                      <use href="#i-repeat" /></svg
-                    >다음 실행 · 월요일 오전 9:00
-                  </p>
-                </div>
-                <p class="task-history-title">실행 기록</p>
-                <ul class="task-history">
-                  <li>
-                    <span class="history-ok" aria-hidden="true">✓</span
-                    ><span>지난주 월요일 · 완료</span
-                    ><span class="history-file">주간 보고.docx</span>
-                  </li>
-                  <li>
-                    <span class="history-ok" aria-hidden="true">✓</span
-                    ><span>2주 전 월요일 · 완료</span
-                    ><span class="history-file">주간 보고.docx</span>
-                  </li>
-                </ul>
-              </div>
+              <video
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="assets/videos/home-schedule.webp"
+                aria-label="매주 할 일을 AI에게 말로 예약하는 앱 화면 녹화"
+              >
+                <source
+                  src="assets/videos/home-schedule.mp4"
+                  type="video/mp4"
+                />
+              </video>
             </div>
           </div>
         </div>
         <div class="showcase-caption">
           <p id="scene-caption">
-            떠오른 생각을 메모해 @로 붙이면, AI가 기획안 문서와 할 일로
-            펼칩니다.
+            AI가 만든 PPT를 앱 안 미리보기에서 바로 손봅니다. 글자 색과 위치를
+            바꾸고, 문구도 그 자리에서 고칩니다.
           </p>
-          <a id="scene-guide" href="docs.html#ai"
+          <a id="scene-guide" href="docs.html#office-review-details"
             >사용 방법 보기 <span aria-hidden="true">↗</span></a
           >
         </div>
