@@ -170,7 +170,6 @@ window.initializeLiberaflowLocale({
     "Windows 11 or later, and Apple Silicon Macs (M1 or later) running macOS 15 or later. Intel Macs are not supported.",
 
   // Download
-  "생각이 일이 되는 곳.": "Where ideas get to work.",
   "macOS 다운로드": "Download for macOS",
   "Windows 다운로드": "Download for Windows",
   "Windows 11 이상": "Windows 11 or later",
