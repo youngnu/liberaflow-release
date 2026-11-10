@@ -73,8 +73,8 @@ window.initializeLiberaflowLocale({
 
   // Get started
   "시작은 세 단계.": "Three steps to start.",
-  "계정을 만들지 않아도 바로 시작합니다. 로그인은 동기화와 공유가 필요할 때 하면 됩니다.":
-    "Start right away, no account needed. Sign in later, when you want sync and sharing.",
+  "계정을 만들지 않아도 바로 시작할 수 있습니다. 로그인은 동기화와 공유가 필요할 때 하면 됩니다.":
+    "You can start right away without creating an account. Sign in when you need sync and sharing.",
   "앱 설치": "Install the app",
   "macOS 15 이상 Apple Silicon Mac, 또는 Windows 11 이상에서 설치합니다.":
     "Install on an Apple Silicon Mac with macOS 15 or later, or on Windows 11 or later.",
@@ -90,19 +90,19 @@ window.initializeLiberaflowLocale({
   // Trust
   "안심하고 쓰기": "Privacy and control",
   "내 파일은 내 컴퓨터에.": "Your files stay on your computer.",
-  "노트는 내 폴더의 마크다운 파일로 남고, AI는 내가 고른 구독으로 씁니다.":
-    "Notes stay as Markdown files in your folder, and AI runs on the subscription you choose.",
+  "문서는 내 컴퓨터에 마크다운 파일로 남고, AI는 내 구독으로 돌아갑니다.":
+    "Documents stay on your computer as Markdown files, and AI runs on your own subscription.",
   "고객 리서치.md": "Customer research.md",
   "회의 메모.md": "Meeting notes.md",
   "내 컴퓨터의 .md 파일": "Plain .md files on your computer",
-  "노트는 내 폴더의 마크다운 파일입니다. 앱이 없어도 열립니다.":
-    "Notes are Markdown files in your folder. They open without the app.",
+  "노트는 내 폴더의 마크다운 파일입니다.":
+    "Notes are Markdown files in your own folder.",
   연결됨: "Connected",
   "OpenRouter 키": "OpenRouter key",
   "이 컴퓨터": "This computer",
   "내 구독, 내 키": "Your subscription, your key",
-  "ChatGPT·Claude 구독이나 OpenRouter 키로 씁니다. OpenRouter 키는 이 컴퓨터에만 저장됩니다.":
-    "Use your ChatGPT or Claude subscription, or your OpenRouter key. The OpenRouter key is stored only on this computer.",
+  "ChatGPT·Claude 구독이나 OpenRouter 키로 연결합니다. 토큰값이나 API 키는 서버에 저장되지 않고 내 컴퓨터에만 남습니다.":
+    "Connect with your ChatGPT or Claude subscription, or an OpenRouter key. Tokens and API keys are never stored on a server; they stay on your computer only.",
   "이 턴 되돌리기": "Undo this turn",
   "한 턴 되돌리기": "Undo a turn",
   "AI가 고친 것이 마음에 안 들면 그 턴을 되돌립니다. 새로 만든 파일은 .trash 폴더로 옮겨집니다.":
@@ -116,34 +116,36 @@ window.initializeLiberaflowLocale({
   // Who it's for
   "이런 일에서,": "Break free",
   "자유로워집니다.": "from work like this.",
-  "지식 관리를 원하는 개인": "People building their own knowledge",
-  "자료와 메모가 여기저기 흩어져 다시 찾기 어렵다면":
-    "Your sources and notes are scattered and hard to find again",
-  "노트를 위키링크로 잇고 그래프로 한눈에 봅니다. 모아 둔 자료는 LLM Wiki가 위키 페이지로 정리하고, 물으면 그 위키를 근거로 답합니다.":
-    "Link notes with wikilinks and see them at a glance as a graph. LLM Wiki turns the sources you collect into wiki pages and answers from that wiki when you ask.",
+  "아이디어는 넘치는데,": "People full of ideas,",
+  "구체화하기 위한 지식 관리 공간이 필요한 개인":
+    "who need a knowledge space to make them real",
+  "떠오른 아이디어와 자료를 구체화하고, 흩어진 지식을 하나로 관리하고 싶다면":
+    "You want to flesh out your ideas and sources, and keep scattered knowledge in one place",
+  "메모를 위키링크로 이어 그래프로 한눈에 보고, 모아 둔 자료는 LLM Wiki가 위키 페이지로 정리합니다. 물으면 그 위키를 근거로 답하니, 떠오른 생각을 바로 구체화할 수 있습니다.":
+    "Link notes with wikilinks to see them at a glance as a graph, and let LLM Wiki turn the sources you collect into wiki pages. Ask a question and it answers from that wiki, so a passing idea becomes something concrete right away.",
   "흩어진 자료를 찾아 일하는 실무자": "Professionals who work from scattered files",
-  "필요한 자료가 컴퓨터 곳곳에 흩어져 있어 찾는 데 시간을 쓴다면":
-    "The material you need is spread across your computer, and finding it eats your time",
-  "폴더와 PDF·오피스 문서를 @로 붙이면 AI가 읽고 필요한 내용을 찾아, 보고서와 표를 파일로 만듭니다.":
-    "Attach folders, PDFs and Office documents with @. AI reads them, finds what you need, and delivers reports and tables as files.",
+  "필요한 자료가 컴퓨터 곳곳에 흩어져 있어 찾는 데 시간을 쓰고 있었다면":
+    "You have been spending time hunting for material spread across your computer",
+  "컴퓨터 안의 자료를 찾아 달라고만 하면 AI가 찾아 읽습니다. 그 자료를 토대로 문서를 만들어 달라고 하면, 정리된 보고서가 파일로 나옵니다.":
+    "Just ask for the files on your computer and AI finds and reads them. Ask for a document based on them, and a tidy report comes back as a file.",
   "메신저 안에서 결과물까지 끝내려는 사람": "People who want finished work right in the chat",
-  "대화로 정한 내용을 다시 문서로 옮겨 전달하고 있다면":
-    "You keep moving what was agreed in chat into a document to send on",
-  "채널에서 AI 팀원을 #으로 부르면 결과가 팀원의 답으로 올라와 함께 있는 사람 모두가 봅니다. 공유한 문서를 @로 붙이면 AI가 그 문서를 바로 고칩니다.":
-    "Call an AI teammate with # in a channel, and its answer appears there for everyone in the channel. Attach a shared document with @ and AI edits it on the spot.",
+  "그동안 메신저 대화로 정한 내용을 다시 문서로 옮겨 전달하고 있었다면":
+    "You have been copying what was agreed in messenger chats into a document to send on",
+  "채널에서 대화로 결정된 사항을 토대로 AI 팀원에게 일을 맡기세요. 채널에 AI 팀원을 참여시키고 #으로 불러 일을 맡기면, AI의 답변 결과를 채널에 참여한 사람 모두가 함께 볼 수 있습니다.":
+    "Hand work to an AI teammate based on what was decided in the channel conversation. Add an AI teammate to the channel and call it with # to assign a task, and everyone in the channel sees the AI’s answer together.",
   "여러 AI를 구독하는 개발자": "Developers with more than one AI subscription",
-  "ChatGPT와 Claude를 번갈아 열어 서로의 답을 확인하고 있다면":
-    "You switch between ChatGPT and Claude to check one against the other",
+  "ChatGPT와 Claude를 번갈아 가며 서로의 답을 복사해 붙여 넣고 있었다면":
+    "You have been switching between ChatGPT and Claude, pasting one’s answer into the other",
   "AI 팀원마다 다른 모델을 정해 두고 한 채널에서 함께 일합니다. 한 팀원이 짠 코드를 다른 모델의 팀원이 검토해, 교차 검증이 대화 한 번에 끝납니다.":
     "Give each AI teammate its own model and let them work together in one channel. Code one teammate writes is reviewed by a teammate on a different model, so the cross-check takes a single conversation.",
   "에이전트 여럿을 동시에 돌리는 사람": "People running several agents at once",
-  "일을 하나 맡기고 끝나기를 기다렸다가 다음 일을 시킨다면":
-    "You hand over one task, wait for it to finish, then start the next",
-  "채널마다, 팀원마다 작업이 따로 돌아가 여러 일을 한꺼번에 맡깁니다. 채널 목록에서 작업 중인 채널과 답을 기다리는 질문을 한눈에 챙깁니다.":
+  "일을 하나 맡기고 끝나기를 기다렸다가 다음 일을 시키고 있었다면":
+    "You have been handing over one task, waiting for it to finish, then starting the next",
+  "채널마다, 팀원마다 작업이 따로 돌아가 여러 일을 한꺼번에 맡길 수 있습니다. 채널 목록에서 작업 중인 채널과 답을 기다리는 질문을 한눈에 챙깁니다.":
     "Each channel and each teammate works on its own, so you can hand out several tasks at once. The channel list shows which channels are working and which are waiting on your answer.",
   "일정과 프로젝트를 함께 관리하는 팀": "Teams that manage schedules and projects together",
-  "일정과 할 일, 자료가 사람마다 따로 있다면":
-    "Schedules, to-dos and files live separately for each person",
+  "일정과 할 일, 자료가 사람마다 따로 있었다면":
+    "Schedules, to-dos and files have lived separately with each person",
   "캘린더에 협업자를 지정해 일정을 함께 보고, 프로젝트는 간트 타임라인으로 진행을 챙깁니다. 팀 문서는 지식 공간(Spaces)에 모아 함께 찾습니다.":
     "Add collaborators to calendar events to share them, and track projects on a Gantt timeline. Gather team documents in Spaces and search them together.",
 
@@ -209,8 +211,8 @@ window.initializeLiberaflowLocale({
     "Can I use it for coding?",
   "네. 채널에 코드 폴더를 연결하면(Cloud 채널은 GitHub 저장소도 가능) AI 팀원이 그 코드를 고치고 바뀐 줄을 보여 줍니다. 혼자 쓰는 채널에서는 부탁하면 지금 브랜치에 커밋·푸시하고, 여럿이 쓰는 채널에서는 AI 전용 작업 폴더의 브랜치에서 일한 뒤 PR을 열어 둡니다. 커밋은 부탁할 때만 합니다.":
     "Yes. Connect a code folder to a channel (Cloud channels can also use a GitHub repository), and AI teammates edit the code and show the changed lines. In a channel you use alone, they commit and push to the current branch when you ask. In a shared channel, they work on a branch in a separate AI work folder and open a pull request. They commit only when you ask.",
-  "같은 구독을 쓰지만, 파일을 매번 올리지 않아도 AI가 내 보관함의 노트와 문서를 직접 읽습니다. 결과를 대화창의 답으로 끝내지 않고 보관함의 Word·Excel·PowerPoint·한글 파일과 연결한 코드로 만들고 고칩니다.":
-    "It uses the same subscription, but AI reads the notes and documents in your vault directly, without uploading files each time. Results are created and edited as Word, Excel, PowerPoint and Hangul files in your vault, and in the code you connect, not just as chat replies.",
+  "답변 결과를 대화창의 답으로 끝내지 않고 보관함의 Word·Excel·PowerPoint·한글 파일과 연결한 코드로 만들고 고칩니다. 하나의 AI 제공자에 종속되지 않는 것을 목표로 합니다.":
+    "Instead of ending with an answer in the chat window, it creates and edits the Word, Excel, PowerPoint and HWPX files in your vault and the code you connect. The goal is not to be tied to a single AI provider.",
 
   // Journey copy (hero flow, scenes, flow stages, FAQ)
   "Liberaflow — 자유롭게 생각하고, 남들과 다르게 일하세요":
@@ -323,7 +325,8 @@ window.initializeLiberaflowLocale({
   "코딩 프로젝트 연결": "Connect a coding project",
   "노트와 지식": "Notes and knowledge",
   "지식 공간": "Spaces",
-  "일은 맡기고,": "Hand off the work.",
+  "일은 맡기면,":
+    "Hand off the work.",
   "결과는 파일로 받습니다.": "Get files back.",
   "자료를 @로 붙이고 원하는 결과를 말하세요. AI가 만들고 고친 것은 모두 내 폴더의 파일로 남고, 마음에 안 들면 한 턴씩 되돌립니다.":
     "Attach material with @ and describe the result you want. Everything AI creates or edits stays as files in your folder, and you can undo it one turn at a time.",
@@ -345,14 +348,11 @@ window.initializeLiberaflowLocale({
   "@아이디어 메모": "@Idea memo",
   "이 메모를 목표와 할 일로 나눈 기획안 Word 문서로 만들어줘.":
     "Turn this memo into a Word plan with goals and to-dos.",
-  "Liberaflow는 어떤 앱인가요?": "What is Liberaflow?",
-  "노트에서 시작해 문서와 코드, 팀의 지식까지 다루는 AI 에이전트 데스크톱 앱입니다. 이름은 Liberation(해방)과 Workflow(일의 흐름)를 합친 말로, 일의 흐름에서 되풀이되는 부분을 AI에게 맡기자는 뜻을 담았습니다.":
-    "An AI agent desktop app that starts with notes and reaches documents, code and your team’s knowledge. The name joins Liberation and Workflow: hand the repetitive parts of your workflow to AI.",
   "이미 쓰고 있는 ChatGPT(OpenAI) 또는 Claude 계정으로 로그인하거나, 설정의 내 연결에서 OpenRouter 키를 넣고 모델을 고릅니다. AI 사용에는 연결한 서비스의 요금과 이용 한도가 적용됩니다. 인터넷 연결이 필요하며, AI 요청에 필요한 문서와 대화 맥락은 해당 제공자에게 전송될 수 있습니다.":
     "Sign in with the ChatGPT (OpenAI) or Claude account you already use, or add an OpenRouter key under Settings › 내 연결 (My connections) and pick a model. AI use follows the pricing and limits of the service you connect. AI needs an internet connection, and documents and conversation context needed for your request may be sent to that provider.",
   "팀과 함께 쓰려면 어떻게 하나요?": "How do I use it with my team?",
-  "로그인한 뒤 팀을 만들고 멤버를 초대합니다. 노트와 캔버스를 팀에 공유하고, 문서를 지식 공간에 모아 함께 찾고, Cloud 채널에서 사람과 AI 팀원이 같이 일합니다. 공유해도 문서는 작성자의 것이고, 공유를 끄면 바로 팀에서 내려갑니다.":
-    "Sign in, create a team and invite members. Share notes and canvases with the team, gather documents in Spaces to search together, and work with people and AI teammates in Cloud channels. Shared documents still belong to their authors, and turning sharing off removes them from the team right away.",
+  "로그인한 뒤 설정에서 팀을 만들고 멤버를 초대합니다.":
+    "Sign in, then create a team in Settings and invite members.",
   "쓰던 마크다운 노트를 그대로 쓸 수 있나요?": "Can I keep using my existing Markdown notes?",
   "네. 쓰던 마크다운 폴더를 보관함으로 그대로 엽니다. 위키링크, 하이라이트, 수식과 노트 속성을 지원하고, 다른 앱이 넣은 속성도 편집·동기화할 때 그대로 둡니다.":
     "Yes. Open your existing Markdown folder as a vault. Wikilinks, highlights, equations and note properties are supported, and properties added by other apps stay as they are when you edit or sync.",
