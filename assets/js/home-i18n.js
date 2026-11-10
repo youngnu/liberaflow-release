@@ -174,10 +174,6 @@ window.initializeLiberaflowLocale({
     "Create with /document, /spreadsheet or /presentation (shown in Korean as /문서, /스프레드시트, /프레젠테이션), then edit by selecting or annotating in the preview.",
   "내 자료를 읽는 AI":
     "AI that reads your material",
-  "코드, 문서, 일정을 앱마다 따로 챙긴다면":
-    "You keep code, documents and schedules in separate apps",
-  "코드 폴더를 채널에 연결하고, 같은 AI 팀원에게 코드와 문서를 함께 맡깁니다.":
-    "Connect your code folder to a channel and hand code and documents to the same AI teammates.",
   "네. 노트, 캔버스, 그래프, AI 대화와 오피스 문서 만들기, Local 채널의 AI 팀원, 개인 일정과 할 일은 Liberaflow 로그인 없이 시작합니다.":
     "Yes. Notes, canvas, graph, AI chat, Office document creation, AI teammates in Local channels, and personal events and tasks all work without a Liberaflow sign-in.",
   "여러 기기 사이의 보관함 동기화, 노트·캔버스 공유, 사람과 함께 쓰는 Cloud 채널, 지식 공간(Spaces) 검색, 일정 협업자 지정이 더해집니다.":
@@ -324,12 +320,16 @@ window.initializeLiberaflowLocale({
     "Turn this memo into a Word plan with goals and to-dos.",
   "이런 일에서,": "Break free",
   "자유로워집니다.": "from work like this.",
-  "아이디어가 많은 개인": "People full of ideas",
-  "떠오른 생각이 메모로만 쌓이고 일이 되지 않는다면":
-    "Your ideas pile up as memos and never become work",
-  "메모를 @로 붙이면 AI가 기획안과 할 일로 만듭니다.":
-    "Attach a memo with @ and AI turns it into a plan and to-dos.",
-  "혼자 만드는 메이커": "Solo makers",
+  "지식 관리를 원하는 개인": "People building their own knowledge",
+  "자료와 메모가 여기저기 흩어져 다시 찾기 어렵다면":
+    "Your sources and notes are scattered and hard to find again",
+  "노트를 위키링크로 잇고 그래프로 한눈에 봅니다. 모아 둔 자료는 AI가 위키로 정리합니다.":
+    "Link notes with wikilinks and see them at a glance as a graph. AI organizes the sources you collect into a wiki.",
+  "아이디어가 많은 개발자": "Developers full of ideas",
+  "떠오른 생각이 메모로만 쌓이고 코드로 이어지지 않는다면":
+    "Your thoughts pile up as memos and never turn into code",
+  "메모를 @로 붙이면 AI가 기획안을 만들고, 코드 폴더를 연결한 채널에서 AI 팀원이 구현까지 맡습니다.":
+    "Attach a memo with @ and AI drafts a plan. In a channel connected to your code folder, AI teammates take it all the way to implementation.",
   "같은 질문이 팀 안에서 되풀이된다면": "The same questions keep coming up on your team",
   "팀 문서를 지식 공간(Spaces)에 모으면, 공유받은 누구나 그 지식을 재활용할 수 있습니다.":
     "Gather team documents in Spaces, and everyone they are shared with can reuse that knowledge.",
