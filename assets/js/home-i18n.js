@@ -114,11 +114,38 @@ window.initializeLiberaflowLocale({
     "Sign in when you want sync and sharing. Material needed for an AI request is sent to the AI provider you chose.",
 
   // Who it's for
-  "지식으로 일하는 팀": "Teams that run on knowledge",
-  "반복 업무가 많은 실무자": "People buried in routine work",
-  "매번 같은 업무를 반복한다면": "You repeat the same work again and again",
-  "전달한 서식을 지키면서 AI가 초안을 만들고, 예약해 둔 작업을 정해진 시간에 해 줍니다.":
-    "AI drafts in the format you give it, and runs scheduled work at the time you set.",
+  "이런 일에서,": "Break free",
+  "자유로워집니다.": "from work like this.",
+  "지식 관리를 원하는 개인": "People building their own knowledge",
+  "자료와 메모가 여기저기 흩어져 다시 찾기 어렵다면":
+    "Your sources and notes are scattered and hard to find again",
+  "노트를 위키링크로 잇고 그래프로 한눈에 봅니다. 모아 둔 자료는 LLM Wiki가 위키 페이지로 정리하고, 물으면 그 위키를 근거로 답합니다.":
+    "Link notes with wikilinks and see them at a glance as a graph. LLM Wiki turns the sources you collect into wiki pages and answers from that wiki when you ask.",
+  "흩어진 자료를 찾아 일하는 실무자": "Professionals who work from scattered files",
+  "필요한 자료가 컴퓨터 곳곳에 흩어져 있어 찾는 데 시간을 쓴다면":
+    "The material you need is spread across your computer, and finding it eats your time",
+  "폴더와 PDF·오피스 문서를 @로 붙이면 AI가 읽고 필요한 내용을 찾아, 보고서와 표를 파일로 만듭니다.":
+    "Attach folders, PDFs and Office documents with @. AI reads them, finds what you need, and delivers reports and tables as files.",
+  "메신저 안에서 결과물까지 끝내려는 사람": "People who want finished work right in the chat",
+  "대화로 정한 내용을 다시 문서로 옮겨 전달하고 있다면":
+    "You keep moving what was agreed in chat into a document to send on",
+  "채널에서 AI 팀원을 #으로 부르면 결과가 팀원의 답으로 올라와 함께 있는 사람 모두가 봅니다. 공유한 문서를 @로 붙이면 AI가 그 문서를 바로 고칩니다.":
+    "Call an AI teammate with # in a channel, and its answer appears there for everyone in the channel. Attach a shared document with @ and AI edits it on the spot.",
+  "여러 AI를 구독하는 개발자": "Developers with more than one AI subscription",
+  "ChatGPT와 Claude를 번갈아 열어 서로의 답을 확인하고 있다면":
+    "You switch between ChatGPT and Claude to check one against the other",
+  "AI 팀원마다 다른 모델을 정해 두고 한 채널에서 함께 일합니다. 한 팀원이 짠 코드를 다른 모델의 팀원이 검토해, 교차 검증이 대화 한 번에 끝납니다.":
+    "Give each AI teammate its own model and let them work together in one channel. Code one teammate writes is reviewed by a teammate on a different model, so the cross-check takes a single conversation.",
+  "에이전트 여럿을 동시에 돌리는 사람": "People running several agents at once",
+  "일을 하나 맡기고 끝나기를 기다렸다가 다음 일을 시킨다면":
+    "You hand over one task, wait for it to finish, then start the next",
+  "채널마다, 팀원마다 작업이 따로 돌아가 여러 일을 한꺼번에 맡깁니다. 채널 목록에서 작업 중인 채널과 답을 기다리는 질문을 한눈에 챙깁니다.":
+    "Each channel and each teammate works on its own, so you can hand out several tasks at once. The channel list shows which channels are working and which are waiting on your answer.",
+  "일정과 프로젝트를 함께 관리하는 팀": "Teams that manage schedules and projects together",
+  "일정과 할 일, 자료가 사람마다 따로 있다면":
+    "Schedules, to-dos and files live separately for each person",
+  "캘린더에 협업자를 지정해 일정을 함께 보고, 프로젝트는 간트 타임라인으로 진행을 챙깁니다. 팀 문서는 지식 공간(Spaces)에 모아 함께 찾습니다.":
+    "Add collaborators to calendar events to share them, and track projects on a Gantt timeline. Gather team documents in Spaces and search them together.",
 
   // FAQ
   "자주 묻는 질문": "Frequently asked questions",
@@ -318,21 +345,6 @@ window.initializeLiberaflowLocale({
   "@아이디어 메모": "@Idea memo",
   "이 메모를 목표와 할 일로 나눈 기획안 Word 문서로 만들어줘.":
     "Turn this memo into a Word plan with goals and to-dos.",
-  "이런 일에서,": "Break free",
-  "자유로워집니다.": "from work like this.",
-  "지식 관리를 원하는 개인": "People building their own knowledge",
-  "자료와 메모가 여기저기 흩어져 다시 찾기 어렵다면":
-    "Your sources and notes are scattered and hard to find again",
-  "노트를 위키링크로 잇고 그래프로 한눈에 봅니다. 모아 둔 자료는 AI가 위키로 정리합니다.":
-    "Link notes with wikilinks and see them at a glance as a graph. AI organizes the sources you collect into a wiki.",
-  "아이디어가 많은 개발자": "Developers full of ideas",
-  "떠오른 생각이 메모로만 쌓이고 코드로 이어지지 않는다면":
-    "Your thoughts pile up as memos and never turn into code",
-  "메모를 @로 붙이면 AI가 기획안을 만들고, 코드 폴더를 연결한 채널에서 AI 팀원이 구현까지 맡습니다.":
-    "Attach a memo with @ and AI drafts a plan. In a channel connected to your code folder, AI teammates take it all the way to implementation.",
-  "같은 질문이 팀 안에서 되풀이된다면": "The same questions keep coming up on your team",
-  "팀 문서를 지식 공간(Spaces)에 모으면, 공유받은 누구나 그 지식을 재활용할 수 있습니다.":
-    "Gather team documents in Spaces, and everyone they are shared with can reuse that knowledge.",
   "Liberaflow는 어떤 앱인가요?": "What is Liberaflow?",
   "노트에서 시작해 문서와 코드, 팀의 지식까지 다루는 AI 에이전트 데스크톱 앱입니다. 이름은 Liberation(해방)과 Workflow(일의 흐름)를 합친 말로, 일의 흐름에서 되풀이되는 부분을 AI에게 맡기자는 뜻을 담았습니다.":
     "An AI agent desktop app that starts with notes and reaches documents, code and your team’s knowledge. The name joins Liberation and Workflow: hand the repetitive parts of your workflow to AI.",

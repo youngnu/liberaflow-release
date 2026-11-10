@@ -54,11 +54,11 @@
       type="image/png"
       href="assets/images/Liberaflow_logo.png"
     />
-    <link rel="stylesheet" href="assets/css/home.css?v=20261109a" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20261110a" />
     <script src="assets/js/download-config.js?v=win-1.5.1" defer></script>
     <script src="assets/js/home.js?v=20261109b" defer></script>
     <script src="assets/js/locale.js" defer></script>
-    <script src="assets/js/home-i18n.js?v=20261109c" defer></script>
+    <script src="assets/js/home-i18n.js?v=20261110a" defer></script>
   </head>
   <body>
     <svg
@@ -635,6 +635,81 @@
         </div>
       </section>
 
+      <section class="section wrap" id="who" aria-labelledby="audience-title">
+        <div class="split-heading">
+          <h2 id="audience-title">
+            이런 일에서,<br />
+            <span>자유로워집니다.</span>
+          </h2>
+        </div>
+        <div class="audience-grid">
+          <article>
+            <h3>지식 관리를 원하는 개인</h3>
+            <p class="audience-before">
+              자료와 메모가 여기저기 흩어져 다시 찾기 어렵다면
+            </p>
+            <p class="audience-after">
+              노트를 위키링크로 잇고 그래프로 한눈에 봅니다. 모아 둔 자료는 LLM
+              Wiki가 위키 페이지로 정리하고, 물으면 그 위키를 근거로 답합니다.
+            </p>
+          </article>
+          <article>
+            <h3>흩어진 자료를 찾아 일하는 실무자</h3>
+            <p class="audience-before">
+              필요한 자료가 컴퓨터 곳곳에 흩어져 있어 찾는 데 시간을 쓴다면
+            </p>
+            <p class="audience-after">
+              폴더와 PDF·오피스 문서를 @로 붙이면 AI가 읽고 필요한 내용을 찾아,
+              보고서와 표를 파일로 만듭니다.
+            </p>
+          </article>
+          <article>
+            <h3>메신저 안에서 결과물까지 끝내려는 사람</h3>
+            <p class="audience-before">
+              대화로 정한 내용을 다시 문서로 옮겨 전달하고 있다면
+            </p>
+            <p class="audience-after">
+              채널에서 AI 팀원을 #으로 부르면 결과가 팀원의 답으로 올라와 함께
+              있는 사람 모두가 봅니다. 공유한 문서를 @로 붙이면 AI가 그 문서를
+              바로 고칩니다.
+            </p>
+          </article>
+          <article>
+            <h3>여러 AI를 구독하는 개발자</h3>
+            <p class="audience-before">
+              ChatGPT와 Claude를 번갈아 열어 서로의 답을 확인하고 있다면
+            </p>
+            <p class="audience-after">
+              AI 팀원마다 다른 모델을 정해 두고 한 채널에서 함께 일합니다. 한
+              팀원이 짠 코드를 다른 모델의 팀원이 검토해, 교차 검증이 대화 한
+              번에 끝납니다.
+            </p>
+          </article>
+          <article>
+            <h3>에이전트 여럿을 동시에 돌리는 사람</h3>
+            <p class="audience-before">
+              일을 하나 맡기고 끝나기를 기다렸다가 다음 일을 시킨다면
+            </p>
+            <p class="audience-after">
+              채널마다, 팀원마다 작업이 따로 돌아가 여러 일을 한꺼번에 맡깁니다.
+              채널 목록에서 작업 중인 채널과 답을 기다리는 질문을 한눈에
+              챙깁니다.
+            </p>
+          </article>
+          <article>
+            <h3>일정과 프로젝트를 함께 관리하는 팀</h3>
+            <p class="audience-before">
+              일정과 할 일, 자료가 사람마다 따로 있다면
+            </p>
+            <p class="audience-after">
+              캘린더에 협업자를 지정해 일정을 함께 보고, 프로젝트는 간트
+              타임라인으로 진행을 챙깁니다. 팀 문서는 지식 공간(Spaces)에 모아
+              함께 찾습니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section
         class="works-with wrap"
         id="works-with"
@@ -1017,53 +1092,6 @@
             <p>
               동기화와 공유가 필요할 때 로그인합니다. AI 요청에 필요한 자료는
               내가 고른 AI 제공자에게 전달됩니다.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section wrap" id="who" aria-labelledby="audience-title">
-        <div class="split-heading">
-          <h2 id="audience-title">
-            이런 일에서,<br />
-            <span>자유로워집니다.</span>
-          </h2>
-        </div>
-        <div class="audience-grid">
-          <article>
-            <h3>지식 관리를 원하는 개인</h3>
-            <p class="audience-before">
-              자료와 메모가 여기저기 흩어져 다시 찾기 어렵다면
-            </p>
-            <p class="audience-after">
-              노트를 위키링크로 잇고 그래프로 한눈에 봅니다. 모아 둔 자료는 AI가
-              위키로 정리합니다.
-            </p>
-          </article>
-          <article>
-            <h3>아이디어가 많은 개발자</h3>
-            <p class="audience-before">
-              떠오른 생각이 메모로만 쌓이고 코드로 이어지지 않는다면
-            </p>
-            <p class="audience-after">
-              메모를 @로 붙이면 AI가 기획안을 만들고, 코드 폴더를 연결한
-              채널에서 AI 팀원이 구현까지 맡습니다.
-            </p>
-          </article>
-          <article>
-            <h3>반복 업무가 많은 실무자</h3>
-            <p class="audience-before">매번 같은 업무를 반복한다면</p>
-            <p class="audience-after">
-              전달한 서식을 지키면서 AI가 초안을 만들고, 예약해 둔 작업을 정해진
-              시간에 해 줍니다.
-            </p>
-          </article>
-          <article>
-            <h3>지식으로 일하는 팀</h3>
-            <p class="audience-before">같은 질문이 팀 안에서 되풀이된다면</p>
-            <p class="audience-after">
-              팀 문서를 지식 공간(Spaces)에 모으면, 공유받은 누구나 그 지식을
-              재활용할 수 있습니다.
             </p>
           </article>
         </div>
