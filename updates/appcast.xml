@@ -8,16 +8,19 @@
              
         <!-- macOS Release Item -->
         <item>
-            <title>Version 1.4.9</title>
-            <sparkle:version>1.4.9</sparkle:version>
-            <sparkle:shortVersionString>1.4.9</sparkle:shortVersionString>
-            <pubDate>Mon, 15 Sep 2026 03:00:00 +0000</pubDate>
-            <enclosure 
-                url="https://downloads.liberaflow.com/Liberaflow-1.4.9-macos.dmg"
+            <title>Version 1.5.2</title>
+            <sparkle:version>1.5.2</sparkle:version>
+            <sparkle:shortVersionString>1.5.2</sparkle:shortVersionString>
+            <sparkle:releaseNotesLink>
+                https://liberaflow.com/notices.html
+            </sparkle:releaseNotesLink>
+            <pubDate>Wed, 11 Nov 2026 12:44:43 +0000</pubDate>
+            <enclosure
+                url="https://downloads.liberaflow.com/Liberaflow-1.5.2-macos.dmg"
                 type="application/x-apple-diskimage"
-                length="292185123"
+                length="353848618"
                 sparkle:os="macos"
-                sparkle:edSignature="yy6QlqX/XGm+sGH0XLsTr2Pf+Jtuzju8cleqbe1A4fUiCnJmeXv5GL0GMzQcl8jU+fC8F1dOb2fAiH/TDWNTAA==" />
+                sparkle:edSignature="OOlOqiElsWLi9NPp4tJGNnH5RjnLepjFNvd4k1sUUMvbJK6NUxENHVrUArvwvlnNYKY+QP8Q2GxbNCZxBPcQDg==" />
         </item>
         
         <!-- Windows Release Item -->
