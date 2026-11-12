@@ -67,6 +67,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `assets/js/download-config.js` — 다운로드 URL의 중앙 설정
 - `reset-password.html`, `email-confirmation.html` — 인증 이메일의 복귀 경로
 - `CNAME` — 기존 도메인
+- `privacy/` — 앱·웹사이트 개인정보처리방침(한국어·영어 한 페이지). Google OAuth 동의 화면과 앱의 Google Calendar 연결 안내 창이 `https://liberaflow.com/privacy` 를 가리키므로 주소를 바꾸지 마세요. 앱 동작(저장 위치·전달·삭제)을 바꾸면 이 페이지와 앱의 안내 문구를 함께 고칩니다
 - `privacy/browser-automation/` — 확장 프로그램 개인정보처리방침
 - `naverbc95ad0893d4f5b76c2c91972731d8bb.html`, `robots.txt` — 사이트 인증과 크롤러 정책
 - `extension-test.html`, `extract-test.html` — 브라우저 확장 진단 페이지

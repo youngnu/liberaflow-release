@@ -23,6 +23,7 @@ window.initializeLiberaflowLocale({
   "사용 가이드": "User guide",
 
   공지사항: "Notices",
+  개인정보처리방침: "Privacy Policy",
   "새 판에서 바뀐 점과 서비스 안내를 알려 드립니다.":
     "What’s new in each release, and announcements about the service.",
   "공지 목록": "All notices",

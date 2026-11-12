@@ -183,6 +183,7 @@ window.initializeLiberaflowLocale({
   도움말: "Help",
   "시작 가이드": "Getting started",
   공지사항: "Notices",
+  개인정보처리방침: "Privacy Policy",
   "제품 소개와 다운로드는 바로 이용할 수 있습니다. 다른 사용 예시와 언어 전환은 JavaScript를 켜면 사용할 수 있습니다.":
     "The product overview and downloads work right away. Turn on JavaScript for the other examples and language switching.",
 

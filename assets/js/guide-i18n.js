@@ -485,6 +485,7 @@ window.initializeLiberaflowLocale({
   제품: "Product",
   도움말: "Help",
   공지사항: "Notices",
+  개인정보처리방침: "Privacy Policy",
   "자유롭게 생각하고, 남들과 다르게 일하세요.":
     "Think freely. Work like no one else.",
   "사용 예시 보기": "See examples",
