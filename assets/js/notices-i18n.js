@@ -9,7 +9,6 @@ window.initializeLiberaflowLocale({
   "메뉴 열기": "Open menu",
   "메뉴 닫기": "Close menu",
   "사용 예시": "Examples",
-  흐름: "Flow",
   기능: "Features",
   시작하기: "Get started",
   "시작 가이드": "Getting started",

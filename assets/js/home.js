@@ -63,25 +63,106 @@
     });
   }
 
+  // Phones and tablets cannot install the app. There the leading button
+  // hands over the page link to open on a computer; installers stay below.
+  const shareButtons = [...document.querySelectorAll(".share-link")];
+  const handheld =
+    navigator.userAgentData?.mobile ||
+    /android|iphone|ipad|ipod/i.test(navigator.userAgent) ||
+    (platform.includes("mac") && navigator.maxTouchPoints > 1);
+  if (
+    handheld &&
+    shareButtons.length &&
+    (navigator.share || navigator.clipboard)
+  ) {
+    document.documentElement.classList.add("is-handheld");
+    heroDownloads.forEach((link) => link.classList.remove("is-primary"));
+    const pageUrl =
+      document.querySelector('link[rel="canonical"]')?.href ||
+      window.location.href;
+    // With a share sheet the button sends the link (to a messenger, mail or
+    // AirDrop); without one it copies it. Either way a failure says what to
+    // do instead of passing silently.
+    const canShare = typeof navigator.share === "function";
+    const idleLabel = canShare ? "PC로 링크 보내기" : "PC에서 받을 링크 복사";
+    shareButtons.forEach((button) => {
+      const label = button.querySelector(".share-label");
+      let resetTimer;
+      label.textContent = idleLabel;
+      label.setAttribute("aria-live", "polite");
+      button.hidden = false;
+      button.classList.add("is-primary");
+      function show(text, hold = 1800) {
+        label.textContent = text;
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          label.textContent = idleLabel;
+        }, hold);
+      }
+      button.addEventListener("click", async () => {
+        if (canShare) {
+          try {
+            await navigator.share({ title: document.title, url: pageUrl });
+            return;
+          } catch (error) {
+            // Closing the share sheet is the visitor's choice, not an error.
+            if (error?.name === "AbortError") return;
+          }
+        }
+        try {
+          await navigator.clipboard.writeText(pageUrl);
+          show("링크를 복사했습니다");
+        } catch {
+          show("PC에서 liberaflow.com을 여세요", 6000);
+        }
+      });
+    });
+  }
+
+  // A direct installer link gives no feedback of its own, so the section
+  // says the download started and what comes next.
+  document
+    .querySelectorAll("[data-download], #macosBtn, #windowsBtn")
+    .forEach((link) => {
+      link.addEventListener("click", () => {
+        if (link.getAttribute("href").startsWith("#")) return;
+        const status = link
+          .closest("section")
+          ?.querySelector(".download-status");
+        if (status) status.hidden = false;
+      });
+    });
+
   const copyButton = document.querySelector("[data-copy-target]");
   if (copyButton && navigator.clipboard) {
     const copyLabel = copyButton.querySelector(".copy-label");
+    copyLabel.setAttribute("aria-live", "polite");
     let resetTimer;
     copyButton.hidden = false;
     copyButton.addEventListener("click", async () => {
       const source = document.getElementById(copyButton.dataset.copyTarget);
+      // The sentence wraps across source lines; copy it as one line.
+      const text = source.textContent.replace(/\s+/g, " ").trim();
+      let copied = true;
       try {
-        await navigator.clipboard.writeText(source.textContent.trim());
+        await navigator.clipboard.writeText(text);
       } catch {
-        return;
+        // Leave the sentence selected so it can be copied by hand.
+        copied = false;
+        window.getSelection()?.selectAllChildren(source);
       }
-      copyButton.classList.add("is-copied");
-      copyLabel.textContent = "복사했어요";
+      copyButton.classList.toggle("is-copied", copied);
+      copyLabel.textContent = copied
+        ? "복사했어요"
+        : "선택해 두었어요. 직접 복사하세요";
       clearTimeout(resetTimer);
-      resetTimer = setTimeout(() => {
-        copyButton.classList.remove("is-copied");
-        copyLabel.textContent = "문장 복사";
-      }, 1800);
+      resetTimer = setTimeout(
+        () => {
+          copyButton.classList.remove("is-copied");
+          copyLabel.textContent = "문장 복사";
+        },
+        copied ? 1800 : 6000,
+      );
     });
   }
 
@@ -120,24 +201,13 @@
   const tabs = [...document.querySelectorAll("[data-scene]")];
   const caption = document.getElementById("scene-caption");
   const guide = document.getElementById("scene-guide");
-  // The mock sidebar highlights where each example happens.
-  const sidebarItems = [
-    ...document.querySelectorAll(".mock-sidebar [data-for]"),
-  ];
-  function highlightSidebar(name) {
-    let first = true;
-    sidebarItems.forEach((item) => {
-      const active = first && item.dataset.for === name;
-      if (active) first = false;
-      item.classList.toggle("is-active", active);
-    });
-  }
 
   // Recorded scenes play muted while the window is on screen. The toggle
   // stops all of them; reduced-motion visitors start from the poster.
   const appWindow = document.querySelector(".app-window");
-  const windowLabel = appWindow.querySelector(".example-label");
-  const videoToggle = appWindow.querySelector(".video-toggle");
+  const showcase = appWindow.closest("section");
+  const windowLabel = showcase.querySelector(".example-label");
+  const videoToggle = showcase.querySelector(".video-toggle");
   let activeVideo = null;
   let videoPaused = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
@@ -195,7 +265,6 @@
     videoToggle.hidden = !video;
     syncVideo();
     caption.textContent = scene.caption;
-    highlightSidebar(tab.dataset.scene);
     // Shared locale.js keeps this language when the guide is opened.
     const language = document.documentElement.lang === "en" ? "en" : "ko";
     guide.setAttribute("href", `docs.html?lang=${language}#${scene.guide}`);
@@ -219,6 +288,15 @@
   selectScene(
     tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0],
   );
+
+  // A link elsewhere on the page can open its scene in the example window;
+  // its href still scrolls there.
+  document.querySelectorAll("[data-show-scene]").forEach((link) => {
+    const tab = tabs.find(
+      (candidate) => candidate.dataset.scene === link.dataset.showScene,
+    );
+    if (tab) link.addEventListener("click", () => selectScene(tab));
+  });
 
   // Keep links from the earlier website useful, including the former AI section.
   function revealLinkedDetail() {

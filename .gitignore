@@ -13,3 +13,9 @@
 
 # Internal notes (benchmarks, planning) stay local; this repository is public.
 /internal/
+
+# Impeccable design context stays local: files in the repository root are
+# served on liberaflow.com.
+/PRODUCT.md
+/DESIGN.md
+/.impeccable/

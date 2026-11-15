@@ -477,7 +477,6 @@ window.initializeLiberaflowLocale({
   "스킬 만들기 ↘": "Create a skill ↘",
   "바탕화면 위젯 쓰기 ↘": "Use desktop widgets ↘",
   "사용 예시": "Examples",
-  흐름: "Flow",
   기능: "Features",
   시작하기: "Get started",
   다운로드: "Download",
